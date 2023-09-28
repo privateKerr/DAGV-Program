@@ -1,2 +1,7 @@
 *.mp3[[:space:]]filter=lfs[[:space:]]diff=lfs[[:space:]]merge=lfs[[:space:]]-text filter=lfs diff=lfs merge=lfs -text
 *.avi[[:space:]]filter=lfs[[:space:]]diff=lfs[[:space:]]merge=lfs[[:space:]]-text filter=lfs diff=lfs merge=lfs -text
+*.fbx filter=lfs diff=lfs merge=lfs -text
+*.avix filter=lfs diff=lfs merge=lfs -text
+*.avi filter=lfs diff=lfs merge=lfs -text
+*.mp3 filter=lfs diff=lfs merge=lfs -text
+*.mp4 filter=lfs diff=lfs merge=lfs -text
