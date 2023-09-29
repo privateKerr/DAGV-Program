@@ -5,20 +5,48 @@ using UnityEngine.Events;
 
 public class AnimStatesBehaviour : StateMachineBehaviour
 {
-  [SerializeField] private UnityEvent walkEvent, runEvent, idleEvent;
+  public UnityEvent onEnterEvent;
+  public UnityEvent onUpdateEvent;
+  public UnityEvent onExitEvent;
 
-  IDictionary<string, bool> animStates = new Dictionary<string, bool>();
 
-  public void Awake()
-  {
-    animStates.Add("Walk", false);
-    animStates.Add("Run", false);
-  }   
-
-  public void Update()
-  {
-    if (Input.GetKeyDown("right")){
-        animStates["Walk"] = true;
+  override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        // Custom logic here
+        onEnterEvent.Invoke();
     }
+
+  override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+  {
+
+    if (Input.GetKeyDown("right")){
+      animator.SetBool("Walk", true);
+      onUpdateEvent.Invoke();
+      Debug.Log("Right key is pressed");
+    }
+
+    if (Input.GetKeyDown(KeyCode.LeftShift)){
+      animator.SetBool("Run", true);
+      onUpdateEvent.Invoke();
+    }
+    else if (Input.GetKeyUp(KeyCode.LeftShift)){
+      animator.SetBool("Run", false);
+      onUpdateEvent.Invoke();
+    }
+    
+    if (Input.GetKeyUp("right")){
+      animator.SetBool("Walk", false);
+      animator.SetBool("Run", false);
+      onUpdateEvent.Invoke();
+      Debug.Log("Right key is up");
+    }
+    
   }
+
+    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        // Custom logic here
+        onExitEvent.Invoke();
+    }
+
 }
