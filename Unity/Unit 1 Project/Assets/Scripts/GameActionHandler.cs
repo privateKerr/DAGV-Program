@@ -1,16 +1,18 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.Events;
 
 public class GameActionHandler : MonoBehaviour
 {
-	public GameAction gameActionObj;
-	public UnityEvent handlerEvent;
-	private void Start () {
-		gameActionObj.action += Action;
-	}
+    public GameAction gameActionObj;
+    public UnityEvent respondEvent;
+    
+    private void Start()
+    {
+        gameActionObj.raise += Respond;
+    }
 
-	private void Action()
-	{
-		handlerEvent.Invoke();
-	}
+    private void Respond()
+    {
+        respondEvent.Invoke();
+    }
 }

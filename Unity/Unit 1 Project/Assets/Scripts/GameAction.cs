@@ -1,19 +1,13 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.Events;
 
 [CreateAssetMenu]
 public class GameAction : ScriptableObject
 {
-     public UnityAction action;
-     public UnityAction<Transform> transformAction;
- 
-     public void Raise()
-     {
-         action?.Invoke();
-     }
+    public UnityAction raise;
 
-     public void Raise(Transform transformObj)
-     {
-         transformAction?.Invoke(transformObj);
-     }
- }
+    public void RaiseAction()
+    {
+        raise.Invoke();
+    }
+}
