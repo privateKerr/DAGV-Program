@@ -9,7 +9,6 @@ public class AnimStatesBehaviour : StateMachineBehaviour
   public UnityEvent onUpdateEvent;
   public UnityEvent onExitEvent;
 
-
   override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
           onEnterEvent.Invoke();     
@@ -28,7 +27,8 @@ public class AnimStatesBehaviour : StateMachineBehaviour
       animator.SetBool("Run", true);
       onUpdateEvent.Invoke();
     }
-    else if (Input.GetKeyUp(KeyCode.LeftShift)){
+    
+    if (Input.GetKeyUp(KeyCode.LeftShift)){
       animator.SetBool("Run", false);
       onUpdateEvent.Invoke();
     }
@@ -44,6 +44,8 @@ public class AnimStatesBehaviour : StateMachineBehaviour
       animator.SetTrigger("Jump");
       Debug.Log("Player has jumped!");
     }
+
+    
     
   }
 
