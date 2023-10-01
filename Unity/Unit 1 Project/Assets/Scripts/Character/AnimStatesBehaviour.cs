@@ -22,6 +22,26 @@ public class AnimStatesBehaviour : StateMachineBehaviour
       onUpdateEvent.Invoke();
       Debug.Log("Right key is pressed");
     }
+  
+    if (Input.GetKeyUp("right")){
+      animator.SetBool("Walk", false);
+      animator.SetBool("Run", false);
+      onUpdateEvent.Invoke();
+      Debug.Log("Right key is up");
+    }
+
+    if (Input.GetKeyDown("left")){
+      animator.SetBool("Walk", true);
+      onUpdateEvent.Invoke();
+      Debug.Log("Left key is pressed");
+    }
+  
+    if (Input.GetKeyUp("left")){
+      animator.SetBool("Walk", false);
+      animator.SetBool("Run", false);
+      onUpdateEvent.Invoke();
+      Debug.Log("Left key is up");
+    }
 
     if (Input.GetKeyDown(KeyCode.LeftShift)){
       animator.SetBool("Run", true);
@@ -32,20 +52,13 @@ public class AnimStatesBehaviour : StateMachineBehaviour
       animator.SetBool("Run", false);
       onUpdateEvent.Invoke();
     }
-    
-    if (Input.GetKeyUp("right")){
-      animator.SetBool("Walk", false);
-      animator.SetBool("Run", false);
-      onUpdateEvent.Invoke();
-      Debug.Log("Right key is up");
-    }
 
     if (Input.GetKeyDown(KeyCode.Space)){
       animator.SetTrigger("Jump");
       Debug.Log("Player has jumped!");
     }
 
-    
+
     
   }
 
