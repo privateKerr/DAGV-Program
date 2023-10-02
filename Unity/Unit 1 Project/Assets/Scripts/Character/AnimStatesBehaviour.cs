@@ -16,50 +16,7 @@ public class AnimStatesBehaviour : StateMachineBehaviour
 
   override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
   {
-
-    if (Input.GetKeyDown("right")){
-      animator.SetBool("Walk", true);
-      onUpdateEvent.Invoke();
-      Debug.Log("Right key is pressed");
-    }
-  
-    if (Input.GetKeyUp("right")){
-      animator.SetBool("Walk", false);
-      animator.SetBool("Run", false);
-      onUpdateEvent.Invoke();
-      Debug.Log("Right key is up");
-    }
-
-    if (Input.GetKeyDown("left")){
-      animator.SetBool("Walk", true);
-      onUpdateEvent.Invoke();
-      Debug.Log("Left key is pressed");
-    }
-  
-    if (Input.GetKeyUp("left")){
-      animator.SetBool("Walk", false);
-      animator.SetBool("Run", false);
-      onUpdateEvent.Invoke();
-      Debug.Log("Left key is up");
-    }
-
-    if (Input.GetKeyDown(KeyCode.LeftShift)){
-      animator.SetBool("Run", true);
-      onUpdateEvent.Invoke();
-    }
-    
-    if (Input.GetKeyUp(KeyCode.LeftShift)){
-      animator.SetBool("Run", false);
-      onUpdateEvent.Invoke();
-    }
-
-    if (Input.GetKeyDown(KeyCode.Space)){
-      animator.SetTrigger("Jump");
-      Debug.Log("Player has jumped!");
-    }
-
-
-    
+    onUpdateEvent.Invoke();
   }
 
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
