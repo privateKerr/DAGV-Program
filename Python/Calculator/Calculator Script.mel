@@ -1,0 +1,15 @@
+proc string RandomEnemy()
+{
+    string $enemyType[] = {"Zombie", "Skeleton", "Goblin", "Giant", "Ogre", "Lich", "Evil Wizard"};
+    int $size = size ($enemyType);
+    int $randNum = `rand $size`;
+    return ($enemyType[$randNum]);
+}
+
+proc int EnemyAge(int $num)
+{
+    $age = `rand $num`;
+    return ($age);
+}
+
+print ("This " + RandomEnemy() + " is " + EnemyAge(1000) + " years old!!\n");
