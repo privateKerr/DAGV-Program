@@ -1,6 +1,6 @@
 //Maya ASCII 2024 scene
 //Name: Little World Animation.ma
-//Last modified: Tue, Oct 03, 2023 06:08:06 PM
+//Last modified: Tue, Oct 03, 2023 07:00:45 PM
 //Codeset: 1252
 file -rdi 1 -ns "WalkingAnimation" -rfn "WalkingAnimationRN" -op "v=0;" -typ
 		 "mayaAscii" "C:/Users/Kerr/Desktop/Animation and Game Dev/DAGV Fall 2023/DGAV-Fall-2023/Unity/Unit 1 Project/Assets/MayaProject/scenes/WalkingAnimation.ma";
@@ -19,17 +19,17 @@ fileInfo "product" "Maya 2024";
 fileInfo "version" "2024";
 fileInfo "cutIdentifier" "202304191415-7fa20164c6";
 fileInfo "osv" "Windows 11 Pro v2009 (Build: 22621)";
-fileInfo "UUID" "DE83C6A6-496B-F4C0-AF24-43A4E86E0D80";
+fileInfo "UUID" "8639E2BF-4F93-B547-E059-7C90543E9E2B";
 createNode transform -s -n "persp";
 	rename -uid "9AEA7B65-4DA6-8D1D-01AF-F08E3A04A4B4";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 43.281875625156708 15.604816905074935 -23.195371746052086 ;
-	setAttr ".r" -type "double3" -9.9383527274328944 -3118.5999999974629 0 ;
+	setAttr ".t" -type "double3" 49.204610082020551 7.9803596702724722 -11.435093547027517 ;
+	setAttr ".r" -type "double3" -0.93835272637308353 -3134.2000000003313 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "C83189BD-4BDA-DBE5-CDEB-85B2AF1E4771";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 48.808439301721947;
+	setAttr ".coi" 48.808439301718963;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
