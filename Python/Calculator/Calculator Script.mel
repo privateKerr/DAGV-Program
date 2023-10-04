@@ -13,3 +13,8 @@ proc int EnemyAge(int $num)
 }
 
 print ("This " + RandomEnemy() + " is " + EnemyAge(1000) + " years old!!\n");
+
+proc float Addition(float ($num1, $num2))
+{
+
+} 
