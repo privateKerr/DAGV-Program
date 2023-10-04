@@ -1,6 +1,6 @@
 proc float Addition(float $nums[])
 {
-    float $sum = $nums[0];
+    float $sum = $nums[0]; 
 
     for ($i = 1; $i < size($nums); $i++){
         $sum += $nums[$i];
@@ -9,7 +9,7 @@ proc float Addition(float $nums[])
     return $sum;
 }
 
-print ("Adding the values of " + $numberInput + "equals: " + $sum + "\n");
+
 
 proc float Subtract(float $nums[])
 {
