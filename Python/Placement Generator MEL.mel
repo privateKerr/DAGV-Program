@@ -1,0 +1,47 @@
+proc placementGenerator (float $xMin, float $xMax, float $yMin, float $yMax, float $zMin, float $zMax, int $numDups)
+{
+
+    //store object(s) name as variable
+    string $sels[] = `ls -selection`; //(ex: [rock1, rock2, rock3, rock4])
+
+    //looping through each object selection
+    for ($i=0; $i < size($sels); $i++)
+    {
+        //perform actions for each individual object
+        for($j = 0; $j < $numDups; $j++)
+        {
+            //duplicate current object 
+            string $dups[] = `duplicate -rr $sels[$i]`;
+            string $dup = $dups[0];
+
+            float $randX = `rand $xMin $xMax`;
+            float $randZ = `rand $zMin $zMax`;
+            float $randY = `rand $yMin $yMax`;
+            //generate a new x, y, and z value based on range arguments
+
+            //translate current object to new position
+            xform -worldSpace -translation $randX $randY $randZ $dup;
+
+        }
+    }
+}
+
+placementGenerator(-20, 30, 40, 100, 1, 45, 79);
+
+string $mWindow = "rp_Window";
+
+if (`$mWindow = window -exists $mWindow`) 
+{
+    deleteUI $mWindow;
+}
+
+string $mWindow = `window -title "Random Placement Generator"
+                         -resizeToFitChildren 1 
+                         -widthHeight 400 300
+                         -$mWindow`;
+string $mColumn = `columnLayout -parent $mWindow -adjustableColumn 1`;
+float $xRange = floatSlider -min -$xMin -max $xMax -value 0 -step 1;
+float $yRange = floatSlider -min -$yMin -max $yMax -value 0 -step 1;
+float $zRange = floatSlider -min -$zMin -max $zMax -value 0 -step 1;
+
+showWindow $mWindow;

@@ -192,12 +192,14 @@ global proc float Calculator(string $operation, float $nums[])
 }
 
 //Calculator functions
-Calculator("add", {1, 2, 3, 4, 5});
-Calculator("subtract", {1, 2, 3, 4, 5});
-Calculator("multiply", {1, 2, 3, 4, 5});
-Calculator("power", {5, 2});
-Calculator("mean", {1, 2, 3, 4, 5});
-Calculator("median", {1, 2, 3, 4, 5});
+//Calculator("add", {1, 2, 3, 4, 5});
+//Calculator("subtract", {1, 2, 3, 4, 5});
+//Calculator("multiply", {1, 2, 3, 4, 5});
+//Calculator("power", {5, 2});
+//Calculator("mean", {1, 2, 3, 4, 5});
+//Calculator("median", {1, 2, 3, 4, 5});
 
 //Putting in an "operation" other than the current sub-functions will run the default case
-Calculator("gravybaby", {1, 2, 3, 4, 5});
+//Calculator("gravybaby", {1, 2, 3, 4, 5});
+
+string $mWindow = window -title "Calculator";

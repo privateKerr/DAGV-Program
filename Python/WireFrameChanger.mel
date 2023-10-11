@@ -1,0 +1,13 @@
+proc wireframeColorchange())
+{
+    string $sels[] = `ls -selection`;
+    for ($i = 0; $i < size($sels); $i++){
+
+        string $overEnabled = $sels[$i] + ".overrideEnabled";
+        string $overColor = $sels[$i] + ".overrideColor";
+        setAttr $overEnabled 1;
+        setAttr $overColor 6; 
+    }
+
+}
+wireframeColorchange();
