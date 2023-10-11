@@ -40,8 +40,10 @@ string $mWindow = `window -title "Random Placement Generator"
                          -widthHeight 400 300
                          -$mWindow`;
 string $mColumn = `columnLayout -parent $mWindow -adjustableColumn 1`;
-float $xRange = floatSlider -min -$xMin -max $xMax -value 0 -step 1;
-float $yRange = floatSlider -min -$yMin -max $yMax -value 0 -step 1;
-float $zRange = floatSlider -min -$zMin -max $zMax -value 0 -step 1;
+float $xRange = floatSlider -min -$xMin -max $xMax -value 0 -step 1 -parent $mColumn;
+float $yRange = floatSlider -min -$yMin -max $yMax -value 0 -step 1 -parent $mColumn;
+float $zRange = floatSlider -min -$zMin -max $zMax -value 0 -step 1 -parent $mColumn;
+button -label "Randomize" -command placementGenerator;
+
 
 showWindow $mWindow;
