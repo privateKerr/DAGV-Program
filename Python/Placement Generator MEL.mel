@@ -1,4 +1,4 @@
-proc placementGenerator (float $xMin, float $xMax, float $yMin, float $yMax, float $zMin, float $zMax, int $numDups)
+global proc placementGenerator (float $xMin, float $xMax, float $yMin, float $yMax, float $zMin, float $zMax, int $numDups)
 {
 
     //store object(s) name as variable
@@ -28,22 +28,55 @@ proc placementGenerator (float $xMin, float $xMax, float $yMin, float $yMax, flo
 
 placementGenerator(-20, 30, 40, 100, 1, 45, 79);
 
-string $mWindow = "rp_Window";
-
-if (`$mWindow = window -exists $mWindow`) 
+global proc RB_ButtonCmd()
 {
-    deleteUI $mWindow;
+    string $xRange = `optionVar -q "pgXRange"`;
+    string $yRange = `optionVar -q "pgYRange"`;
+    string $zRange = `optionVar -q "pgZRange"`;
+    string $numDups = `optionVar -q "numDups"`;
+
+    float $xMin = `floatFieldGrp -q -value1 $xRange`;
+    float $xMax = `floatFieldGrp -q -value2 $xRange`;
+
+    float $yMin = `floatFieldGrp -q -value1 $yRange`;
+    float $yMax = `floatFieldGrp -q -value2 $yRange`;
+
+    float $zMin = `floatFieldGrp -q -value1 $zRange`;
+    float $zMax = `floatFieldGrp -q -value2 $zRange`;
+
+    int $dups = `intSliderGrp -q -value $numDups`;
+
+    placementGenerator($xMin, $xMax, $yMin, $yMax, $zMin, $zMax, $dups);
 }
 
-string $mWindow = `window -title "Random Placement Generator"
-                         -resizeToFitChildren 1 
-                         -widthHeight 400 300
-                         -$mWindow`;
-string $mColumn = `columnLayout -parent $mWindow -adjustableColumn 1`;
-float $xRange = floatSlider -min -$xMin -max $xMax -value 0 -step 1 -parent $mColumn;
-float $yRange = floatSlider -min -$yMin -max $yMax -value 0 -step 1 -parent $mColumn;
-float $zRange = floatSlider -min -$zMin -max $zMax -value 0 -step 1 -parent $mColumn;
-button -label "Randomize" -command placementGenerator;
+global proc PlacementGeneratorUI()
+{
+string $mWindow = "pg_Window";
 
+if (`window -exists $mWindow`)
+    deleteUI $mWindow;
+
+$mWindow = `window -title "Random Placement Generator"
+                  -widthHeight 300 400
+                  -resizeToFitChildren 1
+                  $mWindow`;
+string $mColumn = `columnLayout -parent $mWindow -adjustableColumn 1`;
+optionVar -stringValue "pgXRange" `floatFieldGrp -numberOfFields 2 -parent $mColumn
+    -label "X Min" -extraLabel "X Max"
+    -value1 0 -value2 0`;
+optionVar -stringValue "pgYRange" `floatFieldGrp -numberOfFields 2 -parent $mColumn
+    -label "Y Min" -extraLabel "Y Max"
+    -value1 0 -value2 0`;
+optionVar -stringValue "pgZRange" `floatFieldGrp -numberOfFields 2 -parent $mColumn
+    -label "Z Min" -extraLabel "Z Max"
+    -value1 0 -value2 0`;
+optionVar -stringValue "numDups" `intSliderGrp -label "Number of Duplicates" -field true -parent $mColumn`;
+
+button -label "Generate Placement" -command RB_ButtonCmd;
 
 showWindow $mWindow;
+}
+
+PlacementGeneratorUI();
+
+
