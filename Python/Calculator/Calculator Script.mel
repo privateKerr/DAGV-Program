@@ -122,7 +122,7 @@ global proc float Calculator(string $operation, float $nums[])
                 }
             }
         $output += " is " + Addition($nums) + "\n";
-        print $output;
+        return $output;
         break;
 
         case "subtract":
@@ -134,7 +134,7 @@ global proc float Calculator(string $operation, float $nums[])
                 }
             }
         $output += " is " + Subtract($nums) + "\n";
-        print $output;
+        return $output;
         break;
 
         case "multiply":
@@ -146,7 +146,7 @@ global proc float Calculator(string $operation, float $nums[])
                 }
             }
         $output += " is " + Multiply($nums) + "\n";
-        print $output;
+        return $output;
         break;
 
         case "power":
@@ -155,7 +155,7 @@ global proc float Calculator(string $operation, float $nums[])
                 $output += $nums[$i - 1] + " multiplied by the power of " + $nums[$i];
             }
         $output += " is " + Power($nums) + "\n";
-        print $output;
+        return $output;
         break;
 
         case "mean":
@@ -167,7 +167,7 @@ global proc float Calculator(string $operation, float $nums[])
                 }
             }
         $output += " is " + Mean($nums) + "\n";
-        print $output;
+        return $output;
         break;
 
         case "median":
@@ -179,7 +179,7 @@ global proc float Calculator(string $operation, float $nums[])
                 }
             }
         $output += " is " + Median($nums) + "\n";
-        print $output;
+        return $output;
         break;
 
         default:
@@ -202,4 +202,49 @@ global proc float Calculator(string $operation, float $nums[])
 //Putting in an "operation" other than the current sub-functions will run the default case
 //Calculator("gravybaby", {1, 2, 3, 4, 5});
 
-string $mWindow = window -title "Calculator";
+
+global proc calc_ButtonCMD()
+{
+    string $addition = `optionVar -q "operAdd"`;
+    string $subtraction = `optionVar -q "operSubtract"`;
+    string $multiply = `optionVar -q "operMultiply"`;
+    string $divide = `optionVar -q "operDivide"`;
+    string $power = `optionVar -q "operPower"`;
+    string $mean = `optionVar -q "operMean"`;
+    string $median = `optionVar -q "operMedian"`;
+    string $numInput = `optionVar -q "numInputs"`;
+
+    string $addOpp = `menuItem -q label $addition`;
+    
+}
+
+
+global proc CalculatorUI()
+{
+    string $mWindow = "calcWindow";
+
+    if (`window -exists $mWindow`)
+    {
+        deleteUI $mWindow;
+    }
+
+    $mWindow = `window -title "Calculator"
+                            -widthHeight 400 200
+                            $mWindow`;
+    string $mColumn = `columnLayout -parent $mWindow -adjustableColumn 1`;
+    optionVar -stringValue "numInputs" `floatFieldGrp -parent $mColumn -label "Inputs"`;
+    optionVar -stringValue "operMenu" `optionMenu -label "Operations"`;
+        optionVar -stringValue "operAdd" `menuItem -label "Add"`;
+        optionVar -stringValue "operSubtract" `menuItem -label "Subtract"`;
+        optionVar -stringValue "operMultiply" `menuItem -label "Multiply"`;
+        optionVar -stringValue "operDivide" `menuItem -label "Divide"`;
+        optionVar -stringValue "operPower" `menuItem -label "Power"`;
+        optionVar -stringValue "operMean" `menuItem -label "Find the Mean"`;
+        optionVar -stringValue "operMedian" `menuItem -label "Find the Median"`;
+    button -label "Calculate" -parent $mColumn -command Calculator;
+    optionVar -stringValue "calcResult" `textField -parent $mColumn -editable 0`;
+
+    showWindow $mWindow;
+}
+
+CalculatorUI();
