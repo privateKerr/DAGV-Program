@@ -213,9 +213,12 @@ global proc calc_ButtonCMD()
     string $mean = `optionVar -q "operMean"`;
     string $median = `optionVar -q "operMedian"`;
     string $numInput = `optionVar -q "numInputs"`;
+    string $operationInput = `optionVar -q "operCollection"`;
 
-    string $addOpp = `menuItem -q label $addition`;
-    
+    string $operation = `optionVar -q -select $operationInput`;
+    float $nums = `optionVar -q -value $numInput`;
+
+    Calculator($operation, $nums);
 }
 
 
@@ -230,17 +233,21 @@ global proc CalculatorUI()
 
     $mWindow = `window -title "Calculator"
                             -widthHeight 400 200
+                            -resizeToFitChildren 1
                             $mWindow`;
     string $mColumn = `columnLayout -parent $mWindow -adjustableColumn 1`;
-    optionVar -stringValue "numInputs" `floatFieldGrp -parent $mColumn -label "Inputs"`;
-    optionVar -stringValue "operMenu" `optionMenu -label "Operations"`;
-        optionVar -stringValue "operAdd" `menuItem -label "Add"`;
-        optionVar -stringValue "operSubtract" `menuItem -label "Subtract"`;
-        optionVar -stringValue "operMultiply" `menuItem -label "Multiply"`;
-        optionVar -stringValue "operDivide" `menuItem -label "Divide"`;
-        optionVar -stringValue "operPower" `menuItem -label "Power"`;
-        optionVar -stringValue "operMean" `menuItem -label "Find the Mean"`;
-        optionVar -stringValue "operMedian" `menuItem -label "Find the Median"`;
+    optionVar -stringValue "numInputs" `floatFieldGrp -parent $mColumn -value 0 -label "Inputs"`;
+
+    optionVar -stringValue "operCollection" `radioCollection`;
+
+    optionVar -stringValue "operAdd" `radioButton -label "Add"`;
+    optionVar -stringValue "operSubtract" `radioButton -label "Subtract"`;
+    optionVar -stringValue "operMultiply" `radioButton -label "Multiply"`;
+    optionVar -stringValue "operDivide" `radioButton -label "Divide"`;
+    optionVar -stringValue "operPower" `radioButton -label "Power"`;
+    optionVar -stringValue "operMean" `radioButton -label "Find the Mean"`;
+    optionVar -stringValue "operMedian" `radioButton -label "Find the Median"`;
+
     button -label "Calculate" -parent $mColumn -command Calculator;
     optionVar -stringValue "calcResult" `textField -parent $mColumn -editable 0`;
 
