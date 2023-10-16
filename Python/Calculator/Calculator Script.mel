@@ -210,10 +210,10 @@ global proc calc_ButtonCMD()
     string $resultField = `optionVar -q "calcResult"`;
 
     string $operation = `radioCollection -q -select $operationInput`;
-    float $nums[] = `optionVar -q -value $numInput`;
+    float $nums[] = `floatFieldGrp -q -value $numInput`;
 
 
-    string $result = Calculator($operation, $nums);
+    string $result = Calculator($operation, $num);
     textField -e -text ($result) $resultField;
 }
 

@@ -1,13 +1,25 @@
-proc wireframeColorchange())
+proc wireframeColorchange(int $color)
 {
-    string $sels[] = `ls -selection`;
-    for ($i = 0; $i < size($sels); $i++){
+    string $objectSelection[] = `ls -selection`;
 
-        string $overEnabled = $sels[$i] + ".overrideEnabled";
-        string $overColor = $sels[$i] + ".overrideColor";
-        setAttr $overEnabled 1;
-        setAttr $overColor 6; 
+    if (size($objectSelection) == 0)
+        error("select object(s) before running ChangeColor().");
+    
+    if ($color < 0 || $color > 31)
+    {
+        $color = 0;
+        warning("Color argument must be within a range of 0 to 31. Value set to default of 0.");
     }
+       
+    for ($i = 0; $i < size($objectSelection); $i++)
+    {
+        string $shapes[] = `listRelatives -shapes $objectSelection[$i]`;
 
+        for ($shape in $shapes)
+        {
+            setAttr ($shape + ".overrideEnabled") 1;
+            setAttr ($shape + ".overrideColor") $color;
+        }
+    }
 }
 wireframeColorchange();
