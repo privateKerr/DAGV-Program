@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
     {
         // Horizontal movement
         var moveInput = Input.GetAxis("Horizontal");
-        var moveDirection = transform.right * (moveInput * moveSpeed);
+        var moveDirection = transform.forward * (moveInput * moveSpeed);
 
         // Apply gravity
         if (!controller.isGrounded)

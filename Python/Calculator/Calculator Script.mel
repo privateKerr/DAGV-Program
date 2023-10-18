@@ -244,6 +244,7 @@ global proc CalculatorUI()
     optionVar -stringValue "operMean" `radioButton -label "Find the Mean"`;
     optionVar -stringValue "operMedian" `radioButton -label "Find the Median"`;
 
+
     button -label "Calculate" -parent $mColumn -command calc_ButtonCMD;
     optionVar -stringValue "calcResult" `textField -parent $mColumn -editable 0`;
 
