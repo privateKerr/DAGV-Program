@@ -50,6 +50,8 @@ ExportedObj/
 *.avi
 *.tif
 *.mp4
+*.json
+*.txt
 
 # Unity3D generated meta files
 *.pidb.meta
@@ -155,3 +157,905 @@ Inputs/Assets/Cyberleaf - Horror Ambiences/
 Inputs/Assets/Cyberleaf - Retro SFX/
 
 Inputs/Assets/TextMesh Pro/
+
+Unity/Unit 1 Project/Assets/DigitalAssets.meta
+
+Unity/Unit 1 Project/Assets/DigitalAssets/Bridge_Tool.hdanc
+
+Unity/Unit 1 Project/Assets/DigitalAssets/Bridge_Tool.hdanc.meta
+
+Unity/Unit 1 Project/Assets/DigitalAssets/Chain_tool.hdanc
+
+Unity/Unit 1 Project/Assets/DigitalAssets/Chain_tool.hdanc.meta
+
+Unity/Unit 1 Project/Assets/DigitalAssets/cloud_generator.hdanc
+
+Unity/Unit 1 Project/Assets/DigitalAssets/cloud_generator.hdanc.meta
+
+Unity/Unit 1 Project/Assets/DigitalAssets/Kerr_fence_tool.hdanc
+
+Unity/Unit 1 Project/Assets/DigitalAssets/Kerr_fence_tool.hdanc.meta
+
+Unity/Unit 1 Project/Assets/DigitalAssets/object_Kerr.dev.rock.1.0.hdanc
+
+Unity/Unit 1 Project/Assets/DigitalAssets/object_Kerr.dev.rock.1.0.hdanc.meta
+
+Unity/Unit 1 Project/Assets/DigitalAssets/object_Kerr.dev.water_surface.1.0.hdanc
+
+Unity/Unit 1 Project/Assets/DigitalAssets/object_Kerr.dev.water_surface.1.0.hdanc.meta
+
+Unity/Unit 1 Project/Assets/DigitalAssets/Proc_Fence_Tool.hdanc
+
+Unity/Unit 1 Project/Assets/DigitalAssets/Proc_Fence_Tool.hdanc.meta
+
+Unity/Unit 1 Project/Assets/DigitalAssets/Proc_fence.hdanc
+
+Unity/Unit 1 Project/Assets/DigitalAssets/Proc_fence.hdanc.meta
+
+Unity/Unit 1 Project/Assets/HoudiniEngineAssetCache.meta
+
+Unity/Unit 1 Project/Assets/HoudiniEngineAssetCache/Working.meta
+
+Unity/Unit 1 Project/Assets/HoudiniEngineAssetCache/Working/Bridge_Tool.meta
+
+Unity/Unit 1 Project/Assets/MayaProject/assets.meta
+
+Unity/Unit 1 Project/Assets/MayaProject/autosave.meta
+
+Unity/Unit 1 Project/Assets/MayaProject/cache/nCache/fluid.meta
+
+Unity/Unit 1 Project/Assets/MayaProject/cache/particles.meta
+
+Unity/Unit 1 Project/Assets/MayaProject/clips.meta
+
+Unity/Unit 1 Project/Assets/MayaProject/data.meta
+
+Unity/Unit 1 Project/Assets/MayaProject/images.meta
+
+Unity/Unit 1 Project/Assets/MayaProject/movies.meta
+
+Unity/Unit 1 Project/Assets/MayaProject/renderData/depth.meta
+
+Unity/Unit 1 Project/Assets/MayaProject/renderData/fur/furAttrMap.meta
+
+Unity/Unit 1 Project/Assets/MayaProject/renderData/fur/furEqualMap.meta
+
+Unity/Unit 1 Project/Assets/MayaProject/renderData/fur/furFiles.meta
+
+Unity/Unit 1 Project/Assets/MayaProject/renderData/fur/furImages.meta
+
+Unity/Unit 1 Project/Assets/MayaProject/renderData/fur/furShadowMap.meta
+
+Unity/Unit 1 Project/Assets/MayaProject/renderData/iprImages.meta
+
+Unity/Unit 1 Project/Assets/MayaProject/renderData/shaders.meta
+
+Unity/Unit 1 Project/Assets/MayaProject/sceneAssembly.meta
+
+Unity/Unit 1 Project/Assets/MayaProject/scenes/edits.meta
+
+Unity/Unit 1 Project/Assets/MayaProject/scenes/PlayerAnimController.controller
+
+Unity/Unit 1 Project/Assets/MayaProject/scenes/WalkingAnimation.ma.meta
+
+Unity/Unit 1 Project/Assets/MayaProject/scripts.meta
+
+Unity/Unit 1 Project/Assets/MayaProject/sound.meta
+
+Unity/Unit 1 Project/Assets/MayaProject/sourceimages/3dPaintTextures.meta
+
+Unity/Unit 1 Project/Assets/MayaProject/substance.meta
+
+Unity/Unit 1 Project/Assets/MayaProject/Time Editor/Clip Exports.meta
+
+Unity/Unit 1 Project/Assets/package.json
+
+Unity/Unit 1 Project/Assets/package.json.meta
+
+Unity/Unit 1 Project/Assets/Plugins.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Editor.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Editor/HEU_EditorApp.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Editor/HEU_EditorApp.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Editor/HEU_EditorMenu.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Editor/HEU_EditorMenu.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Editor/HEU_EditorStrings.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Editor/HEU_EditorStrings.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Editor/HoudiniEngineUnityEditor.asmdef
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Editor/HoudiniEngineUnityEditor.asmdef.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Editor/UI.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Editor/UI/HEU_CookLogsWindow.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Editor/UI/HEU_CookLogsWindow.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Editor/UI/HEU_CurveUI.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Editor/UI/HEU_CurveUI.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Editor/UI/HEU_DragHandleMulti.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Editor/UI/HEU_DragHandleMulti.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Editor/UI/HEU_EditorUI.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Editor/UI/HEU_EditorUI.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Editor/UI/HEU_GeoSyncUI.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Editor/UI/HEU_GeoSyncUI.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Editor/UI/HEU_HandlesUI.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Editor/UI/HEU_HandlesUI.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Editor/UI/HEU_HoudiniAssetDebugUI.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Editor/UI/HEU_HoudiniAssetDebugUI.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Editor/UI/HEU_HoudiniAssetUI.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Editor/UI/HEU_HoudiniAssetUI.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Editor/UI/HEU_InputNodeUI.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Editor/UI/HEU_InputNodeUI.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Editor/UI/HEU_InstanceInputUI.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Editor/UI/HEU_InstanceInputUI.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Editor/UI/HEU_NodeSyncUI.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Editor/UI/HEU_NodeSyncUI.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Editor/UI/HEU_OutputLogUIComponent.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Editor/UI/HEU_OutputLogUIComponent.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Editor/UI/HEU_ParameterUI.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Editor/UI/HEU_ParameterUI.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Editor/UI/HEU_PDGAssetLinkUI.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Editor/UI/HEU_PDGAssetLinkUI.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Editor/UI/HEU_SelectionWindow.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Editor/UI/HEU_SelectionWindow.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Editor/UI/HEU_SessionSyncWindow.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Editor/UI/HEU_SessionSyncWindow.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Editor/UI/HEU_SettingsWindow.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Editor/UI/HEU_SettingsWindow.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Editor/UI/HEU_ShelfToolsWindow.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Editor/UI/HEU_ShelfToolsWindow.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Editor/UI/HEU_ToolsUI.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Editor/UI/HEU_ToolsUI.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Editor/VisualScripting.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Editor/VisualScripting/HEU_UnitButtonInspector.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Editor/VisualScripting/HEU_UnitButtonInspector.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Editor/VisualScripting/HoudiniEngineUnityEditor.VisualScripting.asmdef
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Editor/VisualScripting/HoudiniEngineUnityEditor.VisualScripting.asmdef.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/ExampleAssets.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/ExampleAssets/ExampleCube.prefab
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/ExampleAssets/ExampleCube.prefab.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/HDAs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/HDAs/EverGreen.otl
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/HDAs/EverGreen.otl.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/HDAs/HEU_Example_Unity_Script.hda
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/HDAs/HEU_Example_Unity_Script.hda.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/HDAs/HEUInstanceAttributesStore.hda
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/HDAs/HEUInstanceAttributesStore.hda.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/HDAs/TerrainGenerator.hda
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/HDAs/TerrainGenerator.hda.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Prefabs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Prefabs/InputBoundingVolume.prefab
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Prefabs/InputBoundingVolume.prefab.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Resources.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Resources/heu_bakeandreplaceIcon.png
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Resources/heu_bakeandreplaceIcon.png.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Resources/heu_bakegameobjectIcon.png
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Resources/heu_bakegameobjectIcon.png.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Resources/heu_bakeprefabIcon.png
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Resources/heu_bakeprefabIcon.png.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Resources/heu_duplicateassetIcon.png
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Resources/heu_duplicateassetIcon.png.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Resources/heu_hengine_d.png
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Resources/heu_hengine_d.png.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Resources/heu_hengine.png
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Resources/heu_hengine.png.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Resources/heu_recookhdaIcon.png
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Resources/heu_recookhdaIcon.png.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Resources/heu_reloadhdaIcon.png
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Resources/heu_reloadhdaIcon.png.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Resources/heu_removeheIcon.png
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Resources/heu_removeheIcon.png.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Resources/heu_resetparametersIcon.png
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Resources/heu_resetparametersIcon.png.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Resources/heu_skin_d.guiskin
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Resources/heu_skin_d.guiskin.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Resources/heu_skin.guiskin
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Resources/heu_skin.guiskin.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Resources/heu_ui_section_box_d.png
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Resources/heu_ui_section_box_d.png.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Resources/heu_ui_section_box.png
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Resources/heu_ui_section_box.png.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Resources/heu_ui_window_d.png
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Resources/heu_ui_window_d.png.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Resources/heu_ui_window_flat_d.png
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Resources/heu_ui_window_flat_d.png.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Resources/heu_ui_window_flat.png
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Resources/heu_ui_window_flat.png.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Resources/heu_ui_window.png
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Resources/heu_ui_window.png.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Resources/Textures.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Resources/Textures/heu_terrain_default_splat.png
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Resources/Textures/heu_terrain_default_splat.png.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scenes.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scenes/InstanceAttributesStoreExample.unity
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scenes/InstanceAttributesStoreExample.unity.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scenes/ParamModifierExample.unity
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scenes/ParamModifierExample.unity.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scenes/TerrainGeneratorExample.unity
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scenes/TerrainGeneratorExample.unity.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scenes/UnityScriptExample.unity
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scenes/UnityScriptExample.unity.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scenes/VisualScriptingExample.unity
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scenes/VisualScriptingExample.unity.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Asset.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Asset/HEU_AssetEvents.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Asset/HEU_AssetEvents.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Asset/HEU_AssetPreset.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Asset/HEU_AssetPreset.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Asset/HEU_AssetSerializedMetaData.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Asset/HEU_AssetSerializedMetaData.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Asset/HEU_AssetUpdater.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Asset/HEU_AssetUpdater.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Asset/HEU_BoundingVolume.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Asset/HEU_BoundingVolume.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Asset/HEU_Curve.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Asset/HEU_Curve.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Asset/HEU_GeneratedOutput.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Asset/HEU_GeneratedOutput.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Asset/HEU_GeoNode.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Asset/HEU_GeoNode.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Asset/HEU_HoudiniAsset.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Asset/HEU_HoudiniAsset.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Asset/HEU_HoudiniAssetRoot.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Asset/HEU_HoudiniAssetRoot.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Asset/HEU_InputNode.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Asset/HEU_InputNode.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Asset/HEU_InstanceInputUIState.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Asset/HEU_InstanceInputUIState.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Asset/HEU_ObjectInstanceInfo.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Asset/HEU_ObjectInstanceInfo.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Asset/HEU_ObjectNode.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Asset/HEU_ObjectNode.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Asset/HEU_PartData.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Asset/HEU_PartData.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Attributes.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Attributes/HEU_AttributeData.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Attributes/HEU_AttributeData.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Attributes/HEU_AttributesStore.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Attributes/HEU_AttributesStore.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Attributes/HEU_OutputAttribute.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Attributes/HEU_OutputAttribute.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Attributes/HEU_OutputAttributesStore.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Attributes/HEU_OutputAttributesStore.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Core.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Core/HEU_AssetDatabase.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Core/HEU_AssetDatabase.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Core/HEU_Defines.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Core/HEU_Defines.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Core/HEU_HAPIUtility.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Core/HEU_HAPIUtility.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Core/HEU_HoudiniEngineError.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Core/HEU_HoudiniEngineError.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Core/HEU_Platform.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Core/HEU_Platform.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Core/HEU_PlatformWin.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Core/HEU_PlatformWin.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Core/HEU_PluginSettings.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Core/HEU_PluginSettings.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Core/HEU_PluginStorage.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Core/HEU_PluginStorage.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Examples.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Examples/HEU_ExampleEvergreenQuery.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Examples/HEU_ExampleEvergreenQuery.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Examples/HEU_ExampleInstanceCustomAttribute.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Examples/HEU_ExampleInstanceCustomAttribute.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Examples/HEU_ScriptCallbackExample.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Examples/HEU_ScriptCallbackExample.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Examples/HEU_ScriptMeshInputUVLayoutExample.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Examples/HEU_ScriptMeshInputUVLayoutExample.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Examples/HEU_ScriptParameterExample.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Examples/HEU_ScriptParameterExample.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Handles.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Handles/HEU_Handle.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Handles/HEU_Handle.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Handles/HEU_HandleParamBinding.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Handles/HEU_HandleParamBinding.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/HAPI.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/HAPI/HEU_HAPIConstants.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/HAPI/HEU_HAPIConstants.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/HAPI/HEU_HAPIEnums.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/HAPI/HEU_HAPIEnums.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/HAPI/HEU_HAPIFunctions.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/HAPI/HEU_HAPIFunctions.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/HAPI/HEU_HAPIStructs.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/HAPI/HEU_HAPIStructs.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/HAPI/HEU_HAPIStructsMembers.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/HAPI/HEU_HAPIStructsMembers.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/HAPI/HEU_HARCImports.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/HAPI/HEU_HARCImports.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/HEU_HoudiniVersion.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/HEU_HoudiniVersion.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/HoudiniEngineUnity.asmdef
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/HoudiniEngineUnity.asmdef.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Parameters.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Parameters/HEU_ParameterData.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Parameters/HEU_ParameterData.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Parameters/HEU_ParameterModifier.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Parameters/HEU_ParameterModifier.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Parameters/HEU_Parameters.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Parameters/HEU_Parameters.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Parameters/HEU_ParameterUtility.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Parameters/HEU_ParameterUtility.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/PDG.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/PDG/HEU_PDGAssetLink.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/PDG/HEU_PDGAssetLink.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/PDG/HEU_PDGObjects.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/PDG/HEU_PDGObjects.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/PDG/HEU_PDGSession.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/PDG/HEU_PDGSession.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/PublicWrappers.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/PublicWrappers/IHEU_Curve.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/PublicWrappers/IHEU_Curve.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/PublicWrappers/IHEU_GeoNode.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/PublicWrappers/IHEU_GeoNode.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/PublicWrappers/IHEU_HoudiniAsset.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/PublicWrappers/IHEU_HoudiniAsset.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/PublicWrappers/IHEU_HoudiniAssetSubcomponent.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/PublicWrappers/IHEU_HoudiniAssetSubcomponent.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/PublicWrappers/IHEU_InputNode.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/PublicWrappers/IHEU_InputNode.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/PublicWrappers/IHEU_MaterialData.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/PublicWrappers/IHEU_MaterialData.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/PublicWrappers/IHEU_ObjectNode.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/PublicWrappers/IHEU_ObjectNode.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/PublicWrappers/IHEU_Parameters.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/PublicWrappers/IHEU_Parameters.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/PublicWrappers/IHEU_PartData.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/PublicWrappers/IHEU_PartData.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/PublicWrappers/IHEU_PDGAssetLink.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/PublicWrappers/IHEU_PDGAssetLink.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/PublicWrappers/IHEU_VolumeCache.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/PublicWrappers/IHEU_VolumeCache.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Render.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Render/HEU_MaterialData.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Render/HEU_MaterialData.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Render/HEU_MaterialFactory.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Render/HEU_MaterialFactory.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Render/HEU_UnityMaterialInfo.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Render/HEU_UnityMaterialInfo.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Sessions.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Sessions/HEU_SessionBase.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Sessions/HEU_SessionBase.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Sessions/HEU_SessionData.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Sessions/HEU_SessionData.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Sessions/HEU_SessionHAPI.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Sessions/HEU_SessionHAPI.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Sessions/HEU_SessionManager.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Sessions/HEU_SessionManager.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Sessions/HEU_SessionPDG.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Sessions/HEU_SessionPDG.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Sessions/HEU_SessionSyncInfo.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Sessions/HEU_SessionSyncInfo.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Sync.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Sync/HEU_AssetSync.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Sync/HEU_AssetSync.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Sync/HEU_BaseSync.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Sync/HEU_BaseSync.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Sync/HEU_GeoSync.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Sync/HEU_GeoSync.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Sync/HEU_NodeSync.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Sync/HEU_NodeSync.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Tasks.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Tasks/HEU_Task.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Tasks/HEU_Task.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Tasks/HEU_TaskManager.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Tasks/HEU_TaskManager.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Tasks/HEU_ThreadedLoadBuffers.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Tasks/HEU_ThreadedLoadBuffers.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Tasks/HEU_ThreadedTask.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Tasks/HEU_ThreadedTask.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Tasks/HEU_ThreadedTaskLoadGeo.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Tasks/HEU_ThreadedTaskLoadGeo.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Tasks/HEU_ThreadManager.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Tasks/HEU_ThreadManager.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Tests.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Tests/HEU_AssetEventReceiverTest.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Tests/HEU_AssetEventReceiverTest.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Utility.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Utility/HEU_CookLogs.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Utility/HEU_CookLogs.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Utility/HEU_EditorUtility.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Utility/HEU_EditorUtility.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Utility/HEU_Extensions.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Utility/HEU_Extensions.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Utility/HEU_GeneralUtility.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Utility/HEU_GeneralUtility.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Utility/HEU_GenerateGeoCache.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Utility/HEU_GenerateGeoCache.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Utility/HEU_GeoGroup.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Utility/HEU_GeoGroup.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Utility/HEU_GeometryUtility.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Utility/HEU_GeometryUtility.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Utility/HEU_InputData.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Utility/HEU_InputData.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Utility/HEU_InputInterface.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Utility/HEU_InputInterface.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Utility/HEU_InputInterfaceMesh.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Utility/HEU_InputInterfaceMesh.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Utility/HEU_InputInterfaceTerrain.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Utility/HEU_InputInterfaceTerrain.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Utility/HEU_InputInterfaceTilemap.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Utility/HEU_InputInterfaceTilemap.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Utility/HEU_InputMeshUtility.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Utility/HEU_InputMeshUtility.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Utility/HEU_InputUtility.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Utility/HEU_InputUtility.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Utility/HEU_Logger.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Utility/HEU_Logger.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Utility/HEU_MeshData.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Utility/HEU_MeshData.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Utility/HEU_MeshIndexFormat.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Utility/HEU_MeshIndexFormat.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Utility/HEU_RenderingPipelineDefines.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Utility/HEU_RenderingPipelineDefines.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Utility/HEU_SerializableDictionary.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Utility/HEU_SerializableDictionary.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Utility/HEU_ShelfTools.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Utility/HEU_ShelfTools.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Utility/HEU_SimpleJSON.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Utility/HEU_SimpleJSON.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Utility/HEU_SimpleJSONUnity.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Utility/HEU_SimpleJSONUnity.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Utility/HEU_TerrainUtility.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Utility/HEU_TerrainUtility.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Utility/HEU_TestHelpers.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Utility/HEU_TestHelpers.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Utility/HEU_ToolsInfo.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Utility/HEU_ToolsInfo.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Utility/HEU_VolumeCache.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/Utility/HEU_VolumeCache.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/VisualScripting.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/VisualScripting/HEU_InstantiateHDA.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/VisualScripting/HEU_InstantiateHDA.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/VisualScripting/HEU_ModifyHDA.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/VisualScripting/HEU_ModifyHDA.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/VisualScripting/HEU_UnitButton.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/VisualScripting/HEU_UnitButton.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/VisualScripting/HEU_UnitButtonAttribute.cs
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/VisualScripting/HEU_UnitButtonAttribute.cs.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/VisualScripting/HoudiniEngineUnity.VisualScripting.asmdef
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Scripts/VisualScripting/HoudiniEngineUnity.VisualScripting.asmdef.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Shaders.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Shaders/HDRP.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Shaders/HDRP/Color.shadergraph
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Shaders/HDRP/Color.shadergraph.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Shaders/HDRP/SpecularLit.shadergraph
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Shaders/HDRP/SpecularLit.shadergraph.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Shaders/HDRP/SpecularLitAlpha.shadergraph
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Shaders/HDRP/SpecularLitAlpha.shadergraph.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Shaders/HDRP/StandardLit.shadergraph
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Shaders/HDRP/StandardLit.shadergraph.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Shaders/HDRP/StandardLitAlpha.shadergraph
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Shaders/HDRP/StandardLitAlpha.shadergraph.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Shaders/HoudiniLineShader.shader
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Shaders/HoudiniLineShader.shader.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Shaders/HoudiniSpecular.shader
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Shaders/HoudiniSpecular.shader.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Shaders/HoudiniSpecularAlpha.shader
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Shaders/HoudiniSpecularAlpha.shader.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Shaders/HoudiniStandard.shader
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Shaders/HoudiniStandard.shader.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Shaders/HoudiniStandardAlpha.shader
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Shaders/HoudiniStandardAlpha.shader.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Shaders/Legacy.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Shaders/Legacy/HoudiniAlphaSpecularVertexColorLegacy.shader
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Shaders/Legacy/HoudiniAlphaSpecularVertexColorLegacy.shader.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Shaders/Legacy/HoudiniSpecularVertexColorLegacy.shader
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Shaders/Legacy/HoudiniSpecularVertexColorLegacy.shader.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Shaders/URP.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Shaders/URP/Color.shadergraph
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Shaders/URP/Color.shadergraph.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Shaders/URP/SpecularLit.shadergraph
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Shaders/URP/SpecularLit.shadergraph.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Shaders/URP/SpecularLitAlpha.shadergraph
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Shaders/URP/SpecularLitAlpha.shadergraph.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Shaders/URP/StandardLit.shadergraph
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Shaders/URP/StandardLit.shadergraph.meta
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Shaders/URP/StandardLitAlpha.shadergraph
+
+Unity/Unit 1 Project/Assets/Plugins/HoudiniEngineUnity/Shaders/URP/StandardLitAlpha.shadergraph.meta
+
+Unity/Unit 1 Project/heu_settings.ini
+
+Unity/Unit 1 Project/Packages/manifest.json
+
+Unity/Unit 1 Project/Packages/packages-lock.json
+
+Unity/Unit 1 Project/ProjectSettings/ProjectVersion.txt
+
+Unity/Unit 1 Project/ProjectSettings/SceneTemplateSettings.json
+
+Unity/Unit 1 Project/UserSettings/Search.settings

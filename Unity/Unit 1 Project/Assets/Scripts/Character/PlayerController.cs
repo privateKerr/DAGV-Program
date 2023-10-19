@@ -40,7 +40,6 @@ public class PlayerController : MonoBehaviour
         // Jumping
         if (controller.isGrounded && Input.GetButtonDown("Jump"))
         {
-            jumpAudioSource.Play();
             velocity.y = Mathf.Sqrt(jumpForce * -2 * gravity);
         }
 
