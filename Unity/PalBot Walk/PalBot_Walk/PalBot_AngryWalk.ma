@@ -1,6 +1,6 @@
 //Maya ASCII 2024 scene
 //Name: PalBot_AngryWalk.ma
-//Last modified: Sat, Oct 21, 2023 11:46:38 AM
+//Last modified: Sat, Oct 21, 2023 11:47:17 AM
 //Codeset: 1252
 file -rdi 1 -ns "PALBotModel" -rfn "PALBotModelRN" -op "v=0;" -typ "mayaAscii"
 		 "C:/Users/Kerr/Desktop/Animation and Game Dev/DAGV Fall 2023/DGAV-Fall-2023/Unity/PalBot Walk/PALBotModel.ma";
@@ -16,12 +16,12 @@ fileInfo "product" "Maya 2024";
 fileInfo "version" "2024";
 fileInfo "cutIdentifier" "202304191415-7fa20164c6";
 fileInfo "osv" "Windows 11 Pro v2009 (Build: 22621)";
-fileInfo "UUID" "FDC54728-42E4-4449-CC50-B6A6C5F4692D";
+fileInfo "UUID" "58D58D28-48E7-68BD-824C-2DA20438C9F0";
 createNode transform -s -n "persp";
 	rename -uid "B85D402E-4690-E2EB-C30E-76B126FFAECB";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -8.3378487662224039 4.4700025986740126 9.1789556573657798 ;
-	setAttr ".r" -type "double3" -14.13835269866993 -25244.199999993245 0 ;
+	setAttr ".t" -type "double3" -4.4212329382067397 4.2737340482683637 11.851806024634152 ;
+	setAttr ".r" -type "double3" -12.3383527002824 -25223.399999998179 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "C0324BEF-48B7-0C0A-3CE8-65B5488D43DF";
 	setAttr -k off ".v" no;
