@@ -7,6 +7,7 @@ public class AnimatorController : MonoBehaviour
     private readonly int idle = Animator.StringToHash("Idle");
     private readonly int walk = Animator.StringToHash("Walk");
     private readonly int jump = Animator.StringToHash("Jump");
+    private readonly int land = Animator.StringToHash("Landing");
 
     private void Update()
     {
@@ -31,6 +32,7 @@ public class AnimatorController : MonoBehaviour
         }
     }
 
+
     private void HandleJumpToIdle()
     {
         if (!isJumping || !animator.GetCurrentAnimatorStateInfo(0).IsName("Idle")) return;
@@ -40,6 +42,7 @@ public class AnimatorController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        animator.SetTrigger(land);
         animator.SetTrigger(idle);
     }
 }

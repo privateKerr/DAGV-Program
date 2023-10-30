@@ -416,7 +416,7 @@ GameObject:
   - component: {fileID: 754419966}
   - component: {fileID: 754419965}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Player Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -941,7 +941,7 @@ PrefabInstance:
     - target: {fileID: 4833833086151049145, guid: e16d7084dfdb448f8ab0d775f1336d29,
         type: 3}
       propertyPath: m_Name
-      value: Player
+      value: animations
       objectReference: {fileID: 0}
     - target: {fileID: 4833833086151049145, guid: e16d7084dfdb448f8ab0d775f1336d29,
         type: 3}
