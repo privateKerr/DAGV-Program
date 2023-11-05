@@ -37,11 +37,32 @@ for x in [-1, 1]:
 
 # Create side planks on z-axis
 for z in [-1, 1]:
-    side_planks = [cmds.polyPlane(width=width, height=depth*0.25, sx=0, sy=0, name='Side Plank')]
+    if z == -1:
+        cmds.select('Crate.f[0]', replace=True)
+    else:
+        cmds.select('Crate.f[2]', replace=True)
+
+    side_plank_z = cmds.polyPlane(width=width, height=depth * 0.25, sx=0, sy=0, name='SidePlank')
     cmds.rotate('90deg', 0, '45deg', relative=True, worldSpace=True)
-    cmds.move(0, 0, depth * 0.425)
-    cmds.polyExtrudeFacet(constructionHistory=True, keepFacesTogether=True, pivotX=0, pivotY=0, pivotZ=0,thickness=0.25)
-cmds.select(side_planks[1])
-cmds.move(0, 0, 5)
+    if z == -1:
+        cmds.move(0, 0, depth * -0.48)
+    else:
+        cmds.move(0, 0, depth * 0.425)
+        cmds.rotate(0, 0, '90deg', relative=True, worldSpace=True)
+    cmds.polyExtrudeFacet(constructionHistory=True, keepFacesTogether=True, pivotX=0, pivotY=0, pivotZ=0, thickness=0.25)
 
+# Create side planks on x-axis
+for x in [-1, 1]:
+    if x == -1:
+        cmds.select('Crate.f[4]', replace=True)
+    else:
+        cmds.select('Crate.f[5]', replace=True)
 
+    side_plank_x = cmds.polyPlane(width=depth, height=height * 0.25, sx=0, sy=0, name='SidePlankX')
+    cmds.rotate(0, '45deg', '90deg', relative=True, worldSpace=True)
+    if x == -1:
+        cmds.move(width * 0.48, 0, 0)
+    else:
+        cmds.move(width * -0.415, 0, 0)
+        cmds.rotate('90', 0, 0, relative=True, worldSpace=True)
+    cmds.polyExtrudeFacet(constructionHistory=True, keepFacesTogether=True, pivotX=0, pivotY=0, pivotZ=0, thickness=0.25)
