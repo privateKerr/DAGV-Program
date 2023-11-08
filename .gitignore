@@ -73,6 +73,9 @@ sysinfo.txt
 *.unitypackage
 *.app
 
+# Houdini Files 
+*.hipnc
+
 # Crashlytics generated file
 crashlytics-build.properties
 
