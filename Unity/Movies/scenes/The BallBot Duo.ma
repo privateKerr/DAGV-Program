@@ -1,17 +1,17 @@
 //Maya ASCII 2024 scene
 //Name: The BallBot Duo.ma
-//Last modified: Thu, Nov 09, 2023 09:22:30 AM
+//Last modified: Thu, Nov 09, 2023 05:41:50 PM
 //Codeset: 1252
-file -rdi 1 -ns "PalBot_Animations" -rfn "PalBot_AnimationsRN" -op "v=0;" -typ
-		 "mayaAscii" "C:/Users/Kerr/Desktop/Animation and Game Dev/DAGV Fall 2023/DGAV-Fall-2023/Unity/Unit 1 Project/Assets/MayaProject/scenes/PalBot_Animations.ma";
-file -rdi 2 -ns "PALBotModel" -rfn "PalBot_Animations:PALBotModelRN" -op "v=0;"
-		 -typ "mayaAscii" "C:/Users/Kerr/Desktop/Animation and Game Dev/DAGV Fall 2023/DGAV-Fall-2023/Unity/PalBot Walk/PALBotModel.ma";
+file -rdi 1 -ns "PalBot_Animations" -dr 1 -rfn "PalBot_AnimationsRN" -op "v=0;"
+		 -typ "mayaAscii" "C:/Users/Kerr/Desktop/Animation and Game Dev/DAGV Fall 2023/DGAV-Fall-2023/Unity/Unit 1 Project/Assets/MayaProject/scenes/PalBot_Animations.ma";
 file -r -ns "PalBot_Animations" -dr 1 -rfn "PalBot_AnimationsRN" -op "v=0;" -typ
 		 "mayaAscii" "C:/Users/Kerr/Desktop/Animation and Game Dev/DAGV Fall 2023/DGAV-Fall-2023/Unity/Unit 1 Project/Assets/MayaProject/scenes/PalBot_Animations.ma";
 requires maya "2024";
 requires -nodeType "houdiniAsset" -nodeType "houdiniInputCurve" "houdiniEngine" "5.0 (API: 8)";
 requires "stereoCamera" "10.0";
-requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" "mtoa" "5.3.1.1";
+requires -nodeType "substanceNode" -nodeType "substanceOutputNode" "substancemaya" "2.3.2";
+requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" -nodeType "aiStandardSurface"
+		 "mtoa" "5.3.1.1";
 requires "stereoCamera" "10.0";
 currentUnit -l centimeter -a degree -t film;
 fileInfo "application" "maya";
@@ -19,17 +19,17 @@ fileInfo "product" "Maya 2024";
 fileInfo "version" "2024";
 fileInfo "cutIdentifier" "202304191415-7fa20164c6";
 fileInfo "osv" "Windows 11 Pro v2009 (Build: 22621)";
-fileInfo "UUID" "353F3FF7-4EDD-6571-F933-38AD07AB6055";
+fileInfo "UUID" "5B1116E6-4603-5ACB-2125-96A88BBCC566";
 createNode transform -s -n "persp";
 	rename -uid "89DCB2B8-4990-20AA-DD94-C48C925A5E07";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 7.5605742987373601 4.4406968171923609 7.4841222795619364 ;
-	setAttr ".r" -type "double3" -10.538352728873774 -665.7999999998359 0 ;
+	setAttr ".t" -type "double3" 9.3997672183882486 13.010513549178608 16.262510073329548 ;
+	setAttr ".r" -type "double3" -24.938352723875493 -674.99999999986471 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "0CCE18C9-47B8-4EAC-6AE6-A48C367BD34B";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 16.586657221995829;
+	setAttr ".coi" 27.195497371594676;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -5257,14 +5257,6 @@ createNode mesh -n "groundTool1_0Shape" -p "groundTool1_0";
 	setAttr ".pt[17593]" -type "float3" 0 0.46916342 0 ;
 	setAttr ".pt[17595]" -type "float3" 0 0.23331489 0 ;
 	setAttr ".pt[17598]" -type "float3" 0 0.029572612 0 ;
-createNode transform -n "directionalLight1";
-	rename -uid "C25885A4-481C-D9A4-729C-9EB317B0D92A";
-	setAttr ".t" -type "double3" 3.2179190251777952 7.1330419443974211 5.9635924127289632 ;
-	setAttr ".r" -type "double3" -19.948689544987335 26.565033218579615 -8.8637819583818729 ;
-createNode directionalLight -n "directionalLightShape1" -p "directionalLight1";
-	rename -uid "C8F55785-4323-A1AF-7C2A-DEB0D992578B";
-	setAttr -k off ".v";
-	setAttr ".in" 10;
 createNode transform -n "pPlane1";
 	rename -uid "B89B5F31-4536-744B-F76F-F09C0A405DD1";
 	setAttr ".t" -type "double3" -114.24019332115185 0.43160792776513723 -166.59763809947475 ;
@@ -5289,11 +5281,11 @@ createNode houdiniAsset -n "Kerr__dev__BrickWallTool_Build__1_02";
 	addAttr -is true -ci true -sn "houdiniAssetParm_buildModeToggle" -ln "houdiniAssetParm_buildModeToggle" 
 		-nn "Build Mode" -min 0 -max 1 -at "bool" -p "houdiniAssetParm_baseWallParameters_0__folder";
 	addAttr -is true -ci true -sn "houdiniAssetParm_wallLength" -ln "houdiniAssetParm_wallLength" 
-		-nn "Wall Length" -min 1 -smn 1 -smx 10 -at "float" -p "houdiniAssetParm_baseWallParameters_0__folder";
+		-nn "Wall Length" -dv 1 -min 1 -smn 1 -smx 10 -at "float" -p "houdiniAssetParm_baseWallParameters_0__folder";
 	addAttr -is true -ci true -sn "houdiniAssetParm_dist" -ln "houdiniAssetParm_dist" 
-		-nn "Wall Height" -min 1 -smn 1 -smx 10 -at "float" -p "houdiniAssetParm_baseWallParameters_0__folder";
+		-nn "Wall Height" -dv 1 -min 1 -smn 1 -smx 10 -at "float" -p "houdiniAssetParm_baseWallParameters_0__folder";
 	addAttr -is true -ci true -sn "houdiniAssetParm_wallRows" -ln "houdiniAssetParm_wallRows" 
-		-nn "Wall Rows" -min 1 -smn 1 -smx 50 -at "long" -p "houdiniAssetParm_baseWallParameters_0__folder";
+		-nn "Wall Rows" -dv 1 -min 1 -smn 1 -smx 50 -at "long" -p "houdiniAssetParm_baseWallParameters_0__folder";
 	addAttr -is true -ci true -sn "houdiniAssetParm_wallOpenings" -ln "houdiniAssetParm_wallOpenings" 
 		-nn "Wall Openings" -min 0 -max 2 -smn 0 -smx 2 -at "float" -p "houdiniAssetParm_baseWallParameters_0__folder";
 	addAttr -is true -ci true -sn "houdiniAssetParm_brickParameters_0__folder" -ln "houdiniAssetParm_brickParameters_0__folder" 
@@ -5301,7 +5293,7 @@ createNode houdiniAsset -n "Kerr__dev__BrickWallTool_Build__1_02";
 	addAttr -is true -ci true -sn "houdiniAssetParm_lengthJitter" -ln "houdiniAssetParm_lengthJitter" 
 		-nn "Brick Length Jitter" -min 0 -max 1 -smn 0 -smx 1 -at "float" -p "houdiniAssetParm_brickParameters_0__folder";
 	addAttr -is true -ci true -sn "houdiniAssetParm_brickDepth" -ln "houdiniAssetParm_brickDepth" 
-		-nn "Brick Depth" -min 0.5 -max 5 -smn 0.5 -smx 5 -at "float" -p "houdiniAssetParm_brickParameters_0__folder";
+		-nn "Brick Depth" -dv 0.5 -min 0.5 -max 5 -smn 0.5 -smx 5 -at "float" -p "houdiniAssetParm_brickParameters_0__folder";
 	addAttr -is true -ci true -sn "houdiniAssetParm_stackOffset" -ln "houdiniAssetParm_stackOffset" 
 		-nn "Stack Offset" -smn 0 -smx 1 -at "float" -p "houdiniAssetParm_brickParameters_0__folder";
 	addAttr -is true -ci true -sn "houdiniAssetParm_brickSpacing" -ln "houdiniAssetParm_brickSpacing" 
@@ -5327,8 +5319,8 @@ createNode houdiniAsset -n "Kerr__dev__BrickWallTool_Build__1_02";
 	addAttr -is true -ci true -sn "houdiniAssetParm_chipIntensity" -ln "houdiniAssetParm_chipIntensity" 
 		-nn "Chip Intensity" -min 0 -max 0.5 -smn 0 -smx 0.5 -at "float" -p "houdiniAssetParm_brickDetails_0__folder";
 	addAttr -is true -ci true -sn "houdiniAssetParm_chipDepth" -ln "houdiniAssetParm_chipDepth" 
-		-nn "Chip Depth" -min 0.0099999997764825821 -max 0.079999998211860657 -smn 0.0099999997764825821 
-		-smx 0.079999998211860657 -at "float" -p "houdiniAssetParm_brickDetails_0__folder";
+		-nn "Chip Depth" -dv 0.0099999997764825821 -min 0.0099999997764825821 -max 0.079999998211860657 
+		-smn 0.0099999997764825821 -smx 0.079999998211860657 -at "float" -p "houdiniAssetParm_brickDetails_0__folder";
 	setAttr ".otlFilePath" -type "string" "C:/Users/Kerr/Documents/houdini19.5/otls/sop_Kerr.dev.BrickWallTool_Build.1.0.hdanc";
 	setAttr ".assetName" -type "string" "Kerr::dev::Sop/BrickWallTool_Build::1.0";
 	setAttr -s 2 ".input";
@@ -5349,13 +5341,12 @@ createNode houdiniAsset -n "Kerr__dev__BrickWallTool_Build__1_02";
 	setAttr -cb on ".houdiniAssetParm_groutSize" -0.064499996602535248;
 	setAttr -cb on ".houdiniAssetParm_chipIntensity" 0.0099999997764825821;
 	setAttr -cb on ".houdiniAssetParm_chipDepth" 0.023600000888109207;
-createNode transform -n "BrickWallTool_Build_1_1" -p "Kerr__dev__BrickWallTool_Build__1_02";
-	rename -uid "306BB497-448E-5B02-83C2-4AA170E2BD62";
-createNode transform -n "BrickWallTool_Build1_0" -p "BrickWallTool_Build_1_1";
-	rename -uid "F88A7017-4584-2581-2D9E-D99044216649";
-	setAttr ".t" -type "double3" 0.69165647938105568 0 0 ;
+createNode transform -n "BrickWallTool_Build_1_0" -p "Kerr__dev__BrickWallTool_Build__1_02";
+	rename -uid "835882BD-4648-2478-7F48-3FB1FEF7BE27";
+createNode transform -n "BrickWallTool_Build1_0" -p "BrickWallTool_Build_1_0";
+	rename -uid "11BC1B17-4D83-C96C-D4E0-3F836F0A9BF6";
 createNode mesh -n "BrickWallTool_Build1_0Shape" -p "BrickWallTool_Build1_0";
-	rename -uid "C71A7984-44C8-7AD9-8FAC-0698D06CCD30";
+	rename -uid "365D7BBF-426F-D9F8-CF88-2FAC1FC69BB8";
 	addAttr -ci true -sn "class" -ln "class" -dt "Int32Array";
 	addAttr -ci true -sn "name" -ln "name" -dt "stringArray";
 	addAttr -ci true -sn "cracked" -ln "cracked" -dt "Int32Array";
@@ -5367,8 +5358,10 @@ createNode mesh -n "BrickWallTool_Build1_0Shape" -p "BrickWallTool_Build1_0";
 	setAttr -s 4 ".iog[0].og";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
+	setAttr -s 2 ".uvst";
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
-	setAttr ".cuvs" -type "string" "";
+	setAttr ".uvst[1].uvsn" -type "string" "uv";
+	setAttr ".cuvs" -type "string" "uv";
 	setAttr ".dcol" yes;
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".ccls" -type "string" "Cd";
@@ -5376,23 +5369,21 @@ createNode mesh -n "BrickWallTool_Build1_0Shape" -p "BrickWallTool_Build1_0";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "853AD80A-43F7-2E1D-178F-2AA3F8BDE87D";
-	setAttr -s 92 ".lnk";
-	setAttr -s 92 ".slnk";
+	rename -uid "571842B0-4314-5CA1-3B94-6592C6CCCD1C";
+	setAttr -s 93 ".lnk";
+	setAttr -s 93 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "B2759A00-4B13-FA1A-50F9-F29F55A8A9DF";
-	setAttr ".bsdt[0].bscd" -type "Int32Array" 2 0 1 ;
-	setAttr -s 2 ".bspr";
-	setAttr -s 2 ".obsv";
+	rename -uid "E9C74B2E-442F-69E1-F952-7E9994F4741B";
+	setAttr ".bsdt[0].bscd" -type "Int32Array" 0 ;
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "EB2CB7C4-4AB0-201C-26EE-9C8F4FF43F6A";
+	rename -uid "965BF56A-4BAE-A725-A4C8-F185DA5D1EC3";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "33A7B2BC-4109-F7DD-8415-F99792CD3790";
+	rename -uid "A3F9B002-4F56-3AC8-B16E-AEA531EABD0F";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "8FE3508C-422E-DD91-ED13-CCA724FDE27D";
 	setAttr ".ufem" -type "stringArray" 0  ;
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "8F0F1160-429C-A9A6-96A4-ABB633AFA738";
+	rename -uid "984F62B8-4D74-9DD8-0915-C1BDF63B5CD2";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "D0B91384-4A76-DE3C-C492-7197F634CFA3";
 	setAttr ".g" yes;
@@ -5433,14 +5424,14 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Front View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Front View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"|persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n"
 		+ "            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 1\n            -smoothWireframe 0\n            -lineWidth 1.5\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 16384\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 4 4 \n            -bumpResolution 4 4 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n"
 		+ "            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n"
-		+ "            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 0\n            -height 846\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n"
-		+ "\t\t$editorName = $panelName;\n        modelEditor -e \n            -docTag \"RADRENDER\" \n            -camera \"|persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 1\n            -smoothWireframe 0\n            -lineWidth 1.5\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 16384\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n"
+		+ "            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 483\n            -height 846\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n"
+		+ "\t\t$editorName = $panelName;\n        modelEditor -e \n            -docTag \"RADRENDER\" \n            -camera \"|persp\" \n            -useInteractiveMode 0\n            -displayLights \"all\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 1\n            -smoothWireframe 0\n            -lineWidth 1.5\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 16384\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n"
 		+ "            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 4 4 \n            -bumpResolution 4 4 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 0\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n"
-		+ "            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1119\n            -height 846\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n"
-		+ "            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n"
+		+ "            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 0\n            -height 846\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n"
+		+ "            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 0\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n"
 		+ "            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n            -showUfeItems 1\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n"
 		+ "            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n"
-		+ "            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 0\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -showUfeItems 1\n"
+		+ "            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -showUfeItems 1\n"
 		+ "            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"graphEditor\" (localizedPanelLabel(\"Graph Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Graph Editor\")) -mbv $menusOkayInPanels  $panelName;\n"
 		+ "\n\t\t\t$editorName = ($panelName+\"OutlineEd\");\n            outlinerEditor -e \n                -showShapes 1\n                -showAssignedMaterials 0\n                -showTimeEditor 1\n                -showReferenceNodes 0\n                -showReferenceMembers 0\n                -showAttributes 1\n                -showConnected 1\n                -showAnimCurvesOnly 1\n                -showMuteInfo 0\n                -organizeByLayer 1\n                -organizeByClip 1\n                -showAnimLayerWeight 1\n                -autoExpandLayers 1\n                -autoExpand 1\n                -showDagOnly 0\n                -showAssets 1\n                -showContainedOnly 0\n                -showPublishedAsConnected 0\n                -showParentContainers 0\n                -showContainerContents 0\n                -ignoreDagHierarchy 0\n                -expandConnections 1\n                -showUpstreamCurves 1\n                -showUnitlessCurves 1\n                -showCompounds 0\n                -showLeafs 1\n                -showNumericAttrsOnly 1\n"
 		+ "                -highlightActive 0\n                -autoSelectNewObjects 1\n                -doNotSelectNewObjects 0\n                -dropIsParent 1\n                -transmitFilters 1\n                -setFilter \"0\" \n                -showSetMembers 0\n                -allowMultiSelection 1\n                -alwaysToggleSelect 0\n                -directSelect 0\n                -showUfeItems 1\n                -displayMode \"DAG\" \n                -expandObjects 0\n                -setsIgnoreFilters 1\n                -containersIgnoreFilters 0\n                -editAttrName 0\n                -showAttrValues 0\n                -highlightSecondary 0\n                -showUVAttrsOnly 0\n                -showTextureNodesOnly 0\n                -attrAlphaOrder \"default\" \n                -animLayerFilterOptions \"allAffecting\" \n                -sortOrder \"none\" \n                -longNames 0\n                -niceNames 1\n                -showNamespace 1\n                -showPinIcons 1\n                -mapMotionTrails 1\n                -ignoreHiddenAttribute 0\n"
@@ -5465,9 +5456,9 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "                -useCustomBackground 1\n                $editorName;\n            stereoCameraView -e -viewSelected 0 $editorName;\n            stereoCameraView -e \n                -pluginObjects \"gpuCacheDisplayFilter\" 1 \n                $editorName; };\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 1\n            -showReferenceMembers 1\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n"
 		+ "            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n            -showUfeItems 1\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n"
 		+ "            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n"
-		+ "\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
-		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -docTag \\\"RADRENDER\\\" \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1.5\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 4 4 \\n    -bumpResolution 4 4 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 0\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1119\\n    -height 846\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
-		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -docTag \\\"RADRENDER\\\" \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1.5\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 4 4 \\n    -bumpResolution 4 4 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 0\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1119\\n    -height 846\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Front View\")) \n\t\t\t\t\t\"modelPanel\"\n"
+		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Front View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -camera \\\"|persp\\\" \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1.5\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 4 4 \\n    -bumpResolution 4 4 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 483\\n    -height 846\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Front View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -camera \\\"|persp\\\" \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1.5\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 4 4 \\n    -bumpResolution 4 4 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 483\\n    -height 846\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
 		+ "\t\t\t\t$configName;\n\n            setNamedPanelLayout (localizedPanelLabel(\"Current Layout\"));\n        }\n\n        panelHistory -e -clear mainPanelHistory;\n        sceneUIReplacement -clear;\n\t}\n\n\ngrid -spacing 5 -size 12 -divisions 5 -displayAxes yes -displayGridLines yes -displayDivisionLines yes -displayPerspectiveLabels no -displayOrthographicLabels no -displayAxesBold yes -perspectiveLabelPosition axis -orthographicLabelPosition edge;\nviewManip -drawCompass 0 -compassAngle 0 -frontParameters \"\" -homeParameters \"\" -selectionLockParameters \"\";\n}\n");
 	setAttr ".st" 3;
 createNode script -n "sceneConfigurationScriptNode";
@@ -5478,8 +5469,6 @@ createNode reference -n "PalBot_AnimationsRN";
 	rename -uid "C276738C-4C7F-C741-673B-8B8C90A338CB";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"PalBot_AnimationsRN"
-		"PalBot_Animations:PALBotModelRN" 0
-		"PalBot_AnimationsRN" 0
 		"PalBot_Animations:PALBotModelRN" 5
 		2 "|PalBot_Animations:PALBotModel:PALBOT_GRP|PalBot_Animations:PALBotModel:PALbot_MESH|PalBot_Animations:PALBotModel:PALbot_HeadGRP|PalBot_Animations:PALBotModel:GLASS_clean|PalBot_Animations:PALBotModel:GLASS_cleanShape" 
 		"uvSet[0].uvSetName" " -type \"string\" \"map1\""
@@ -5490,7 +5479,8 @@ createNode reference -n "PalBot_AnimationsRN";
 		2 "|PalBot_Animations:PALBotModel:PALBOT_GRP|PalBot_Animations:PALBotModel:PALbot_LOC|PalBot_Animations:PALBotModel:PALbot_CTRLs|PalBot_Animations:PALBotModel:PALbot_MAIN" 
 		"translateY" " -av"
 		2 "|PalBot_Animations:PALBotModel:PALBOT_GRP|PalBot_Animations:PALBotModel:PALbot_LOC|PalBot_Animations:PALBotModel:PALbot_CTRLs|PalBot_Animations:PALBotModel:PALbot_MAIN" 
-		"translateX" " -av";
+		"translateX" " -av"
+		"PalBot_AnimationsRN" 0;
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode polyPlane -n "polyPlane1";
@@ -5513,19 +5503,709 @@ createNode groupParts -n "groupParts8";
 createNode houdiniInputCurve -n "houdiniInputCurve2";
 	rename -uid "2A601FB3-4B88-68A2-883F-B59B503FE5F4";
 createNode groupId -n "groupId9";
-	rename -uid "18034A2D-44D0-C638-C9C9-DAB9C4B36365";
+	rename -uid "86C4983D-44C9-2408-560B-398D259CC112";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts9";
-	rename -uid "B06BAE5D-48CE-76B3-A3D0-7C8CABD2F333";
+	rename -uid "403FAA21-4335-427C-D3B5-1AB1E399C55C";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 4150 "f[4:6]" "f[11:14]" "f[21]" "f[26]" "f[28]" "f[31]" "f[34]" "f[37]" "f[39]" "f[53:55]" "f[57]" "f[68:69]" "f[74:76]" "f[87:89]" "f[91]" "f[98]" "f[101]" "f[105:106]" "f[108]" "f[112:116]" "f[122]" "f[127]" "f[130]" "f[132:133]" "f[139:141]" "f[152:154]" "f[159]" "f[169]" "f[171]" "f[175]" "f[177:178]" "f[183:186]" "f[193]" "f[200:202]" "f[208:210]" "f[214:218]" "f[225]" "f[229]" "f[232]" "f[234:235]" "f[239:240]" "f[242]" "f[247:250]" "f[257]" "f[264:266]" "f[272:274]" "f[279:281]" "f[289]" "f[296]" "f[299]" "f[301]" "f[305]" "f[310:312]" "f[323]" "f[325]" "f[330:331]" "f[343]" "f[355]" "f[357:358]" "f[363:365]" "f[373]" "f[378:379]" "f[388:390]" "f[395:397]" "f[405]" "f[412]" "f[415]" "f[417]" "f[421]" "f[426:428]" "f[439]" "f[441]" "f[446:447]" "f[459]" "f[471]" "f[473:474]" "f[485:486]" "f[489]" "f[499]" "f[530:532]" "f[537:540]" "f[547]" "f[552]" "f[556:557]" "f[561:562]" "f[564]" "f[569:572]" "f[579]" "f[586:588]" "f[594:596]" "f[609:611]" "f[621]" "f[625:626]" "f[628]" "f[639:641]" "f[643]" "f[650]" "f[653]" "f[658:660]" "f[671:672]" "f[675]" "f[684]" "f[689]" "f[691:692]" "f[697:699]" "f[707]" "f[714]" "f[716]" "f[722:723]" "f[735]" "f[745]" "f[749]" "f[754:756]" "f[767]" "f[769]" "f[826:828]" "f[833:835]" "f[843]" "f[850]" "f[853]" "f[855]" "f[859]" "f[864:866]" "f[877]" "f[879]" "f[884:885]" "f[897]" "f[909]" "f[911:912]" "f[923:924]" "f[927]" "f[937]" "f[942:944]" "f[949:952]" "f[959]" "f[964]" "f[968:969]" "f[973:974]" "f[976]" "f[981:984]" "f[991]" "f[998:1000]" "f[1006:1008]" "f[1021:1023]" "f[1033]" "f[1037:1038]" "f[1040]" "f[1051:1053]" "f[1055]" "f[1062]" "f[1065]" "f[1122:1124]" "f[1129:1131]" "f[1139]" "f[1146]" "f[1149]" "f[1151]" "f[1155]" "f[1160:1162]" "f[1173]" "f[1175]" "f[1180:1181]" "f[1193]" "f[1206:1208]" "f[1213:1215]" "f[1223]" "f[1228:1229]" "f[1238:1240]" "f[1245:1248]" "f[1255]" "f[1260]" "f[1264:1265]" "f[1269:1270]" "f[1272]" "f[1277:1280]" "f[1287]" "f[1294:1296]" "f[1302:1304]" "f[1317:1319]" "f[1329]" "f[1333:1334]" "f[1336]" "f[1347:1349]" "f[1351]" "f[1358]" "f[1361]" "f[1366:1368]" "f[1378:1380]" "f[1383]" "f[1391]" "f[1393]" "f[1397]" "f[1399:1400]" "f[1405:1408]" "f[1415]" "f[1422:1424]" "f[1430:1432]" "f[1445:1447]" "f[1457]" "f[1461]" "f[1463:1464]" "f[1469:1472]" "f[1479]" "f[1486]" "f[1488:1489]" "f[1494:1496]" "f[1501:1503]" "f[1511]" "f[1518]" "f[1521]" "f[1523]" "f[1527]" "f[1532:1534]" "f[1545]" "f[1547]" "f[1552:1553]" "f[1565]" "f[1577]" "f[1579:1580]" "f[1591:1592]" "f[1595]" "f[1605]" "f[1610:1612]" "f[1617:1619]" "f[1627]" "f[1634]" "f[1637]" "f[1639]" "f[1643]" "f[1648:1650]" "f[1661]" "f[1663]" "f[1668:1669]" "f[1681]" "f[1693]" "f[1695:1696]" "f[1707:1708]" "f[1711]" "f[1721]" "f[1726:1728]" "f[1733:1735]" "f[1743]" "f[1750]" "f[1753]" "f[1755]" "f[1759]" "f[1764:1766]" "f[1777]" "f[1779]" "f[1784:1785]" "f[1797]" "f[1810:1812]" "f[1817:1819]" "f[1827]" "f[1832:1833]" "f[1842:1844]" "f[1849:1852]" "f[1859]" "f[1864]" "f[1866]" "f[1869]" "f[1873]" "f[1875]" "f[1877]" "f[1882:1885]" "f[1893:1894]" "f[1903:1904]" "f[1906:1907]" "f[1912:1914]" "f[1927:1929]" "f[1939]" "f[1942]" "f[1944:1945]" "f[1949:1952]" "f[1957]" "f[1961:1962]" "f[1964]" "f[2022:2023]" "f[2028:2030]" "f[2040]" "f[2043]" "f[2047]" "f[2049:2050]" "f[2055:2057]" "f[2065]" "f[2072:2073]" "f[2080:2082]" "f[2096:2097]" "f[2112:2113]" "f[2123:2124]" "f[2133]" "f[2138:2140]" "f[2145:2148]" "f[2155]" "f[2162:2163]" "f[2165]" "f[2170:2172]" "f[2182:2184]" "f[2187]" "f[2196:2197]" "f[2202:2204]" "f[2217:2219]" "f[2229]" "f[2231]" "f[2235:2236]" "f[2241:2244]" "f[2251]" "f[2257]" "f[2259:2260]" "f[2292:2294]" "f[2299:2301]" "f[2309]" "f[2316]" "f[2319]" "f[2321]" "f[2325]" "f[2330:2332]" "f[2343]" "f[2345]" "f[2350:2351]" "f[2363]" "f[2375]" "f[2377:2378]" "f[2389:2390]" "f[2393]" "f[2403]" "f[2408:2410]" "f[2415:2417]" "f[2425]" "f[2432]" "f[2435]" "f[2437]" "f[2441]" "f[2446:2448]" "f[2459]" "f[2461]" "f[2466:2467]" "f[2479]" "f[2491]" "f[2493:2494]" "f[2505:2506]" "f[2509]" "f[2519]" "f[2576:2578]" "f[2589:2590]" "f[2593]" "f[2602]" "f[2607]" "f[2609:2610]" "f[2615:2617]" "f[2625]" "f[2632]" "f[2634]" "f[2639]" "f[2641]" "f[2651:2652]" "f[2660]" "f[2666:2667]" "f[2672:2674]" "f[2686:2687]" "f[2719:2721]" "f[2734:2736]" "f[2738:2739]" "f[2748]" "f[2751]" "f[2755]" "f[2757:2758]" "f[2763:2766]" "f[2773]" "f[2780:2781]" "f[2783]" "f[2786]" "f[2789:2790]" "f[2801:2805]" "f[2812]" "f[2815]" "f[2820:2822]" "f[2827:2830]" "f[2837]" "f[2844:2845]" "f[2847]" "f[2852:2854]" "f[2859:2862]" "f[2869]" "f[2876:2877]" "f[2879]" "f[2881]" "f[2885:2886]" "f[2891:2894]" "f[2901]" "f[2907]" "f[2909:2910]" "f[2916:2918]" "f[2931:2933]" "f[2943]" "f[2948:2950]" "f[2960:2962]" "f[2965]" "f[2974:2975]" "f[2980:2982]" "f[2987:2989]" "f[2997]" "f[3004]" "f[3007]" "f[3009]" "f[3013]" "f[3018:3020]" "f[3031]" "f[3033]" "f[3038:3039]" "f[3051]" "f[3063]" "f[3065:3066]" "f[3077:3078]" "f[3081]" "f[3091]" "f[3096:3098]" "f[3108:3110]" "f[3113]" "f[3121]" "f[3123]" "f[3127]" "f[3129:3130]" "f[3135:3138]" "f[3145]" "f[3152:3154]" "f[3160:3162]" "f[3175:3177]" "f[3187]" "f[3191:3192]" "f[3194]" "f[3199:3202]" "f[3209]" "f[3216:3218]" "f[3224:3226]" "f[3231:3233]" "f[3241]" "f[3248]" "f[3251]" "f[3253]" "f[3257]" "f[3262:3264]" "f[3275]" "f[3277]" "f[3282:3283]" "f[3295]" "f[3307]" "f[3309:3310]" "f[3315:3317]" "f[3325]" "f[3330:3331]" "f[3340:3342]" "f[3353:3355]" "f[3357]" "f[3364]" "f[3367]" "f[3371]" "f[3373:3374]" "f[3379:3382]" "f[3389]" "f[3396:3397]" "f[3399]" "f[3404:3406]" "f[3419:3421]" "f[3431]" "f[3433]" "f[3437:3438]" "f[3443:3446]" "f[3453]" "f[3459]" "f[3461:3462]" "f[3468:3470]" "f[3475:3477]" "f[3485]" "f[3492]" "f[3495]" "f[3497]" "f[3501]" "f[3506:3508]" "f[3519]" "f[3521]" "f[3526:3527]" "f[3539]" "f[3551]" "f[3553:3554]" "f[3559:3561]" "f[3569]" "f[3574:3575]" "f[3610:3612]" "f[3617:3619]" "f[3627]" "f[3634]" "f[3637]" "f[3639]" "f[3643]" "f[3648:3650]" "f[3661]" "f[3663]" "f[3668:3669]" "f[3681]" "f[3693]" "f[3695:3696]" "f[3701:3703]" "f[3711]" "f[3716:3717]" "f[3752:3754]" "f[3765:3767]" "f[3769]" "f[3776]" "f[3779]" "f[3783]" "f[3785:3786]" "f[3791:3794]" "f[3801]" "f[3808:3809]" "f[3811]" "f[3816:3818]" "f[3831:3833]" "f[3843]" "f[3845]" "f[3849:3850]" "f[3855:3858]" "f[3865]" "f[3871]" "f[3873:3874]" "f[3880:3882]" "f[3887:3889]" "f[3897]" "f[3904]" "f[3907]" "f[3909]" "f[3913]" "f[3918:3920]" "f[3931]" "f[3933]" "f[3938:3939]" "f[3951]" "f[3963]" "f[3965:3966]" "f[3977:3978]" "f[3981]" "f[3991]" "f[4048:4050]" "f[4055:4058]" "f[4065]" "f[4070]" "f[4074:4075]" "f[4079:4080]" "f[4082]" "f[4087:4090]" "f[4097]" "f[4104:4106]" "f[4112:4114]" "f[4127:4129]" "f[4139]" "f[4143:4144]" "f[4146]" "f[4157:4159]" "f[4161]" "f[4168]" "f[4171]" "f[4176:4178]" "f[4183:4185]" "f[4193]" "f[4200]" "f[4203]" "f[4205]" "f[4209]" "f[4214:4216]" "f[4227]" "f[4229]" "f[4234:4235]" "f[4247]" "f[4260:4262]" "f[4267:4269]" "f[4277]" "f[4282:4283]" "f[4292:4294]" "f[4304:4306]" "f[4309]" "f[4317]" "f[4319]" "f[4323]" "f[4325:4326]" "f[4331:4334]" "f[4341]" "f[4348:4350]" "f[4356:4358]" "f[4371:4373]" "f[4383]" "f[4387:4388]" "f[4390]" "f[4395:4398]" "f[4405]" "f[4412:4414]" "f[4420:4422]" "f[4427:4429]" "f[4437]" "f[4444]" "f[4447]" "f[4449]" "f[4453]" "f[4458:4460]" "f[4471]" "f[4473]" "f[4478:4479]" "f[4491]" "f[4503]" "f[4505:4506]" "f[4517:4518]" "f[4521]" "f[4531]" "f[4562:4564]" "f[4569:4572]" "f[4579]" "f[4584]" "f[4588:4589]" "f[4593:4594]" "f[4596]" "f[4601:4604]" "f[4611]" "f[4618:4620]" "f[4626:4628]" "f[4641:4643]" "f[4653]" "f[4657:4658]" "f[4660]" "f[4671:4673]" "f[4675]" "f[4682]" "f[4685]" "f[4690:4691]" "f[4701:4702]" "f[4711]" "f[4716:4718]" "f[4723:4725]" "f[4733]" "f[4740]" "f[4742]" "f[4747]" "f[4749:4750]" "f[4761:4762]" "f[4765]" "f[4774]" "f[4779]" "f[4781]" "f[4786:4788]" "f[4800:4801]" "f[4806:4808]" "f[4813:4816]" "f[4823]" "f[4828]" "f[4832:4833]" "f[4837:4838]" "f[4840]" "f[4845:4848]" "f[4855]" "f[4862:4864]" "f[4870:4872]" "f[4885:4887]" "f[4897]" "f[4901:4902]" "f[4904]" "f[4915:4917]" "f[4919]" "f[4926]" "f[4929]" "f[4934:4936]" "f[4941:4943]" "f[4951]" "f[4958]" "f[4961]" "f[4963]" "f[4967]" "f[4972:4974]" "f[4985]" "f[4987]" "f[4992:4993]" "f[5005]" "f[5017]" "f[5019:5020]" "f[5031:5032]" "f[5035]" "f[5045]" "f[5050:5052]" "f[5057:5060]" "f[5067]" "f[5072]" "f[5076:5077]" "f[5081:5082]" "f[5084]" "f[5089:5092]" "f[5099]" "f[5106:5108]" "f[5114:5116]" "f[5129:5131]" "f[5141]" "f[5145:5146]" "f[5148]" "f[5159:5161]" "f[5163]" "f[5170]" "f[5173]" "f[5178:5180]" "f[5185:5187]" "f[5195]" "f[5202]" "f[5205]" "f[5207]" "f[5211]" "f[5216:5218]" "f[5229]" "f[5231]" "f[5236:5237]" "f[5249]" "f[5261]" "f[5263:5264]" "f[5275:5276]" "f[5279]" "f[5289]" "f[5320:5322]" "f[5327:5329]" "f[5337]" "f[5342]" "f[5344]" "f[5352]" "f[5354:5355]" "f[5359:5363]" "f[5370:5371]" "f[5373]" "f[5379:5382]" "f[5384]" "f[5390:5391]" "f[5403]" "f[5413]" "f[5418]" "f[5424:5429]" "f[5439]" "f[5441:5443]" "f[5447:5448]" "f[5450]" "f[5461:5463]" "f[5465]" "f[5472]" "f[5475]" "f[5480:5482]" "f[5487:5490]" "f[5497]" "f[5502]" "f[5506:5507]" "f[5512:5514]" "f[5527:5529]" "f[5539]" "f[5543:5544]" "f[5546]" "f[5551:5554]" "f[5561]" "f[5568:5570]" "f[5576:5578]" "f[5583:5585]" "f[5593]" "f[5598]" "f[5600]" "f[5608]" "f[5610:5611]" "f[5615:5619]" "f[5626:5627]" "f[5629]" "f[5635:5638]" "f[5640]" "f[5646:5647]" "f[5659]" "f[5669]" "f[5674]" "f[5680:5685]" "f[5695]" "f[5697:5699]" "f[5729:5730]" "f[5732]" "f[5743:5745]" "f[5747]" "f[5754]" "f[5757]" "f[5762:5764]" "f[5769:5772]" "f[5779]" "f[5784]" "f[5788:5789]" "f[5794:5796]" "f[5809:5811]" "f[5821]" "f[5825:5826]" "f[5828]" "f[5833:5836]" "f[5843]" "f[5850:5852]" "f[5858]" "f[5860:5861]" "f[5866:5868]" "f[5877:5879]" "f[5886]" "f[5888]" "f[5891:5892]" "f[5897]" "f[5902:5906]" "f[5914]" "f[5916:5917]" "f[5922:5923]" "f[5935]" "f[5948:5950]" "f[5955:5957]" "f[5965]" "f[5970]" "f[5972]" "f[5980:5982]" "f[5987:5990]" "f[5997]" "f[6004:6005]" "f[6007]" "f[6009]" "f[6013:6014]" "f[6019:6022]" "f[6029]" "f[6035]" "f[6037:6038]" "f[6044:6046]" "f[6059:6061]" "f[6071]" "f[6076:6078]" "f[6088:6090]" "f[6093]" "f[6102:6103]" "f[6133]" "f[6135:6136]" "f[6147:6148]" "f[6151]" "f[6161]" "f[6166:6168]" "f[6173:6175]" "f[6183]" "f[6190]" "f[6193]" "f[6198:6199]" "f[6211]" "f[6221]" "f[6225]" "f[6230:6232]" "f[6243]" "f[6245]" "f[6248:6249]" "f[6251]" "f[6261:6263]" "f[6271]" "f[6276:6278]" "f[6283:6286]" "f[6293]" "f[6298]" "f[6302:6303]" "f[6308]" "f[6310:6311]" "f[6325:6328]" "f[6340:6341]" "f[6345:6346]" "f[6348]" "f[6353:6356]" "f[6363]" "f[6368]" "f[6372:6373]" "f[6403]" "f[6405:6406]" "f[6417:6418]" "f[6421]" "f[6431]" "f[6436:6438]" "f[6443:6445]" "f[6453]" "f[6460]" "f[6463]" "f[6468:6469]" "f[6481]" "f[6491]" "f[6495]" "f[6500:6502]" "f[6513]" "f[6515]" "f[6545:6546]" "f[6548]" "f[6559:6561]" "f[6563]" "f[6570]" "f[6573]" "f[6578:6580]" "f[6585:6588]" "f[6595]" "f[6600]" "f[6604:6605]" "f[6610:6612]" "f[6625:6627]" "f[6637]" "f[6641:6642]" "f[6644]" "f[6649:6652]" "f[6659]" "f[6666:6668]" "f[6674:6676]" "f[6681:6684]" "f[6691]" "f[6696]" "f[6700:6701]" "f[6705:6706]" "f[6708]" "f[6713:6716]" "f[6723]" "f[6730:6732]" "f[6738:6740]" "f[6753:6755]" "f[6765]" "f[6769:6770]" "f[6772]" "f[6783:6785]" "f[6787]" "f[6794]" "f[6797]" "f[6827:6828]" "f[6830]" "f[6841:6843]" "f[6845]" "f[6852]" "f[6855]" "f[6860:6862]" "f[6867:6870]" "f[6877]" "f[6882]" "f[6886:6887]" "f[6892:6894]" "f[6907:6909]" "f[6919]" "f[6923:6924]" "f[6926]" "f[6931:6934]" "f[6941]" "f[6948:6950]" "f[6955]" "f[6957:6958]" "f[6969:6970]" "f[6973]" "f[6983]" "f[6988:6990]" "f[6995:6997]" "f[7005]" "f[7012]" "f[7015]" "f[7020:7021]" "f[7033]" "f[7043]" "f[7047]" "f[7052:7054]" "f[7065]" "f[7067]" "f[7098:7100]" "f[7110:7112]" "f[7115]" "f[7124:7125]" "f[7130:7132]" "f[7137:7140]" "f[7147]" "f[7154:7155]" "f[7157]" "f[7162:7164]" "f[7177:7179]" "f[7189]" "f[7191]" "f[7195:7196]" "f[7201:7204]" "f[7211]" "f[7217]" "f[7219:7220]" "f[7226:7228]" "f[7233:7236]" "f[7243]" "f[7250:7251]" "f[7253]" "f[7255]" "f[7259:7260]" "f[7265:7268]" "f[7275]" "f[7281]" "f[7283:7284]" "f[7290:7292]" "f[7305:7307]" "f[7317]" "f[7322:7324]" "f[7334:7336]" "f[7339]" "f[7348:7349]" "f[7354:7356]" "f[7361:7364]" "f[7371]" "f[7376]" "f[7380:7381]" "f[7385:7386]" "f[7388]" "f[7393:7396]" "f[7403]" "f[7410:7412]" "f[7418:7420]" "f[7433:7435]" "f[7445]" "f[7449:7450]" "f[7452]" "f[7463:7465]" "f[7467]" "f[7474]" "f[7477]" "f[7534:7536]" "f[7541:7543]" "f[7551]" "f[7556]" "f[7558]" "f[7566]" "f[7568:7569]" "f[7573:7577]" "f[7584:7585]" "f[7587]" "f[7593:7596]" "f[7598]" "f[7604:7605]" "f[7617]" "f[7627]" "f[7632]" "f[7638:7643]" "f[7653]" "f[7655:7657]" "f[7688:7690]" "f[7700:7702]" "f[7705]" "f[7714:7715]" "f[7720:7722]" "f[7727:7730]" "f[7737]" "f[7744:7745]" "f[7747]" "f[7752:7754]" "f[7767:7769]" "f[7779]" "f[7781]" "f[7785:7786]" "f[7791:7794]" "f[7801]" "f[7807]" "f[7809:7810]" "f[7815]" "f[7817:7818]" "f[7829:7830]" "f[7833]" "f[7843]" "f[7848:7850]" "f[7855:7857]" "f[7865]" "f[7872]" "f[7875]" "f[7880:7881]" "f[7893]" "f[7903]" "f[7907]" "f[7912:7914]" "f[7925]" "f[7927]" "f[7958:7960]" "f[7970:7972]" "f[7975]" "f[7984:7985]" "f[7990:7992]" "f[7997:8000]" "f[8007]" "f[8014:8015]" "f[8017]" "f[8022:8024]" "f[8037:8039]" "f[8049]" "f[8051]" "f[8055:8056]" "f[8061:8064]" "f[8071]" "f[8077]" "f[8079:8080]" "f[8163:8164]" "f[8166]" "f[8177:8179]" "f[8181]" "f[8188]" "f[8191]" "f[8196:8198]" "f[8203:8206]" "f[8213]" "f[8218]" "f[8222:8223]" "f[8228:8230]" "f[8243:8245]" "f[8255]" "f[8259:8260]" "f[8262]" "f[8267:8270]" "f[8277]" "f[8284:8286]" "f[8292:8294]" "f[8304:8306]" "f[8309]" "f[8318:8319]" "f[8324:8326]" "f[8331:8334]" "f[8341]" "f[8348:8349]" "f[8351]" "f[8356:8358]" "f[8371:8373]" "f[8383]" "f[8385]" "f[8389:8390]" "f[8395:8398]" "f[8405]" "f[8411]" "f[8413:8414]" "f[8420:8422]" "f[8427:8430]" "f[8437]" "f[8442]" "f[8446:8447]" "f[8451:8452]" "f[8454]" "f[8459:8462]" "f[8469]" "f[8476:8478]" "f[8484:8486]" "f[8499:8501]" "f[8511]" "f[8515:8516]" "f[8518]" "f[8529:8531]" "f[8533]" "f[8540]" "f[8543]" "f[8574:8576]" "f[8581:8584]" "f[8591]" "f[8596]" "f[8600:8601]" "f[8605:8606]" "f[8608]" "f[8613:8616]" "f[8623]" "f[8630:8632]" "f[8638:8640]" "f[8653:8655]" "f[8665]" "f[8669:8670]" "f[8672]" "f[8683:8685]" "f[8687]" "f[8694]" "f[8697]" "f[8753:8754]" "f[8756]" "f[8767:8769]" "f[8771]" "f[8778]" "f[8781]" "f[8786:8788]" "f[8793:8796]" "f[8803]" "f[8808]" "f[8812:8813]" "f[8818:8820]" "f[8833:8835]" "f[8845]" "f[8849:8850]" "f[8852]" "f[8857:8860]" "f[8867]" "f[8874:8876]" "f[8907]" "f[8909:8910]" "f[8921:8922]" "f[8925]" "f[8935]" "f[8940:8942]" "f[8947:8949]" "f[8957]" "f[8964]" "f[8967]" "f[8972:8973]" "f[8985]" "f[8995]" "f[8999]" "f[9004:9006]" "f[9017]" "f[9019]" "f[9024:9026]" "f[9031:9034]" "f[9041]" "f[9046]" "f[9050:9051]" "f[9055:9056]" "f[9058]" "f[9063:9066]" "f[9073]" "f[9080:9082]" "f[9088:9090]" "f[9103:9105]" "f[9115]" "f[9119:9120]" "f[9122]" "f[9133:9135]" "f[9137]" "f[9144]" "f[9147]" "f[9152:9154]" "f[9159:9162]" "f[9169]" "f[9176:9177]" "f[9179]" "f[9181]" "f[9185:9186]" "f[9191:9194]" "f[9201]" "f[9207]" "f[9209:9210]" "f[9216:9218]" "f[9231:9233]" "f[9243]" "f[9248:9250]" "f[9260:9262]" "f[9265]" "f[9274:9275]" "f[9280]" "f[9282:9283]" "f[9288:9290]" "f[9299:9301]" "f[9308]" "f[9310]" "f[9313:9314]" "f[9319]" "f[9324:9328]" "f[9336]" "f[9338:9339]" "f[9344:9345]" "f[9357]" "f[9370:9372]" "f[9377:9379]" "f[9387]" "f[9392]" "f[9394]" "f[9454:9456]" "f[9466:9468]" "f[9471]" "f[9480:9481]" "f[9486:9488]" "f[9493:9496]" "f[9503]" "f[9510:9511]" "f[9513]" "f[9518:9520]" "f[9533:9535]" "f[9545]" "f[9547]" "f[9551:9552]" "f[9557:9560]" "f[9567]" "f[9573]" "f[9575:9576]" "f[9581]" "f[9583:9584]" "f[9589:9591]" "f[9599]" "f[9607:9608]" "f[9614]" "f[9616:9617]" "f[9622:9624]" "f[9633:9635]" "f[9642]" "f[9644]" "f[9647]" "f[9652:9653]" "f[9665]" "f[9674]" "f[9679]" "f[9684:9688]" "f[9696]" "f[9698:9699]" "f[9730:9732]" "f[9737:9740]" "f[9747]" "f[9754:9755]" "f[9757]" "f[9759]" "f[9763:9764]" "f[9769:9772]" "f[9779]" "f[9785]" "f[9787:9788]" "f[9794:9796]" "f[9809:9811]" "f[9821]" "f[9826:9828]" "f[9838:9840]" "f[9843]" "f[9852:9853]" "f[9884]" "f[9886:9887]" "f[9892:9894]" "f[9903:9905]" "f[9912]" "f[9914]" "f[9917:9918]" "f[9923]" "f[9928:9932]" "f[9940]" "f[9942:9943]" "f[9948:9949]" "f[9961]" "f[9974:9976]" "f[9981:9983]" "f[9991]" "f[9996]" "f[9998]" "f[10006:10007]" "f[10017:10018]" "f[10027]" "f[10032:10033]" "f[10038:10040]" "f[10050]" "f[10053]" "f[10058:10060]" "f[10074:10075]" "f[10089]" "f[10091:10092]" "f[10097:10099]" "f[10107]" "f[10114:10115]" "f[10122:10124]" "f[10134:10136]" "f[10139]" "f[10148:10149]" "f[10154:10156]" "f[10161:10164]" "f[10171]" "f[10178:10179]" "f[10181]" "f[10186:10188]" "f[10201:10203]" "f[10213]" "f[10215]" "f[10219:10220]" "f[10225:10228]" "f[10235]" "f[10241]" "f[10243:10244]" "f[10249]" "f[10251:10252]" "f[10257:10260]" "f[10267]" "f[10274:10275]" "f[10277]" "f[10282:10284]" "f[10295:10297]" "f[10299]" "f[10306]" "f[10309]" "f[10313]" "f[10315:10316]" "f[10327:10329]" "f[10331]" "f[10338]" "f[10341]" "f[10346:10348]" "f[10353:10356]" "f[10363]" "f[10370:10371]" "f[10373]" "f[10378:10380]" "f[10385:10390]" "f[10401]" "f[10403:10405]" "f[10410]" "f[10412:10413]" "f[10417:10422]" "f[10430]" "f[10435]" "f[10437]" "f[10440:10441]" "f[10443]" "f[10447]" "f[10449:10450]" "f[10458:10460]" "f[10465]" "f[10473]" "f[10475]" "f[10477]" "f[10482:10483]" "f[10489:10496]" "f[10507]" "f[10509:10513]" "f[10518:10520]" "f[10525:10528]" "f[10535]" "f[10540]" "f[10544:10545]" "f[10550:10552]" "f[10557:10560]" "f[10567]" "f[10574:10575]" "f[10577]" "f[10581]" "f[10583:10584]" "f[10593:10595]" "f[10599]" "f[10605]" "f[10609]" "f[10612]" "f[10614]" "f[10616]" "f[10625:10627]" "f[10631]" "f[10638]" "f[10640]" "f[10646:10648]" "f[10653:10658]" "f[10669]" "f[10671:10673]" "f[10677]" "f[10679:10680]" "f[10691:10693]" "f[10695]" "f[10701]" "f[10705]" "f[10709]" "f[10711:10712]" "f[10723:10726]" "f[10735]" "f[10737:10738]" "f[10743:10744]" "f[10749:10754]" "f[10764]" "f[10766]" "f[10768:10769]" "f[10800:10802]" "f[10807:10810]" "f[10817]" "f[10822]" "f[10826:10827]" "f[10832:10834]" "f[10839:10842]" "f[10849]" "f[10856:10857]" "f[10859]" "f[10863]" "f[10865:10866]" "f[10875:10877]" "f[10881]" "f[10887]" "f[10891]" "f[10894]" "f[10896]" "f[10898]" "f[10907:10909]" "f[10913]" "f[10920]" "f[10922]" "f[10954:10956]" "f[10967:10969]" "f[10971]" "f[10977]" "f[10981]" "f[10985:10986]" "f[10988]" "f[10993:10996]" "f[11003]" "f[11009:11010]" "f[11013]" "f[11017:11018]" "f[11020]" "f[11025:11028]" "f[11035]" "f[11040]" "f[11044:11045]" "f[11049:11050]" "f[11052]" "f[11065:11067]" "f[11076]" "f[11160:11162]" "f[11167:11170]" "f[11177]" "f[11183]" "f[11186:11187]" "f[11192:11194]" "f[11199:11203]" "f[11209]" "f[11214]" "f[11216]" "f[11218:11219]" "f[11223]" "f[11225:11226]" "f[11237:11240]" "f[11249]" "f[11251]" "f[11254]" "f[11257]" "f[11259]" "f[11267:11269]" "f[11275:11277]" "f[11285]" "f[11288:11289]" "f[11294:11296]" "f[11309:11311]" "f[11321]" "f[11326:11328]" "f[11333:11336]" "f[11343]" "f[11350:11351]" "f[11353]" "f[11358:11360]" "f[11370:11372]" "f[11375]" "f[11384:11385]" "f[11387]" "f[11391:11392]" "f[11397:11400]" "f[11407]" "f[11413]" "f[11415:11416]" "f[11421]" "f[11423]" "f[11435]" "f[11447]" "f[11449:11450]" "f[11461:11462]" "f[11465]" "f[11474]" "f[11480]" "f[11482:11483]" "f[11494:11495]" "f[11499:11501]" "f[11509]" "f[11511]" "f[11515]" "f[11519]" "f[11524:11526]" "f[11537]" "f[11539]" "f[11544]" "f[11546:11547]" "f[11557:11559]" "f[11564:11565]" "f[11571]" "f[11577]" "f[11582:11584]" "f[11589:11592]" "f[11599]" "f[11606:11607]" "f[11609]" "f[11614:11616]" "f[11620:11624]" "f[11628:11629]" "f[11635:11636]" "f[11639:11641]" "f[11644]" "f[11646]" "f[11648]" "f[11657:11659]" "f[11663]" "f[11670]" "f[11672]" "f[11704:11706]" "f[11717:11719]" "f[11721]" "f[11727]" "f[11731]" "f[11734]" "f[11737:11738]" "f[11743:11746]" "f[11753]" "f[11758]" "f[11761]" "f[11763]" "f[11767:11768]" "f[11770]" "f[11775:11778]" "f[11785]" "f[11790]" "f[11794:11795]" "f[11797]" "f[11799]" "f[11802]" "f[11815:11817]" "f[11826]" "f[11832:11834]" "f[11839:11844]" "f[11855]" "f[11857:11859]" "f[11863]" "f[11865:11866]" "f[11877:11879]" "f[11881]" "f[11887]" "f[11891]" "f[11895]" "f[11897:11898]" "f[11909:11912]" "f[11921]" "f[11923:11924]" "f[11929:11930]" "f[11935:11940]" "f[11950]" "f[11952]" "f[11954:11955]" "f[11960:11961]" "f[11963]" "f[11972:11974]" "f[11979:11980]" "f[11987]" "f[11992:11993]" "f[11998:12000]" "f[12005:12008]" "f[12015]" "f[12022:12023]" "f[12025]" "f[12029:12031]" "f[12035:12038]" "f[12043]" "f[12047]" "f[12049]" "f[12051]" "f[12053]" "f[12055]" "f[12058]" "f[12071:12073]" "f[12082]" "f[12088:12090]" "f[12095:12098]" "f[12104]" "f[12110]" "f[12114:12115]" "f[12118:12119]" "f[12122]" "f[12131:12135]" "f[12143]" "f[12146:12147]" "f[12152:12154]" "f[12165:12168]" "f[12177]" "f[12179]" "f[12183:12184]" "f[12186]" "f[12191:12194]" "f[12201]" "f[12206]" "f[12210:12211]" "f[12216:12218]" "f[12229:12231]" "f[12233]" "f[12239]" "f[12243]" "f[12246]" "f[12249:12250]" "f[12255:12258]" "f[12265]" "f[12270]" "f[12273]" "f[12275]" "f[12279:12280]" "f[12282]" "f[12287:12290]" "f[12297]" "f[12302]" "f[12306:12307]" "f[12309]" "f[12311]" "f[12314]" "f[12327:12329]" "f[12338]" "f[12344:12346]" "f[12351:12356]" "f[12367]" "f[12369:12371]" "f[12375]" "f[12377:12378]" "f[12389:12391]" "f[12393]" "f[12399]" "f[12403]" "f[12407]" "f[12409:12410]" "f[12421:12424]" "f[12433]" "f[12435:12436]" "f[12441:12442]" "f[12447:12452]" "f[12462]" "f[12464]" "f[12466:12467]" "f[12549:12551]" "f[12556:12559]" "f[12563]" "f[12568:12569]" "f[12571]" "f[12574:12575]" "f[12578]" "f[12587:12591]" "f[12599]" "f[12602:12603]" "f[12607]" "f[12610:12611]" "f[12623:12625]" "f[12627:12628]" "f[12637]" "f[12639]" "f[12641]" "f[12645:12646]" "f[12648]" "f[12653:12656]" "f[12663]" "f[12670:12672]" "f[12703:12704]" "f[12706]" "f[12717:12719]" "f[12721]" "f[12730:12731]" "f[12735:12736]" "f[12738]" "f[12743:12746]" "f[12753]" "f[12759:12760]" "f[12763]" "f[12767:12768]" "f[12770]" "f[12775:12778]" "f[12785]" "f[12790]" "f[12794:12795]" "f[12797]" "f[12799]" "f[12802]" "f[12815:12817]" "f[12826]" "f[12858:12860]" "f[12865:12870]" "f[12881]" "f[12883:12885]" "f[12888:12889]" "f[12892]" "f[12901:12905]" "f[12913]" "f[12916:12917]" "f[12922:12924]" "f[12935:12938]" "f[12947]" "f[12949:12950]" "f[12955:12956]" "f[12961:12966]" "f[12976]" "f[12978]" "f[12980:12981]" "f[13012:13014]" "f[13019:13022]" "f[13028]" "f[13034]" "f[13038:13039]" "f[13042:13043]" "f[13046]" "f[13055:13059]" "f[13067]" "f[13070:13071]" "f[13076:13078]" "f[13089:13092]" "f[13101]" "f[13103:13104]" "f[13109:13110]" "f[13115:13120]" "f[13130]" "f[13132]" "f[13134:13135]" "f[13165]" "f[13167]" "f[13175:13176]" "f[13187]" "f[13192]" "f[13194:13195]" "f[13199:13203]" "f[13212]" "f[13218]" "f[13221:13222]" "f[13225]" "f[13230:13232]" "f[13237:13239]" "f[13245:13246]" "f[13252]" "f[13254]" "f[13257]" "f[13259]" "f[13264]" "f[13270:13275]" "f[13285]" "f[13287:13289]" "f[13320:13322]" "f[13327:13330]" "f[13336]" "f[13342]" "f[13346:13347]" "f[13350:13351]" "f[13354]" "f[13363:13367]" "f[13375]" "f[13378:13379]" "f[13384:13386]" "f[13397:13400]" "f[13409]" "f[13411]" "f[13415:13416]" "f[13418]" "f[13423:13426]" "f[13433]" "f[13438]" "f[13442:13443]" "f[13500:13501]" "f[13506:13508]" "f[13518]" "f[13521]" "f[13526:13527]" "f[13532:13534]" "f[13546:13547]" "f[13551]" "f[13553:13554]" "f[13563:13564]" "f[13569]" "f[13578]" "f[13582]" "f[13584]" "f[13586]" "f[13595:13596]" "f[13601]" "f[13609]" "f[13615]" "f[13617]" "f[13628:13629]" "f[13641]" "f[13644:13645]" "f[13656:13658]" "f[13662:13663]" "f[13672]" "f[13674]" "f[13680]" "f[13682:13683]" "f[13691:13693]" "f[13700:13701]" "f[13710]" "f[13713:13714]" "f[13719]" "f[13724:13728]" "f[13736]" "f[13738:13739]" "f[13769]" "f[13771]" "f[13779:13780]" "f[13791]" "f[13796]" "f[13798:13799]" "f[13803:13807]" "f[13816]" "f[13822]" "f[13825:13826]" "f[13829]" "f[13834:13836]" "f[13841:13843]" "f[13849:13850]" "f[13856]" "f[13858]" "f[13861]" "f[13863]" "f[13868]" "f[13874:13879]" "f[13889]" "f[13891:13893]" "f[13898:13900]" "f[13905:13910]" "f[13921]" "f[13923:13925]" "f[13929]" "f[13931:13932]" "f[13943:13945]" "f[13947]" "f[13953]" "f[13957]" "f[13961]" "f[13963:13964]" "f[13975:13978]" "f[13987]" "f[13989:13990]" "f[13995:13996]" "f[14001:14006]" "f[14016]" "f[14018]" "f[14020:14021]" "f[14026]" "f[14028]" "f[14042:14043]" "f[14057]" "f[14060:14061]" "f[14065:14069]" "f[14078:14079]" "f[14084:14085]" "f[14088]" "f[14090]" "f[14097:14099]" "f[14103:14107]" "f[14112:14114]" "f[14121:14122]" "f[14124:14126]" "f[14129]" "f[14131]" "f[14136]" "f[14142:14147]" "f[14157]" "f[14159:14161]" "f[14191:14192]" "f[14194]" "f[14199:14202]" "f[14209]" "f[14214]" "f[14218:14219]" "f[14223:14224]" "f[14226]" "f[14231:14234]" "f[14241]" "f[14247:14248]" "f[14251]" "f[14255:14256]" "f[14258]" "f[14269:14271]" "f[14273]" "f[14282:14283]" "f[14285]" "f[14287]" "f[14290]" "f[14303:14305]" "f[14314]" "f[14345:14347]" "f[14354:14356]" "f[14359]" "f[14364]" "f[14367]" "f[14370:14371]" "f[14374]" "f[14383:14387]" "f[14395]" "f[14398:14399]" "f[14403]" "f[14406:14407]" "f[14419:14421]" "f[14423:14424]" "f[14433]" "f[14435]" "f[14437]" "f[14441:14442]" "f[14444]" "f[14449:14452]" "f[14459]" "f[14466:14468]" "f[14474:14476]" "f[14487:14489]" "f[14491]" "f[14497]" "f[14501]" "f[14504]" "f[14507:14508]" "f[14513:14516]" "f[14523]" "f[14528]" "f[14531]" "f[14533]" "f[14537:14538]" "f[14540]" "f[14545:14548]" "f[14555]" "f[14560]" "f[14564:14565]" "f[14567]" "f[14569]" "f[14572]" "f[14585:14587]" "f[14596]" "f[14758:14760]" "f[14773:14775]" "f[14785]" "f[14790:14792]" "f[14797:14800]" "f[14807]" "f[14814:14815]" "f[14817]" "f[14822:14824]" "f[14834:14836]" "f[14839]" "f[14848:14849]" "f[14851]" "f[14855:14856]" "f[14861:14864]" "f[14871]" "f[14877]" "f[14879:14880]" "f[14885]" "f[14887:14888]" "f[14893:14896]" "f[14903]" "f[14910:14911]" "f[14913]" "f[14916]" "f[14919:14920]" "f[14930:14932]" "f[14935]" "f[14943:14944]" "f[14950:14952]" "f[14962:14964]" "f[14967]" "f[14975]" "f[14977]" "f[14981]" "f[14983:14984]" "f[14989:14992]" "f[14999]" "f[15006:15008]" "f[15040:15042]" "f[15047:15049]" "f[15057]" "f[15064]" "f[15067]" "f[15069]" "f[15073]" "f[15078:15080]" "f[15091]" "f[15093]" "f[15098:15099]" "f[15111]" "f[15123]" "f[15125:15126]" "f[15137:15138]" "f[15141]" "f[15151]" "f[15156:15158]" "f[15163:15166]" "f[15173]" "f[15178]" "f[15182:15183]" "f[15187:15188]" "f[15190]" "f[15195:15198]" "f[15205]" "f[15212:15214]" "f[15220:15222]" "f[15235:15237]" "f[15247]" "f[15251:15252]" "f[15254]" "f[15265:15267]" "f[15269]" "f[15276]" "f[15279]" "f[15285:15287]" "f[15298:15300]" "f[15305]" "f[15315]" "f[15317]" "f[15321]" "f[15323:15324]" "f[15328:15332]" "f[15338:15339]" "f[15345:15348]" "f[15355:15357]" "f[15361:15365]" "f[15374:15375]" "f[15382]" "f[15385:15387]" "f[15391:15392]" "f[15394]" "f[15399:15402]" "f[15409]" "f[15416:15418]" "f[15476:15478]" "f[15483:15485]" "f[15493]" "f[15500]" "f[15503]" "f[15505]" "f[15509]" "f[15514:15516]" "f[15527]" "f[15529]" "f[15534:15535]" "f[15547]" "f[15559]" "f[15561:15562]" "f[15573:15574]" "f[15577]" "f[15587]" "f[15644]" "f[15646:15647]" "f[15651:15655]" "f[15664:15665]" "f[15670]" "f[15673]" "f[15676:15677]" "f[15681]" "f[15683:15684]" "f[15689:15692]" "f[15699]" "f[15706:15708]" "f[15711]" "f[15715:15716]" "f[15720:15724]" "f[15731]" "f[15735]" "f[15738:15739]" "f[15741]" "f[15746:15747]" "f[15749]" "f[15754:15757]" "f[15767]" "f[15776:15778]" "f[15784:15786]" "f[15791:15793]" "f[15801]" "f[15808]" "f[15811]" "f[15813]" "f[15817]" "f[15822:15824]" "f[15835]" "f[15837]" "f[15842:15843]" "f[15855]" "f[15867]" "f[15869:15870]" "f[15881:15882]" "f[15885]" "f[15895]" "f[15900:15902]" "f[15913:15915]" "f[15917]" "f[15924]" "f[15927]" "f[15931]" "f[15933:15934]" "f[15939:15942]" "f[15949]" "f[15956:15957]" "f[15959]" "f[15963]" "f[15965:15966]" "f[15977:15979]" "f[15981]" "f[15990:15991]" "f[15993]" "f[15997:15998]" "f[16003:16006]" "f[16013]" "f[16019]" "f[16021:16022]" "f[16028:16030]" "f[16035:16037]" "f[16045]" "f[16052]" "f[16055]" "f[16057]" "f[16061]" "f[16066:16068]" "f[16079]" "f[16081]" "f[16086:16087]" "f[16099]" "f[16112:16114]" "f[16119:16121]" "f[16129]" "f[16134:16135]" "f[16144:16145]" "f[16150:16152]" "f[16162]" "f[16165]" "f[16169]" "f[16171:16172]" "f[16177:16179]" "f[16187]" "f[16194:16195]" "f[16202:16204]" "f[16218:16219]" "f[16234:16235]" "f[16245:16246]" "f[16255]" "f[16260:16262]" "f[16267:16270]" "f[16277]" "f[16282]" "f[16286:16287]" "f[16291]" "f[16293:16294]" "f[16299:16302]" "f[16309]" "f[16316:16317]" "f[16319]" "f[16323]" "f[16325:16326]" "f[16336:16338]" "f[16341]" "f[16349:16350]" "f[16355:16356]" "f[16358]" "f[16369:16371]" "f[16373]" "f[16380]" "f[16383]" "f[16388:16390]" "f[16395:16397]" "f[16405]" "f[16412]" "f[16415]" "f[16417]" "f[16421]" "f[16426:16428]" "f[16439]" "f[16441]" "f[16446:16447]" "f[16459]" "f[16471]" "f[16473:16474]" "f[16479:16481]" "f[16489]" "f[16494:16495]" "f[16504:16506]" "f[16511:16514]" "f[16521]" "f[16526]" "f[16530:16531]" "f[16535:16536]" "f[16538]" "f[16543:16546]" "f[16553]" "f[16560:16562]" "f[16568:16570]" "f[16583:16585]" "f[16595]" "f[16599:16600]" "f[16602]" "f[16613:16615]" "f[16617]" "f[16624]" "f[16627]" "f[16684:16686]" "f[16691:16693]" "f[16701]" "f[16708]" "f[16711]" "f[16713]" "f[16717]" "f[16722:16724]" "f[16735]" "f[16737]" "f[16742:16743]" "f[16755]" "f[16767]" "f[16769:16770]" "f[16781:16782]" "f[16785]" "f[16795]" "f[16800:16802]" "f[16807:16810]" "f[16817]" "f[16822]" "f[16824]" "f[16827]" "f[16831]" "f[16833]" "f[16835]" "f[16840:16843]" "f[16851:16852]" "f[16861:16862]" "f[16864:16865]" "f[16870:16872]" "f[16885:16887]" "f[16897]" "f[16900]" "f[16902:16903]" "f[16907:16910]" "f[16915]" "f[16919:16920]" "f[16922]" "f[16928:16930]" "f[16935:16937]" "f[16945]" "f[16952]" "f[16955]" "f[16957]" "f[16961]" "f[16966:16968]" "f[16979]" "f[16981]" "f[16986:16987]" "f[16999]" "f[17011]" "f[17013:17014]" "f[17019:17021]" "f[17029]" "f[17034:17035]" "f[17096:17098]" "f[17108:17110]" "f[17113]" "f[17121]" "f[17123]" "f[17127]" "f[17129:17130]" "f[17135:17138]" "f[17145]" "f[17152:17154]" "f[17160:17162]" "f[17175:17177]" "f[17187]" "f[17191:17192]" "f[17194]" "f[17199:17202]" "f[17209]" "f[17216:17218]" "f[17250:17252]" "f[17263:17265]" "f[17267]" "f[17274]" "f[17277]" "f[17281]" "f[17283:17284]" "f[17288:17292]" "f[17299]" "f[17303]" "f[17306:17307]" "f[17309]" "f[17315:17317]" "f[17332:17333]" "f[17335]" "f[17347]" "f[17349]" "f[17353:17354]" "f[17359:17362]" "f[17369]" "f[17375]" "f[17377:17378]" "f[17384:17386]" "f[17396:17398]" "f[17401]" "f[17409]" "f[17411]" "f[17415]" "f[17417:17418]" "f[17423:17426]" "f[17433]" "f[17440:17442]" "f[17448:17450]" "f[17463:17465]" "f[17475]" "f[17479:17480]" "f[17482]" "f[17487:17490]" "f[17497]" "f[17504:17506]" "f[17511]" "f[17513:17514]" "f[17525:17527]" "f[17529]" "f[17536]" "f[17539]" "f[17543]" "f[17546:17547]" "f[17552:17555]" "f[17564:17565]" "f[17573]" "f[17575:17576]" "f[17579]" "f[17583:17584]" "f[17588:17592]" "f[17599]" "f[17603]" "f[17606:17607]" "f[17609]" "f[17614]" "f[17616:17617]" "f[17622:17625]" "f[17634:17635]" "f[17640]" "f[17646:17647]" "f[17651]" "f[17653:17654]" "f[17665:17666]" "f[17669]" "f[17678]" "f[17684:17686]" "f[17691:17693]" "f[17701]" "f[17708]" "f[17710]" "f[17716:17717]" "f[17727:17728]" "f[17737]" "f[17742:17743]" "f[17748:17750]" "f[17760]" "f[17763]" "f[17768:17770]" "f[17780:17782]" "f[17785]" "f[17793]" "f[17795]" "f[17799]" "f[17801:17802]" "f[17807:17810]" "f[17817]" "f[17824:17826]" "f[17832:17834]" "f[17847:17849]" "f[17859]" "f[17863:17864]" "f[17866]" "f[17871:17874]" "f[17881]" "f[17888:17890]" "f[17922:17924]" "f[17929:17931]" "f[17939]" "f[17946]" "f[17949]" "f[17951]" "f[17955]" "f[17960:17962]" "f[17973]" "f[17975]" "f[17980:17981]" "f[17993]" "f[18005]" "f[18007:18008]" "f[18013:18015]" "f[18023]" "f[18028:18029]" "f[18038:18040]" "f[18045:18048]" "f[18055]" "f[18060]" "f[18064:18065]" "f[18069:18070]" "f[18072]" "f[18083:18085]" "f[18087]" "f[18094]" "f[18097]" "f[18102:18104]" "f[18117:18119]" "f[18129]" "f[18133:18134]" "f[18136]" "f[18141:18144]" "f[18151]" "f[18158:18160]" "f[18166:18168]" "f[18173:18176]" "f[18183]" "f[18188]" "f[18192:18193]" "f[18197:18198]" "f[18200]" "f[18205:18208]" "f[18215]" "f[18222:18224]" "f[18230:18232]" "f[18245:18247]" "f[18257]" "f[18261:18262]" "f[18264]" "f[18275:18277]" "f[18279]" "f[18286]" "f[18289]" "f[18345]" "f[18348:18349]" "f[18361:18363]" "f[18365:18366]" "f[18375:18376]" "f[18379]" "f[18382]" "f[18384]" "f[18386]" "f[18397:18399]" "f[18401]" "f[18410:18411]" "f[18415:18417]" "f[18427:18429]" "f[18437]" "f[18442:18444]" "f[18449:18452]" "f[18459]" "f[18466:18467]" "f[18469]" "f[18526:18528]" "f[18533:18536]" "f[18543]" "f[18550:18551]" "f[18553]" "f[18555]" "f[18559:18560]" "f[18565:18568]" "f[18575]" "f[18581]" "f[18583:18584]" "f[18590:18592]" "f[18605:18607]" "f[18617]" "f[18622:18624]" "f[18634:18636]" "f[18639]" "f[18648:18649]" "f[18654:18656]" "f[18667:18669]" "f[18671]" "f[18678]" "f[18681]" "f[18685]" "f[18687:18688]" "f[18693:18696]" "f[18703]" "f[18710:18711]" "f[18713]" "f[18718:18720]" "f[18733:18735]" "f[18745]" "f[18747]" "f[18751:18752]" "f[18757:18760]" "f[18767]" "f[18773]" "f[18775:18776]" "f[18782:18784]" "f[18789:18791]" "f[18799]" "f[18806]" "f[18809]" "f[18811]" "f[18815]" "f[18820:18822]" "f[18833]" "f[18835]" "f[18840:18841]" "f[18853]" "f[18865]" "f[18867:18868]" "f[18879:18880]" "f[18883]" "f[18893]" "f[18924:18926]" "f[18931:18933]" "f[18941]" "f[18948]" "f[18951]" "f[18953]" "f[18957]" "f[18962:18964]" "f[18975]" "f[18977]" "f[18982:18983]" "f[18995]" "f[19007]" "f[19009:19010]" "f[19021:19022]" "f[19025]" "f[19035]" "f[19040:19042]" "f[19047:19049]" "f[19057]" "f[19064]" "f[19067]" "f[19069]" "f[19073]" "f[19078:19080]" "f[19091]" "f[19093]" "f[19098:19099]" "f[19111]" "f[19123]" "f[19125:19126]" "f[19137:19138]" "f[19141]" "f[19151]" "f[19182:19184]" "f[19189:19191]" "f[19199]" "f[19206]" "f[19209]" "f[19211]" "f[19215]" "f[19220:19222]" "f[19233]" "f[19235]" "f[19240:19241]" "f[19253]" "f[19265]" "f[19267:19268]" "f[19273:19275]" "f[19283]" "f[19288:19289]" "f[19298:19300]" "f[19305:19308]" "f[19315]" "f[19322:19323]" "f[19325]" "f[19330:19332]" "f[19342:19344]" "f[19347]" "f[19356:19357]" "f[19361]" "f[19363:19364]" "f[19375:19377]" "f[19379]" "f[19386]" "f[19389]" "f[19394:19396]" "f[19401:19404]" "f[19411]" "f[19418:19419]" "f[19421]" "f[19426:19428]" "f[19433:19435]" "f[19443]" "f[19450]" "f[19453]" "f[19455]" "f[19459]" "f[19464:19466]" "f[19477]" "f[19479]" "f[19484:19485]" "f[19497]" "f[19509]" "f[19511:19512]" "f[19523:19524]" "f[19527]" "f[19537]" "f[19568:19570]" "f[19575:19577]" "f[19585]" "f[19592]" "f[19595]" "f[19597]" "f[19601]" "f[19606:19608]" "f[19619]" "f[19621]" "f[19626:19627]" "f[19639]" "f[19651]" "f[19653:19654]" "f[19665:19666]" "f[19669]" "f[19679]" "f[19710:19712]" "f[19717:19719]" "f[19727]" "f[19734]" "f[19737]" "f[19739]" "f[19743]" "f[19748:19750]" "f[19761]" "f[19763]" "f[19768:19769]" "f[19781]" "f[19793]" "f[19795:19796]" "f[19807:19808]" "f[19811]" "f[19821]" "f[19852:19854]" "f[19859:19861]" "f[19869]" "f[19876]" "f[19879]" "f[19881]" "f[19885]" "f[19890:19892]" "f[19903]" "f[19905]" "f[19910:19911]" "f[19923]" "f[19935]" "f[19937:19938]" "f[19949:19950]" "f[19953]" "f[19963]" "f[19994:19996]" "f[20001:20003]" "f[20011]" "f[20016]" "f[20018]" "f[20026]" "f[20028:20029]" "f[20033:20037]" "f[20044:20045]" "f[20047]" "f[20053:20056]" "f[20058]" "f[20064:20065]" "f[20077]" "f[20087]" "f[20092]" "f[20098:20103]" "f[20113]" "f[20115:20117]" "f[20174:20176]" "f[20181:20183]" "f[20191]" "f[20196]" "f[20198]" "f[20206]" "f[20208:20209]" "f[20213:20217]" "f[20224:20225]" "f[20227]" "f[20233:20236]" "f[20238]" "f[20244:20245]" "f[20257]" "f[20267]" "f[20272]" "f[20278:20283]" "f[20293]" "f[20295:20297]" "f[20379]" "f[20381:20382]" "f[20393:20394]" "f[20397]" "f[20407]" "f[20412:20414]" "f[20419:20421]" "f[20429]" "f[20436]" "f[20439]" "f[20444:20445]" "f[20457]" "f[20467]" "f[20471]" "f[20476:20478]" "f[20489]" "f[20491]" "f[20495]" "f[20497:20498]" "f[20509:20510]" "f[20513]" "f[20523]" "f[20528:20530]" "f[20535:20537]" "f[20545]" "f[20552]" "f[20555]" "f[20560:20561]" "f[20573]" "f[20583]" "f[20587]" "f[20592:20594]" "f[20605]" "f[20607]" "f[20612:20614]" "f[20624:20626]" "f[20629]" "f[20638:20639]" "f[20644:20646]" "f[20651:20654]" "f[20661]" "f[20668:20669]" "f[20671]" "f[20676:20678]" "f[20691:20693]" "f[20703]" "f[20705]" "f[20709:20710]" "f[20715:20718]" "f[20725]" "f[20731]" "f[20733:20734]" "f[20740:20742]" "f[20747:20749]" "f[20757]" "f[20764]" "f[20767]" "f[20769]" "f[20773]" "f[20778:20780]" "f[20791]" "f[20793]" "f[20798:20799]" "f[20811]" "f[20823]" "f[20825:20826]" "f[20837:20838]" "f[20841]" "f[20849]" "f[20855]" "f[20857:20858]" "f[20869:20870]" "f[20873]" "f[20883]" "f[20888:20890]" "f[20895:20897]" "f[20905]" "f[20912]" "f[20915]" "f[20920:20921]" "f[20933]" "f[20943]" "f[20947]" "f[20952:20954]" "f[20965]" "f[20967]" "f[20971]" "f[20973:20974]" "f[20979:20982]" "f[20989]" "f[20996:20997]" "f[20999]" "f[21004:21006]" "f[21017:21019]" "f[21021]" "f[21028]" "f[21031]" "f[21035]" "f[21037:21038]" "f[21049:21051]" "f[21053]" "f[21060]" "f[21063]" "f[21068:21070]" "f[21075:21078]" "f[21085]" "f[21092:21093]" "f[21095]" "f[21099]" "f[21101:21102]" "f[21113:21114]" "f[21117]" "f[21127]" "f[21132:21134]" "f[21139:21141]" "f[21149]" "f[21156]" "f[21159]" "f[21164:21165]" "f[21177]" "f[21187]" "f[21191]" "f[21196:21198]" "f[21209]" "f[21211]" "f[21216:21218]" "f[21228:21230]" "f[21233]" "f[21242:21243]" "f[21248:21250]" "f[21255:21258]" "f[21265]" "f[21272:21273]" "f[21275]" "f[21280:21282]" "f[21295:21297]" "f[21307]" "f[21309]" "f[21313:21314]" "f[21319:21322]" "f[21329]" "f[21335]" "f[21337:21338]" "f[21344:21346]" "f[21351:21353]" "f[21361]" "f[21366]" "f[21368]" "f[21376]" "f[21378:21379]" "f[21384:21386]" "f[21395:21397]" "f[21404]" "f[21406]" "f[21409]" "f[21414:21415]" "f[21427]" "f[21436]" "f[21441]" "f[21446:21450]" "f[21458]" "f[21460:21461]" "f[21465]" "f[21467:21468]" "f[21479:21480]" "f[21483]" "f[21493]" "f[21498:21500]" "f[21505:21507]" "f[21515]" "f[21522]" "f[21525]" "f[21530:21531]" "f[21543]" "f[21553]" "f[21557]" "f[21562:21564]" "f[21575]" "f[21577]" "f[21581:21582]" "f[21584]" "f[21595:21597]" "f[21599]" "f[21606]" "f[21609]" "f[21614:21616]" "f[21621:21624]" "f[21631]" "f[21636]" "f[21640:21641]" "f[21646:21648]" "f[21661:21663]" "f[21673]" "f[21677:21678]" "f[21680]" "f[21685:21688]" "f[21695]" "f[21702:21704]" "f[21709:21710]" "f[21712]" "f[21723:21725]" "f[21727]" "f[21734]" "f[21737]" "f[21742:21744]" "f[21749:21752]" "f[21759]" "f[21764]" "f[21768:21769]" "f[21774:21776]" "f[21789:21791]" "f[21801]" "f[21805:21806]" "f[21808]" "f[21813:21816]" "f[21823]" "f[21830:21832]" "f[21863]" "f[21865:21866]" "f[21871:21873]" "f[21881]" "f[21889:21890]" "f[21896]" "f[21898:21899]" "f[21904:21906]" "f[21915:21917]" "f[21924]" "f[21926]" "f[21929]" "f[21934:21935]" "f[21947]" "f[21956]" "f[21961]" "f[21966:21970]" "f[21978]" "f[21980:21981]" "f[21985:21986]" "f[21988]" "f[21999:22001]" "f[22003]" "f[22010]" "f[22013]" "f[22018:22020]" "f[22025:22028]" "f[22035]" "f[22040]" "f[22044:22045]" "f[22050:22052]" "f[22065:22067]" "f[22077]" "f[22081:22082]" "f[22084]" "f[22089:22092]" "f[22099]" "f[22106:22108]" "f[22114]" "f[22116:22117]" "f[22122:22124]" "f[22133:22135]" "f[22142]" "f[22144]" "f[22147:22148]" "f[22153]" "f[22158:22162]" "f[22170]" "f[22172:22173]" "f[22178:22179]" "f[22191]" "f[22204:22206]" "f[22211:22213]" "f[22221]" "f[22226]" "f[22228]" "f[22262:22264]" "f[22274:22276]" "f[22279]" "f[22288:22289]" "f[22294:22296]" "f[22301:22304]" "f[22311]" "f[22318:22319]" "f[22321]" "f[22326:22328]" "f[22341:22343]" "f[22353]" "f[22355]" "f[22359:22360]" "f[22365:22368]" "f[22375]" "f[22381]" "f[22383:22384]" "f[22389]" "f[22392:22393]" "f[22404:22406]" "f[22410:22411]" "f[22420]" "f[22422]" "f[22424]" "f[22429]" "f[22434:22438]" "f[22446]" "f[22448:22449]" "f[22453]" "f[22455]" "f[22467]" "f[22481:22483]" "f[22487:22490]" "f[22495:22497]" "f[22505:22506]" "f[22509:22511]" "f[22517]" "f[22519:22520]" "f[22531:22532]" "f[22535]" "f[22545]" "f[22550:22552]" "f[22557:22559]" "f[22567]" "f[22574]" "f[22577]" "f[22582:22583]" "f[22595]" "f[22605]" "f[22609]" "f[22614:22616]" "f[22627]" "f[22629]" "f[22634:22636]" "f[22646:22648]" "f[22651]" "f[22660:22661]" "f[22666:22668]" "f[22681:22683]" "f[22693]" "f[22698:22700]" "f[22711:22713]" "f[22715]" "f[22721]" "f[22725]" "f[22729]" "f[22732:22733]" "f[22737:22744]" "f[22755:22756]" "f[22759]" "f[22761:22763]" "f[22767]" "f[22769:22770]" "f[22781:22782]" "f[22785]" "f[22795]" "f[22800:22802]" "f[22807:22809]" "f[22817]" "f[22824]" "f[22827]" "f[22832:22833]" "f[22845]" "f[22855]" "f[22859]" "f[22864:22866]" "f[22877]" "f[22879]" "f[22884:22886]" "f[22896:22898]" "f[22901]" "f[22910:22911]" "f[22916:22918]" "f[22923:22926]" "f[22933]" "f[22940:22941]" "f[22943]" "f[22948:22950]" "f[22963:22965]" "f[22975]" "f[22977]" "f[22981:22982]" "f[22987:22990]" "f[22997]" "f[23003]" "f[23005:23006]" "f[23011:23012]" "f[23014]" "f[23025:23027]" "f[23029]" "f[23036]" "f[23039]" "f[23044:23046]" "f[23051:23054]" "f[23061]" "f[23066]" "f[23070:23071]" "f[23076:23078]" "f[23091:23093]" "f[23103]" "f[23107:23108]" "f[23110]" "f[23115:23118]" "f[23125]" "f[23132:23134]" "f[23139]" "f[23142:23143]" "f[23154:23156]" "f[23160:23161]" "f[23170]" "f[23172]" "f[23174]" "f[23179]" "f[23184:23188]" "f[23196]" "f[23198:23199]" "f[23203]" "f[23205]" "f[23217]" "f[23231:23233]" "f[23237:23240]" "f[23245:23247]" "f[23255:23256]" "f[23259:23261]" "f[23268:23270]" "f[23280:23282]" "f[23285]" "f[23294:23295]" "f[23300:23302]" "f[23307:23310]" "f[23317]" "f[23324:23325]" "f[23327]" "f[23332:23334]" "f[23347:23349]" "f[23359]" "f[23361]" "f[23365:23366]" "f[23371:23374]" "f[23381]" "f[23387]" "f[23389:23390]" "f[23448:23450]" "f[23455:23457]" "f[23465]" "f[23470]" "f[23472]" "f[23480]" "f[23482:23483]" "f[23487:23491]" "f[23498:23499]" "f[23501]" "f[23507:23510]" "f[23512]" "f[23518:23519]" "f[23531]" "f[23541]" "f[23546]" "f[23552:23557]" "f[23567]" "f[23569:23571]" "f[23627]" "f[23629:23630]" "f[23635:23637]" "f[23645]" "f[23653:23654]" "f[23660]" "f[23662:23663]" "f[23668:23670]" "f[23679:23681]" "f[23688]" "f[23690]" "f[23693]" "f[23698:23699]" "f[23711]" "f[23720]" "f[23725]" "f[23730:23734]" "f[23742]" "f[23744:23745]" "f[23750:23752]" "f[23757:23759]" "f[23767]" "f[23772]" "f[23774]" "f[23782]" "f[23784:23785]" "f[23789:23793]" "f[23800:23801]" "f[23803]" "f[23809:23812]" "f[23814]" "f[23820:23821]" "f[23833]" "f[23843]" "f[23848]" "f[23854:23859]" "f[23869]" "f[23871:23873]" "f[23877]" "f[23879:23880]" "f[23891:23892]" "f[23895]" "f[23905]" "f[23910:23912]" "f[23917:23919]" "f[23927]" "f[23934]" "f[23937]" "f[23942:23943]" "f[23955]" "f[23965]" "f[23969]" "f[23974:23976]" "f[23987]" "f[23989]" "f[24046:24048]" "f[24053:24055]" "f[24063]" "f[24068]" "f[24070]" "f[24078]" "f[24080:24081]" "f[24085:24089]" "f[24096:24097]" "f[24099]" "f[24105:24108]" "f[24110]" "f[24116:24117]" "f[24129]" "f[24139]" "f[24144]" "f[24150:24155]" "f[24165]" "f[24167:24169]" "f[24225]" "f[24227:24228]" "f[24233:24235]" "f[24243]" "f[24251:24252]" "f[24258]" "f[24260:24261]" "f[24266:24268]" "f[24277:24279]" "f[24286]" "f[24288]" "f[24291]" "f[24296:24297]" "f[24309]" "f[24318]" "f[24323]" "f[24328:24332]" "f[24340]" "f[24342:24343]" "f[24373]" "f[24375:24376]" "f[24387:24388]" "f[24391]" "f[24401]" "f[24406:24408]" "f[24413:24415]" "f[24423]" "f[24430]" "f[24433]" "f[24438:24439]" "f[24451]" "f[24461]" "f[24465]" "f[24470:24472]" "f[24483]" "f[24485]" "f[24489:24490]" "f[24492]" "f[24503:24505]" "f[24507]" "f[24514]" "f[24517]" "f[24522:24524]" "f[24529:24532]" "f[24539]" "f[24544]" "f[24548:24549]" "f[24554:24556]" "f[24569:24571]" "f[24581]" "f[24585:24586]" "f[24588]" "f[24593:24596]" "f[24603]" "f[24610:24612]" "f[24618:24620]" "f[24625:24627]" "f[24635]" "f[24640]" "f[24642]" "f[24650]" "f[24652:24653]" "f[24658:24660]" "f[24669:24671]" "f[24678]" "f[24680]" "f[24683]" "f[24688:24689]" "f[24701]" "f[24710]" "f[24715]" "f[24720:24724]" "f[24732]" "f[24734:24735]" "f[24765:24766]" "f[24768]" "f[24779:24781]" "f[24783]" "f[24790]" "f[24793]" "f[24798:24800]" "f[24805:24808]" "f[24815]" "f[24820]" "f[24824:24825]" "f[24830:24832]" "f[24845:24847]" "f[24857]" "f[24861:24862]" "f[24864]" "f[24869:24872]" "f[24879]" "f[24886:24888]" "f[24946:24948]" "f[24953:24956]" "f[24963]" "f[24970:24971]" "f[24973]" "f[24976]" "f[24979:24980]" "f[24991:24993]" "f[24995]" "f[25002]" "f[25005]" "f[25010:25012]" "f[25023:25025]" "f[25027]" "f[25034]" "f[25037]" "f[25041]" "f[25043:25044]" "f[25049:25052]" "f[25059]" "f[25066:25067]" "f[25069]" "f[25100:25102]" "f[25107:25112]" "f[25123]" "f[25125:25127]" "f[25131]" "f[25133:25134]" "f[25145:25147]" "f[25149]" "f[25155]" "f[25159]" "f[25163]" "f[25165:25166]" "f[25177:25180]" "f[25189]" "f[25191:25192]" "f[25197:25198]" "f[25203:25208]" "f[25218]" "f[25220]" "f[25222:25223]" "f[25227:25228]" "f[25230]" "f[25235:25238]" "f[25245]" "f[25250]" "f[25254:25255]" "f[25260:25261]" "f[25263]" "f[25271:25276]" "f[25286]" "f[25290]" "f[25292:25293]" "f[25298:25300]" "f[25313:25315]" "f[25325]" "f[25329:25330]" "f[25332]" "f[25345:25347]" "f[25356]" "f[25413:25415]" "f[25423:25425]" "f[25427]" "f[25432]" "f[25435]" "f[25440:25442]" "f[25447:25450]" "f[25457]" "f[25464:25465]" "f[25467]" "f[25471]" "f[25474:25475]" "f[25481:25484]" "f[25493]" "f[25499]" "f[25502]" "f[25505]" "f[25509:25510]" "f[25512]" "f[25525:25527]" "f[25536]" "f[25542:25544]" "f[25549:25552]" "f[25559]" "f[25565]" "f[25568:25569]" "f[25574:25576]" "f[25581:25584]" "f[25591]" "f[25598:25599]" "f[25601]" "f[25606:25608]" "f[25613:25616]" "f[25623]" "f[25629]" "f[25632:25633]" "f[25635]" "f[25637]" "f[25640]" "f[25653:25655]" "f[25663]" "f[25669:25671]" "f[25678:25680]" "f[25683]" "f[25688]" "f[25691]" "f[25694:25695]" "f[25698]" "f[25707:25711]" "f[25719]" "f[25722:25723]" "f[25727]" "f[25730:25731]" "f[25743:25745]" "f[25747:25748]" "f[25757]" "f[25759]" "f[25761]" "f[25765:25766]" "f[25768]" "f[25773:25776]" "f[25783]" "f[25790:25792]" "f[25798:25800]" "f[25805:25808]" "f[25814]" "f[25820]" "f[25824:25825]" "f[25830]" "f[25832:25833]" "f[25837:25842]" "f[25850]" "f[25855]" "f[25857]" "f[25860:25861]" "f[25863]" "f[25867]" "f[25869:25870]" "f[25878:25880]" "f[25885]" "f[25893]" "f[25895]" "f[25900:25901]" "f[25903]" "f[25919:25921]" "f[25930]" "f[25938:25940]" "f[25945:25948]" "f[25955]" "f[25961]" "f[25964:25965]" "f[25970:25972]" "f[25977:25980]" "f[25987]" "f[25994:25995]" "f[25997]" "f[26001]" "f[26003:26004]" "f[26012:26014]" "f[26019]" "f[26027]" "f[26029]" "f[26032]" "f[26034]" "f[26036]" "f[26044:26046]" "f[26051]" "f[26059]" "f[26061]" "f[26118]" "f[26120]" "f[26134:26135]" "f[26149]" "f[26151:26152]" "f[26163:26164]" "f[26167]" "f[26176]" "f[26182]" "f[26184:26185]" "f[26191:26195]" "f[26198:26199]" "f[26203]" "f[26209:26211]" "f[26213:26214]" "f[26217]" "f[26221]" "f[26226:26228]" "f[26239]" "f[26241]" "f[26246]" "f[26248]" "f[26262:26263]" "f[26277]" "f[26279:26280]" "f[26291:26292]" "f[26295]" "f[26304]" "f[26310]" "f[26312:26313]" "f[26319:26323]" "f[26326:26327]" "f[26331]" "f[26337:26339]" "f[26341:26342]" "f[26345]" "f[26349]" "f[26354:26356]" "f[26367]" "f[26369]" "f[26374:26375]" "f[26387]" "f[26400]" "f[26402:26403]" "f[26408:26410]" "f[26419:26421]" "f[26428]" "f[26430]" "f[26433]" "f[26437]" "f[26439:26440]" "f[26445:26447]" "f[26455]" "f[26463:26464]" "f[26466]" "f[26471]" "f[26476:26480]" "f[26488]" "f[26490:26491]" "f[26497:26498]" "f[26512]" "f[26528]" "f[26530:26531]" "f[26536:26538]" "f[26547:26549]" "f[26556]" "f[26558]" "f[26561]" "f[26565]" "f[26567:26568]" "f[26572:26575]" "f[26582:26583]" "f[26587]" "f[26590]" "f[26593:26594]" "f[26599]" "f[26604:26608]" "f[26616]" "f[26618:26619]" "f[26624:26625]" "f[26637]" "f[26650]" "f[26652:26653]" "f[26658:26660]" "f[26669:26671]" "f[26678]" "f[26680]" "f[26683]" "f[26687]" "f[26689:26690]" "f[26695:26697]" "f[26705]" "f[26713:26714]" "f[26716]" "f[26721]" "f[26726:26730]" "f[26738]" "f[26740:26741]" "f[26746]" "f[26748]" "f[26762:26763]" "f[26777]" "f[26780:26781]" "f[26785:26789]" "f[26798:26799]" "f[26804:26805]" "f[26808]" "f[26810]" "f[26817:26819]" "f[26823:26827]" "f[26832:26834]" "f[26841:26842]" "f[26844:26846]" "f[26849]" "f[26851]" "f[26856]" "f[26862:26867]" "f[26877]" "f[26879:26881]" "f[26886:26888]" "f[26893:26898]" "f[26909]" "f[26911:26913]" "f[26917]" "f[26919:26920]" "f[26931:26933]" "f[26935]" "f[26941]" "f[26945]" "f[26949]" "f[26951:26952]" "f[26963:26966]" "f[26975]" "f[26977:26978]" "f[26983:26984]" "f[26989:26994]" "f[27004]" "f[27006]" "f[27008:27009]" "f[27040:27042]" "f[27053:27055]" "f[27057]" "f[27063]" "f[27067]" "f[27072:27074]" "f[27086:27089]" "f[27099]" "f[27104:27106]" "f[27116:27118]" "f[27121]" "f[27130:27131]" "f[27136]" "f[27138:27139]" "f[27144:27147]" "f[27155:27156]" "f[27163]" "f[27166]" "f[27168:27169]" "f[27226:27228]" "f[27233:27236]" "f[27243]" "f[27249]" "f[27252:27253]" "f[27258:27260]" "f[27265:27268]" "f[27275]" "f[27282:27283]" "f[27285]" "f[27290:27292]" "f[27297:27300]" "f[27307]" "f[27313]" "f[27316:27317]" "f[27320]" "f[27323:27324]" "f[27332:27334]" "f[27339]" "f[27347:27348]" "f[27354:27356]" "f[27361:27364]" "f[27370]" "f[27376]" "f[27380:27381]" "f[27384:27385]" "f[27388]" "f[27397:27401]" "f[27409]" "f[27412:27413]" "f[27418:27420]" "f[27431:27434]" "f[27443]" "f[27445]" "f[27449:27450]" "f[27452]" "f[27457:27460]" "f[27467]" "f[27472]" "f[27476:27477]" "f[27482:27484]" "f[27489:27492]" "f[27498]" "f[27504]" "f[27508:27509]" "f[27514]" "f[27516:27517]" "f[27522:27525]" "f[27533:27534]" "f[27542]" "f[27544]" "f[27546:27547]" "f[27551]" "f[27553:27554]" "f[27562:27564]" "f[27569]" "f[27577]" "f[27579]" "f[27581]" "f[27585:27586]" "f[27592:27598]" "f[27607:27611]" "f[27616:27618]" "f[27623:27628]" "f[27639]" "f[27641:27643]" "f[27646:27647]" "f[27650]" "f[27659:27663]" "f[27671]" "f[27674:27675]" "f[27680:27682]" "f[27693:27696]" "f[27705]" "f[27707]" "f[27711:27712]" "f[27714]" "f[27719:27722]" "f[27729]" "f[27734]" "f[27738:27739]" "f[27744:27746]" "f[27751:27754]" "f[27761]" "f[27767]" "f[27770:27771]" "f[27775:27777]" "f[27781:27784]" "f[27789]" "f[27794]" "f[27796:27797]" "f[27801]" "f[27803:27804]" "f[27815:27818]" "f[27827]" "f[27829]" "f[27832]" "f[27835]" "f[27837]" "f[27845:27847]" "f[27855]" "f[27864]" "f[27866]" "f[27872:27874]" "f[27879:27882]" "f[27888]" "f[27894]" "f[27898:27899]" "f[27904]" "f[27906:27907]" "f[27912:27915]" "f[27925]" "f[27933]" "f[27936:27937]" "f[27941]" "f[27943:27944]" "f[27952:27954]" "f[27959]" "f[27967]" "f[27969]" "f[27971:27972]" "f[27975]" "f[27979:27982]" "f[27987]" "f[27992:27994]" "f[28000:28002]" "f[28007:28009]" "f[28017]" "f[28025]" "f[28027]" "f[28032:28034]" "f[28039:28041]" "f[28049]" "f[28056]" "f[28058]" "f[28063]" "f[28065]" "f[28073:28074]" "f[28085]" "f[28088]" "f[28091]" "f[28099:28100]" "f[28111]" "f[28116:28118]" "f[28123:28126]" "f[28133]" "f[28139]" "f[28142:28143]" "f[28148:28150]" "f[28155:28158]" "f[28165]" "f[28172:28173]" "f[28175]" "f[28180:28182]" "f[28187:28190]" "f[28197]" "f[28203]" "f[28206:28207]" "f[28209]" "f[28211]" "f[28214]" "f[28227:28229]" "f[28237]" "f[28243:28245]" "f[28250:28253]" "f[28257]" "f[28262:28263]" "f[28265]" "f[28268:28269]" "f[28272]" "f[28281:28285]" "f[28293]" "f[28296:28297]" "f[28301]" "f[28304:28305]" "f[28317:28319]" "f[28321:28322]" "f[28331]" "f[28333]" "f[28335]" "f[28339:28340]" "f[28342]" "f[28347:28350]" "f[28357]" "f[28364:28366]" "f[28371:28372]" "f[28374]" "f[28385:28387]" "f[28389]" "f[28398:28399]" "f[28403:28404]" "f[28406]" "f[28411:28414]" "f[28421]" "f[28427:28428]" "f[28431]" "f[28435:28436]" "f[28438]" "f[28443:28446]" "f[28453]" "f[28458]" "f[28462:28463]" "f[28465]" "f[28467]" "f[28470]" "f[28483:28485]" "f[28494]" "f[28500]" "f[28502]" "f[28516:28517]" "f[28531]" "f[28534:28535]" "f[28546:28548]" "f[28552:28553]" "f[28562]" "f[28564]" "f[28570]" "f[28572:28573]" "f[28577:28581]" "f[28589:28591]" "f[28595]" "f[28599:28600]" "f[28603:28604]" "f[28609]" "f[28614:28618]" "f[28626]" "f[28628:28629]" "f[28738:28739]" "f[28751]" "f[28764:28766]" "f[28771:28773]" "f[28781]" "f[28788]" "f[28791]" "f[28795]" "f[28797:28798]" "f[28809:28810]" "f[28813]" "f[28823]" "f[28825]" "f[28829]" "f[28834:28836]" "f[28847]" "f[28849]" "f[28880:28881]" "f[28893]" "f[28906:28908]" "f[28913:28915]" "f[28923]" "f[28930]" "f[28933]" "f[28937]" "f[28939:28940]" "f[28951:28952]" "f[28955]" "f[28965]" "f[28967]" "f[28971]" "f[28976:28978]" "f[28989]" "f[28991]" "f[28996:28998]" "f[29011:29013]" "f[29023]" "f[29028:29029]" "f[29031]" "f[29039:29044]" "f[29054]" "f[29058]" "f[29060:29061]" "f[29065:29066]" "f[29068]" "f[29073:29076]" "f[29083]" "f[29088]" "f[29092:29093]" "f[29097:29098]" "f[29100]" "f[29113:29115]" "f[29124]" "f[29182:29184]" "f[29189:29192]" "f[29198]" "f[29204]" "f[29208:29209]" "f[29212:29213]" "f[29216]" "f[29225:29229]" "f[29237]" "f[29240:29241]" "f[29246:29248]" "f[29259:29262]" "f[29271]" "f[29273]" "f[29277:29278]" "f[29280]" "f[29285:29288]" "f[29295]" "f[29300]" "f[29304:29305]" "f[29336:29338]" "f[29343:29348]" "f[29359]" "f[29361:29363]" "f[29366:29367]" "f[29370]" "f[29379:29383]" "f[29390]" "f[29394:29395]" "f[29400:29402]" "f[29413:29416]" "f[29425]" "f[29427]" "f[29429]" "f[29433]" "f[29435]" "f[29441:29447]" "f[29459]" "f[29461:29462]" "f[29464:29465]" "f[29470:29472]" "f[29477:29479]" "f[29485:29486]" "f[29492]" "f[29494]" "f[29497]" "f[29502]" "f[29504:29505]" "f[29510:29512]" "f[29521:29522]" "f[29531]" "f[29533:29534]" "f[29539]" "f[29541]" "f[29549:29550]" "f[29561]" "f[29563]" "f[29567]" "f[29573:29577]" "f[29585:29587]" "f[29592:29593]" "f[29598:29600]" "f[29610]" "f[29613]" "f[29618:29619]" "f[29624:29626]" "f[29638:29639]" "f[29643]" "f[29645:29646]" "f[29655:29656]" "f[29661]" "f[29670]" "f[29674]" "f[29676]" "f[29678]" "f[29687:29688]" "f[29693]" "f[29701]" "f[29708:29710]" "f[29715:29718]" "f[29725]" "f[29731]" "f[29734:29735]" "f[29740:29742]" "f[29747:29750]" "f[29757]" "f[29764:29765]" "f[29767]" "f[29771]" "f[29773:29774]" "f[29782:29784]" "f[29789]" "f[29797]" "f[29799]" "f[29802]" "f[29805:29806]" "f[29814:29816]" "f[29821]" "f[29829:29830]" "f[29835:29837]" "f[29845:29847]" "f[29849]" "f[29854]" "f[29857]" "f[29861:29863]" "f[29867:29870]" "f[29875]" "f[29880]" "f[29882:29883]" "f[29887]" "f[29890:29891]" "f[29903:29905]" "f[29907:29908]" "f[29917]" "f[29919]" "f[29921]" "f[29924]" "f[29926]" "f[29929]" "f[29934:29937]" "f[29947]" "f[29955]" "f[29957:29958]" "f[29990:29992]" "f[29997:30000]" "f[30007]" "f[30013]" "f[30016:30017]" "f[30019:30020]" "f[30024]" "f[30029:30032]" "f[30039]" "f[30046:30047]" "f[30049]" "f[30054:30056]" "f[30061:30064]" "f[30071]" "f[30077]" "f[30080:30081]" "f[30084]" "f[30087:30088]" "f[30096:30098]" "f[30103]" "f[30111:30112]" "f[30117:30119]" "f[30127:30129]" "f[30131]" "f[30136]" "f[30139]" "f[30141:30142]" "f[30145]" "f[30149:30152]" "f[30157]" "f[30163:30165]" "f[30169]" "f[30172:30173]" "f[30185:30187]" "f[30189:30190]" "f[30199]" "f[30201]" "f[30203]" "f[30208]" "f[30210:30211]" "f[30227:30229]" "f[30240]" "f[30272:30274]" "f[30285:30287]" "f[30289]" "f[30295]" "f[30299]" "f[30303:30304]" "f[30306]" "f[30311:30314]" "f[30321]" "f[30327:30328]" "f[30331]" "f[30335:30336]" "f[30338]" "f[30343:30346]" "f[30353]" "f[30358]" "f[30362:30363]" "f[30367:30368]" "f[30370]" "f[30383:30385]" "f[30394]";
+	setAttr ".ic" -type "componentList" 1276 "f[134]" "f[136:137]" "f[142:145]" "f[153:154]" "f[161]" "f[165:167]" "f[171]" "f[173:174]" "f[179:182]" "f[189]" "f[196:197]" "f[199]" "f[256:258]" "f[263:266]" "f[273]" "f[280:281]" "f[283]" "f[288:290]" "f[299:301]" "f[305]" "f[310]" "f[314]" "f[320:322]" "f[327:330]" "f[337]" "f[343]" "f[346:347]" "f[352:354]" "f[363:365]" "f[369]" "f[376]" "f[379]" "f[461:462]" "f[464]" "f[469:472]" "f[479]" "f[486]" "f[488:489]" "f[494:496]" "f[501:504]" "f[511]" "f[517]" "f[520:521]" "f[526:528]" "f[537:539]" "f[543]" "f[548]" "f[552]" "f[558:560]" "f[569:571]" "f[575]" "f[582]" "f[585]" "f[587]" "f[591:592]" "f[597:600]" "f[607]" "f[613]" "f[615:616]" "f[622:624]" "f[637:639]" "f[649]" "f[654:656]" "f[666:668]" "f[671]" "f[679]" "f[681]" "f[686:688]" "f[693:696]" "f[703]" "f[710:711]" "f[713]" "f[769]" "f[771:772]" "f[777:780]" "f[787]" "f[794:795]" "f[797]" "f[802:804]" "f[809:812]" "f[819]" "f[825]" "f[827]" "f[829]" "f[831]" "f[835:836]" "f[844:846]" "f[851]" "f[859:860]" "f[866:868]" "f[876:878]" "f[883]" "f[891]" "f[893]" "f[1052]" "f[1055:1056]" "f[1064:1066]" "f[1071]" "f[1076]" "f[1081]" "f[1086:1088]" "f[1093:1098]" "f[1108]" "f[1111:1113]" "f[1117]" "f[1119:1120]" "f[1131:1134]" "f[1141]" "f[1144]" "f[1150:1152]" "f[1165:1167]" "f[1177]" "f[1441:1442]" "f[1444]" "f[1449:1452]" "f[1459]" "f[1466]" "f[1468:1469]" "f[1474:1476]" "f[1485:1487]" "f[1491]" "f[1496]" "f[1500]" "f[1506:1508]" "f[1513:1516]" "f[1523]" "f[1529]" "f[1532:1533]" "f[1538:1540]" "f[1549:1551]" "f[1555]" "f[1562]" "f[1565]" "f[1595:1596]" "f[1598]" "f[1603:1606]" "f[1613]" "f[1620]" "f[1622:1623]" "f[1628:1630]" "f[1639:1641]" "f[1645]" "f[1650]" "f[1654]" "f[1660:1662]" "f[1667:1670]" "f[1677]" "f[1683]" "f[1686:1687]" "f[1692:1694]" "f[1703:1705]" "f[1709]" "f[1716]" "f[1719]" "f[1878]" "f[1880]" "f[1882]" "f[1891:1893]" "f[1897]" "f[1904]" "f[1906]" "f[1913:1915]" "f[1923:1925]" "f[1931:1932]" "f[1943:1945]" "f[1949:1951]" "f[1961:1963]" "f[1970]" "f[1976:1978]" "f[1991:1993]" "f[2003]" "f[2033]" "f[2035:2036]" "f[2041:2044]" "f[2051]" "f[2056]" "f[2060:2061]" "f[2066:2068]" "f[2073:2078]" "f[2088]" "f[2091:2093]" "f[2098:2100]" "f[2111:2113]" "f[2115]" "f[2121]" "f[2125]" "f[2130:2132]" "f[2145:2147]" "f[2157]" "f[2185]" "f[2189:2190]" "f[2195:2198]" "f[2205]" "f[2211]" "f[2213:2214]" "f[2220:2222]" "f[2235:2237]" "f[2247]" "f[2252:2254]" "f[2264:2266]" "f[2269]" "f[2277]" "f[2279]" "f[2284:2286]" "f[2291:2294]" "f[2301]" "f[2308:2309]" "f[2311]" "f[2339]" "f[2343:2344]" "f[2349:2352]" "f[2359]" "f[2365]" "f[2367:2368]" "f[2374:2376]" "f[2389:2391]" "f[2401]" "f[2406:2408]" "f[2418:2420]" "f[2423]" "f[2431]" "f[2433]" "f[2438:2440]" "f[2445:2448]" "f[2455]" "f[2462:2463]" "f[2465]" "f[2625]" "f[2627:2628]" "f[2633:2636]" "f[2643]" "f[2650:2651]" "f[2653]" "f[2658:2660]" "f[2665:2668]" "f[2675]" "f[2681]" "f[2683]" "f[2685]" "f[2687]" "f[2691:2692]" "f[2700:2702]" "f[2707]" "f[2715:2716]" "f[2722:2724]" "f[2732:2734]" "f[2739]" "f[2747]" "f[2749]" "f[2883]" "f[2885:2886]" "f[2899:2901]" "f[2911]" "f[2993]" "f[2995:2996]" "f[3001:3003]" "f[3011]" "f[3018]" "f[3020]" "f[3024]" "f[3026]" "f[3028]" "f[3033:3036]" "f[3043]" "f[3048]" "f[3052:3053]" "f[3057]" "f[3059:3060]" "f[3065:3068]" "f[3074]" "f[3080]" "f[3084:3085]" "f[3090:3092]" "f[3103:3106]" "f[3115]" "f[3117]" "f[3277:3278]" "f[3280]" "f[3285:3288]" "f[3295]" "f[3302]" "f[3304:3305]" "f[3310:3312]" "f[3317:3320]" "f[3327]" "f[3333]" "f[3336:3337]" "f[3342:3344]" "f[3353:3355]" "f[3359]" "f[3364]" "f[3368]" "f[3374:3376]" "f[3385:3387]" "f[3391]" "f[3398]" "f[3401]" "f[3457:3458]" "f[3460]" "f[3465:3468]" "f[3475]" "f[3482]" "f[3484:3485]" "f[3490:3492]" "f[3497:3500]" "f[3507]" "f[3513]" "f[3516:3517]" "f[3522:3524]" "f[3533:3535]" "f[3539]" "f[3544]" "f[3548]" "f[3554:3556]" "f[3565:3567]" "f[3571]" "f[3578]" "f[3581]" "f[3609]" "f[3613:3614]" "f[3619:3622]" "f[3629]" "f[3635]" "f[3637:3638]" "f[3644:3646]" "f[3656:3658]" "f[3661]" "f[3669]" "f[3671]" "f[3676:3678]" "f[3683:3686]" "f[3693]" "f[3700:3701]" "f[3703]" "f[3757]" "f[3761:3762]" "f[3767:3770]" "f[3777]" "f[3783]" "f[3785:3786]" "f[3894]" "f[3896]" "f[3898]" "f[3903:3906]" "f[3913]" "f[3918]" "f[3922:3923]" "f[3927]" "f[3929:3930]" "f[3935:3938]" "f[3944]" "f[3950]" "f[3954:3955]" "f[3960:3962]" "f[3973:3976]" "f[3985]" "f[3987]" "f[3991:3992]" "f[3994]" "f[4003:4007]" "f[4015]" "f[4018:4019]" "f[4023]" "f[4025:4026]" "f[4031:4034]" "f[4041]" "f[4048:4049]" "f[4051]" "f[4056:4058]" "f[4063:4066]" "f[4073]" "f[4079]" "f[4081]" "f[4083]" "f[4085]" "f[4089:4090]" "f[4098:4100]" "f[4105]" "f[4113:4114]" "f[4120:4122]" "f[4130:4132]" "f[4137]" "f[4145]" "f[4147]" "f[4332]" "f[4335:4336]" "f[4341:4343]" "f[4351]" "f[4358]" "f[4361]" "f[4366:4368]" "f[4373:4375]" "f[4383]" "f[4390]" "f[4393]" "f[4395]" "f[4399]" "f[4407:4408]" "f[4418]" "f[4424:4425]" "f[4433:4434]" "f[4445]" "f[4450:4452]" "f[4466:4467]" "f[4482:4484]" "f[4489:4491]" "f[4499]" "f[4506]" "f[4509]" "f[4668:4669]" "f[4672]" "f[4685:4687]" "f[4697]" "f[4701:4702]" "f[4704]" "f[4713:4717]" "f[4725]" "f[4728:4729]" "f[4733:4734]" "f[4736]" "f[4741:4744]" "f[4751]" "f[4756]" "f[4760:4761]" "f[4790]" "f[4793:4794]" "f[4802:4804]" "f[4809]" "f[4817:4818]" "f[4823]" "f[4825:4826]" "f[4834:4836]" "f[4841]" "f[4849]" "f[4851]" "f[4856:4858]" "f[4867:4869]" "f[4873]" "f[4878]" "f[4882]" "f[4888:4890]" "f[4899:4901]" "f[4905]" "f[4912]" "f[4915]" "f[4920:4922]" "f[4935:4937]" "f[4947]" "f[4952:4954]" "f[4959:4962]" "f[4969]" "f[4976:4977]" "f[4979]" "f[5141:5143]" "f[5147:5152]" "f[5161]" "f[5165]" "f[5168:5169]" "f[5172:5173]" "f[5179:5181]" "f[5193:5195]" "f[5199]" "f[5209]" "f[5211]" "f[5217:5219]" "f[5231:5237]" "f[5244]" "f[5248:5249]" "f[5513:5514]" "f[5516]" "f[5521:5524]" "f[5531]" "f[5538]" "f[5540:5541]" "f[5546:5548]" "f[5553:5556]" "f[5563]" "f[5569]" "f[5572:5573]" "f[5578:5580]" "f[5589:5591]" "f[5595]" "f[5600]" "f[5604]" "f[5610:5612]" "f[5621:5623]" "f[5627]" "f[5634]" "f[5637]" "f[5667]" "f[5669:5670]" "f[5675:5678]" "f[5685]" "f[5692:5693]" "f[5695]" "f[5700:5702]" "f[5707:5710]" "f[5717]" "f[5723]" "f[5725]" "f[5727]" "f[5729]" "f[5733:5734]" "f[5742:5744]" "f[5749]" "f[5757:5758]" "f[5764:5766]" "f[5774:5776]" "f[5781]" "f[5789]" "f[5791]" "f[6056:6058]" "f[6063:6066]" "f[6073]" "f[6078]" "f[6082:6083]" "f[6165]" "f[6167:6168]" "f[6173:6176]" "f[6183]" "f[6190:6191]" "f[6193]" "f[6198:6200]" "f[6205:6208]" "f[6215]" "f[6221]" "f[6223]" "f[6225]" "f[6227]" "f[6231:6232]" "f[6240:6242]" "f[6247]" "f[6255:6256]" "f[6262:6264]" "f[6272:6274]" "f[6279]" "f[6287]" "f[6289]" "f[6398:6400]" "f[6405:6407]" "f[6415]" "f[6423:6424]" "f[6430]" "f[6432:6433]" "f[6438:6440]" "f[6449:6450]" "f[6459]" "f[6462:6463]" "f[6467:6468]" "f[6470]" "f[6475:6478]" "f[6485]" "f[6492:6494]" "f[6499]" "f[6501:6502]" "f[6515:6517]" "f[6527]" "f[6532:6534]" "f[6545:6547]" "f[6549]" "f[6554]" "f[6559]" "f[6564:6566]" "f[6571:6574]" "f[6581]" "f[6586]" "f[6590:6591]" "f[6621:6622]" "f[6624]" "f[6629:6632]" "f[6639]" "f[6646]" "f[6648:6649]" "f[6654:6656]" "f[6661:6664]" "f[6671]" "f[6677]" "f[6680:6681]" "f[6686:6688]" "f[6693:6696]" "f[6703]" "f[6710:6711]" "f[6713]" "f[6718:6720]" "f[6725:6728]" "f[6735]" "f[6741]" "f[6744:6745]" "f[6775]" "f[6777:6778]" "f[6783:6786]" "f[6793]" "f[6800:6801]" "f[6803]" "f[6807:6809]" "f[6817:6819]" "f[6821]" "f[6826]" "f[6829]" "f[6835:6837]" "f[6845:6847]" "f[6853:6854]" "f[6865:6867]" "f[6872:6874]" "f[6887:6889]" "f[6899]" "f[7007]" "f[7009:7010]" "f[7015:7018]" "f[7025]" "f[7032:7033]" "f[7035]" "f[7040:7042]" "f[7047:7050]" "f[7057]" "f[7063]" "f[7065]" "f[7067]" "f[7069]" "f[7073:7074]" "f[7082:7084]" "f[7089]" "f[7097:7098]" "f[7104:7106]" "f[7114:7116]" "f[7121]" "f[7129]" "f[7131]" "f[7500:7502]" "f[7510:7512]" "f[7517]" "f[7525]" "f[7527]" "f[7531]" "f[7533:7534]" "f[7539:7542]" "f[7549]" "f[7557:7559]" "f[7564:7566]" "f[7571:7574]" "f[7581]" "f[7587]" "f[7589]" "f[7591]" "f[7595:7596]" "f[7598]" "f[7603:7606]" "f[7613]" "f[7621:7623]" "f[7809]" "f[7811:7812]" "f[7817:7820]" "f[7827]" "f[7834:7835]" "f[7837]" "f[7842:7844]" "f[7849:7852]" "f[7859]" "f[7865]" "f[7867]" "f[7869]" "f[7871]" "f[7875:7876]" "f[7884:7886]" "f[7891]" "f[7899:7900]" "f[7906:7908]" "f[7916:7918]" "f[7923]" "f[7931]" "f[7933]" "f[7936:7937]" "f[7940]" "f[7953:7955]" "f[7965]" "f[7969]" "f[7971:7972]" "f[7977:7980]" "f[7987]" "f[7992]" "f[7996:7997]" "f[8001:8002]" "f[8004]" "f[8013:8017]" "f[8025]" "f[8028:8029]" "f[8033:8034]" "f[8036]" "f[8041:8044]" "f[8051]" "f[8056]" "f[8060:8061]" "f[8142]" "f[8145:8146]" "f[8157:8158]" "f[8161]" "f[8170]" "f[8330:8331]" "f[8333]" "f[8337:8340]" "f[8345]" "f[8349]" "f[8352:8353]" "f[8359:8361]" "f[8366:8369]" "f[8377:8378]" "f[8385]" "f[8388]" "f[8390:8391]" "f[8395:8396]" "f[8398]" "f[8403:8406]" "f[8413]" "f[8418]" "f[8422:8423]" "f[8426]" "f[8428]" "f[8430]" "f[8435:8438]" "f[8445]" "f[8450]" "f[8454:8455]" "f[8459]" "f[8461:8462]" "f[8467:8470]" "f[8476]" "f[8482]" "f[8486:8487]" "f[8492:8494]" "f[8505:8508]" "f[8517]" "f[8519]" "f[8523:8524]" "f[8526]" "f[8535:8539]" "f[8547]" "f[8550:8551]" "f[8555]" "f[8557:8558]" "f[8563:8566]" "f[8573]" "f[8580:8581]" "f[8583]" "f[8585]" "f[8589:8590]" "f[8598:8600]" "f[8605]" "f[8613:8614]" "f[8620:8622]" "f[8627:8630]" "f[8637]" "f[8643]" "f[8645]" "f[8647]" "f[8652:8654]" "f[8662:8664]" "f[8669]" "f[8677]" "f[8679]" "f[8735:8736]" "f[8738]" "f[8743:8746]" "f[8753]" "f[8760]" "f[8762:8763]" "f[8768:8770]" "f[8775:8778]" "f[8785]" "f[8791]" "f[8794:8795]" "f[8800:8802]" "f[8811:8813]" "f[8817]" "f[8822]" "f[8826]" "f[8832:8834]" "f[8843:8845]" "f[8849]" "f[8856]" "f[8859]" "f[8965]" "f[8969:8970]" "f[8975:8978]" "f[8985]" "f[8991]" "f[8993:8994]" "f[9000]" "f[9002:9003]" "f[9017:9020]" "f[9031]" "f[9033]" "f[9035]" "f[9038:9039]" "f[9044:9049]" "f[9056:9059]" "f[9062]" "f[9065:9066]" "f[9077:9079]" "f[9081]" "f[9087]" "f[9091]" "f[9146:9147]" "f[9150]" "f[9163:9165]" "f[9175]" "f[9179]" "f[9181:9182]" "f[9187:9190]" "f[9197]" "f[9202]" "f[9206:9207]" "f[9211:9212]" "f[9214]" "f[9219:9222]" "f[9229]" "f[9234]" "f[9238:9239]" "f[9242]" "f[9245:9246]" "f[9251:9253]" "f[9261]" "f[9268]" "f[9271]" "f[9276:9278]" "f[9283:9285]" "f[9293]" "f[9300]" "f[9303]" "f[9305]" "f[9309]" "f[9317:9318]" "f[9328]" "f[9334:9335]" "f[9343:9344]" "f[9355]" "f[9411]" "f[9413:9414]" "f[9419:9422]" "f[9429]" "f[9434]" "f[9438:9439]" "f[9444:9446]" "f[9457:9459]" "f[9461]" "f[9467]" "f[9471]" "f[9476:9478]" "f[9483:9488]" "f[9498]" "f[9501:9503]" "f[9508:9510]" "f[9523:9525]" "f[9535]" "f[9589]" "f[9593]" "f[9598:9600]" "f[9611]" "f[9613]" "f[9618]" "f[9620:9621]" "f[9637]" "f[9639]" "f[9656:9658]" "f[9663:9665]" "f[9673]" "f[9680]" "f[9683]" "f[9738]" "f[9741:9742]" "f[9747:9749]" "f[9757]" "f[9764]" "f[9767]" "f[9772:9774]" "f[9779:9781]" "f[9789]" "f[9796]" "f[9799]" "f[9801]" "f[9805]" "f[9813:9814]" "f[9824]" "f[9830:9831]" "f[9839:9840]" "f[9851]" "f[9985:9986]" "f[9988]" "f[9993:9996]" "f[10003]" "f[10010]" "f[10012:10013]" "f[10018:10020]" "f[10025:10028]" "f[10035]" "f[10041]" "f[10044:10045]" "f[10050:10052]" "f[10061:10063]" "f[10067]" "f[10072]" "f[10076]" "f[10082:10084]" "f[10093:10095]" "f[10099]" "f[10106]" "f[10109]" "f[10295:10296]" "f[10298]" "f[10303:10306]" "f[10313]" "f[10320]" "f[10322:10323]" "f[10328:10330]" "f[10339:10341]" "f[10345]" "f[10350]" "f[10354]" "f[10360:10362]" "f[10367:10370]" "f[10377]" "f[10383]" "f[10386:10387]" "f[10392:10394]" "f[10403:10405]" "f[10409]" "f[10416]" "f[10419]" "f[10449]" "f[10451:10452]" "f[10457:10460]" "f[10467]" "f[10474:10475]" "f[10477]" "f[10482:10484]" "f[10489:10492]" "f[10499]" "f[10505]" "f[10507]" "f[10509]" "f[10511]" "f[10515:10516]" "f[10524:10526]" "f[10531]" "f[10539:10540]" "f[10546:10548]" "f[10556:10558]" "f[10563]" "f[10571]" "f[10573]" "f[10810]" "f[10813:10814]" "f[10819:10821]" "f[10829]" "f[10836]" "f[10839]" "f[10844:10846]" "f[10851:10853]" "f[10861]" "f[10868]" "f[10871]" "f[10873]" "f[10877]" "f[10885:10886]" "f[10896]" "f[10902:10903]" "f[10911:10912]" "f[10923]" "f[11031:11032]" "f[11034]" "f[11039:11042]" "f[11049]" "f[11056]" "f[11058:11059]" "f[11064:11066]" "f[11071:11074]" "f[11081]" "f[11087]" "f[11090:11091]" "f[11096:11098]" "f[11107:11109]" "f[11113]" "f[11118]" "f[11122]" "f[11128:11130]" "f[11139:11141]" "f[11145]" "f[11152]" "f[11155]" "f[11236:11237]" "f[11240]" "f[11253:11255]" "f[11265]" "f[11269:11270]" "f[11272]" "f[11277:11280]" "f[11287]" "f[11292]" "f[11296:11297]" "f[11534:11535]" "f[11538]" "f[11551:11553]" "f[11563]" "f[11567]" "f[11569:11570]" "f[11575:11578]" "f[11585]" "f[11590]" "f[11594:11595]" "f[11599:11600]" "f[11602]" "f[11611:11615]" "f[11623]" "f[11626:11627]" "f[11631:11632]" "f[11634]" "f[11639:11642]" "f[11649]" "f[11654]" "f[11658:11659]" "f[11793]" "f[11795:11796]" "f[11801:11804]" "f[11811]" "f[11818:11819]" "f[11821]" "f[11826:11828]" "f[11833:11836]" "f[11843]" "f[11849]" "f[11851]" "f[11853]" "f[11855]" "f[11859:11860]" "f[11868:11870]" "f[11875]" "f[11883:11884]" "f[11890:11892]" "f[11900:11902]" "f[11907]" "f[11915]" "f[11917]" "f[12154:12155]" "f[12158]" "f[12171:12173]" "f[12183]" "f[12318:12319]" "f[12321]" "f[12333:12335]" "f[12337:12338]" "f[12344]" "f[12350:12351]" "f[12459]" "f[12461:12462]" "f[12467:12470]" "f[12477]" "f[12484:12485]" "f[12487]" "f[12492:12494]" "f[12499:12502]" "f[12509]" "f[12515]" "f[12517]" "f[12519]" "f[12521]" "f[12525:12526]" "f[12534:12536]" "f[12541]" "f[12549:12550]" "f[12556:12558]" "f[12566:12568]" "f[12573]" "f[12581]" "f[12583]" "f[12588:12589]" "f[12594:12596]" "f[12608:12609]" "f[12614:12615]" "f[12620:12622]" "f[12633]" "f[12635]" "f[12640:12642]" "f[12651:12652]" "f[12657]" "f[12665]" "f[12672:12674]" "f[12683:12684]" "f[12689]" "f[12698]" "f[12702]" "f[12704]" "f[12706]" "f[12711:12714]" "f[12721]" "f[12726]" "f[12730:12731]" "f[12735]" "f[12737:12738]" "f[12743:12746]" "f[12752]" "f[12758]" "f[12762:12763]" "f[12768:12770]" "f[12781:12784]" "f[12793]" "f[12795]" "f[12799:12800]" "f[12802]" "f[12811:12815]" "f[12823]" "f[12826:12827]" "f[12857]" "f[12859:12860]" "f[12865:12868]" "f[12875]" "f[12882:12883]" "f[12885]" "f[12890:12892]" "f[12897:12900]" "f[12907]" "f[12913]" "f[12915]" "f[12917]" "f[12919]" "f[12923:12924]" "f[12932:12934]" "f[12939]" "f[12947:12948]" "f[12954:12956]" "f[12964:12966]" "f[12971]" "f[12979]" "f[12981]" "f[13037]" "f[13039:13040]" "f[13045:13048]" "f[13055]" "f[13062:13063]" "f[13065]" "f[13070:13072]" "f[13077:13080]" "f[13087]" "f[13093]" "f[13095]" "f[13097]" "f[13099]" "f[13103:13104]" "f[13112:13114]" "f[13119]" "f[13127:13128]" "f[13134:13136]" "f[13144:13146]" "f[13151]" "f[13159]" "f[13161]" "f[13763]" "f[13765:13766]" "f[13771:13773]" "f[13781]" "f[13788]" "f[13790]" "f[13977]" "f[13979:13980]" "f[13985:13988]" "f[13995]" "f[14002:14003]" "f[14005]" "f[14010:14012]" "f[14017:14020]" "f[14027]" "f[14033]" "f[14035]" "f[14037]" "f[14039]" "f[14043:14044]" "f[14052:14054]" "f[14059]" "f[14067:14068]" "f[14074:14076]" "f[14084:14086]" "f[14091]" "f[14099]" "f[14101]" "f[14182]" "f[14185:14186]" "f[14191:14193]" "f[14201]" "f[14208]" "f[14211]" "f[14216:14218]" "f[14223:14225]" "f[14233]" "f[14240]" "f[14243]" "f[14273:14274]" "f[14276]" "f[14281:14284]" "f[14291]" "f[14298]" "f[14300:14301]" "f[14306:14308]" "f[14317:14319]" "f[14323]" "f[14328]" "f[14332]" "f[14338:14340]" "f[14345:14348]" "f[14355]" "f[14361]" "f[14364:14365]" "f[14370:14372]" "f[14381:14383]" "f[14387]" "f[14394]" "f[14397]" "f[14479]" "f[14481:14482]" "f[14487:14490]" "f[14497]" "f[14504:14505]" "f[14507]" "f[14512:14514]" "f[14519:14522]" "f[14529]" "f[14535]" "f[14537]" "f[14539]" "f[14541]" "f[14545:14546]" "f[14554:14556]" "f[14561]" "f[14569:14570]" "f[14653]" "f[14655:14656]" "f[14661:14663]" "f[14671]" "f[14678:14679]" "f[14842:14844]" "f[14849:14852]" "f[14859]" "f[14865]" "f[14867]" "f[14869]" "f[14874:14876]" "f[14884:14886]" "f[14891]" "f[14899]" "f[14901]" "f[14904]" "f[14907:14908]" "f[14913:14915]" "f[14923]" "f[14930]" "f[14933]" "f[14938:14940]" "f[14945:14947]" "f[14955]" "f[14962]" "f[14965]" "f[15073:15074]" "f[15077]" "f[15081:15085]" "f[15094:15095]" "f[15099]" "f[15102]" "f[15106:15107]" "f[15501:15502]" "f[15504]" "f[15509:15512]" "f[15519]" "f[15526]" "f[15528:15529]" "f[15534:15536]" "f[15545:15547]" "f[15551]" "f[15556]" "f[15560]";
 createNode groupId -n "groupId10";
-	rename -uid "B90F9BE5-4F18-6C4E-27AD-FE8A5936733B";
+	rename -uid "E8450C23-41AD-851C-10B8-B9ACFDC81C88";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts10";
-	rename -uid "4AE0129A-46D9-FED8-E4D3-83979824648B";
+	rename -uid "62AB7877-459C-8CC3-49EC-CC971FD7C36A";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 4178 "f[0:3]" "f[7:10]" "f[15:20]" "f[22:25]" "f[27]" "f[29:30]" "f[32:33]" "f[35:36]" "f[38]" "f[40:52]" "f[56]" "f[58:67]" "f[70:73]" "f[77:86]" "f[90]" "f[92:97]" "f[99:100]" "f[102:104]" "f[107]" "f[109:111]" "f[117:121]" "f[123:126]" "f[128:129]" "f[131]" "f[134:138]" "f[142:151]" "f[155:158]" "f[160:168]" "f[170]" "f[172:174]" "f[176]" "f[179:182]" "f[187:192]" "f[194:199]" "f[203:207]" "f[211:213]" "f[219:224]" "f[226:228]" "f[230:231]" "f[233]" "f[236:238]" "f[241]" "f[243:246]" "f[251:256]" "f[258:263]" "f[267:271]" "f[275:278]" "f[282:288]" "f[290:295]" "f[297:298]" "f[300]" "f[302:304]" "f[306:309]" "f[313:322]" "f[324]" "f[326:329]" "f[332:342]" "f[344:354]" "f[356]" "f[359:362]" "f[366:372]" "f[374:377]" "f[380:387]" "f[391:394]" "f[398:404]" "f[406:411]" "f[413:414]" "f[416]" "f[418:420]" "f[422:425]" "f[429:438]" "f[440]" "f[442:445]" "f[448:458]" "f[460:470]" "f[472]" "f[475:484]" "f[487:488]" "f[490:498]" "f[526:529]" "f[533:536]" "f[541:546]" "f[548:551]" "f[553:555]" "f[558:560]" "f[563]" "f[565:568]" "f[573:578]" "f[580:585]" "f[589:593]" "f[597:608]" "f[612:620]" "f[622:624]" "f[627]" "f[629:638]" "f[642]" "f[644:649]" "f[651:652]" "f[654:657]" "f[661:670]" "f[673:674]" "f[676:683]" "f[685:688]" "f[690]" "f[693:696]" "f[700:706]" "f[708:713]" "f[715]" "f[717:721]" "f[724:734]" "f[736:744]" "f[746:748]" "f[750:753]" "f[757:766]" "f[768]" "f[822:825]" "f[829:832]" "f[836:842]" "f[844:849]" "f[851:852]" "f[854]" "f[856:858]" "f[860:863]" "f[867:876]" "f[878]" "f[880:883]" "f[886:896]" "f[898:908]" "f[910]" "f[913:922]" "f[925:926]" "f[928:936]" "f[938:941]" "f[945:948]" "f[953:958]" "f[960:963]" "f[965:967]" "f[970:972]" "f[975]" "f[977:980]" "f[985:990]" "f[992:997]" "f[1001:1005]" "f[1009:1020]" "f[1024:1032]" "f[1034:1036]" "f[1039]" "f[1041:1050]" "f[1054]" "f[1056:1061]" "f[1063:1064]" "f[1118:1121]" "f[1125:1128]" "f[1132:1138]" "f[1140:1145]" "f[1147:1148]" "f[1150]" "f[1152:1154]" "f[1156:1159]" "f[1163:1172]" "f[1174]" "f[1176:1179]" "f[1182:1192]" "f[1194:1205]" "f[1209:1212]" "f[1216:1222]" "f[1224:1227]" "f[1230:1237]" "f[1241:1244]" "f[1249:1254]" "f[1256:1259]" "f[1261:1263]" "f[1266:1268]" "f[1271]" "f[1273:1276]" "f[1281:1286]" "f[1288:1293]" "f[1297:1301]" "f[1305:1316]" "f[1320:1328]" "f[1330:1332]" "f[1335]" "f[1337:1346]" "f[1350]" "f[1352:1357]" "f[1359:1360]" "f[1362:1365]" "f[1369:1377]" "f[1381:1382]" "f[1384:1390]" "f[1392]" "f[1394:1396]" "f[1398]" "f[1401:1404]" "f[1409:1414]" "f[1416:1421]" "f[1425:1429]" "f[1433:1444]" "f[1448:1456]" "f[1458:1460]" "f[1462]" "f[1465:1468]" "f[1473:1478]" "f[1480:1485]" "f[1487]" "f[1490:1493]" "f[1497:1500]" "f[1504:1510]" "f[1512:1517]" "f[1519:1520]" "f[1522]" "f[1524:1526]" "f[1528:1531]" "f[1535:1544]" "f[1546]" "f[1548:1551]" "f[1554:1564]" "f[1566:1576]" "f[1578]" "f[1581:1590]" "f[1593:1594]" "f[1596:1604]" "f[1606:1609]" "f[1613:1616]" "f[1620:1626]" "f[1628:1633]" "f[1635:1636]" "f[1638]" "f[1640:1642]" "f[1644:1647]" "f[1651:1660]" "f[1662]" "f[1664:1667]" "f[1670:1680]" "f[1682:1692]" "f[1694]" "f[1697:1706]" "f[1709:1710]" "f[1712:1720]" "f[1722:1725]" "f[1729:1732]" "f[1736:1742]" "f[1744:1749]" "f[1751:1752]" "f[1754]" "f[1756:1758]" "f[1760:1763]" "f[1767:1776]" "f[1778]" "f[1780:1783]" "f[1786:1796]" "f[1798:1809]" "f[1813:1816]" "f[1820:1826]" "f[1828:1831]" "f[1834:1841]" "f[1845:1848]" "f[1853:1858]" "f[1860:1863]" "f[1865]" "f[1867:1868]" "f[1870:1872]" "f[1874]" "f[1876]" "f[1878:1881]" "f[1886:1892]" "f[1895:1902]" "f[1905]" "f[1908:1911]" "f[1915:1926]" "f[1930:1938]" "f[1940:1941]" "f[1943]" "f[1946:1948]" "f[1953:1956]" "f[1958:1960]" "f[1963]" "f[1965]" "f[2018:2021]" "f[2024:2027]" "f[2031:2039]" "f[2041:2042]" "f[2044:2046]" "f[2048]" "f[2051:2054]" "f[2058:2064]" "f[2066:2071]" "f[2074:2079]" "f[2083:2095]" "f[2098:2111]" "f[2114:2122]" "f[2125:2132]" "f[2134:2137]" "f[2141:2144]" "f[2149:2154]" "f[2156:2161]" "f[2164]" "f[2166:2169]" "f[2173:2181]" "f[2185:2186]" "f[2188:2195]" "f[2198:2201]" "f[2205:2216]" "f[2220:2228]" "f[2230]" "f[2232:2234]" "f[2237:2240]" "f[2245:2250]" "f[2252:2256]" "f[2258]" "f[2261]" "f[2288:2291]" "f[2295:2298]" "f[2302:2308]" "f[2310:2315]" "f[2317:2318]" "f[2320]" "f[2322:2324]" "f[2326:2329]" "f[2333:2342]" "f[2344]" "f[2346:2349]" "f[2352:2362]" "f[2364:2374]" "f[2376]" "f[2379:2388]" "f[2391:2392]" "f[2394:2402]" "f[2404:2407]" "f[2411:2414]" "f[2418:2424]" "f[2426:2431]" "f[2433:2434]" "f[2436]" "f[2438:2440]" "f[2442:2445]" "f[2449:2458]" "f[2460]" "f[2462:2465]" "f[2468:2478]" "f[2480:2490]" "f[2492]" "f[2495:2504]" "f[2507:2508]" "f[2510:2518]" "f[2572:2575]" "f[2579:2588]" "f[2591:2592]" "f[2594:2601]" "f[2603:2606]" "f[2608]" "f[2611:2614]" "f[2618:2624]" "f[2626:2631]" "f[2633]" "f[2635:2638]" "f[2640]" "f[2642:2650]" "f[2653:2659]" "f[2661:2665]" "f[2668:2671]" "f[2675:2685]" "f[2714:2718]" "f[2722:2733]" "f[2737]" "f[2740:2747]" "f[2749:2750]" "f[2752:2754]" "f[2756]" "f[2759:2762]" "f[2767:2772]" "f[2774:2779]" "f[2782]" "f[2784:2785]" "f[2787:2788]" "f[2791:2800]" "f[2806:2811]" "f[2813:2814]" "f[2816:2819]" "f[2823:2826]" "f[2831:2836]" "f[2838:2843]" "f[2846]" "f[2848:2851]" "f[2855:2858]" "f[2863:2868]" "f[2870:2875]" "f[2878]" "f[2880]" "f[2882:2884]" "f[2887:2890]" "f[2895:2900]" "f[2902:2906]" "f[2908]" "f[2911:2915]" "f[2919:2930]" "f[2934:2942]" "f[2944:2947]" "f[2951:2959]" "f[2963:2964]" "f[2966:2973]" "f[2976:2979]" "f[2983:2986]" "f[2990:2996]" "f[2998:3003]" "f[3005:3006]" "f[3008]" "f[3010:3012]" "f[3014:3017]" "f[3021:3030]" "f[3032]" "f[3034:3037]" "f[3040:3050]" "f[3052:3062]" "f[3064]" "f[3067:3076]" "f[3079:3080]" "f[3082:3090]" "f[3092:3095]" "f[3099:3107]" "f[3111:3112]" "f[3114:3120]" "f[3122]" "f[3124:3126]" "f[3128]" "f[3131:3134]" "f[3139:3144]" "f[3146:3151]" "f[3155:3159]" "f[3163:3174]" "f[3178:3186]" "f[3188:3190]" "f[3193]" "f[3195:3198]" "f[3203:3208]" "f[3210:3215]" "f[3219:3223]" "f[3227:3230]" "f[3234:3240]" "f[3242:3247]" "f[3249:3250]" "f[3252]" "f[3254:3256]" "f[3258:3261]" "f[3265:3274]" "f[3276]" "f[3278:3281]" "f[3284:3294]" "f[3296:3306]" "f[3308]" "f[3311:3314]" "f[3318:3324]" "f[3326:3329]" "f[3332:3339]" "f[3343:3352]" "f[3356]" "f[3358:3363]" "f[3365:3366]" "f[3368:3370]" "f[3372]" "f[3375:3378]" "f[3383:3388]" "f[3390:3395]" "f[3398]" "f[3400:3403]" "f[3407:3418]" "f[3422:3430]" "f[3432]" "f[3434:3436]" "f[3439:3442]" "f[3447:3452]" "f[3454:3458]" "f[3460]" "f[3463:3467]" "f[3471:3474]" "f[3478:3484]" "f[3486:3491]" "f[3493:3494]" "f[3496]" "f[3498:3500]" "f[3502:3505]" "f[3509:3518]" "f[3520]" "f[3522:3525]" "f[3528:3538]" "f[3540:3550]" "f[3552]" "f[3555:3558]" "f[3562:3568]" "f[3570:3573]" "f[3576:3579]" "f[3606:3609]" "f[3613:3616]" "f[3620:3626]" "f[3628:3633]" "f[3635:3636]" "f[3638]" "f[3640:3642]" "f[3644:3647]" "f[3651:3660]" "f[3662]" "f[3664:3667]" "f[3670:3680]" "f[3682:3692]" "f[3694]" "f[3697:3700]" "f[3704:3710]" "f[3712:3715]" "f[3718:3721]" "f[3748:3751]" "f[3755:3764]" "f[3768]" "f[3770:3775]" "f[3777:3778]" "f[3780:3782]" "f[3784]" "f[3787:3790]" "f[3795:3800]" "f[3802:3807]" "f[3810]" "f[3812:3815]" "f[3819:3830]" "f[3834:3842]" "f[3844]" "f[3846:3848]" "f[3851:3854]" "f[3859:3864]" "f[3866:3870]" "f[3872]" "f[3875:3879]" "f[3883:3886]" "f[3890:3896]" "f[3898:3903]" "f[3905:3906]" "f[3908]" "f[3910:3912]" "f[3914:3917]" "f[3921:3930]" "f[3932]" "f[3934:3937]" "f[3940:3950]" "f[3952:3962]" "f[3964]" "f[3967:3976]" "f[3979:3980]" "f[3982:3990]" "f[4044:4047]" "f[4051:4054]" "f[4059:4064]" "f[4066:4069]" "f[4071:4073]" "f[4076:4078]" "f[4081]" "f[4083:4086]" "f[4091:4096]" "f[4098:4103]" "f[4107:4111]" "f[4115:4126]" "f[4130:4138]" "f[4140:4142]" "f[4145]" "f[4147:4156]" "f[4160]" "f[4162:4167]" "f[4169:4170]" "f[4172:4175]" "f[4179:4182]" "f[4186:4192]" "f[4194:4199]" "f[4201:4202]" "f[4204]" "f[4206:4208]" "f[4210:4213]" "f[4217:4226]" "f[4228]" "f[4230:4233]" "f[4236:4246]" "f[4248:4259]" "f[4263:4266]" "f[4270:4276]" "f[4278:4281]" "f[4284:4291]" "f[4295:4303]" "f[4307:4308]" "f[4310:4316]" "f[4318]" "f[4320:4322]" "f[4324]" "f[4327:4330]" "f[4335:4340]" "f[4342:4347]" "f[4351:4355]" "f[4359:4370]" "f[4374:4382]" "f[4384:4386]" "f[4389]" "f[4391:4394]" "f[4399:4404]" "f[4406:4411]" "f[4415:4419]" "f[4423:4426]" "f[4430:4436]" "f[4438:4443]" "f[4445:4446]" "f[4448]" "f[4450:4452]" "f[4454:4457]" "f[4461:4470]" "f[4472]" "f[4474:4477]" "f[4480:4490]" "f[4492:4502]" "f[4504]" "f[4507:4516]" "f[4519:4520]" "f[4522:4530]" "f[4558:4561]" "f[4565:4568]" "f[4573:4578]" "f[4580:4583]" "f[4585:4587]" "f[4590:4592]" "f[4595]" "f[4597:4600]" "f[4605:4610]" "f[4612:4617]" "f[4621:4625]" "f[4629:4640]" "f[4644:4652]" "f[4654:4656]" "f[4659]" "f[4661:4670]" "f[4674]" "f[4676:4681]" "f[4683:4684]" "f[4686:4689]" "f[4692:4700]" "f[4703:4710]" "f[4712:4715]" "f[4719:4722]" "f[4726:4732]" "f[4734:4739]" "f[4741]" "f[4743:4746]" "f[4748]" "f[4751:4760]" "f[4763:4764]" "f[4766:4773]" "f[4775:4778]" "f[4780]" "f[4782:4785]" "f[4789:4799]" "f[4802:4805]" "f[4809:4812]" "f[4817:4822]" "f[4824:4827]" "f[4829:4831]" "f[4834:4836]" "f[4839]" "f[4841:4844]" "f[4849:4854]" "f[4856:4861]" "f[4865:4869]" "f[4873:4884]" "f[4888:4896]" "f[4898:4900]" "f[4903]" "f[4905:4914]" "f[4918]" "f[4920:4925]" "f[4927:4928]" "f[4930:4933]" "f[4937:4940]" "f[4944:4950]" "f[4952:4957]" "f[4959:4960]" "f[4962]" "f[4964:4966]" "f[4968:4971]" "f[4975:4984]" "f[4986]" "f[4988:4991]" "f[4994:5004]" "f[5006:5016]" "f[5018]" "f[5021:5030]" "f[5033:5034]" "f[5036:5044]" "f[5046:5049]" "f[5053:5056]" "f[5061:5066]" "f[5068:5071]" "f[5073:5075]" "f[5078:5080]" "f[5083]" "f[5085:5088]" "f[5093:5098]" "f[5100:5105]" "f[5109:5113]" "f[5117:5128]" "f[5132:5140]" "f[5142:5144]" "f[5147]" "f[5149:5158]" "f[5162]" "f[5164:5169]" "f[5171:5172]" "f[5174:5177]" "f[5181:5184]" "f[5188:5194]" "f[5196:5201]" "f[5203:5204]" "f[5206]" "f[5208:5210]" "f[5212:5215]" "f[5219:5228]" "f[5230]" "f[5232:5235]" "f[5238:5248]" "f[5250:5260]" "f[5262]" "f[5265:5274]" "f[5277:5278]" "f[5280:5288]" "f[5316:5319]" "f[5323:5326]" "f[5330:5336]" "f[5338:5341]" "f[5343]" "f[5345:5351]" "f[5353]" "f[5356:5358]" "f[5364:5369]" "f[5372]" "f[5374:5378]" "f[5383]" "f[5385:5389]" "f[5392:5402]" "f[5404:5412]" "f[5414:5417]" "f[5419:5423]" "f[5430:5438]" "f[5440]" "f[5444:5446]" "f[5449]" "f[5451:5460]" "f[5464]" "f[5466:5471]" "f[5473:5474]" "f[5476:5479]" "f[5483:5486]" "f[5491:5496]" "f[5498:5501]" "f[5503:5505]" "f[5508:5511]" "f[5515:5526]" "f[5530:5538]" "f[5540:5542]" "f[5545]" "f[5547:5550]" "f[5555:5560]" "f[5562:5567]" "f[5571:5575]" "f[5579:5582]" "f[5586:5592]" "f[5594:5597]" "f[5599]" "f[5601:5607]" "f[5609]" "f[5612:5614]" "f[5620:5625]" "f[5628]" "f[5630:5634]" "f[5639]" "f[5641:5645]" "f[5648:5658]" "f[5660:5668]" "f[5670:5673]" "f[5675:5679]" "f[5686:5694]" "f[5696]" "f[5726:5728]" "f[5731]" "f[5733:5742]" "f[5746]" "f[5748:5753]" "f[5755:5756]" "f[5758:5761]" "f[5765:5768]" "f[5773:5778]" "f[5780:5783]" "f[5785:5787]" "f[5790:5793]" "f[5797:5808]" "f[5812:5820]" "f[5822:5824]" "f[5827]" "f[5829:5832]" "f[5837:5842]" "f[5844:5849]" "f[5853:5857]" "f[5859]" "f[5862:5865]" "f[5869:5876]" "f[5880:5885]" "f[5887]" "f[5889:5890]" "f[5893:5896]" "f[5898:5901]" "f[5907:5913]" "f[5915]" "f[5918:5921]" "f[5924:5934]" "f[5936:5947]" "f[5951:5954]" "f[5958:5964]" "f[5966:5969]" "f[5971]" "f[5973:5979]" "f[5983:5986]" "f[5991:5996]" "f[5998:6003]" "f[6006]" "f[6008]" "f[6010:6012]" "f[6015:6018]" "f[6023:6028]" "f[6030:6034]" "f[6036]" "f[6039:6043]" "f[6047:6058]" "f[6062:6070]" "f[6072:6075]" "f[6079:6087]" "f[6091:6092]" "f[6094:6101]" "f[6130:6132]" "f[6134]" "f[6137:6146]" "f[6149:6150]" "f[6152:6160]" "f[6162:6165]" "f[6169:6172]" "f[6176:6182]" "f[6184:6189]" "f[6191:6192]" "f[6194:6197]" "f[6200:6210]" "f[6212:6220]" "f[6222:6224]" "f[6226:6229]" "f[6233:6242]" "f[6244]" "f[6246:6247]" "f[6250]" "f[6252:6260]" "f[6264:6270]" "f[6272:6275]" "f[6279:6282]" "f[6287:6292]" "f[6294:6297]" "f[6299:6301]" "f[6304:6307]" "f[6309]" "f[6312:6324]" "f[6329:6339]" "f[6342:6344]" "f[6347]" "f[6349:6352]" "f[6357:6362]" "f[6364:6367]" "f[6369:6371]" "f[6400:6402]" "f[6404]" "f[6407:6416]" "f[6419:6420]" "f[6422:6430]" "f[6432:6435]" "f[6439:6442]" "f[6446:6452]" "f[6454:6459]" "f[6461:6462]" "f[6464:6467]" "f[6470:6480]" "f[6482:6490]" "f[6492:6494]" "f[6496:6499]" "f[6503:6512]" "f[6514]" "f[6542:6544]" "f[6547]" "f[6549:6558]" "f[6562]" "f[6564:6569]" "f[6571:6572]" "f[6574:6577]" "f[6581:6584]" "f[6589:6594]" "f[6596:6599]" "f[6601:6603]" "f[6606:6609]" "f[6613:6624]" "f[6628:6636]" "f[6638:6640]" "f[6643]" "f[6645:6648]" "f[6653:6658]" "f[6660:6665]" "f[6669:6673]" "f[6677:6680]" "f[6685:6690]" "f[6692:6695]" "f[6697:6699]" "f[6702:6704]" "f[6707]" "f[6709:6712]" "f[6717:6722]" "f[6724:6729]" "f[6733:6737]" "f[6741:6752]" "f[6756:6764]" "f[6766:6768]" "f[6771]" "f[6773:6782]" "f[6786]" "f[6788:6793]" "f[6795:6796]" "f[6824:6826]" "f[6829]" "f[6831:6840]" "f[6844]" "f[6846:6851]" "f[6853:6854]" "f[6856:6859]" "f[6863:6866]" "f[6871:6876]" "f[6878:6881]" "f[6883:6885]" "f[6888:6891]" "f[6895:6906]" "f[6910:6918]" "f[6920:6922]" "f[6925]" "f[6927:6930]" "f[6935:6940]" "f[6942:6947]" "f[6951:6954]" "f[6956]" "f[6959:6968]" "f[6971:6972]" "f[6974:6982]" "f[6984:6987]" "f[6991:6994]" "f[6998:7004]" "f[7006:7011]" "f[7013:7014]" "f[7016:7019]" "f[7022:7032]" "f[7034:7042]" "f[7044:7046]" "f[7048:7051]" "f[7055:7064]" "f[7066]" "f[7094:7097]" "f[7101:7109]" "f[7113:7114]" "f[7116:7123]" "f[7126:7129]" "f[7133:7136]" "f[7141:7146]" "f[7148:7153]" "f[7156]" "f[7158:7161]" "f[7165:7176]" "f[7180:7188]" "f[7190]" "f[7192:7194]" "f[7197:7200]" "f[7205:7210]" "f[7212:7216]" "f[7218]" "f[7221:7225]" "f[7229:7232]" "f[7237:7242]" "f[7244:7249]" "f[7252]" "f[7254]" "f[7256:7258]" "f[7261:7264]" "f[7269:7274]" "f[7276:7280]" "f[7282]" "f[7285:7289]" "f[7293:7304]" "f[7308:7316]" "f[7318:7321]" "f[7325:7333]" "f[7337:7338]" "f[7340:7347]" "f[7350:7353]" "f[7357:7360]" "f[7365:7370]" "f[7372:7375]" "f[7377:7379]" "f[7382:7384]" "f[7387]" "f[7389:7392]" "f[7397:7402]" "f[7404:7409]" "f[7413:7417]" "f[7421:7432]" "f[7436:7444]" "f[7446:7448]" "f[7451]" "f[7453:7462]" "f[7466]" "f[7468:7473]" "f[7475:7476]" "f[7530:7533]" "f[7537:7540]" "f[7544:7550]" "f[7552:7555]" "f[7557]" "f[7559:7565]" "f[7567]" "f[7570:7572]" "f[7578:7583]" "f[7586]" "f[7588:7592]" "f[7597]" "f[7599:7603]" "f[7606:7616]" "f[7618:7626]" "f[7628:7631]" "f[7633:7637]" "f[7644:7652]" "f[7654]" "f[7684:7687]" "f[7691:7699]" "f[7703:7704]" "f[7706:7713]" "f[7716:7719]" "f[7723:7726]" "f[7731:7736]" "f[7738:7743]" "f[7746]" "f[7748:7751]" "f[7755:7766]" "f[7770:7778]" "f[7780]" "f[7782:7784]" "f[7787:7790]" "f[7795:7800]" "f[7802:7806]" "f[7808]" "f[7811:7814]" "f[7816]" "f[7819:7828]" "f[7831:7832]" "f[7834:7842]" "f[7844:7847]" "f[7851:7854]" "f[7858:7864]" "f[7866:7871]" "f[7873:7874]" "f[7876:7879]" "f[7882:7892]" "f[7894:7902]" "f[7904:7906]" "f[7908:7911]" "f[7915:7924]" "f[7926]" "f[7954:7957]" "f[7961:7969]" "f[7973:7974]" "f[7976:7983]" "f[7986:7989]" "f[7993:7996]" "f[8001:8006]" "f[8008:8013]" "f[8016]" "f[8018:8021]" "f[8025:8036]" "f[8040:8048]" "f[8050]" "f[8052:8054]" "f[8057:8060]" "f[8065:8070]" "f[8072:8076]" "f[8078]" "f[8081]" "f[8160:8162]" "f[8165]" "f[8167:8176]" "f[8180]" "f[8182:8187]" "f[8189:8190]" "f[8192:8195]" "f[8199:8202]" "f[8207:8212]" "f[8214:8217]" "f[8219:8221]" "f[8224:8227]" "f[8231:8242]" "f[8246:8254]" "f[8256:8258]" "f[8261]" "f[8263:8266]" "f[8271:8276]" "f[8278:8283]" "f[8287:8291]" "f[8295:8303]" "f[8307:8308]" "f[8310:8317]" "f[8320:8323]" "f[8327:8330]" "f[8335:8340]" "f[8342:8347]" "f[8350]" "f[8352:8355]" "f[8359:8370]" "f[8374:8382]" "f[8384]" "f[8386:8388]" "f[8391:8394]" "f[8399:8404]" "f[8406:8410]" "f[8412]" "f[8415:8419]" "f[8423:8426]" "f[8431:8436]" "f[8438:8441]" "f[8443:8445]" "f[8448:8450]" "f[8453]" "f[8455:8458]" "f[8463:8468]" "f[8470:8475]" "f[8479:8483]" "f[8487:8498]" "f[8502:8510]" "f[8512:8514]" "f[8517]" "f[8519:8528]" "f[8532]" "f[8534:8539]" "f[8541:8542]" "f[8570:8573]" "f[8577:8580]" "f[8585:8590]" "f[8592:8595]" "f[8597:8599]" "f[8602:8604]" "f[8607]" "f[8609:8612]" "f[8617:8622]" "f[8624:8629]" "f[8633:8637]" "f[8641:8652]" "f[8656:8664]" "f[8666:8668]" "f[8671]" "f[8673:8682]" "f[8686]" "f[8688:8693]" "f[8695:8696]" "f[8750:8752]" "f[8755]" "f[8757:8766]" "f[8770]" "f[8772:8777]" "f[8779:8780]" "f[8782:8785]" "f[8789:8792]" "f[8797:8802]" "f[8804:8807]" "f[8809:8811]" "f[8814:8817]" "f[8821:8832]" "f[8836:8844]" "f[8846:8848]" "f[8851]" "f[8853:8856]" "f[8861:8866]" "f[8868:8873]" "f[8877]" "f[8904:8906]" "f[8908]" "f[8911:8920]" "f[8923:8924]" "f[8926:8934]" "f[8936:8939]" "f[8943:8946]" "f[8950:8956]" "f[8958:8963]" "f[8965:8966]" "f[8968:8971]" "f[8974:8984]" "f[8986:8994]" "f[8996:8998]" "f[9000:9003]" "f[9007:9016]" "f[9018]" "f[9020:9023]" "f[9027:9030]" "f[9035:9040]" "f[9042:9045]" "f[9047:9049]" "f[9052:9054]" "f[9057]" "f[9059:9062]" "f[9067:9072]" "f[9074:9079]" "f[9083:9087]" "f[9091:9102]" "f[9106:9114]" "f[9116:9118]" "f[9121]" "f[9123:9132]" "f[9136]" "f[9138:9143]" "f[9145:9146]" "f[9148:9151]" "f[9155:9158]" "f[9163:9168]" "f[9170:9175]" "f[9178]" "f[9180]" "f[9182:9184]" "f[9187:9190]" "f[9195:9200]" "f[9202:9206]" "f[9208]" "f[9211:9215]" "f[9219:9230]" "f[9234:9242]" "f[9244:9247]" "f[9251:9259]" "f[9263:9264]" "f[9266:9273]" "f[9276:9279]" "f[9281]" "f[9284:9287]" "f[9291:9298]" "f[9302:9307]" "f[9309]" "f[9311:9312]" "f[9315:9318]" "f[9320:9323]" "f[9329:9335]" "f[9337]" "f[9340:9343]" "f[9346:9356]" "f[9358:9369]" "f[9373:9376]" "f[9380:9386]" "f[9388:9391]" "f[9393]" "f[9395:9397]" "f[9450:9453]" "f[9457:9465]" "f[9469:9470]" "f[9472:9479]" "f[9482:9485]" "f[9489:9492]" "f[9497:9502]" "f[9504:9509]" "f[9512]" "f[9514:9517]" "f[9521:9532]" "f[9536:9544]" "f[9546]" "f[9548:9550]" "f[9553:9556]" "f[9561:9566]" "f[9568:9572]" "f[9574]" "f[9577:9580]" "f[9582]" "f[9585:9588]" "f[9592:9598]" "f[9600:9606]" "f[9609:9613]" "f[9615]" "f[9618:9621]" "f[9625:9632]" "f[9636:9641]" "f[9643]" "f[9645:9646]" "f[9648:9651]" "f[9654:9664]" "f[9666:9673]" "f[9675:9678]" "f[9680:9683]" "f[9689:9695]" "f[9697]" "f[9726:9729]" "f[9733:9736]" "f[9741:9746]" "f[9748:9753]" "f[9756]" "f[9758]" "f[9760:9762]" "f[9765:9768]" "f[9773:9778]" "f[9780:9784]" "f[9786]" "f[9789:9793]" "f[9797:9808]" "f[9812:9820]" "f[9822:9825]" "f[9829:9837]" "f[9841:9842]" "f[9844:9851]" "f[9880:9883]" "f[9885]" "f[9888:9891]" "f[9895:9902]" "f[9906:9911]" "f[9913]" "f[9915:9916]" "f[9919:9922]" "f[9924:9927]" "f[9933:9939]" "f[9941]" "f[9944:9947]" "f[9950:9960]" "f[9962:9973]" "f[9977:9980]" "f[9984:9990]" "f[9992:9995]" "f[9997]" "f[9999:10005]" "f[10008:10016]" "f[10019:10026]" "f[10028:10031]" "f[10034:10037]" "f[10041:10049]" "f[10051:10052]" "f[10054:10057]" "f[10061:10073]" "f[10076:10088]" "f[10090]" "f[10093:10096]" "f[10100:10106]" "f[10108:10113]" "f[10116:10121]" "f[10125:10133]" "f[10137:10138]" "f[10140:10147]" "f[10150:10153]" "f[10157:10160]" "f[10165:10170]" "f[10172:10177]" "f[10180]" "f[10182:10185]" "f[10189:10200]" "f[10204:10212]" "f[10214]" "f[10216:10218]" "f[10221:10224]" "f[10229:10234]" "f[10236:10240]" "f[10242]" "f[10245:10248]" "f[10250]" "f[10253:10256]" "f[10261:10266]" "f[10268:10273]" "f[10276]" "f[10278:10281]" "f[10285:10294]" "f[10298]" "f[10300:10305]" "f[10307:10308]" "f[10310:10312]" "f[10314]" "f[10317:10326]" "f[10330]" "f[10332:10337]" "f[10339:10340]" "f[10342:10345]" "f[10349:10352]" "f[10357:10362]" "f[10364:10369]" "f[10372]" "f[10374:10377]" "f[10381:10384]" "f[10391:10400]" "f[10402]" "f[10406:10409]" "f[10411]" "f[10414:10416]" "f[10423:10429]" "f[10431:10434]" "f[10436]" "f[10438:10439]" "f[10442]" "f[10444:10446]" "f[10448]" "f[10451:10457]" "f[10461:10464]" "f[10466:10472]" "f[10474]" "f[10476]" "f[10478:10481]" "f[10484:10488]" "f[10497:10506]" "f[10508]" "f[10514:10517]" "f[10521:10524]" "f[10529:10534]" "f[10536:10539]" "f[10541:10543]" "f[10546:10549]" "f[10553:10556]" "f[10561:10566]" "f[10568:10573]" "f[10576]" "f[10578:10580]" "f[10582]" "f[10585:10592]" "f[10596:10598]" "f[10600:10604]" "f[10606:10608]" "f[10610:10611]" "f[10613]" "f[10615]" "f[10617:10624]" "f[10628:10630]" "f[10632:10637]" "f[10639]" "f[10641:10645]" "f[10649:10652]" "f[10659:10668]" "f[10670]" "f[10674:10676]" "f[10678]" "f[10681:10690]" "f[10694]" "f[10696:10700]" "f[10702:10704]" "f[10706:10708]" "f[10710]" "f[10713:10722]" "f[10727:10734]" "f[10736]" "f[10739:10742]" "f[10745:10748]" "f[10755:10763]" "f[10765]" "f[10767]" "f[10796:10799]" "f[10803:10806]" "f[10811:10816]" "f[10818:10821]" "f[10823:10825]" "f[10828:10831]" "f[10835:10838]" "f[10843:10848]" "f[10850:10855]" "f[10858]" "f[10860:10862]" "f[10864]" "f[10867:10874]" "f[10878:10880]" "f[10882:10886]" "f[10888:10890]" "f[10892:10893]" "f[10895]" "f[10897]" "f[10899:10906]" "f[10910:10912]" "f[10914:10919]" "f[10921]" "f[10923]" "f[10950:10953]" "f[10957:10966]" "f[10970]" "f[10972:10976]" "f[10978:10980]" "f[10982:10984]" "f[10987]" "f[10989:10992]" "f[10997:11002]" "f[11004:11008]" "f[11011:11012]" "f[11014:11016]" "f[11019]" "f[11021:11024]" "f[11029:11034]" "f[11036:11039]" "f[11041:11043]" "f[11046:11048]" "f[11051]" "f[11053:11064]" "f[11068:11075]" "f[11077]" "f[11156:11159]" "f[11163:11166]" "f[11171:11176]" "f[11178:11182]" "f[11184:11185]" "f[11188:11191]" "f[11195:11198]" "f[11204:11208]" "f[11210:11213]" "f[11215]" "f[11217]" "f[11220:11222]" "f[11224]" "f[11227:11236]" "f[11241:11248]" "f[11250]" "f[11252:11253]" "f[11255:11256]" "f[11258]" "f[11260:11266]" "f[11270:11274]" "f[11278:11284]" "f[11286:11287]" "f[11290:11293]" "f[11297:11308]" "f[11312:11320]" "f[11322:11325]" "f[11329:11332]" "f[11337:11342]" "f[11344:11349]" "f[11352]" "f[11354:11357]" "f[11361:11369]" "f[11373:11374]" "f[11376:11383]" "f[11386]" "f[11388:11390]" "f[11393:11396]" "f[11401:11406]" "f[11408:11412]" "f[11414]" "f[11417:11420]" "f[11422]" "f[11424:11434]" "f[11436:11446]" "f[11448]" "f[11451:11460]" "f[11463:11464]" "f[11466:11473]" "f[11475:11479]" "f[11481]" "f[11484:11493]" "f[11496:11498]" "f[11502:11508]" "f[11510]" "f[11512:11514]" "f[11516:11518]" "f[11520:11523]" "f[11527:11536]" "f[11538]" "f[11540:11543]" "f[11545]" "f[11548:11556]" "f[11560:11563]" "f[11566:11570]" "f[11572:11576]" "f[11578:11581]" "f[11585:11588]" "f[11593:11598]" "f[11600:11605]" "f[11608]" "f[11610:11613]" "f[11617:11619]" "f[11625:11627]" "f[11630:11634]" "f[11637:11638]" "f[11642:11643]" "f[11645]" "f[11647]" "f[11649:11656]" "f[11660:11662]" "f[11664:11669]" "f[11671]" "f[11673]" "f[11700:11703]" "f[11707:11716]" "f[11720]" "f[11722:11726]" "f[11728:11730]" "f[11732:11733]" "f[11735:11736]" "f[11739:11742]" "f[11747:11752]" "f[11754:11757]" "f[11759:11760]" "f[11762]" "f[11764:11766]" "f[11769]" "f[11771:11774]" "f[11779:11784]" "f[11786:11789]" "f[11791:11793]" "f[11796]" "f[11798]" "f[11800:11801]" "f[11803:11814]" "f[11818:11825]" "f[11827:11831]" "f[11835:11838]" "f[11845:11854]" "f[11856]" "f[11860:11862]" "f[11864]" "f[11867:11876]" "f[11880]" "f[11882:11886]" "f[11888:11890]" "f[11892:11894]" "f[11896]" "f[11899:11908]" "f[11913:11920]" "f[11922]" "f[11925:11928]" "f[11931:11934]" "f[11941:11949]" "f[11951]" "f[11953]" "f[11956:11959]" "f[11962]" "f[11964:11971]" "f[11975:11978]" "f[11981:11986]" "f[11988:11991]" "f[11994:11997]" "f[12001:12004]" "f[12009:12014]" "f[12016:12021]" "f[12024]" "f[12026:12028]" "f[12032:12034]" "f[12039:12042]" "f[12044:12046]" "f[12048]" "f[12050]" "f[12052]" "f[12054]" "f[12056:12057]" "f[12059:12070]" "f[12074:12081]" "f[12083:12087]" "f[12091:12094]" "f[12099:12103]" "f[12105:12109]" "f[12111:12113]" "f[12116:12117]" "f[12120:12121]" "f[12123:12130]" "f[12136:12142]" "f[12144:12145]" "f[12148:12151]" "f[12155:12164]" "f[12169:12176]" "f[12178]" "f[12180:12182]" "f[12185]" "f[12187:12190]" "f[12195:12200]" "f[12202:12205]" "f[12207:12209]" "f[12212:12215]" "f[12219:12228]" "f[12232]" "f[12234:12238]" "f[12240:12242]" "f[12244:12245]" "f[12247:12248]" "f[12251:12254]" "f[12259:12264]" "f[12266:12269]" "f[12271:12272]" "f[12274]" "f[12276:12278]" "f[12281]" "f[12283:12286]" "f[12291:12296]" "f[12298:12301]" "f[12303:12305]" "f[12308]" "f[12310]" "f[12312:12313]" "f[12315:12326]" "f[12330:12337]" "f[12339:12343]" "f[12347:12350]" "f[12357:12366]" "f[12368]" "f[12372:12374]" "f[12376]" "f[12379:12388]" "f[12392]" "f[12394:12398]" "f[12400:12402]" "f[12404:12406]" "f[12408]" "f[12411:12420]" "f[12425:12432]" "f[12434]" "f[12437:12440]" "f[12443:12446]" "f[12453:12461]" "f[12463]" "f[12465]" "f[12546:12548]" "f[12552:12555]" "f[12560:12562]" "f[12564:12567]" "f[12570]" "f[12572:12573]" "f[12576:12577]" "f[12579:12586]" "f[12592:12598]" "f[12600:12601]" "f[12604:12606]" "f[12608:12609]" "f[12612:12622]" "f[12626]" "f[12629:12636]" "f[12638]" "f[12640]" "f[12642:12644]" "f[12647]" "f[12649:12652]" "f[12657:12662]" "f[12664:12669]" "f[12673]" "f[12700:12702]" "f[12705]" "f[12707:12716]" "f[12720]" "f[12722:12729]" "f[12732:12734]" "f[12737]" "f[12739:12742]" "f[12747:12752]" "f[12754:12758]" "f[12761:12762]" "f[12764:12766]" "f[12769]" "f[12771:12774]" "f[12779:12784]" "f[12786:12789]" "f[12791:12793]" "f[12796]" "f[12798]" "f[12800:12801]" "f[12803:12814]" "f[12818:12825]" "f[12827]" "f[12854:12857]" "f[12861:12864]" "f[12871:12880]" "f[12882]" "f[12886:12887]" "f[12890:12891]" "f[12893:12900]" "f[12906:12912]" "f[12914:12915]" "f[12918:12921]" "f[12925:12934]" "f[12939:12946]" "f[12948]" "f[12951:12954]" "f[12957:12960]" "f[12967:12975]" "f[12977]" "f[12979]" "f[13008:13011]" "f[13015:13018]" "f[13023:13027]" "f[13029:13033]" "f[13035:13037]" "f[13040:13041]" "f[13044:13045]" "f[13047:13054]" "f[13060:13066]" "f[13068:13069]" "f[13072:13075]" "f[13079:13088]" "f[13093:13100]" "f[13102]" "f[13105:13108]" "f[13111:13114]" "f[13121:13129]" "f[13131]" "f[13133]" "f[13162:13164]" "f[13166]" "f[13168:13174]" "f[13177:13186]" "f[13188:13191]" "f[13193]" "f[13196:13198]" "f[13204:13211]" "f[13213:13217]" "f[13219:13220]" "f[13223:13224]" "f[13226:13229]" "f[13233:13236]" "f[13240:13244]" "f[13247:13251]" "f[13253]" "f[13255:13256]" "f[13258]" "f[13260:13263]" "f[13265:13269]" "f[13276:13284]" "f[13286]" "f[13316:13319]" "f[13323:13326]" "f[13331:13335]" "f[13337:13341]" "f[13343:13345]" "f[13348:13349]" "f[13352:13353]" "f[13355:13362]" "f[13368:13374]" "f[13376:13377]" "f[13380:13383]" "f[13387:13396]" "f[13401:13408]" "f[13410]" "f[13412:13414]" "f[13417]" "f[13419:13422]" "f[13427:13432]" "f[13434:13437]" "f[13439:13441]" "f[13496:13499]" "f[13502:13505]" "f[13509:13517]" "f[13519:13520]" "f[13522:13525]" "f[13528:13531]" "f[13535:13545]" "f[13548:13550]" "f[13552]" "f[13555:13562]" "f[13565:13568]" "f[13570:13577]" "f[13579:13581]" "f[13583]" "f[13585]" "f[13587:13594]" "f[13597:13600]" "f[13602:13608]" "f[13610:13614]" "f[13616]" "f[13618:13627]" "f[13630:13640]" "f[13642:13643]" "f[13646:13655]" "f[13659:13661]" "f[13664:13671]" "f[13673]" "f[13675:13679]" "f[13681]" "f[13684:13690]" "f[13694:13699]" "f[13702:13709]" "f[13711:13712]" "f[13715:13718]" "f[13720:13723]" "f[13729:13735]" "f[13737]" "f[13766:13768]" "f[13770]" "f[13772:13778]" "f[13781:13790]" "f[13792:13795]" "f[13797]" "f[13800:13802]" "f[13808:13815]" "f[13817:13821]" "f[13823:13824]" "f[13827:13828]" "f[13830:13833]" "f[13837:13840]" "f[13844:13848]" "f[13851:13855]" "f[13857]" "f[13859:13860]" "f[13862]" "f[13864:13867]" "f[13869:13873]" "f[13880:13888]" "f[13890]" "f[13894:13897]" "f[13901:13904]" "f[13911:13920]" "f[13922]" "f[13926:13928]" "f[13930]" "f[13933:13942]" "f[13946]" "f[13948:13952]" "f[13954:13956]" "f[13958:13960]" "f[13962]" "f[13965:13974]" "f[13979:13986]" "f[13988]" "f[13991:13994]" "f[13997:14000]" "f[14007:14015]" "f[14017]" "f[14019]" "f[14022:14025]" "f[14027]" "f[14029:14041]" "f[14044:14056]" "f[14058:14059]" "f[14062:14064]" "f[14070:14077]" "f[14080:14083]" "f[14086:14087]" "f[14089]" "f[14091:14096]" "f[14100:14102]" "f[14108:14111]" "f[14115:14120]" "f[14123]" "f[14127:14128]" "f[14130]" "f[14132:14135]" "f[14137:14141]" "f[14148:14156]" "f[14158]" "f[14188:14190]" "f[14193]" "f[14195:14198]" "f[14203:14208]" "f[14210:14213]" "f[14215:14217]" "f[14220:14222]" "f[14225]" "f[14227:14230]" "f[14235:14240]" "f[14242:14246]" "f[14249:14250]" "f[14252:14254]" "f[14257]" "f[14259:14268]" "f[14272]" "f[14274:14281]" "f[14284]" "f[14286]" "f[14288:14289]" "f[14291:14302]" "f[14306:14313]" "f[14315]" "f[14342:14344]" "f[14348:14353]" "f[14357:14358]" "f[14360:14363]" "f[14365:14366]" "f[14368:14369]" "f[14372:14373]" "f[14375:14382]" "f[14388:14394]" "f[14396:14397]" "f[14400:14402]" "f[14404:14405]" "f[14408:14418]" "f[14422]" "f[14425:14432]" "f[14434]" "f[14436]" "f[14438:14440]" "f[14443]" "f[14445:14448]" "f[14453:14458]" "f[14460:14465]" "f[14469:14473]" "f[14477:14486]" "f[14490]" "f[14492:14496]" "f[14498:14500]" "f[14502:14503]" "f[14505:14506]" "f[14509:14512]" "f[14517:14522]" "f[14524:14527]" "f[14529:14530]" "f[14532]" "f[14534:14536]" "f[14539]" "f[14541:14544]" "f[14549:14554]" "f[14556:14559]" "f[14561:14563]" "f[14566]" "f[14568]" "f[14570:14571]" "f[14573:14584]" "f[14588:14595]" "f[14597]" "f[14754:14757]" "f[14761:14772]" "f[14776:14784]" "f[14786:14789]" "f[14793:14796]" "f[14801:14806]" "f[14808:14813]" "f[14816]" "f[14818:14821]" "f[14825:14833]" "f[14837:14838]" "f[14840:14847]" "f[14850]" "f[14852:14854]" "f[14857:14860]" "f[14865:14870]" "f[14872:14876]" "f[14878]" "f[14881:14884]" "f[14886]" "f[14889:14892]" "f[14897:14902]" "f[14904:14909]" "f[14912]" "f[14914:14915]" "f[14917:14918]" "f[14921:14929]" "f[14933:14934]" "f[14936:14942]" "f[14945:14949]" "f[14953:14961]" "f[14965:14966]" "f[14968:14974]" "f[14976]" "f[14978:14980]" "f[14982]" "f[14985:14988]" "f[14993:14998]" "f[15000:15005]" "f[15009]" "f[15036:15039]" "f[15043:15046]" "f[15050:15056]" "f[15058:15063]" "f[15065:15066]" "f[15068]" "f[15070:15072]" "f[15074:15077]" "f[15081:15090]" "f[15092]" "f[15094:15097]" "f[15100:15110]" "f[15112:15122]" "f[15124]" "f[15127:15136]" "f[15139:15140]" "f[15142:15150]" "f[15152:15155]" "f[15159:15162]" "f[15167:15172]" "f[15174:15177]" "f[15179:15181]" "f[15184:15186]" "f[15189]" "f[15191:15194]" "f[15199:15204]" "f[15206:15211]" "f[15215:15219]" "f[15223:15234]" "f[15238:15246]" "f[15248:15250]" "f[15253]" "f[15255:15264]" "f[15268]" "f[15270:15275]" "f[15277:15278]" "f[15280:15284]" "f[15288:15297]" "f[15301:15304]" "f[15306:15314]" "f[15316]" "f[15318:15320]" "f[15322]" "f[15325:15327]" "f[15333:15337]" "f[15340:15344]" "f[15349:15354]" "f[15358:15360]" "f[15366:15373]" "f[15376:15381]" "f[15383:15384]" "f[15388:15390]" "f[15393]" "f[15395:15398]" "f[15403:15408]" "f[15410:15415]" "f[15419]" "f[15472:15475]" "f[15479:15482]" "f[15486:15492]" "f[15494:15499]" "f[15501:15502]" "f[15504]" "f[15506:15508]" "f[15510:15513]" "f[15517:15526]" "f[15528]" "f[15530:15533]" "f[15536:15546]" "f[15548:15558]" "f[15560]" "f[15563:15572]" "f[15575:15576]" "f[15578:15586]" "f[15640:15643]" "f[15645]" "f[15648:15650]" "f[15656:15663]" "f[15666:15669]" "f[15671:15672]" "f[15674:15675]" "f[15678:15680]" "f[15682]" "f[15685:15688]" "f[15693:15698]" "f[15700:15705]" "f[15709:15710]" "f[15712:15714]" "f[15717:15719]" "f[15725:15730]" "f[15732:15734]" "f[15736:15737]" "f[15740]" "f[15742:15745]" "f[15748]" "f[15750:15753]" "f[15758:15766]" "f[15768:15775]" "f[15779:15783]" "f[15787:15790]" "f[15794:15800]" "f[15802:15807]" "f[15809:15810]" "f[15812]" "f[15814:15816]" "f[15818:15821]" "f[15825:15834]" "f[15836]" "f[15838:15841]" "f[15844:15854]" "f[15856:15866]" "f[15868]" "f[15871:15880]" "f[15883:15884]" "f[15886:15894]" "f[15896:15899]" "f[15903:15912]" "f[15916]" "f[15918:15923]" "f[15925:15926]" "f[15928:15930]" "f[15932]" "f[15935:15938]" "f[15943:15948]" "f[15950:15955]" "f[15958]" "f[15960:15962]" "f[15964]" "f[15967:15976]" "f[15980]" "f[15982:15989]" "f[15992]" "f[15994:15996]" "f[15999:16002]" "f[16007:16012]" "f[16014:16018]" "f[16020]" "f[16023:16027]" "f[16031:16034]" "f[16038:16044]" "f[16046:16051]" "f[16053:16054]" "f[16056]" "f[16058:16060]" "f[16062:16065]" "f[16069:16078]" "f[16080]" "f[16082:16085]" "f[16088:16098]" "f[16100:16111]" "f[16115:16118]" "f[16122:16128]" "f[16130:16133]" "f[16136:16143]" "f[16146:16149]" "f[16153:16161]" "f[16163:16164]" "f[16166:16168]" "f[16170]" "f[16173:16176]" "f[16180:16186]" "f[16188:16193]" "f[16196:16201]" "f[16205:16217]" "f[16220:16233]" "f[16236:16244]" "f[16247:16254]" "f[16256:16259]" "f[16263:16266]" "f[16271:16276]" "f[16278:16281]" "f[16283:16285]" "f[16288:16290]" "f[16292]" "f[16295:16298]" "f[16303:16308]" "f[16310:16315]" "f[16318]" "f[16320:16322]" "f[16324]" "f[16327:16335]" "f[16339:16340]" "f[16342:16348]" "f[16351:16354]" "f[16357]" "f[16359:16368]" "f[16372]" "f[16374:16379]" "f[16381:16382]" "f[16384:16387]" "f[16391:16394]" "f[16398:16404]" "f[16406:16411]" "f[16413:16414]" "f[16416]" "f[16418:16420]" "f[16422:16425]" "f[16429:16438]" "f[16440]" "f[16442:16445]" "f[16448:16458]" "f[16460:16470]" "f[16472]" "f[16475:16478]" "f[16482:16488]" "f[16490:16493]" "f[16496:16503]" "f[16507:16510]" "f[16515:16520]" "f[16522:16525]" "f[16527:16529]" "f[16532:16534]" "f[16537]" "f[16539:16542]" "f[16547:16552]" "f[16554:16559]" "f[16563:16567]" "f[16571:16582]" "f[16586:16594]" "f[16596:16598]" "f[16601]" "f[16603:16612]" "f[16616]" "f[16618:16623]" "f[16625:16626]" "f[16680:16683]" "f[16687:16690]" "f[16694:16700]" "f[16702:16707]" "f[16709:16710]" "f[16712]" "f[16714:16716]" "f[16718:16721]" "f[16725:16734]" "f[16736]" "f[16738:16741]" "f[16744:16754]" "f[16756:16766]" "f[16768]" "f[16771:16780]" "f[16783:16784]" "f[16786:16794]" "f[16796:16799]" "f[16803:16806]" "f[16811:16816]" "f[16818:16821]" "f[16823]" "f[16825:16826]" "f[16828:16830]" "f[16832]" "f[16834]" "f[16836:16839]" "f[16844:16850]" "f[16853:16860]" "f[16863]" "f[16866:16869]" "f[16873:16884]" "f[16888:16896]" "f[16898:16899]" "f[16901]" "f[16904:16906]" "f[16911:16914]" "f[16916:16918]" "f[16921]" "f[16923:16927]" "f[16931:16934]" "f[16938:16944]" "f[16946:16951]" "f[16953:16954]" "f[16956]" "f[16958:16960]" "f[16962:16965]" "f[16969:16978]" "f[16980]" "f[16982:16985]" "f[16988:16998]" "f[17000:17010]" "f[17012]" "f[17015:17018]" "f[17022:17028]" "f[17030:17033]" "f[17036:17039]" "f[17092:17095]" "f[17099:17107]" "f[17111:17112]" "f[17114:17120]" "f[17122]" "f[17124:17126]" "f[17128]" "f[17131:17134]" "f[17139:17144]" "f[17146:17151]" "f[17155:17159]" "f[17163:17174]" "f[17178:17186]" "f[17188:17190]" "f[17193]" "f[17195:17198]" "f[17203:17208]" "f[17210:17215]" "f[17219]" "f[17246:17249]" "f[17253:17262]" "f[17266]" "f[17268:17273]" "f[17275:17276]" "f[17278:17280]" "f[17282]" "f[17285:17287]" "f[17293:17298]" "f[17300:17302]" "f[17304:17305]" "f[17308]" "f[17310:17314]" "f[17318:17331]" "f[17334]" "f[17336:17346]" "f[17348]" "f[17350:17352]" "f[17355:17358]" "f[17363:17368]" "f[17370:17374]" "f[17376]" "f[17379:17383]" "f[17387:17395]" "f[17399:17400]" "f[17402:17408]" "f[17410]" "f[17412:17414]" "f[17416]" "f[17419:17422]" "f[17427:17432]" "f[17434:17439]" "f[17443:17447]" "f[17451:17462]" "f[17466:17474]" "f[17476:17478]" "f[17481]" "f[17483:17486]" "f[17491:17496]" "f[17498:17503]" "f[17507:17510]" "f[17512]" "f[17515:17524]" "f[17528]" "f[17530:17535]" "f[17537:17538]" "f[17540:17542]" "f[17544:17545]" "f[17548:17551]" "f[17556:17563]" "f[17566:17572]" "f[17574]" "f[17577:17578]" "f[17580:17582]" "f[17585:17587]" "f[17593:17598]" "f[17600:17602]" "f[17604:17605]" "f[17608]" "f[17610:17613]" "f[17615]" "f[17618:17621]" "f[17626:17633]" "f[17636:17639]" "f[17641:17645]" "f[17648:17650]" "f[17652]" "f[17655:17664]" "f[17667:17668]" "f[17670:17677]" "f[17679:17683]" "f[17687:17690]" "f[17694:17700]" "f[17702:17707]" "f[17709]" "f[17711:17715]" "f[17718:17726]" "f[17729:17736]" "f[17738:17741]" "f[17744:17747]" "f[17751:17759]" "f[17761:17762]" "f[17764:17767]" "f[17771:17779]" "f[17783:17784]" "f[17786:17792]" "f[17794]" "f[17796:17798]" "f[17800]" "f[17803:17806]" "f[17811:17816]" "f[17818:17823]" "f[17827:17831]" "f[17835:17846]" "f[17850:17858]" "f[17860:17862]" "f[17865]" "f[17867:17870]" "f[17875:17880]" "f[17882:17887]" "f[17891]" "f[17918:17921]" "f[17925:17928]" "f[17932:17938]" "f[17940:17945]" "f[17947:17948]" "f[17950]" "f[17952:17954]" "f[17956:17959]" "f[17963:17972]" "f[17974]" "f[17976:17979]" "f[17982:17992]" "f[17994:18004]" "f[18006]" "f[18009:18012]" "f[18016:18022]" "f[18024:18027]" "f[18030:18037]" "f[18041:18044]" "f[18049:18054]" "f[18056:18059]" "f[18061:18063]" "f[18066:18068]" "f[18071]" "f[18073:18082]" "f[18086]" "f[18088:18093]" "f[18095:18096]" "f[18098:18101]" "f[18105:18116]" "f[18120:18128]" "f[18130:18132]" "f[18135]" "f[18137:18140]" "f[18145:18150]" "f[18152:18157]" "f[18161:18165]" "f[18169:18172]" "f[18177:18182]" "f[18184:18187]" "f[18189:18191]" "f[18194:18196]" "f[18199]" "f[18201:18204]" "f[18209:18214]" "f[18216:18221]" "f[18225:18229]" "f[18233:18244]" "f[18248:18256]" "f[18258:18260]" "f[18263]" "f[18265:18274]" "f[18278]" "f[18280:18285]" "f[18287:18288]" "f[18342:18344]" "f[18346:18347]" "f[18350:18360]" "f[18364]" "f[18367:18374]" "f[18377:18378]" "f[18380:18381]" "f[18383]" "f[18385]" "f[18387:18396]" "f[18400]" "f[18402:18409]" "f[18412:18414]" "f[18418:18426]" "f[18430:18436]" "f[18438:18441]" "f[18445:18448]" "f[18453:18458]" "f[18460:18465]" "f[18468]" "f[18522:18525]" "f[18529:18532]" "f[18537:18542]" "f[18544:18549]" "f[18552]" "f[18554]" "f[18556:18558]" "f[18561:18564]" "f[18569:18574]" "f[18576:18580]" "f[18582]" "f[18585:18589]" "f[18593:18604]" "f[18608:18616]" "f[18618:18621]" "f[18625:18633]" "f[18637:18638]" "f[18640:18647]" "f[18650:18653]" "f[18657:18666]" "f[18670]" "f[18672:18677]" "f[18679:18680]" "f[18682:18684]" "f[18686]" "f[18689:18692]" "f[18697:18702]" "f[18704:18709]" "f[18712]" "f[18714:18717]" "f[18721:18732]" "f[18736:18744]" "f[18746]" "f[18748:18750]" "f[18753:18756]" "f[18761:18766]" "f[18768:18772]" "f[18774]" "f[18777:18781]" "f[18785:18788]" "f[18792:18798]" "f[18800:18805]" "f[18807:18808]" "f[18810]" "f[18812:18814]" "f[18816:18819]" "f[18823:18832]" "f[18834]" "f[18836:18839]" "f[18842:18852]" "f[18854:18864]" "f[18866]" "f[18869:18878]" "f[18881:18882]" "f[18884:18892]" "f[18920:18923]" "f[18927:18930]" "f[18934:18940]" "f[18942:18947]" "f[18949:18950]" "f[18952]" "f[18954:18956]" "f[18958:18961]" "f[18965:18974]" "f[18976]" "f[18978:18981]" "f[18984:18994]" "f[18996:19006]" "f[19008]" "f[19011:19020]" "f[19023:19024]" "f[19026:19034]" "f[19036:19039]" "f[19043:19046]" "f[19050:19056]" "f[19058:19063]" "f[19065:19066]" "f[19068]" "f[19070:19072]" "f[19074:19077]" "f[19081:19090]" "f[19092]" "f[19094:19097]" "f[19100:19110]" "f[19112:19122]" "f[19124]" "f[19127:19136]" "f[19139:19140]" "f[19142:19150]" "f[19178:19181]" "f[19185:19188]" "f[19192:19198]" "f[19200:19205]" "f[19207:19208]" "f[19210]" "f[19212:19214]" "f[19216:19219]" "f[19223:19232]" "f[19234]" "f[19236:19239]" "f[19242:19252]" "f[19254:19264]" "f[19266]" "f[19269:19272]" "f[19276:19282]" "f[19284:19287]" "f[19290:19297]" "f[19301:19304]" "f[19309:19314]" "f[19316:19321]" "f[19324]" "f[19326:19329]" "f[19333:19341]" "f[19345:19346]" "f[19348:19355]" "f[19358:19360]" "f[19362]" "f[19365:19374]" "f[19378]" "f[19380:19385]" "f[19387:19388]" "f[19390:19393]" "f[19397:19400]" "f[19405:19410]" "f[19412:19417]" "f[19420]" "f[19422:19425]" "f[19429:19432]" "f[19436:19442]" "f[19444:19449]" "f[19451:19452]" "f[19454]" "f[19456:19458]" "f[19460:19463]" "f[19467:19476]" "f[19478]" "f[19480:19483]" "f[19486:19496]" "f[19498:19508]" "f[19510]" "f[19513:19522]" "f[19525:19526]" "f[19528:19536]" "f[19564:19567]" "f[19571:19574]" "f[19578:19584]" "f[19586:19591]" "f[19593:19594]" "f[19596]" "f[19598:19600]" "f[19602:19605]" "f[19609:19618]" "f[19620]" "f[19622:19625]" "f[19628:19638]" "f[19640:19650]" "f[19652]" "f[19655:19664]" "f[19667:19668]" "f[19670:19678]" "f[19706:19709]" "f[19713:19716]" "f[19720:19726]" "f[19728:19733]" "f[19735:19736]" "f[19738]" "f[19740:19742]" "f[19744:19747]" "f[19751:19760]" "f[19762]" "f[19764:19767]" "f[19770:19780]" "f[19782:19792]" "f[19794]" "f[19797:19806]" "f[19809:19810]" "f[19812:19820]" "f[19848:19851]" "f[19855:19858]" "f[19862:19868]" "f[19870:19875]" "f[19877:19878]" "f[19880]" "f[19882:19884]" "f[19886:19889]" "f[19893:19902]" "f[19904]" "f[19906:19909]" "f[19912:19922]" "f[19924:19934]" "f[19936]" "f[19939:19948]" "f[19951:19952]" "f[19954:19962]" "f[19990:19993]" "f[19997:20000]" "f[20004:20010]" "f[20012:20015]" "f[20017]" "f[20019:20025]" "f[20027]" "f[20030:20032]" "f[20038:20043]" "f[20046]" "f[20048:20052]" "f[20057]" "f[20059:20063]" "f[20066:20076]" "f[20078:20086]" "f[20088:20091]" "f[20093:20097]" "f[20104:20112]" "f[20114]" "f[20170:20173]" "f[20177:20180]" "f[20184:20190]" "f[20192:20195]" "f[20197]" "f[20199:20205]" "f[20207]" "f[20210:20212]" "f[20218:20223]" "f[20226]" "f[20228:20232]" "f[20237]" "f[20239:20243]" "f[20246:20256]" "f[20258:20266]" "f[20268:20271]" "f[20273:20277]" "f[20284:20292]" "f[20294]" "f[20376:20378]" "f[20380]" "f[20383:20392]" "f[20395:20396]" "f[20398:20406]" "f[20408:20411]" "f[20415:20418]" "f[20422:20428]" "f[20430:20435]" "f[20437:20438]" "f[20440:20443]" "f[20446:20456]" "f[20458:20466]" "f[20468:20470]" "f[20472:20475]" "f[20479:20488]" "f[20490]" "f[20492:20494]" "f[20496]" "f[20499:20508]" "f[20511:20512]" "f[20514:20522]" "f[20524:20527]" "f[20531:20534]" "f[20538:20544]" "f[20546:20551]" "f[20553:20554]" "f[20556:20559]" "f[20562:20572]" "f[20574:20582]" "f[20584:20586]" "f[20588:20591]" "f[20595:20604]" "f[20606]" "f[20608:20611]" "f[20615:20623]" "f[20627:20628]" "f[20630:20637]" "f[20640:20643]" "f[20647:20650]" "f[20655:20660]" "f[20662:20667]" "f[20670]" "f[20672:20675]" "f[20679:20690]" "f[20694:20702]" "f[20704]" "f[20706:20708]" "f[20711:20714]" "f[20719:20724]" "f[20726:20730]" "f[20732]" "f[20735:20739]" "f[20743:20746]" "f[20750:20756]" "f[20758:20763]" "f[20765:20766]" "f[20768]" "f[20770:20772]" "f[20774:20777]" "f[20781:20790]" "f[20792]" "f[20794:20797]" "f[20800:20810]" "f[20812:20822]" "f[20824]" "f[20827:20836]" "f[20839:20840]" "f[20842:20848]" "f[20850:20854]" "f[20856]" "f[20859:20868]" "f[20871:20872]" "f[20874:20882]" "f[20884:20887]" "f[20891:20894]" "f[20898:20904]" "f[20906:20911]" "f[20913:20914]" "f[20916:20919]" "f[20922:20932]" "f[20934:20942]" "f[20944:20946]" "f[20948:20951]" "f[20955:20964]" "f[20966]" "f[20968:20970]" "f[20972]" "f[20975:20978]" "f[20983:20988]" "f[20990:20995]" "f[20998]" "f[21000:21003]" "f[21007:21016]" "f[21020]" "f[21022:21027]" "f[21029:21030]" "f[21032:21034]" "f[21036]" "f[21039:21048]" "f[21052]" "f[21054:21059]" "f[21061:21062]" "f[21064:21067]" "f[21071:21074]" "f[21079:21084]" "f[21086:21091]" "f[21094]" "f[21096:21098]" "f[21100]" "f[21103:21112]" "f[21115:21116]" "f[21118:21126]" "f[21128:21131]" "f[21135:21138]" "f[21142:21148]" "f[21150:21155]" "f[21157:21158]" "f[21160:21163]" "f[21166:21176]" "f[21178:21186]" "f[21188:21190]" "f[21192:21195]" "f[21199:21208]" "f[21210]" "f[21212:21215]" "f[21219:21227]" "f[21231:21232]" "f[21234:21241]" "f[21244:21247]" "f[21251:21254]" "f[21259:21264]" "f[21266:21271]" "f[21274]" "f[21276:21279]" "f[21283:21294]" "f[21298:21306]" "f[21308]" "f[21310:21312]" "f[21315:21318]" "f[21323:21328]" "f[21330:21334]" "f[21336]" "f[21339:21343]" "f[21347:21350]" "f[21354:21360]" "f[21362:21365]" "f[21367]" "f[21369:21375]" "f[21377]" "f[21380:21383]" "f[21387:21394]" "f[21398:21403]" "f[21405]" "f[21407:21408]" "f[21410:21413]" "f[21416:21426]" "f[21428:21435]" "f[21437:21440]" "f[21442:21445]" "f[21451:21457]" "f[21459]" "f[21462:21464]" "f[21466]" "f[21469:21478]" "f[21481:21482]" "f[21484:21492]" "f[21494:21497]" "f[21501:21504]" "f[21508:21514]" "f[21516:21521]" "f[21523:21524]" "f[21526:21529]" "f[21532:21542]" "f[21544:21552]" "f[21554:21556]" "f[21558:21561]" "f[21565:21574]" "f[21576]" "f[21578:21580]" "f[21583]" "f[21585:21594]" "f[21598]" "f[21600:21605]" "f[21607:21608]" "f[21610:21613]" "f[21617:21620]" "f[21625:21630]" "f[21632:21635]" "f[21637:21639]" "f[21642:21645]" "f[21649:21660]" "f[21664:21672]" "f[21674:21676]" "f[21679]" "f[21681:21684]" "f[21689:21694]" "f[21696:21701]" "f[21705:21708]" "f[21711]" "f[21713:21722]" "f[21726]" "f[21728:21733]" "f[21735:21736]" "f[21738:21741]" "f[21745:21748]" "f[21753:21758]" "f[21760:21763]" "f[21765:21767]" "f[21770:21773]" "f[21777:21788]" "f[21792:21800]" "f[21802:21804]" "f[21807]" "f[21809:21812]" "f[21817:21822]" "f[21824:21829]" "f[21833]" "f[21860:21862]" "f[21864]" "f[21867:21870]" "f[21874:21880]" "f[21882:21888]" "f[21891:21895]" "f[21897]" "f[21900:21903]" "f[21907:21914]" "f[21918:21923]" "f[21925]" "f[21927:21928]" "f[21930:21933]" "f[21936:21946]" "f[21948:21955]" "f[21957:21960]" "f[21962:21965]" "f[21971:21977]" "f[21979]" "f[21982:21984]" "f[21987]" "f[21989:21998]" "f[22002]" "f[22004:22009]" "f[22011:22012]" "f[22014:22017]" "f[22021:22024]" "f[22029:22034]" "f[22036:22039]" "f[22041:22043]" "f[22046:22049]" "f[22053:22064]" "f[22068:22076]" "f[22078:22080]" "f[22083]" "f[22085:22088]" "f[22093:22098]" "f[22100:22105]" "f[22109:22113]" "f[22115]" "f[22118:22121]" "f[22125:22132]" "f[22136:22141]" "f[22143]" "f[22145:22146]" "f[22149:22152]" "f[22154:22157]" "f[22163:22169]" "f[22171]" "f[22174:22177]" "f[22180:22190]" "f[22192:22203]" "f[22207:22210]" "f[22214:22220]" "f[22222:22225]" "f[22227]" "f[22229:22231]" "f[22258:22261]" "f[22265:22273]" "f[22277:22278]" "f[22280:22287]" "f[22290:22293]" "f[22297:22300]" "f[22305:22310]" "f[22312:22317]" "f[22320]" "f[22322:22325]" "f[22329:22340]" "f[22344:22352]" "f[22354]" "f[22356:22358]" "f[22361:22364]" "f[22369:22374]" "f[22376:22380]" "f[22382]" "f[22385:22388]" "f[22390:22391]" "f[22394:22403]" "f[22407:22409]" "f[22412:22419]" "f[22421]" "f[22423]" "f[22425:22428]" "f[22430:22433]" "f[22439:22445]" "f[22447]" "f[22450:22452]" "f[22454]" "f[22456:22466]" "f[22468:22480]" "f[22484:22486]" "f[22491:22494]" "f[22498:22504]" "f[22507:22508]" "f[22512:22516]" "f[22518]" "f[22521:22530]" "f[22533:22534]" "f[22536:22544]" "f[22546:22549]" "f[22553:22556]" "f[22560:22566]" "f[22568:22573]" "f[22575:22576]" "f[22578:22581]" "f[22584:22594]" "f[22596:22604]" "f[22606:22608]" "f[22610:22613]" "f[22617:22626]" "f[22628]" "f[22630:22633]" "f[22637:22645]" "f[22649:22650]" "f[22652:22659]" "f[22662:22665]" "f[22669:22680]" "f[22684:22692]" "f[22694:22697]" "f[22701:22710]" "f[22714]" "f[22716:22720]" "f[22722:22724]" "f[22726:22728]" "f[22730:22731]" "f[22734:22736]" "f[22745:22754]" "f[22757:22758]" "f[22760]" "f[22764:22766]" "f[22768]" "f[22771:22780]" "f[22783:22784]" "f[22786:22794]" "f[22796:22799]" "f[22803:22806]" "f[22810:22816]" "f[22818:22823]" "f[22825:22826]" "f[22828:22831]" "f[22834:22844]" "f[22846:22854]" "f[22856:22858]" "f[22860:22863]" "f[22867:22876]" "f[22878]" "f[22880:22883]" "f[22887:22895]" "f[22899:22900]" "f[22902:22909]" "f[22912:22915]" "f[22919:22922]" "f[22927:22932]" "f[22934:22939]" "f[22942]" "f[22944:22947]" "f[22951:22962]" "f[22966:22974]" "f[22976]" "f[22978:22980]" "f[22983:22986]" "f[22991:22996]" "f[22998:23002]" "f[23004]" "f[23007:23010]" "f[23013]" "f[23015:23024]" "f[23028]" "f[23030:23035]" "f[23037:23038]" "f[23040:23043]" "f[23047:23050]" "f[23055:23060]" "f[23062:23065]" "f[23067:23069]" "f[23072:23075]" "f[23079:23090]" "f[23094:23102]" "f[23104:23106]" "f[23109]" "f[23111:23114]" "f[23119:23124]" "f[23126:23131]" "f[23135:23138]" "f[23140:23141]" "f[23144:23153]" "f[23157:23159]" "f[23162:23169]" "f[23171]" "f[23173]" "f[23175:23178]" "f[23180:23183]" "f[23189:23195]" "f[23197]" "f[23200:23202]" "f[23204]" "f[23206:23216]" "f[23218:23230]" "f[23234:23236]" "f[23241:23244]" "f[23248:23254]" "f[23257:23258]" "f[23262:23267]" "f[23271:23279]" "f[23283:23284]" "f[23286:23293]" "f[23296:23299]" "f[23303:23306]" "f[23311:23316]" "f[23318:23323]" "f[23326]" "f[23328:23331]" "f[23335:23346]" "f[23350:23358]" "f[23360]" "f[23362:23364]" "f[23367:23370]" "f[23375:23380]" "f[23382:23386]" "f[23388]" "f[23391]" "f[23444:23447]" "f[23451:23454]" "f[23458:23464]" "f[23466:23469]" "f[23471]" "f[23473:23479]" "f[23481]" "f[23484:23486]" "f[23492:23497]" "f[23500]" "f[23502:23506]" "f[23511]" "f[23513:23517]" "f[23520:23530]" "f[23532:23540]" "f[23542:23545]" "f[23547:23551]" "f[23558:23566]" "f[23568]" "f[23624:23626]" "f[23628]" "f[23631:23634]" "f[23638:23644]" "f[23646:23652]" "f[23655:23659]" "f[23661]" "f[23664:23667]" "f[23671:23678]" "f[23682:23687]" "f[23689]" "f[23691:23692]" "f[23694:23697]" "f[23700:23710]" "f[23712:23719]" "f[23721:23724]" "f[23726:23729]" "f[23735:23741]" "f[23743]" "f[23746:23749]" "f[23753:23756]" "f[23760:23766]" "f[23768:23771]" "f[23773]" "f[23775:23781]" "f[23783]" "f[23786:23788]" "f[23794:23799]" "f[23802]" "f[23804:23808]" "f[23813]" "f[23815:23819]" "f[23822:23832]" "f[23834:23842]" "f[23844:23847]" "f[23849:23853]" "f[23860:23868]" "f[23870]" "f[23874:23876]" "f[23878]" "f[23881:23890]" "f[23893:23894]" "f[23896:23904]" "f[23906:23909]" "f[23913:23916]" "f[23920:23926]" "f[23928:23933]" "f[23935:23936]" "f[23938:23941]" "f[23944:23954]" "f[23956:23964]" "f[23966:23968]" "f[23970:23973]" "f[23977:23986]" "f[23988]" "f[24042:24045]" "f[24049:24052]" "f[24056:24062]" "f[24064:24067]" "f[24069]" "f[24071:24077]" "f[24079]" "f[24082:24084]" "f[24090:24095]" "f[24098]" "f[24100:24104]" "f[24109]" "f[24111:24115]" "f[24118:24128]" "f[24130:24138]" "f[24140:24143]" "f[24145:24149]" "f[24156:24164]" "f[24166]" "f[24222:24224]" "f[24226]" "f[24229:24232]" "f[24236:24242]" "f[24244:24250]" "f[24253:24257]" "f[24259]" "f[24262:24265]" "f[24269:24276]" "f[24280:24285]" "f[24287]" "f[24289:24290]" "f[24292:24295]" "f[24298:24308]" "f[24310:24317]" "f[24319:24322]" "f[24324:24327]" "f[24333:24339]" "f[24341]" "f[24370:24372]" "f[24374]" "f[24377:24386]" "f[24389:24390]" "f[24392:24400]" "f[24402:24405]" "f[24409:24412]" "f[24416:24422]" "f[24424:24429]" "f[24431:24432]" "f[24434:24437]" "f[24440:24450]" "f[24452:24460]" "f[24462:24464]" "f[24466:24469]" "f[24473:24482]" "f[24484]" "f[24486:24488]" "f[24491]" "f[24493:24502]" "f[24506]" "f[24508:24513]" "f[24515:24516]" "f[24518:24521]" "f[24525:24528]" "f[24533:24538]" "f[24540:24543]" "f[24545:24547]" "f[24550:24553]" "f[24557:24568]" "f[24572:24580]" "f[24582:24584]" "f[24587]" "f[24589:24592]" "f[24597:24602]" "f[24604:24609]" "f[24613:24617]" "f[24621:24624]" "f[24628:24634]" "f[24636:24639]" "f[24641]" "f[24643:24649]" "f[24651]" "f[24654:24657]" "f[24661:24668]" "f[24672:24677]" "f[24679]" "f[24681:24682]" "f[24684:24687]" "f[24690:24700]" "f[24702:24709]" "f[24711:24714]" "f[24716:24719]" "f[24725:24731]" "f[24733]" "f[24762:24764]" "f[24767]" "f[24769:24778]" "f[24782]" "f[24784:24789]" "f[24791:24792]" "f[24794:24797]" "f[24801:24804]" "f[24809:24814]" "f[24816:24819]" "f[24821:24823]" "f[24826:24829]" "f[24833:24844]" "f[24848:24856]" "f[24858:24860]" "f[24863]" "f[24865:24868]" "f[24873:24878]" "f[24880:24885]" "f[24889]" "f[24942:24945]" "f[24949:24952]" "f[24957:24962]" "f[24964:24969]" "f[24972]" "f[24974:24975]" "f[24977:24978]" "f[24981:24990]" "f[24994]" "f[24996:25001]" "f[25003:25004]" "f[25006:25009]" "f[25013:25022]" "f[25026]" "f[25028:25033]" "f[25035:25036]" "f[25038:25040]" "f[25042]" "f[25045:25048]" "f[25053:25058]" "f[25060:25065]" "f[25068]" "f[25096:25099]" "f[25103:25106]" "f[25113:25122]" "f[25124]" "f[25128:25130]" "f[25132]" "f[25135:25144]" "f[25148]" "f[25150:25154]" "f[25156:25158]" "f[25160:25162]" "f[25164]" "f[25167:25176]" "f[25181:25188]" "f[25190]" "f[25193:25196]" "f[25199:25202]" "f[25209:25217]" "f[25219]" "f[25221]" "f[25224:25226]" "f[25229]" "f[25231:25234]" "f[25239:25244]" "f[25246:25249]" "f[25251:25253]" "f[25256:25259]" "f[25262]" "f[25264:25270]" "f[25277:25285]" "f[25287:25289]" "f[25291]" "f[25294:25297]" "f[25301:25312]" "f[25316:25324]" "f[25326:25328]" "f[25331]" "f[25333:25344]" "f[25348:25355]" "f[25357]" "f[25410:25412]" "f[25416:25422]" "f[25426]" "f[25428:25431]" "f[25433:25434]" "f[25436:25439]" "f[25443:25446]" "f[25451:25456]" "f[25458:25463]" "f[25466]" "f[25468:25470]" "f[25472:25473]" "f[25476:25480]" "f[25485:25492]" "f[25494:25498]" "f[25500:25501]" "f[25503:25504]" "f[25506:25508]" "f[25511]" "f[25513:25524]" "f[25528:25535]" "f[25537:25541]" "f[25545:25548]" "f[25553:25558]" "f[25560:25564]" "f[25566:25567]" "f[25570:25573]" "f[25577:25580]" "f[25585:25590]" "f[25592:25597]" "f[25600]" "f[25602:25605]" "f[25609:25612]" "f[25617:25622]" "f[25624:25628]" "f[25630:25631]" "f[25634]" "f[25636]" "f[25638:25639]" "f[25641:25652]" "f[25656:25662]" "f[25664:25668]" "f[25672:25677]" "f[25681:25682]" "f[25684:25687]" "f[25689:25690]" "f[25692:25693]" "f[25696:25697]" "f[25699:25706]" "f[25712:25718]" "f[25720:25721]" "f[25724:25726]" "f[25728:25729]" "f[25732:25742]" "f[25746]" "f[25749:25756]" "f[25758]" "f[25760]" "f[25762:25764]" "f[25767]" "f[25769:25772]" "f[25777:25782]" "f[25784:25789]" "f[25793:25797]" "f[25801:25804]" "f[25809:25813]" "f[25815:25819]" "f[25821:25823]" "f[25826:25829]" "f[25831]" "f[25834:25836]" "f[25843:25849]" "f[25851:25854]" "f[25856]" "f[25858:25859]" "f[25862]" "f[25864:25866]" "f[25868]" "f[25871:25877]" "f[25881:25884]" "f[25886:25892]" "f[25894]" "f[25896:25899]" "f[25902]" "f[25904:25918]" "f[25922:25929]" "f[25931:25937]" "f[25941:25944]" "f[25949:25954]" "f[25956:25960]" "f[25962:25963]" "f[25966:25969]" "f[25973:25976]" "f[25981:25986]" "f[25988:25993]" "f[25996]" "f[25998:26000]" "f[26002]" "f[26005:26011]" "f[26015:26018]" "f[26020:26026]" "f[26028]" "f[26030:26031]" "f[26033]" "f[26035]" "f[26037:26043]" "f[26047:26050]" "f[26052:26058]" "f[26060]" "f[26114:26117]" "f[26119]" "f[26121:26133]" "f[26136:26148]" "f[26150]" "f[26153:26162]" "f[26165:26166]" "f[26168:26175]" "f[26177:26181]" "f[26183]" "f[26186:26190]" "f[26196:26197]" "f[26200:26202]" "f[26204:26208]" "f[26212]" "f[26215:26216]" "f[26218:26220]" "f[26222:26225]" "f[26229:26238]" "f[26240]" "f[26242:26245]" "f[26247]" "f[26249:26261]" "f[26264:26276]" "f[26278]" "f[26281:26290]" "f[26293:26294]" "f[26296:26303]" "f[26305:26309]" "f[26311]" "f[26314:26318]" "f[26324:26325]" "f[26328:26330]" "f[26332:26336]" "f[26340]" "f[26343:26344]" "f[26346:26348]" "f[26350:26353]" "f[26357:26366]" "f[26368]" "f[26370:26373]" "f[26376:26386]" "f[26388:26399]" "f[26401]" "f[26404:26407]" "f[26411:26418]" "f[26422:26427]" "f[26429]" "f[26431:26432]" "f[26434:26436]" "f[26438]" "f[26441:26444]" "f[26448:26454]" "f[26456:26462]" "f[26465]" "f[26467:26470]" "f[26472:26475]" "f[26481:26487]" "f[26489]" "f[26492:26496]" "f[26499:26511]" "f[26513:26527]" "f[26529]" "f[26532:26535]" "f[26539:26546]" "f[26550:26555]" "f[26557]" "f[26559:26560]" "f[26562:26564]" "f[26566]" "f[26569:26571]" "f[26576:26581]" "f[26584:26586]" "f[26588:26589]" "f[26591:26592]" "f[26595:26598]" "f[26600:26603]" "f[26609:26615]" "f[26617]" "f[26620:26623]" "f[26626:26636]" "f[26638:26649]" "f[26651]" "f[26654:26657]" "f[26661:26668]" "f[26672:26677]" "f[26679]" "f[26681:26682]" "f[26684:26686]" "f[26688]" "f[26691:26694]" "f[26698:26704]" "f[26706:26712]" "f[26715]" "f[26717:26720]" "f[26722:26725]" "f[26731:26737]" "f[26739]" "f[26742:26745]" "f[26747]" "f[26749:26761]" "f[26764:26776]" "f[26778:26779]" "f[26782:26784]" "f[26790:26797]" "f[26800:26803]" "f[26806:26807]" "f[26809]" "f[26811:26816]" "f[26820:26822]" "f[26828:26831]" "f[26835:26840]" "f[26843]" "f[26847:26848]" "f[26850]" "f[26852:26855]" "f[26857:26861]" "f[26868:26876]" "f[26878]" "f[26882:26885]" "f[26889:26892]" "f[26899:26908]" "f[26910]" "f[26914:26916]" "f[26918]" "f[26921:26930]" "f[26934]" "f[26936:26940]" "f[26942:26944]" "f[26946:26948]" "f[26950]" "f[26953:26962]" "f[26967:26974]" "f[26976]" "f[26979:26982]" "f[26985:26988]" "f[26995:27003]" "f[27005]" "f[27007]" "f[27036:27039]" "f[27043:27052]" "f[27056]" "f[27058:27062]" "f[27064:27066]" "f[27068:27071]" "f[27075:27085]" "f[27090:27098]" "f[27100:27103]" "f[27107:27115]" "f[27119:27120]" "f[27122:27129]" "f[27132:27135]" "f[27137]" "f[27140:27143]" "f[27148:27154]" "f[27157:27162]" "f[27164:27165]" "f[27167]" "f[27222:27225]" "f[27229:27232]" "f[27237:27242]" "f[27244:27248]" "f[27250:27251]" "f[27254:27257]" "f[27261:27264]" "f[27269:27274]" "f[27276:27281]" "f[27284]" "f[27286:27289]" "f[27293:27296]" "f[27301:27306]" "f[27308:27312]" "f[27314:27315]" "f[27318:27319]" "f[27321:27322]" "f[27325:27331]" "f[27335:27338]" "f[27340:27346]" "f[27349:27353]" "f[27357:27360]" "f[27365:27369]" "f[27371:27375]" "f[27377:27379]" "f[27382:27383]" "f[27386:27387]" "f[27389:27396]" "f[27402:27408]" "f[27410:27411]" "f[27414:27417]" "f[27421:27430]" "f[27435:27442]" "f[27444]" "f[27446:27448]" "f[27451]" "f[27453:27456]" "f[27461:27466]" "f[27468:27471]" "f[27473:27475]" "f[27478:27481]" "f[27485:27488]" "f[27493:27497]" "f[27499:27503]" "f[27505:27507]" "f[27510:27513]" "f[27515]" "f[27518:27521]" "f[27526:27532]" "f[27535:27541]" "f[27543]" "f[27545]" "f[27548:27550]" "f[27552]" "f[27555:27561]" "f[27565:27568]" "f[27570:27576]" "f[27578]" "f[27580]" "f[27582:27584]" "f[27587:27591]" "f[27599:27606]" "f[27612:27615]" "f[27619:27622]" "f[27629:27638]" "f[27640]" "f[27644:27645]" "f[27648:27649]" "f[27651:27658]" "f[27664:27670]" "f[27672:27673]" "f[27676:27679]" "f[27683:27692]" "f[27697:27704]" "f[27706]" "f[27708:27710]" "f[27713]" "f[27715:27718]" "f[27723:27728]" "f[27730:27733]" "f[27735:27737]" "f[27740:27743]" "f[27747:27750]" "f[27755:27760]" "f[27762:27766]" "f[27768:27769]" "f[27772:27774]" "f[27778:27780]" "f[27785:27788]" "f[27790:27793]" "f[27795]" "f[27798:27800]" "f[27802]" "f[27805:27814]" "f[27819:27826]" "f[27828]" "f[27830:27831]" "f[27833:27834]" "f[27836]" "f[27838:27844]" "f[27848:27854]" "f[27856:27863]" "f[27865]" "f[27867:27871]" "f[27875:27878]" "f[27883:27887]" "f[27889:27893]" "f[27895:27897]" "f[27900:27903]" "f[27905]" "f[27908:27911]" "f[27916:27924]" "f[27926:27932]" "f[27934:27935]" "f[27938:27940]" "f[27942]" "f[27945:27951]" "f[27955:27958]" "f[27960:27966]" "f[27968]" "f[27970]" "f[27973:27974]" "f[27976:27978]" "f[27983:27986]" "f[27988:27991]" "f[27995:27999]" "f[28003:28006]" "f[28010:28016]" "f[28018:28024]" "f[28026]" "f[28028:28031]" "f[28035:28038]" "f[28042:28048]" "f[28050:28055]" "f[28057]" "f[28059:28062]" "f[28064]" "f[28066:28072]" "f[28075:28084]" "f[28086:28087]" "f[28089:28090]" "f[28092:28098]" "f[28101:28110]" "f[28112:28115]" "f[28119:28122]" "f[28127:28132]" "f[28134:28138]" "f[28140:28141]" "f[28144:28147]" "f[28151:28154]" "f[28159:28164]" "f[28166:28171]" "f[28174]" "f[28176:28179]" "f[28183:28186]" "f[28191:28196]" "f[28198:28202]" "f[28204:28205]" "f[28208]" "f[28210]" "f[28212:28213]" "f[28215:28226]" "f[28230:28236]" "f[28238:28242]" "f[28246:28249]" "f[28254:28256]" "f[28258:28261]" "f[28264]" "f[28266:28267]" "f[28270:28271]" "f[28273:28280]" "f[28286:28292]" "f[28294:28295]" "f[28298:28300]" "f[28302:28303]" "f[28306:28316]" "f[28320]" "f[28323:28330]" "f[28332]" "f[28334]" "f[28336:28338]" "f[28341]" "f[28343:28346]" "f[28351:28356]" "f[28358:28363]" "f[28367:28370]" "f[28373]" "f[28375:28384]" "f[28388]" "f[28390:28397]" "f[28400:28402]" "f[28405]" "f[28407:28410]" "f[28415:28420]" "f[28422:28426]" "f[28429:28430]" "f[28432:28434]" "f[28437]" "f[28439:28442]" "f[28447:28452]" "f[28454:28457]" "f[28459:28461]" "f[28464]" "f[28466]" "f[28468:28469]" "f[28471:28482]" "f[28486:28493]" "f[28495:28499]" "f[28501]" "f[28503:28515]" "f[28518:28530]" "f[28532:28533]" "f[28536:28545]" "f[28549:28551]" "f[28554:28561]" "f[28563]" "f[28565:28569]" "f[28571]" "f[28574:28576]" "f[28582:28588]" "f[28592:28594]" "f[28596:28598]" "f[28601:28602]" "f[28605:28608]" "f[28610:28613]" "f[28619:28625]" "f[28627]" "f[28734:28737]" "f[28740:28750]" "f[28752:28763]" "f[28767:28770]" "f[28774:28780]" "f[28782:28787]" "f[28789:28790]" "f[28792:28794]" "f[28796]" "f[28799:28808]" "f[28811:28812]" "f[28814:28822]" "f[28824]" "f[28826:28828]" "f[28830:28833]" "f[28837:28846]" "f[28848]" "f[28876:28879]" "f[28882:28892]" "f[28894:28905]" "f[28909:28912]" "f[28916:28922]" "f[28924:28929]" "f[28931:28932]" "f[28934:28936]" "f[28938]" "f[28941:28950]" "f[28953:28954]" "f[28956:28964]" "f[28966]" "f[28968:28970]" "f[28972:28975]" "f[28979:28988]" "f[28990]" "f[28992:28995]" "f[28999:29010]" "f[29014:29022]" "f[29024:29027]" "f[29030]" "f[29032:29038]" "f[29045:29053]" "f[29055:29057]" "f[29059]" "f[29062:29064]" "f[29067]" "f[29069:29072]" "f[29077:29082]" "f[29084:29087]" "f[29089:29091]" "f[29094:29096]" "f[29099]" "f[29101:29112]" "f[29116:29123]" "f[29125]" "f[29178:29181]" "f[29185:29188]" "f[29193:29197]" "f[29199:29203]" "f[29205:29207]" "f[29210:29211]" "f[29214:29215]" "f[29217:29224]" "f[29230:29236]" "f[29238:29239]" "f[29242:29245]" "f[29249:29258]" "f[29263:29270]" "f[29272]" "f[29274:29276]" "f[29279]" "f[29281:29284]" "f[29289:29294]" "f[29296:29299]" "f[29301:29303]" "f[29332:29335]" "f[29339:29342]" "f[29349:29358]" "f[29360]" "f[29364:29365]" "f[29368:29369]" "f[29371:29378]" "f[29384:29389]" "f[29391:29393]" "f[29396:29399]" "f[29403:29412]" "f[29417:29424]" "f[29426]" "f[29428]" "f[29430:29432]" "f[29434]" "f[29436:29440]" "f[29448:29458]" "f[29460]" "f[29463]" "f[29466:29469]" "f[29473:29476]" "f[29480:29484]" "f[29487:29491]" "f[29493]" "f[29495:29496]" "f[29498:29501]" "f[29503]" "f[29506:29509]" "f[29513:29520]" "f[29523:29530]" "f[29532]" "f[29535:29538]" "f[29540]" "f[29542:29548]" "f[29551:29560]" "f[29562]" "f[29564:29566]" "f[29568:29572]" "f[29578:29584]" "f[29588:29591]" "f[29594:29597]" "f[29601:29609]" "f[29611:29612]" "f[29614:29617]" "f[29620:29623]" "f[29627:29637]" "f[29640:29642]" "f[29644]" "f[29647:29654]" "f[29657:29660]" "f[29662:29669]" "f[29671:29673]" "f[29675]" "f[29677]" "f[29679:29686]" "f[29689:29692]" "f[29694:29700]" "f[29702:29707]" "f[29711:29714]" "f[29719:29724]" "f[29726:29730]" "f[29732:29733]" "f[29736:29739]" "f[29743:29746]" "f[29751:29756]" "f[29758:29763]" "f[29766]" "f[29768:29770]" "f[29772]" "f[29775:29781]" "f[29785:29788]" "f[29790:29796]" "f[29798]" "f[29800:29801]" "f[29803:29804]" "f[29807:29813]" "f[29817:29820]" "f[29822:29828]" "f[29831:29834]" "f[29838:29844]" "f[29848]" "f[29850:29853]" "f[29855:29856]" "f[29858:29860]" "f[29864:29866]" "f[29871:29874]" "f[29876:29879]" "f[29881]" "f[29884:29886]" "f[29888:29889]" "f[29892:29902]" "f[29906]" "f[29909:29916]" "f[29918]" "f[29920]" "f[29922:29923]" "f[29925]" "f[29927:29928]" "f[29930:29933]" "f[29938:29946]" "f[29948:29954]" "f[29956]" "f[29959]" "f[29986:29989]" "f[29993:29996]" "f[30001:30006]" "f[30008:30012]" "f[30014:30015]" "f[30018]" "f[30021:30023]" "f[30025:30028]" "f[30033:30038]" "f[30040:30045]" "f[30048]" "f[30050:30053]" "f[30057:30060]" "f[30065:30070]" "f[30072:30076]" "f[30078:30079]" "f[30082:30083]" "f[30085:30086]" "f[30089:30095]" "f[30099:30102]" "f[30104:30110]" "f[30113:30116]" "f[30120:30126]" "f[30130]" "f[30132:30135]" "f[30137:30138]" "f[30140]" "f[30143:30144]" "f[30146:30148]" "f[30153:30156]" "f[30158:30162]" "f[30166:30168]" "f[30170:30171]" "f[30174:30184]" "f[30188]" "f[30191:30198]" "f[30200]" "f[30202]" "f[30204:30207]" "f[30209]" "f[30212:30226]" "f[30230:30239]" "f[30241]" "f[30268:30271]" "f[30275:30284]" "f[30288]" "f[30290:30294]" "f[30296:30298]" "f[30300:30302]" "f[30305]" "f[30307:30310]" "f[30315:30320]" "f[30322:30326]" "f[30329:30330]" "f[30332:30334]" "f[30337]" "f[30339:30342]" "f[30347:30352]" "f[30354:30357]" "f[30359:30361]" "f[30364:30366]" "f[30369]" "f[30371:30382]" "f[30386:30393]" "f[30395]";
+	setAttr ".ic" -type "componentList" 1282 "f[130:133]" "f[135]" "f[138:141]" "f[146:152]" "f[155:160]" "f[162:164]" "f[168:170]" "f[172]" "f[175:178]" "f[183:188]" "f[190:195]" "f[198]" "f[252:255]" "f[259:262]" "f[267:272]" "f[274:279]" "f[282]" "f[284:287]" "f[291:298]" "f[302:304]" "f[306:309]" "f[311:313]" "f[315:319]" "f[323:326]" "f[331:336]" "f[338:342]" "f[344:345]" "f[348:351]" "f[355:362]" "f[366:368]" "f[370:375]" "f[377:378]" "f[458:460]" "f[463]" "f[465:468]" "f[473:478]" "f[480:485]" "f[487]" "f[490:493]" "f[497:500]" "f[505:510]" "f[512:516]" "f[518:519]" "f[522:525]" "f[529:536]" "f[540:542]" "f[544:547]" "f[549:551]" "f[553:557]" "f[561:568]" "f[572:574]" "f[576:581]" "f[583:584]" "f[586]" "f[588:590]" "f[593:596]" "f[601:606]" "f[608:612]" "f[614]" "f[617:621]" "f[625:636]" "f[640:648]" "f[650:653]" "f[657:665]" "f[669:670]" "f[672:678]" "f[680]" "f[682:685]" "f[689:692]" "f[697:702]" "f[704:709]" "f[712]" "f[766:768]" "f[770]" "f[773:776]" "f[781:786]" "f[788:793]" "f[796]" "f[798:801]" "f[805:808]" "f[813:818]" "f[820:824]" "f[826]" "f[828]" "f[830]" "f[832:834]" "f[837:843]" "f[847:850]" "f[852:858]" "f[861:865]" "f[869:875]" "f[879:882]" "f[884:890]" "f[892]" "f[1050:1051]" "f[1053:1054]" "f[1057:1063]" "f[1067:1070]" "f[1072:1075]" "f[1077:1080]" "f[1082:1085]" "f[1089:1092]" "f[1099:1107]" "f[1109:1110]" "f[1114:1116]" "f[1118]" "f[1121:1130]" "f[1135:1140]" "f[1142:1143]" "f[1145:1149]" "f[1153:1164]" "f[1168:1176]" "f[1438:1440]" "f[1443]" "f[1445:1448]" "f[1453:1458]" "f[1460:1465]" "f[1467]" "f[1470:1473]" "f[1477:1484]" "f[1488:1490]" "f[1492:1495]" "f[1497:1499]" "f[1501:1505]" "f[1509:1512]" "f[1517:1522]" "f[1524:1528]" "f[1530:1531]" "f[1534:1537]" "f[1541:1548]" "f[1552:1554]" "f[1556:1561]" "f[1563:1564]" "f[1592:1594]" "f[1597]" "f[1599:1602]" "f[1607:1612]" "f[1614:1619]" "f[1621]" "f[1624:1627]" "f[1631:1638]" "f[1642:1644]" "f[1646:1649]" "f[1651:1653]" "f[1655:1659]" "f[1663:1666]" "f[1671:1676]" "f[1678:1682]" "f[1684:1685]" "f[1688:1691]" "f[1695:1702]" "f[1706:1708]" "f[1710:1715]" "f[1717:1718]" "f[1876:1877]" "f[1879]" "f[1881]" "f[1883:1890]" "f[1894:1896]" "f[1898:1903]" "f[1905]" "f[1907:1912]" "f[1916:1922]" "f[1926:1930]" "f[1933:1942]" "f[1946:1948]" "f[1952:1960]" "f[1964:1969]" "f[1971:1975]" "f[1979:1990]" "f[1994:2002]" "f[2030:2032]" "f[2034]" "f[2037:2040]" "f[2045:2050]" "f[2052:2055]" "f[2057:2059]" "f[2062:2065]" "f[2069:2072]" "f[2079:2087]" "f[2089:2090]" "f[2094:2097]" "f[2101:2110]" "f[2114]" "f[2116:2120]" "f[2122:2124]" "f[2126:2129]" "f[2133:2144]" "f[2148:2156]" "f[2184]" "f[2186:2188]" "f[2191:2194]" "f[2199:2204]" "f[2206:2210]" "f[2212]" "f[2215:2219]" "f[2223:2234]" "f[2238:2246]" "f[2248:2251]" "f[2255:2263]" "f[2267:2268]" "f[2270:2276]" "f[2278]" "f[2280:2283]" "f[2287:2290]" "f[2295:2300]" "f[2302:2307]" "f[2310]" "f[2338]" "f[2340:2342]" "f[2345:2348]" "f[2353:2358]" "f[2360:2364]" "f[2366]" "f[2369:2373]" "f[2377:2388]" "f[2392:2400]" "f[2402:2405]" "f[2409:2417]" "f[2421:2422]" "f[2424:2430]" "f[2432]" "f[2434:2437]" "f[2441:2444]" "f[2449:2454]" "f[2456:2461]" "f[2464]" "f[2622:2624]" "f[2626]" "f[2629:2632]" "f[2637:2642]" "f[2644:2649]" "f[2652]" "f[2654:2657]" "f[2661:2664]" "f[2669:2674]" "f[2676:2680]" "f[2682]" "f[2684]" "f[2686]" "f[2688:2690]" "f[2693:2699]" "f[2703:2706]" "f[2708:2714]" "f[2717:2721]" "f[2725:2731]" "f[2735:2738]" "f[2740:2746]" "f[2748]" "f[2880:2882]" "f[2884]" "f[2887:2898]" "f[2902:2910]" "f[2990:2992]" "f[2994]" "f[2997:3000]" "f[3004:3010]" "f[3012:3017]" "f[3019]" "f[3021:3023]" "f[3025]" "f[3027]" "f[3029:3032]" "f[3037:3042]" "f[3044:3047]" "f[3049:3051]" "f[3054:3056]" "f[3058]" "f[3061:3064]" "f[3069:3073]" "f[3075:3079]" "f[3081:3083]" "f[3086:3089]" "f[3093:3102]" "f[3107:3114]" "f[3116]" "f[3274:3276]" "f[3279]" "f[3281:3284]" "f[3289:3294]" "f[3296:3301]" "f[3303]" "f[3306:3309]" "f[3313:3316]" "f[3321:3326]" "f[3328:3332]" "f[3334:3335]" "f[3338:3341]" "f[3345:3352]" "f[3356:3358]" "f[3360:3363]" "f[3365:3367]" "f[3369:3373]" "f[3377:3384]" "f[3388:3390]" "f[3392:3397]" "f[3399:3400]" "f[3454:3456]" "f[3459]" "f[3461:3464]" "f[3469:3474]" "f[3476:3481]" "f[3483]" "f[3486:3489]" "f[3493:3496]" "f[3501:3506]" "f[3508:3512]" "f[3514:3515]" "f[3518:3521]" "f[3525:3532]" "f[3536:3538]" "f[3540:3543]" "f[3545:3547]" "f[3549:3553]" "f[3557:3564]" "f[3568:3570]" "f[3572:3577]" "f[3579:3580]" "f[3608]" "f[3610:3612]" "f[3615:3618]" "f[3623:3628]" "f[3630:3634]" "f[3636]" "f[3639:3643]" "f[3647:3655]" "f[3659:3660]" "f[3662:3668]" "f[3670]" "f[3672:3675]" "f[3679:3682]" "f[3687:3692]" "f[3694:3699]" "f[3702]" "f[3756]" "f[3758:3760]" "f[3763:3766]" "f[3771:3776]" "f[3778:3782]" "f[3784]" "f[3787]" "f[3892:3893]" "f[3895]" "f[3897]" "f[3899:3902]" "f[3907:3912]" "f[3914:3917]" "f[3919:3921]" "f[3924:3926]" "f[3928]" "f[3931:3934]" "f[3939:3943]" "f[3945:3949]" "f[3951:3953]" "f[3956:3959]" "f[3963:3972]" "f[3977:3984]" "f[3986]" "f[3988:3990]" "f[3993]" "f[3995:4002]" "f[4008:4014]" "f[4016:4017]" "f[4020:4022]" "f[4024]" "f[4027:4030]" "f[4035:4040]" "f[4042:4047]" "f[4050]" "f[4052:4055]" "f[4059:4062]" "f[4067:4072]" "f[4074:4078]" "f[4080]" "f[4082]" "f[4084]" "f[4086:4088]" "f[4091:4097]" "f[4101:4104]" "f[4106:4112]" "f[4115:4119]" "f[4123:4129]" "f[4133:4136]" "f[4138:4144]" "f[4146]" "f[4330:4331]" "f[4333:4334]" "f[4337:4340]" "f[4344:4350]" "f[4352:4357]" "f[4359:4360]" "f[4362:4365]" "f[4369:4372]" "f[4376:4382]" "f[4384:4389]" "f[4391:4392]" "f[4394]" "f[4396:4398]" "f[4400:4406]" "f[4409:4417]" "f[4419:4423]" "f[4426:4432]" "f[4435:4444]" "f[4446:4449]" "f[4453:4465]" "f[4468:4481]" "f[4485:4488]" "f[4492:4498]" "f[4500:4505]" "f[4507:4508]" "f[4666:4667]" "f[4670:4671]" "f[4673:4684]" "f[4688:4696]" "f[4698:4700]" "f[4703]" "f[4705:4712]" "f[4718:4724]" "f[4726:4727]" "f[4730:4732]" "f[4735]" "f[4737:4740]" "f[4745:4750]" "f[4752:4755]" "f[4757:4759]" "f[4788:4789]" "f[4791:4792]" "f[4795:4801]" "f[4805:4808]" "f[4810:4816]" "f[4819:4822]" "f[4824]" "f[4827:4833]" "f[4837:4840]" "f[4842:4848]" "f[4850]" "f[4852:4855]" "f[4859:4866]" "f[4870:4872]" "f[4874:4877]" "f[4879:4881]" "f[4883:4887]" "f[4891:4898]" "f[4902:4904]" "f[4906:4911]" "f[4913:4914]" "f[4916:4919]" "f[4923:4934]" "f[4938:4946]" "f[4948:4951]" "f[4955:4958]" "f[4963:4968]" "f[4970:4975]" "f[4978]" "f[5136:5140]" "f[5144:5146]" "f[5153:5160]" "f[5162:5164]" "f[5166:5167]" "f[5170:5171]" "f[5174:5178]" "f[5182:5192]" "f[5196:5198]" "f[5200:5208]" "f[5210]" "f[5212:5216]" "f[5220:5230]" "f[5238:5243]" "f[5245:5247]" "f[5510:5512]" "f[5515]" "f[5517:5520]" "f[5525:5530]" "f[5532:5537]" "f[5539]" "f[5542:5545]" "f[5549:5552]" "f[5557:5562]" "f[5564:5568]" "f[5570:5571]" "f[5574:5577]" "f[5581:5588]" "f[5592:5594]" "f[5596:5599]" "f[5601:5603]" "f[5605:5609]" "f[5613:5620]" "f[5624:5626]" "f[5628:5633]" "f[5635:5636]" "f[5664:5666]" "f[5668]" "f[5671:5674]" "f[5679:5684]" "f[5686:5691]" "f[5694]" "f[5696:5699]" "f[5703:5706]" "f[5711:5716]" "f[5718:5722]" "f[5724]" "f[5726]" "f[5728]" "f[5730:5732]" "f[5735:5741]" "f[5745:5748]" "f[5750:5756]" "f[5759:5763]" "f[5767:5773]" "f[5777:5780]" "f[5782:5788]" "f[5790]" "f[6052:6055]" "f[6059:6062]" "f[6067:6072]" "f[6074:6077]" "f[6079:6081]" "f[6162:6164]" "f[6166]" "f[6169:6172]" "f[6177:6182]" "f[6184:6189]" "f[6192]" "f[6194:6197]" "f[6201:6204]" "f[6209:6214]" "f[6216:6220]" "f[6222]" "f[6224]" "f[6226]" "f[6228:6230]" "f[6233:6239]" "f[6243:6246]" "f[6248:6254]" "f[6257:6261]" "f[6265:6271]" "f[6275:6278]" "f[6280:6286]" "f[6288]" "f[6394:6397]" "f[6401:6404]" "f[6408:6414]" "f[6416:6422]" "f[6425:6429]" "f[6431]" "f[6434:6437]" "f[6441:6448]" "f[6451:6458]" "f[6460:6461]" "f[6464:6466]" "f[6469]" "f[6471:6474]" "f[6479:6484]" "f[6486:6491]" "f[6495:6498]" "f[6500]" "f[6503:6514]" "f[6518:6526]" "f[6528:6531]" "f[6535:6544]" "f[6548]" "f[6550:6553]" "f[6555:6558]" "f[6560:6563]" "f[6567:6570]" "f[6575:6580]" "f[6582:6585]" "f[6587:6589]" "f[6618:6620]" "f[6623]" "f[6625:6628]" "f[6633:6638]" "f[6640:6645]" "f[6647]" "f[6650:6653]" "f[6657:6660]" "f[6665:6670]" "f[6672:6676]" "f[6678:6679]" "f[6682:6685]" "f[6689:6692]" "f[6697:6702]" "f[6704:6709]" "f[6712]" "f[6714:6717]" "f[6721:6724]" "f[6729:6734]" "f[6736:6740]" "f[6742:6743]" "f[6772:6774]" "f[6776]" "f[6779:6782]" "f[6787:6792]" "f[6794:6799]" "f[6802]" "f[6804:6806]" "f[6810:6816]" "f[6820]" "f[6822:6825]" "f[6827:6828]" "f[6830:6834]" "f[6838:6844]" "f[6848:6852]" "f[6855:6864]" "f[6868:6871]" "f[6875:6886]" "f[6890:6898]" "f[7004:7006]" "f[7008]" "f[7011:7014]" "f[7019:7024]" "f[7026:7031]" "f[7034]" "f[7036:7039]" "f[7043:7046]" "f[7051:7056]" "f[7058:7062]" "f[7064]" "f[7066]" "f[7068]" "f[7070:7072]" "f[7075:7081]" "f[7085:7088]" "f[7090:7096]" "f[7099:7103]" "f[7107:7113]" "f[7117:7120]" "f[7122:7128]" "f[7130]" "f[7496:7499]" "f[7503:7509]" "f[7513:7516]" "f[7518:7524]" "f[7526]" "f[7528:7530]" "f[7532]" "f[7535:7538]" "f[7543:7548]" "f[7550:7556]" "f[7560:7563]" "f[7567:7570]" "f[7575:7580]" "f[7582:7586]" "f[7588]" "f[7590]" "f[7592:7594]" "f[7597]" "f[7599:7602]" "f[7607:7612]" "f[7614:7620]" "f[7806:7808]" "f[7810]" "f[7813:7816]" "f[7821:7826]" "f[7828:7833]" "f[7836]" "f[7838:7841]" "f[7845:7848]" "f[7853:7858]" "f[7860:7864]" "f[7866]" "f[7868]" "f[7870]" "f[7872:7874]" "f[7877:7883]" "f[7887:7890]" "f[7892:7898]" "f[7901:7905]" "f[7909:7915]" "f[7919:7922]" "f[7924:7930]" "f[7932]" "f[7934:7935]" "f[7938:7939]" "f[7941:7952]" "f[7956:7964]" "f[7966:7968]" "f[7970]" "f[7973:7976]" "f[7981:7986]" "f[7988:7991]" "f[7993:7995]" "f[7998:8000]" "f[8003]" "f[8005:8012]" "f[8018:8024]" "f[8026:8027]" "f[8030:8032]" "f[8035]" "f[8037:8040]" "f[8045:8050]" "f[8052:8055]" "f[8057:8059]" "f[8140:8141]" "f[8143:8144]" "f[8147:8156]" "f[8159:8160]" "f[8162:8169]" "f[8171]" "f[8328:8329]" "f[8332]" "f[8334:8336]" "f[8341:8344]" "f[8346:8348]" "f[8350:8351]" "f[8354:8358]" "f[8362:8365]" "f[8370:8376]" "f[8379:8384]" "f[8386:8387]" "f[8389]" "f[8392:8394]" "f[8397]" "f[8399:8402]" "f[8407:8412]" "f[8414:8417]" "f[8419:8421]" "f[8424:8425]" "f[8427]" "f[8429]" "f[8431:8434]" "f[8439:8444]" "f[8446:8449]" "f[8451:8453]" "f[8456:8458]" "f[8460]" "f[8463:8466]" "f[8471:8475]" "f[8477:8481]" "f[8483:8485]" "f[8488:8491]" "f[8495:8504]" "f[8509:8516]" "f[8518]" "f[8520:8522]" "f[8525]" "f[8527:8534]" "f[8540:8546]" "f[8548:8549]" "f[8552:8554]" "f[8556]" "f[8559:8562]" "f[8567:8572]" "f[8574:8579]" "f[8582]" "f[8584]" "f[8586:8588]" "f[8591:8597]" "f[8601:8604]" "f[8606:8612]" "f[8615:8619]" "f[8623:8626]" "f[8631:8636]" "f[8638:8642]" "f[8644]" "f[8646]" "f[8648:8651]" "f[8655:8661]" "f[8665:8668]" "f[8670:8676]" "f[8678]" "f[8732:8734]" "f[8737]" "f[8739:8742]" "f[8747:8752]" "f[8754:8759]" "f[8761]" "f[8764:8767]" "f[8771:8774]" "f[8779:8784]" "f[8786:8790]" "f[8792:8793]" "f[8796:8799]" "f[8803:8810]" "f[8814:8816]" "f[8818:8821]" "f[8823:8825]" "f[8827:8831]" "f[8835:8842]" "f[8846:8848]" "f[8850:8855]" "f[8857:8858]" "f[8964]" "f[8966:8968]" "f[8971:8974]" "f[8979:8984]" "f[8986:8990]" "f[8992]" "f[8995:8999]" "f[9001]" "f[9004:9016]" "f[9021:9030]" "f[9032]" "f[9034]" "f[9036:9037]" "f[9040:9043]" "f[9050:9055]" "f[9060:9061]" "f[9063:9064]" "f[9067:9076]" "f[9080]" "f[9082:9086]" "f[9088:9090]" "f[9144:9145]" "f[9148:9149]" "f[9151:9162]" "f[9166:9174]" "f[9176:9178]" "f[9180]" "f[9183:9186]" "f[9191:9196]" "f[9198:9201]" "f[9203:9205]" "f[9208:9210]" "f[9213]" "f[9215:9218]" "f[9223:9228]" "f[9230:9233]" "f[9235:9237]" "f[9240:9241]" "f[9243:9244]" "f[9247:9250]" "f[9254:9260]" "f[9262:9267]" "f[9269:9270]" "f[9272:9275]" "f[9279:9282]" "f[9286:9292]" "f[9294:9299]" "f[9301:9302]" "f[9304]" "f[9306:9308]" "f[9310:9316]" "f[9319:9327]" "f[9329:9333]" "f[9336:9342]" "f[9345:9354]" "f[9408:9410]" "f[9412]" "f[9415:9418]" "f[9423:9428]" "f[9430:9433]" "f[9435:9437]" "f[9440:9443]" "f[9447:9456]" "f[9460]" "f[9462:9466]" "f[9468:9470]" "f[9472:9475]" "f[9479:9482]" "f[9489:9497]" "f[9499:9500]" "f[9504:9507]" "f[9511:9522]" "f[9526:9534]" "f[9588]" "f[9590:9592]" "f[9594:9597]" "f[9601:9610]" "f[9612]" "f[9614:9617]" "f[9619]" "f[9622:9636]" "f[9638]" "f[9640:9655]" "f[9659:9662]" "f[9666:9672]" "f[9674:9679]" "f[9681:9682]" "f[9736:9737]" "f[9739:9740]" "f[9743:9746]" "f[9750:9756]" "f[9758:9763]" "f[9765:9766]" "f[9768:9771]" "f[9775:9778]" "f[9782:9788]" "f[9790:9795]" "f[9797:9798]" "f[9800]" "f[9802:9804]" "f[9806:9812]" "f[9815:9823]" "f[9825:9829]" "f[9832:9838]" "f[9841:9850]" "f[9982:9984]" "f[9987]" "f[9989:9992]" "f[9997:10002]" "f[10004:10009]" "f[10011]" "f[10014:10017]" "f[10021:10024]" "f[10029:10034]" "f[10036:10040]" "f[10042:10043]" "f[10046:10049]" "f[10053:10060]" "f[10064:10066]" "f[10068:10071]" "f[10073:10075]" "f[10077:10081]" "f[10085:10092]" "f[10096:10098]" "f[10100:10105]" "f[10107:10108]" "f[10292:10294]" "f[10297]" "f[10299:10302]" "f[10307:10312]" "f[10314:10319]" "f[10321]" "f[10324:10327]" "f[10331:10338]" "f[10342:10344]" "f[10346:10349]" "f[10351:10353]" "f[10355:10359]" "f[10363:10366]" "f[10371:10376]" "f[10378:10382]" "f[10384:10385]" "f[10388:10391]" "f[10395:10402]" "f[10406:10408]" "f[10410:10415]" "f[10417:10418]" "f[10446:10448]" "f[10450]" "f[10453:10456]" "f[10461:10466]" "f[10468:10473]" "f[10476]" "f[10478:10481]" "f[10485:10488]" "f[10493:10498]" "f[10500:10504]" "f[10506]" "f[10508]" "f[10510]" "f[10512:10514]" "f[10517:10523]" "f[10527:10530]" "f[10532:10538]" "f[10541:10545]" "f[10549:10555]" "f[10559:10562]" "f[10564:10570]" "f[10572]" "f[10808:10809]" "f[10811:10812]" "f[10815:10818]" "f[10822:10828]" "f[10830:10835]" "f[10837:10838]" "f[10840:10843]" "f[10847:10850]" "f[10854:10860]" "f[10862:10867]" "f[10869:10870]" "f[10872]" "f[10874:10876]" "f[10878:10884]" "f[10887:10895]" "f[10897:10901]" "f[10904:10910]" "f[10913:10922]" "f[11028:11030]" "f[11033]" "f[11035:11038]" "f[11043:11048]" "f[11050:11055]" "f[11057]" "f[11060:11063]" "f[11067:11070]" "f[11075:11080]" "f[11082:11086]" "f[11088:11089]" "f[11092:11095]" "f[11099:11106]" "f[11110:11112]" "f[11114:11117]" "f[11119:11121]" "f[11123:11127]" "f[11131:11138]" "f[11142:11144]" "f[11146:11151]" "f[11153:11154]" "f[11234:11235]" "f[11238:11239]" "f[11241:11252]" "f[11256:11264]" "f[11266:11268]" "f[11271]" "f[11273:11276]" "f[11281:11286]" "f[11288:11291]" "f[11293:11295]" "f[11532:11533]" "f[11536:11537]" "f[11539:11550]" "f[11554:11562]" "f[11564:11566]" "f[11568]" "f[11571:11574]" "f[11579:11584]" "f[11586:11589]" "f[11591:11593]" "f[11596:11598]" "f[11601]" "f[11603:11610]" "f[11616:11622]" "f[11624:11625]" "f[11628:11630]" "f[11633]" "f[11635:11638]" "f[11643:11648]" "f[11650:11653]" "f[11655:11657]" "f[11790:11792]" "f[11794]" "f[11797:11800]" "f[11805:11810]" "f[11812:11817]" "f[11820]" "f[11822:11825]" "f[11829:11832]" "f[11837:11842]" "f[11844:11848]" "f[11850]" "f[11852]" "f[11854]" "f[11856:11858]" "f[11861:11867]" "f[11871:11874]" "f[11876:11882]" "f[11885:11889]" "f[11893:11899]" "f[11903:11906]" "f[11908:11914]" "f[11916]" "f[12152:12153]" "f[12156:12157]" "f[12159:12170]" "f[12174:12182]" "f[12314:12317]" "f[12320]" "f[12322:12332]" "f[12336]" "f[12339:12343]" "f[12345:12349]" "f[12456:12458]" "f[12460]" "f[12463:12466]" "f[12471:12476]" "f[12478:12483]" "f[12486]" "f[12488:12491]" "f[12495:12498]" "f[12503:12508]" "f[12510:12514]" "f[12516]" "f[12518]" "f[12520]" "f[12522:12524]" "f[12527:12533]" "f[12537:12540]" "f[12542:12548]" "f[12551:12555]" "f[12559:12565]" "f[12569:12572]" "f[12574:12580]" "f[12582]" "f[12584:12587]" "f[12590:12593]" "f[12597:12607]" "f[12610:12613]" "f[12616:12619]" "f[12623:12632]" "f[12634]" "f[12636:12639]" "f[12643:12650]" "f[12653:12656]" "f[12658:12664]" "f[12666:12671]" "f[12675:12682]" "f[12685:12688]" "f[12690:12697]" "f[12699:12701]" "f[12703]" "f[12705]" "f[12707:12710]" "f[12715:12720]" "f[12722:12725]" "f[12727:12729]" "f[12732:12734]" "f[12736]" "f[12739:12742]" "f[12747:12751]" "f[12753:12757]" "f[12759:12761]" "f[12764:12767]" "f[12771:12780]" "f[12785:12792]" "f[12794]" "f[12796:12798]" "f[12801]" "f[12803:12810]" "f[12816:12822]" "f[12824:12825]" "f[12854:12856]" "f[12858]" "f[12861:12864]" "f[12869:12874]" "f[12876:12881]" "f[12884]" "f[12886:12889]" "f[12893:12896]" "f[12901:12906]" "f[12908:12912]" "f[12914]" "f[12916]" "f[12918]" "f[12920:12922]" "f[12925:12931]" "f[12935:12938]" "f[12940:12946]" "f[12949:12953]" "f[12957:12963]" "f[12967:12970]" "f[12972:12978]" "f[12980]" "f[13034:13036]" "f[13038]" "f[13041:13044]" "f[13049:13054]" "f[13056:13061]" "f[13064]" "f[13066:13069]" "f[13073:13076]" "f[13081:13086]" "f[13088:13092]" "f[13094]" "f[13096]" "f[13098]" "f[13100:13102]" "f[13105:13111]" "f[13115:13118]" "f[13120:13126]" "f[13129:13133]" "f[13137:13143]" "f[13147:13150]" "f[13152:13158]" "f[13160]" "f[13760:13762]" "f[13764]" "f[13767:13770]" "f[13774:13780]" "f[13782:13787]" "f[13789]" "f[13791]" "f[13974:13976]" "f[13978]" "f[13981:13984]" "f[13989:13994]" "f[13996:14001]" "f[14004]" "f[14006:14009]" "f[14013:14016]" "f[14021:14026]" "f[14028:14032]" "f[14034]" "f[14036]" "f[14038]" "f[14040:14042]" "f[14045:14051]" "f[14055:14058]" "f[14060:14066]" "f[14069:14073]" "f[14077:14083]" "f[14087:14090]" "f[14092:14098]" "f[14100]" "f[14180:14181]" "f[14183:14184]" "f[14187:14190]" "f[14194:14200]" "f[14202:14207]" "f[14209:14210]" "f[14212:14215]" "f[14219:14222]" "f[14226:14232]" "f[14234:14239]" "f[14241:14242]" "f[14270:14272]" "f[14275]" "f[14277:14280]" "f[14285:14290]" "f[14292:14297]" "f[14299]" "f[14302:14305]" "f[14309:14316]" "f[14320:14322]" "f[14324:14327]" "f[14329:14331]" "f[14333:14337]" "f[14341:14344]" "f[14349:14354]" "f[14356:14360]" "f[14362:14363]" "f[14366:14369]" "f[14373:14380]" "f[14384:14386]" "f[14388:14393]" "f[14395:14396]" "f[14476:14478]" "f[14480]" "f[14483:14486]" "f[14491:14496]" "f[14498:14503]" "f[14506]" "f[14508:14511]" "f[14515:14518]" "f[14523:14528]" "f[14530:14534]" "f[14536]" "f[14538]" "f[14540]" "f[14542:14544]" "f[14547:14553]" "f[14557:14560]" "f[14562:14568]" "f[14571]" "f[14650:14652]" "f[14654]" "f[14657:14660]" "f[14664:14670]" "f[14672:14677]" "f[14680:14681]" "f[14838:14841]" "f[14845:14848]" "f[14853:14858]" "f[14860:14864]" "f[14866]" "f[14868]" "f[14870:14873]" "f[14877:14883]" "f[14887:14890]" "f[14892:14898]" "f[14900]" "f[14902:14903]" "f[14905:14906]" "f[14909:14912]" "f[14916:14922]" "f[14924:14929]" "f[14931:14932]" "f[14934:14937]" "f[14941:14944]" "f[14948:14954]" "f[14956:14961]" "f[14963:14964]" "f[15070:15072]" "f[15075:15076]" "f[15078:15080]" "f[15086:15093]" "f[15096:15098]" "f[15100:15101]" "f[15103:15105]" "f[15498:15500]" "f[15503]" "f[15505:15508]" "f[15513:15518]" "f[15520:15525]" "f[15527]" "f[15530:15533]" "f[15537:15544]" "f[15548:15550]" "f[15552:15555]" "f[15557:15559]" "f[15561]";
+createNode materialInfo -n "materialInfo1";
+	rename -uid "BF688D8A-421C-8A08-7C29-33B53BE89138";
+createNode substanceNode -n "substanceNode1";
+	rename -uid "5055D645-4EAB-56E0-F88C-E78060B409F0";
+	addAttr -r false -ci true -h true -k true -sn "input_randomseed" -ln "input_randomseed" 
+		-nn "$randomseed" -ct "substance_input" -smn 0 -smx 2147483647 -at "long";
+	addAttr -r false -ci true -h true -k true -sn "input_stratum_intensity" -ln "input_stratum_intensity" 
+		-nn "Stratum Intensity" -ct "substance_input" -dv 1 -smn 0 -smx 1 -at "float";
+	addAttr -r false -ci true -uac -h true -k true -sn "input_color" -ln "input_color" 
+		-nn "Color" -ct "substance_input" -at "float3" -nc 3;
+	addAttr -r false -ci true -h true -k true -sn "input_colorr" -ln "input_colorR" 
+		-dv 0.75686299800872803 -smn 0 -smx 0 -at "float" -p "input_color";
+	addAttr -r false -ci true -h true -k true -sn "input_colorg" -ln "input_colorG" 
+		-dv 0.66959601640701294 -smn 0 -smx 0 -at "float" -p "input_color";
+	addAttr -r false -ci true -h true -k true -sn "input_colorb" -ln "input_colorB" 
+		-dv 0.56987899541854858 -smn 0 -smx 0 -at "float" -p "input_color";
+	addAttr -r false -ci true -h true -k true -sn "input_sandstone_roughness" -ln "input_sandstone_roughness" 
+		-nn "Sandstone Roughness" -ct "substance_input" -dv 0.94999998807907104 -smn 0 -smx 
+		1 -at "float";
+	addAttr -r false -ci true -h true -k true -sn "input_diffuse" -ln "input_diffuse" 
+		-nn "Diffuse" -ct "substance_input" -min 0 -max 1 -smn 0 -smx 0 -at "bool";
+	addAttr -r false -ci true -h true -k true -sn "input_basecolor" -ln "input_basecolor" 
+		-nn "Base Color" -ct "substance_input" -dv 1 -min 0 -max 1 -smn 0 -smx 0 -at "bool";
+	addAttr -r false -ci true -h true -k true -sn "input_normal" -ln "input_normal" 
+		-nn "Normal" -ct "substance_input" -dv 1 -min 0 -max 1 -smn 0 -smx 0 -at "bool";
+	addAttr -r false -ci true -h true -k true -sn "input_specular" -ln "input_specular" 
+		-nn "Specular" -ct "substance_input" -min 0 -max 1 -smn 0 -smx 0 -at "bool";
+	addAttr -r false -ci true -h true -k true -sn "input_glossiness" -ln "input_glossiness" 
+		-nn "Glossiness" -ct "substance_input" -min 0 -max 1 -smn 0 -smx 0 -at "bool";
+	addAttr -r false -ci true -h true -k true -sn "input_roughness" -ln "input_roughness" 
+		-nn "Roughness" -ct "substance_input" -dv 1 -min 0 -max 1 -smn 0 -smx 0 -at "bool";
+	addAttr -r false -ci true -h true -k true -sn "input_metallic" -ln "input_metallic" 
+		-nn "Metallic" -ct "substance_input" -dv 1 -min 0 -max 1 -smn 0 -smx 0 -at "bool";
+	addAttr -r false -ci true -h true -k true -sn "input_height" -ln "input_height" 
+		-nn "Height" -ct "substance_input" -dv 1 -min 0 -max 1 -smn 0 -smx 0 -at "bool";
+	addAttr -r false -ci true -h true -k true -sn "input_luminosity" -ln "input_luminosity" 
+		-nn "Luminosity" -ct "substance_input" -dv 0.5 -smn 0 -smx 1 -at "float";
+	addAttr -r false -ci true -h true -k true -sn "input_contrast" -ln "input_contrast" 
+		-nn "Contrast" -ct "substance_input" -smn -1 -smx 1 -at "float";
+	addAttr -r false -ci true -h true -k true -sn "input_hue_shift" -ln "input_hue_shift" 
+		-nn "Hue Shift" -ct "substance_input" -smn 0 -smx 1 -at "float";
+	addAttr -r false -ci true -h true -k true -sn "input_saturation" -ln "input_saturation" 
+		-nn "Saturation" -ct "substance_input" -dv 0.5 -smn 0 -smx 1 -at "float";
+	addAttr -r false -ci true -h true -k true -sn "input_normal_intensity" -ln "input_normal_intensity" 
+		-nn "Normal Intensity" -ct "substance_input" -dv 0.5 -smn 0 -smx 1 -at "float";
+	addAttr -r false -ci true -h true -k true -sn "input_normal_format" -ln "input_normal_format" 
+		-nn "Normal Format" -ct "substance_input" -smn 0 -smx 0 -at "long";
+	addAttr -r false -ci true -h true -k true -sn "input_height_range" -ln "input_height_range" 
+		-nn "Height Range" -ct "substance_input" -dv 0.5 -smn 0 -smx 1 -at "float";
+	addAttr -r false -ci true -h true -k true -sn "input_height_position" -ln "input_height_position" 
+		-nn "Height Position" -ct "substance_input" -dv 0.5 -smn 0 -smx 1 -at "float";
+	addAttr -ci true -h true -sn "output_diffuse" -ln "output_diffuse" -ct "substance_output" 
+		-dt "string";
+	addAttr -ci true -h true -sn "output_basecolor" -ln "output_basecolor" -ct "substance_output" 
+		-dt "string";
+	addAttr -ci true -h true -sn "output_normal" -ln "output_normal" -ct "substance_output" 
+		-dt "string";
+	addAttr -ci true -h true -sn "output_roughness" -ln "output_roughness" -ct "substance_output" 
+		-dt "string";
+	setAttr ".sbs" -type "string" "C:/Users/Kerr/Downloads/sandstone_beige.sbsar";
+	setAttr ".ctd" yes;
+	setAttr ".wkfl" -type "string" "Arnold";
+	setAttr ".storedHeight" 9;
+	setAttr ".pst" -type "stringArray" 1 "<sbspresets formatversion=\"1.1\" count=\"0\" >\n</sbspresets>\n"  ;
+createNode place2dTexture -n "place2dTexture1";
+	rename -uid "D30AD5C7-4D5E-14B5-EF8E-58ADAFCA5326";
+createNode substanceOutputNode -n "Beige_Sandstone__diffuse";
+	rename -uid "0C8DFAB7-47E3-8339-288C-C99522FA1ADD";
+	setAttr ".cpth" -type "string" "C:/Users/Kerr/Documents/maya\\2024\\substance/baked_images/Beige_Sandstone__diffuse.exr";
+createNode file -n "file1";
+	rename -uid "65A8D9CD-4E41-E785-AF9D-6CAB96842725";
+	setAttr ".cs" -type "string" "sRGB";
+	setAttr ".ifr" yes;
+createNode substanceOutputNode -n "Beige_Sandstone__basecolor";
+	rename -uid "F5C8F3ED-43FE-B8B9-A673-64A207770439";
+	setAttr ".cpth" -type "string" "C:/Users/Kerr/Documents/maya\\2024\\substance/baked_images/Beige_Sandstone__basecolor.png";
+createNode file -n "file2";
+	rename -uid "5F4CB4F4-4E0F-9085-5009-53A7EB9B2A0B";
+	setAttr ".cs" -type "string" "sRGB";
+	setAttr ".ifr" yes;
+createNode substanceOutputNode -n "Beige_Sandstone__normal";
+	rename -uid "78E3BCDD-4089-8328-2472-729588A31B69";
+	setAttr ".cpth" -type "string" "C:/Users/Kerr/Documents/maya\\2024\\substance/baked_images/Beige_Sandstone__normal.exr";
+createNode file -n "file3";
+	rename -uid "DE9A1ED3-4107-B881-1332-F0AFA26BB035";
+	setAttr ".cs" -type "string" "Raw";
+	setAttr ".ifr" yes;
+createNode substanceOutputNode -n "Beige_Sandstone__roughness";
+	rename -uid "C7B565B0-4920-C268-421E-BEB56BFAA55A";
+	setAttr ".cpth" -type "string" "C:/Users/Kerr/Documents/maya\\2024\\substance/baked_images/Beige_Sandstone__roughness.png";
+createNode file -n "file4";
+	rename -uid "15E532BB-4931-2CF1-45B2-F091BC59B38F";
+	setAttr ".ail" yes;
+	setAttr ".cs" -type "string" "Raw";
+	setAttr ".ifr" yes;
+createNode lambert -n "groundPath";
+	rename -uid "4219EE1B-46AD-05AB-2D67-5A9D76E569C2";
+createNode substanceNode -n "substanceNode2";
+	rename -uid "D35C7CFC-4969-5F98-32A1-D989D6856844";
+	addAttr -r false -ci true -h true -k true -sn "input_randomseed" -ln "input_randomseed" 
+		-nn "$randomseed" -ct "substance_input" -smn 0 -smx 2147483647 -at "long";
+	addAttr -r false -ci true -h true -k true -sn "input_stratum_intensity" -ln "input_stratum_intensity" 
+		-nn "Stratum Intensity" -ct "substance_input" -dv 1 -smn 0 -smx 1 -at "float";
+	addAttr -r false -ci true -uac -h true -k true -sn "input_color" -ln "input_color" 
+		-nn "Color" -ct "substance_input" -at "float3" -nc 3;
+	addAttr -r false -ci true -h true -k true -sn "input_colorr" -ln "input_colorR" 
+		-dv 0.75686299800872803 -smn 0 -smx 0 -at "float" -p "input_color";
+	addAttr -r false -ci true -h true -k true -sn "input_colorg" -ln "input_colorG" 
+		-dv 0.66959601640701294 -smn 0 -smx 0 -at "float" -p "input_color";
+	addAttr -r false -ci true -h true -k true -sn "input_colorb" -ln "input_colorB" 
+		-dv 0.56987899541854858 -smn 0 -smx 0 -at "float" -p "input_color";
+	addAttr -r false -ci true -h true -k true -sn "input_sandstone_roughness" -ln "input_sandstone_roughness" 
+		-nn "Sandstone Roughness" -ct "substance_input" -dv 0.94999998807907104 -smn 0 -smx 
+		1 -at "float";
+	addAttr -r false -ci true -h true -k true -sn "input_diffuse" -ln "input_diffuse" 
+		-nn "Diffuse" -ct "substance_input" -min 0 -max 1 -smn 0 -smx 0 -at "bool";
+	addAttr -r false -ci true -h true -k true -sn "input_basecolor" -ln "input_basecolor" 
+		-nn "Base Color" -ct "substance_input" -dv 1 -min 0 -max 1 -smn 0 -smx 0 -at "bool";
+	addAttr -r false -ci true -h true -k true -sn "input_normal" -ln "input_normal" 
+		-nn "Normal" -ct "substance_input" -dv 1 -min 0 -max 1 -smn 0 -smx 0 -at "bool";
+	addAttr -r false -ci true -h true -k true -sn "input_specular" -ln "input_specular" 
+		-nn "Specular" -ct "substance_input" -min 0 -max 1 -smn 0 -smx 0 -at "bool";
+	addAttr -r false -ci true -h true -k true -sn "input_glossiness" -ln "input_glossiness" 
+		-nn "Glossiness" -ct "substance_input" -min 0 -max 1 -smn 0 -smx 0 -at "bool";
+	addAttr -r false -ci true -h true -k true -sn "input_roughness" -ln "input_roughness" 
+		-nn "Roughness" -ct "substance_input" -dv 1 -min 0 -max 1 -smn 0 -smx 0 -at "bool";
+	addAttr -r false -ci true -h true -k true -sn "input_metallic" -ln "input_metallic" 
+		-nn "Metallic" -ct "substance_input" -dv 1 -min 0 -max 1 -smn 0 -smx 0 -at "bool";
+	addAttr -r false -ci true -h true -k true -sn "input_height" -ln "input_height" 
+		-nn "Height" -ct "substance_input" -dv 1 -min 0 -max 1 -smn 0 -smx 0 -at "bool";
+	addAttr -r false -ci true -h true -k true -sn "input_luminosity" -ln "input_luminosity" 
+		-nn "Luminosity" -ct "substance_input" -dv 0.5 -smn 0 -smx 1 -at "float";
+	addAttr -r false -ci true -h true -k true -sn "input_contrast" -ln "input_contrast" 
+		-nn "Contrast" -ct "substance_input" -smn -1 -smx 1 -at "float";
+	addAttr -r false -ci true -h true -k true -sn "input_hue_shift" -ln "input_hue_shift" 
+		-nn "Hue Shift" -ct "substance_input" -smn 0 -smx 1 -at "float";
+	addAttr -r false -ci true -h true -k true -sn "input_saturation" -ln "input_saturation" 
+		-nn "Saturation" -ct "substance_input" -dv 0.5 -smn 0 -smx 1 -at "float";
+	addAttr -r false -ci true -h true -k true -sn "input_normal_intensity" -ln "input_normal_intensity" 
+		-nn "Normal Intensity" -ct "substance_input" -dv 0.5 -smn 0 -smx 1 -at "float";
+	addAttr -r false -ci true -h true -k true -sn "input_normal_format" -ln "input_normal_format" 
+		-nn "Normal Format" -ct "substance_input" -smn 0 -smx 0 -at "long";
+	addAttr -r false -ci true -h true -k true -sn "input_height_range" -ln "input_height_range" 
+		-nn "Height Range" -ct "substance_input" -dv 0.5 -smn 0 -smx 1 -at "float";
+	addAttr -r false -ci true -h true -k true -sn "input_height_position" -ln "input_height_position" 
+		-nn "Height Position" -ct "substance_input" -dv 0.5 -smn 0 -smx 1 -at "float";
+	addAttr -ci true -h true -sn "output_diffuse" -ln "output_diffuse" -ct "substance_output" 
+		-dt "string";
+	addAttr -ci true -h true -sn "output_basecolor" -ln "output_basecolor" -ct "substance_output" 
+		-dt "string";
+	addAttr -ci true -h true -sn "output_normal" -ln "output_normal" -ct "substance_output" 
+		-dt "string";
+	addAttr -ci true -h true -sn "output_roughness" -ln "output_roughness" -ct "substance_output" 
+		-dt "string";
+	addAttr -ci true -h true -sn "output_metallic" -ln "output_metallic" -ct "substance_output" 
+		-dt "string";
+	addAttr -ci true -h true -sn "output_height" -ln "output_height" -ct "substance_output" 
+		-dt "string";
+	setAttr ".sbs" -type "string" "C:/Users/Kerr/Downloads/sandstone_beige.sbsar";
+	setAttr ".ctd" yes;
+	setAttr ".wkfl" -type "string" "Arnold";
+	setAttr ".storedHeight" 9;
+	setAttr ".pst" -type "stringArray" 1 "<sbspresets formatversion=\"1.1\" count=\"0\" >\n</sbspresets>\n"  ;
+createNode place2dTexture -n "place2dTexture2";
+	rename -uid "364C278A-4AB5-383D-6E39-91B28EAE24C4";
+createNode substanceOutputNode -n "Beige_Sandstone__diffuse1";
+	rename -uid "2815C18C-42C6-2D46-9597-39A4D05E7FF5";
+	setAttr ".cpth" -type "string" "C:/Users/Kerr/Documents/maya\\2024\\substance/baked_images/Beige_Sandstone__diffuse1.exr";
+createNode file -n "file5";
+	rename -uid "89C7A067-4489-F0D4-DAB6-0C97E27D2D3F";
+	setAttr ".cs" -type "string" "sRGB";
+	setAttr ".ifr" yes;
+createNode substanceOutputNode -n "Beige_Sandstone__basecolor1";
+	rename -uid "5F8D1AB2-46B3-F3F6-F7BE-DA9E188553E1";
+	setAttr ".cpth" -type "string" "C:/Users/Kerr/Documents/maya\\2024\\substance/baked_images/Beige_Sandstone__basecolor1.png";
+createNode file -n "file6";
+	rename -uid "A3BE4783-4428-0FA2-6872-B185D0B184C9";
+	setAttr ".cs" -type "string" "sRGB";
+	setAttr ".ifr" yes;
+createNode substanceOutputNode -n "Beige_Sandstone__normal1";
+	rename -uid "AFA3C813-4E97-6424-46A7-25B9699965F9";
+	setAttr ".cpth" -type "string" "C:/Users/Kerr/Documents/maya\\2024\\substance/baked_images/Beige_Sandstone__normal1.exr";
+createNode file -n "file7";
+	rename -uid "7C32B8BB-43DE-C3BE-8AD8-E6862EB5713C";
+	setAttr ".ail" yes;
+	setAttr ".cs" -type "string" "Raw";
+	setAttr ".ifr" yes;
+createNode substanceOutputNode -n "Beige_Sandstone__roughness1";
+	rename -uid "4BB11E73-4CCA-F8F3-35FB-D9A5E73FDEC4";
+	setAttr ".cpth" -type "string" "C:/Users/Kerr/Documents/maya\\2024\\substance/baked_images/Beige_Sandstone__roughness1.png";
+createNode file -n "file8";
+	rename -uid "E42C8DC3-47ED-D988-BD4D-8C8BA9D0CA6A";
+	setAttr ".ail" yes;
+	setAttr ".cs" -type "string" "Raw";
+	setAttr ".ifr" yes;
+createNode substanceOutputNode -n "Beige_Sandstone__metallic";
+	rename -uid "2FC2936F-4F88-84CD-3731-3C86BBAEAE7E";
+	setAttr ".cpth" -type "string" "C:/Users/Kerr/Documents/maya\\2024\\substance/baked_images/Beige_Sandstone__metallic.png";
+createNode file -n "file9";
+	rename -uid "E9170FBA-487F-0C4C-61DD-84AAC3510E94";
+	setAttr ".ail" yes;
+	setAttr ".cs" -type "string" "Raw";
+	setAttr ".ifr" yes;
+createNode substanceOutputNode -n "Beige_Sandstone__height";
+	rename -uid "6D6A40A4-4841-BA1F-E6C1-90B4614A4ED6";
+	setAttr ".cpth" -type "string" "C:/Users/Kerr/Documents/maya\\2024\\substance/baked_images/Beige_Sandstone__height.exr";
+createNode file -n "file10";
+	rename -uid "278385D4-438F-9313-EC61-5DB2967D16C8";
+	setAttr ".ail" yes;
+	setAttr ".ao" -0.5;
+	setAttr ".cs" -type "string" "Raw";
+	setAttr ".ifr" yes;
+createNode multiplyDivide -n "multiplyDivide1";
+	rename -uid "855538E1-4600-D43B-591A-69BE1CB2107E";
+createNode aiStandardSurface -n "aiStandardSurface1";
+	rename -uid "B5F6659C-4721-2B3A-0506-B4BB8ED9C742";
+	setAttr ".emission" 1;
+	setAttr ".emission_color" -type "float3" 0 0 0 ;
+createNode shadingEngine -n "set1";
+	rename -uid "283FE17B-439F-A60E-0636-22BBB1B64A0C";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "materialInfo2";
+	rename -uid "388EC681-4213-64BC-4B83-81AFEE4A0294";
+createNode bump2d -n "bump2d1";
+	rename -uid "36EC584A-4326-7C20-C630-B68F533FC5E3";
+	setAttr ".bi" 1;
+	setAttr ".vc1" -type "float3" 0 9.9999997e-06 0 ;
+	setAttr ".vc2" -type "float3" 9.9999997e-06 9.9999997e-06 0 ;
+createNode displacementShader -n "displacementShader1";
+	rename -uid "310D72D6-4FAE-F69B-0867-8AAE26A2A001";
+createNode reference -n "sharedReferenceNode";
+	rename -uid "4FE7AF2C-407B-FFCA-FC67-4CA07B93BBB8";
+	setAttr ".ed" -type "dataReferenceEdits" 
+		"sharedReferenceNode";
+createNode substanceNode -n "substanceNode3";
+	rename -uid "20C3E666-4153-E782-9C1D-EDAD7DB174BC";
+	addAttr -r false -ci true -h true -k true -sn "input_randomseed" -ln "input_randomseed" 
+		-nn "$randomseed" -ct "substance_input" -smn 0 -smx 2147483647 -at "long";
+	addAttr -r false -ci true -uac -h true -k true -sn "input_sand_color_1" -ln "input_sand_color_1" 
+		-nn "Sand Color 1" -ct "substance_input" -at "float3" -nc 3;
+	addAttr -r false -ci true -h true -k true -sn "input_sand_color_1r" -ln "input_sand_color_1R" 
+		-dv 0.85490202903747559 -smn 0 -smx 0 -at "float" -p "input_sand_color_1";
+	addAttr -r false -ci true -h true -k true -sn "input_sand_color_1g" -ln "input_sand_color_1G" 
+		-dv 0.7019609808921814 -smn 0 -smx 0 -at "float" -p "input_sand_color_1";
+	addAttr -r false -ci true -h true -k true -sn "input_sand_color_1b" -ln "input_sand_color_1B" 
+		-dv 0.53725498914718628 -smn 0 -smx 0 -at "float" -p "input_sand_color_1";
+	addAttr -r false -ci true -uac -h true -k true -sn "input_sand_color_2" -ln "input_sand_color_2" 
+		-nn "Sand Color 2" -ct "substance_input" -at "float3" -nc 3;
+	addAttr -r false -ci true -h true -k true -sn "input_sand_color_2r" -ln "input_sand_color_2R" 
+		-dv 0.64313697814941406 -smn 0 -smx 0 -at "float" -p "input_sand_color_2";
+	addAttr -r false -ci true -h true -k true -sn "input_sand_color_2g" -ln "input_sand_color_2G" 
+		-dv 0.52808099985122681 -smn 0 -smx 0 -at "float" -p "input_sand_color_2";
+	addAttr -r false -ci true -h true -k true -sn "input_sand_color_2b" -ln "input_sand_color_2B" 
+		-dv 0.40417298674583435 -smn 0 -smx 0 -at "float" -p "input_sand_color_2";
+	addAttr -r false -ci true -h true -k true -sn "input_sand_roughness" -ln "input_sand_roughness" 
+		-nn "Sand Roughness" -ct "substance_input" -dv 0.85490202903747559 -smn 0 -smx 1 
+		-at "float";
+	addAttr -r false -ci true -h true -k true -sn "input_pebble_density" -ln "input_pebble_density" 
+		-nn "Pebble Density" -ct "substance_input" -dv 0.4699999988079071 -smn 0 -smx 1 -at "float";
+	addAttr -r false -ci true -uac -h true -k true -sn "input_pebble_color" -ln "input_pebble_color" 
+		-nn "Pebble Color" -ct "substance_input" -at "float3" -nc 3;
+	addAttr -r false -ci true -h true -k true -sn "input_pebble_colorr" -ln "input_pebble_colorR" 
+		-dv 0.76470601558685303 -smn 0 -smx 0 -at "float" -p "input_pebble_color";
+	addAttr -r false -ci true -h true -k true -sn "input_pebble_colorg" -ln "input_pebble_colorG" 
+		-dv 0.68240398168563843 -smn 0 -smx 0 -at "float" -p "input_pebble_color";
+	addAttr -r false -ci true -h true -k true -sn "input_pebble_colorb" -ln "input_pebble_colorB" 
+		-dv 0.59377098083496094 -smn 0 -smx 0 -at "float" -p "input_pebble_color";
+	addAttr -r false -ci true -h true -k true -sn "input_pebble_roughness" -ln "input_pebble_roughness" 
+		-nn "Pebble Roughness" -ct "substance_input" -dv 0.76627200841903687 -smn 0 -smx 
+		1 -at "float";
+	addAttr -r false -ci true -h true -k true -sn "input_wave_amount_x" -ln "input_wave_amount_x" 
+		-nn "Wave Amount X" -ct "substance_input" -dv 8 -smn 1 -smx 32 -at "long";
+	addAttr -r false -ci true -h true -k true -sn "input_wave_amount_y" -ln "input_wave_amount_y" 
+		-nn "Wave Amount Y" -ct "substance_input" -dv 22 -smn 1 -smx 32 -at "long";
+	addAttr -r false -ci true -h true -k true -sn "input_wave_roundness" -ln "input_wave_roundness" 
+		-nn "Wave Roundness" -ct "substance_input" -dv 0.2800000011920929 -smn 0 -smx 1 -at "float";
+	addAttr -r false -ci true -h true -k true -sn "input_channel_diffuse" -ln "input_channel_diffuse" 
+		-nn "Diffuse" -ct "substance_input" -min 0 -max 1 -smn 0 -smx 0 -at "bool";
+	addAttr -r false -ci true -h true -k true -sn "input_channel_basecolor" -ln "input_channel_basecolor" 
+		-nn "Base Color" -ct "substance_input" -dv 1 -min 0 -max 1 -smn 0 -smx 0 -at "bool";
+	addAttr -r false -ci true -h true -k true -sn "input_channel_normal" -ln "input_channel_normal" 
+		-nn "Normal" -ct "substance_input" -dv 1 -min 0 -max 1 -smn 0 -smx 0 -at "bool";
+	addAttr -r false -ci true -h true -k true -sn "input_channel_specular" -ln "input_channel_specular" 
+		-nn "Specular" -ct "substance_input" -min 0 -max 1 -smn 0 -smx 0 -at "bool";
+	addAttr -r false -ci true -h true -k true -sn "input_channel_glossiness" -ln "input_channel_glossiness" 
+		-nn "Glossiness" -ct "substance_input" -min 0 -max 1 -smn 0 -smx 0 -at "bool";
+	addAttr -r false -ci true -h true -k true -sn "input_channel_roughness" -ln "input_channel_roughness" 
+		-nn "Roughness" -ct "substance_input" -dv 1 -min 0 -max 1 -smn 0 -smx 0 -at "bool";
+	addAttr -r false -ci true -h true -k true -sn "input_channel_metallic" -ln "input_channel_metallic" 
+		-nn "Metallic" -ct "substance_input" -dv 1 -min 0 -max 1 -smn 0 -smx 0 -at "bool";
+	addAttr -r false -ci true -h true -k true -sn "input_channel_height" -ln "input_channel_height" 
+		-nn "Height" -ct "substance_input" -dv 1 -min 0 -max 1 -smn 0 -smx 0 -at "bool";
+	addAttr -r false -ci true -h true -k true -sn "input_channel_ambientocclusion" -ln "input_channel_ambientocclusion" 
+		-nn "Ambient Occlusion" -ct "substance_input" -dv 1 -min 0 -max 1 -smn 0 -smx 0 -at "bool";
+	addAttr -r false -ci true -h true -k true -sn "input_luminosity" -ln "input_luminosity" 
+		-nn "Luminosity" -ct "substance_input" -dv 0.5 -smn 0 -smx 1 -at "float";
+	addAttr -r false -ci true -h true -k true -sn "input_contrast" -ln "input_contrast" 
+		-nn "Contrast" -ct "substance_input" -smn -1 -smx 1 -at "float";
+	addAttr -r false -ci true -h true -k true -sn "input_hue_shift" -ln "input_hue_shift" 
+		-nn "Hue Shift" -ct "substance_input" -smn 0 -smx 1 -at "float";
+	addAttr -r false -ci true -h true -k true -sn "input_saturation" -ln "input_saturation" 
+		-nn "Saturation" -ct "substance_input" -dv 0.5 -smn 0 -smx 1 -at "float";
+	addAttr -r false -ci true -h true -k true -sn "input_normal_intensity" -ln "input_normal_intensity" 
+		-nn "Normal Intensity" -ct "substance_input" -dv 0.5 -smn 0 -smx 1 -at "float";
+	addAttr -r false -ci true -h true -k true -sn "input_normal_format" -ln "input_normal_format" 
+		-nn "Normal Format" -ct "substance_input" -smn 0 -smx 0 -at "long";
+	addAttr -r false -ci true -h true -k true -sn "input_height_range" -ln "input_height_range" 
+		-nn "Height Range" -ct "substance_input" -dv 1 -smn 0 -smx 1 -at "float";
+	addAttr -r false -ci true -h true -k true -sn "input_height_position" -ln "input_height_position" 
+		-nn "Height Position" -ct "substance_input" -dv 0.5 -smn 0 -smx 1 -at "float";
+	addAttr -r false -ci true -h true -k true -sn "input_ambientocclusion_intensity" 
+		-ln "input_ambientocclusion_intensity" -nn "Ambient Occlusion Intensity" -ct "substance_input" 
+		-dv 0.5 -smn 0 -smx 1 -at "float";
+	addAttr -ci true -h true -sn "output_diffuse" -ln "output_diffuse" -ct "substance_output" 
+		-dt "string";
+	addAttr -ci true -h true -sn "output_roughness" -ln "output_roughness" -ct "substance_output" 
+		-dt "string";
+	addAttr -ci true -h true -sn "output_height" -ln "output_height" -ct "substance_output" 
+		-dt "string";
+	addAttr -ci true -h true -sn "output_basecolor" -ln "output_basecolor" -ct "substance_output" 
+		-dt "string";
+	addAttr -ci true -h true -sn "output_metallic" -ln "output_metallic" -ct "substance_output" 
+		-dt "string";
+	addAttr -ci true -h true -sn "output_normal" -ln "output_normal" -ct "substance_output" 
+		-dt "string";
+	setAttr ".sbs" -type "string" "C:/Users/Kerr/Downloads/sand_step_dunes.sbsar";
+	setAttr ".ctd" yes;
+	setAttr ".wkfl" -type "string" "Arnold";
+	setAttr ".storedHeight" 9;
+	setAttr ".pst" -type "stringArray" 1 "<sbspresets formatversion=\"1.1\" count=\"3\" >\n <sbspreset pkgurl=\"pkg://sand_step_dunes\" label=\"Rippled Grey Sand\" >\n  <presetinput identifier=\"sand_color_1\" uid=\"3218690496\" type=\"2\" value=\"0.701961,0.654246,0.602861\" />\n  <presetinput identifier=\"sand_color_2\" uid=\"3218690538\" type=\"2\" value=\"0.643137,0.598206,0.549819\" />\n  <presetinput identifier=\"sand_roughness\" uid=\"3218690332\" type=\"0\" value=\"0.854902\" />\n  <presetinput identifier=\"pebble_density\" uid=\"3218687494\" type=\"0\" value=\"0.61\" />\n  <presetinput identifier=\"pebble_color\" uid=\"3218687616\" type=\"2\" value=\"0.764706,0.709838,0.65075\" />\n  <presetinput identifier=\"pebble_roughness\" uid=\"3218687656\" type=\"0\" value=\"0.766272\" />\n  <presetinput identifier=\"wave_amount_x\" uid=\"3218690349\" type=\"4\" value=\"17\" />\n  <presetinput identifier=\"wave_amount_y\" uid=\"3218689089\" type=\"4\" value=\"7\" />\n  <presetinput identifier=\"wave_roundness\" uid=\"3218808085\" type=\"0\" value=\"1\" />\n  <presetinput identifier=\"channel_diffuse\" uid=\"2775031492\" type=\"4\" value=\"0\" />\n  <presetinput identifier=\"channel_basecolor\" uid=\"2882184942\" type=\"4\" value=\"1\" />\n  <presetinput identifier=\"channel_normal\" uid=\"2882184941\" type=\"4\" value=\"1\" />\n  <presetinput identifier=\"channel_specular\" uid=\"2775031547\" type=\"4\" value=\"0\" />\n  <presetinput identifier=\"channel_glossiness\" uid=\"2775031546\" type=\"4\" value=\"0\" />\n  <presetinput identifier=\"channel_roughness\" uid=\"2882184929\" type=\"4\" value=\"1\" />\n  <presetinput identifier=\"channel_metallic\" uid=\"2882184928\" type=\"4\" value=\"1\" />\n  <presetinput identifier=\"channel_height\" uid=\"2882184934\" type=\"4\" value=\"1\" />\n  <presetinput identifier=\"channel_ambientocclusion\" uid=\"2687101315\" type=\"4\" value=\"1\" />\n  <presetinput identifier=\"luminosity\" uid=\"3538960353\" type=\"0\" value=\"0.5\" />\n  <presetinput identifier=\"contrast\" uid=\"2910189251\" type=\"0\" value=\"0\" />\n  <presetinput identifier=\"hue_shift\" uid=\"3538960275\" type=\"0\" value=\"0\" />\n  <presetinput identifier=\"saturation\" uid=\"3538960372\" type=\"0\" value=\"0.5\" />\n  <presetinput identifier=\"normal_intensity\" uid=\"3539058816\" type=\"0\" value=\"0.5\" />\n  <presetinput identifier=\"normal_format\" uid=\"2882188749\" type=\"4\" value=\"0\" />\n  <presetinput identifier=\"height_range\" uid=\"2865876129\" type=\"0\" value=\"1\" />\n  <presetinput identifier=\"height_position\" uid=\"2865876176\" type=\"0\" value=\"0.5\" />\n  <presetinput identifier=\"ambientocclusion_intensity\" uid=\"2692927530\" type=\"0\" value=\"0.5\" />\n </sbspreset>\n <sbspreset pkgurl=\"pkg://sand_step_dunes\" label=\"Dark Grey Sand\" >\n  <presetinput identifier=\"sand_color_1\" uid=\"3218690496\" type=\"2\" value=\"0.372549,0.347226,0.319954\" />\n  <presetinput identifier=\"sand_color_2\" uid=\"3218690538\" type=\"2\" value=\"0.498039,0.463245,0.425775\" />\n  <presetinput identifier=\"sand_roughness\" uid=\"3218690332\" type=\"0\" value=\"0.76\" />\n  <presetinput identifier=\"pebble_density\" uid=\"3218687494\" type=\"0\" value=\"0.43\" />\n  <presetinput identifier=\"pebble_color\" uid=\"3218687616\" type=\"2\" value=\"0.447059,0.414982,0.380438\" />\n  <presetinput identifier=\"pebble_roughness\" uid=\"3218687656\" type=\"0\" value=\"0.766272\" />\n  <presetinput identifier=\"wave_amount_x\" uid=\"3218690349\" type=\"4\" value=\"6\" />\n  <presetinput identifier=\"wave_amount_y\" uid=\"3218689089\" type=\"4\" value=\"20\" />\n  <presetinput identifier=\"wave_roundness\" uid=\"3218808085\" type=\"0\" value=\"0.23\" />\n  <presetinput identifier=\"channel_diffuse\" uid=\"2775031492\" type=\"4\" value=\"0\" />\n  <presetinput identifier=\"channel_basecolor\" uid=\"2882184942\" type=\"4\" value=\"1\" />\n  <presetinput identifier=\"channel_normal\" uid=\"2882184941\" type=\"4\" value=\"1\" />\n  <presetinput identifier=\"channel_specular\" uid=\"2775031547\" type=\"4\" value=\"0\" />\n  <presetinput identifier=\"channel_glossiness\" uid=\"2775031546\" type=\"4\" value=\"0\" />\n  <presetinput identifier=\"channel_roughness\" uid=\"2882184929\" type=\"4\" value=\"1\" />\n  <presetinput identifier=\"channel_metallic\" uid=\"2882184928\" type=\"4\" value=\"1\" />\n  <presetinput identifier=\"channel_height\" uid=\"2882184934\" type=\"4\" value=\"1\" />\n  <presetinput identifier=\"channel_ambientocclusion\" uid=\"2687101315\" type=\"4\" value=\"1\" />\n  <presetinput identifier=\"luminosity\" uid=\"3538960353\" type=\"0\" value=\"0.5\" />\n  <presetinput identifier=\"contrast\" uid=\"2910189251\" type=\"0\" value=\"0\" />\n  <presetinput identifier=\"hue_shift\" uid=\"3538960275\" type=\"0\" value=\"0\" />\n  <presetinput identifier=\"saturation\" uid=\"3538960372\" type=\"0\" value=\"0.5\" />\n  <presetinput identifier=\"normal_intensity\" uid=\"3539058816\" type=\"0\" value=\"0.5\" />\n  <presetinput identifier=\"normal_format\" uid=\"2882188749\" type=\"4\" value=\"0\" />\n  <presetinput identifier=\"height_range\" uid=\"2865876129\" type=\"0\" value=\"1\" />\n  <presetinput identifier=\"height_position\" uid=\"2865876176\" type=\"0\" value=\"0.5\" />\n  <presetinput identifier=\"ambientocclusion_intensity\" uid=\"2692927530\" type=\"0\" value=\"0.5\" />\n </sbspreset>\n <sbspreset pkgurl=\"pkg://sand_step_dunes\" label=\"Pink Sand\" >\n  <presetinput identifier=\"sand_color_1\" uid=\"3218690496\" type=\"2\" value=\"0.784314,0.614533,0.572088\" />\n  <presetinput identifier=\"sand_color_2\" uid=\"3218690538\" type=\"2\" value=\"0.733333,0.561317,0.549246\" />\n  <presetinput identifier=\"sand_roughness\" uid=\"3218690332\" type=\"0\" value=\"0.78\" />\n  <presetinput identifier=\"pebble_density\" uid=\"3218687494\" type=\"0\" value=\"0.43\" />\n  <presetinput identifier=\"pebble_color\" uid=\"3218687616\" type=\"2\" value=\"0.819608,0.627354,0.613863\" />\n  <presetinput identifier=\"pebble_roughness\" uid=\"3218687656\" type=\"0\" value=\"0.766272\" />\n  <presetinput identifier=\"wave_amount_x\" uid=\"3218690349\" type=\"4\" value=\"8\" />\n  <presetinput identifier=\"wave_amount_y\" uid=\"3218689089\" type=\"4\" value=\"10\" />\n  <presetinput identifier=\"wave_roundness\" uid=\"3218808085\" type=\"0\" value=\"0.72\" />\n  <presetinput identifier=\"channel_diffuse\" uid=\"2775031492\" type=\"4\" value=\"0\" />\n  <presetinput identifier=\"channel_basecolor\" uid=\"2882184942\" type=\"4\" value=\"1\" />\n  <presetinput identifier=\"channel_normal\" uid=\"2882184941\" type=\"4\" value=\"1\" />\n  <presetinput identifier=\"channel_specular\" uid=\"2775031547\" type=\"4\" value=\"0\" />\n  <presetinput identifier=\"channel_glossiness\" uid=\"2775031546\" type=\"4\" value=\"0\" />\n  <presetinput identifier=\"channel_roughness\" uid=\"2882184929\" type=\"4\" value=\"1\" />\n  <presetinput identifier=\"channel_metallic\" uid=\"2882184928\" type=\"4\" value=\"1\" />\n  <presetinput identifier=\"channel_height\" uid=\"2882184934\" type=\"4\" value=\"1\" />\n  <presetinput identifier=\"channel_ambientocclusion\" uid=\"2687101315\" type=\"4\" value=\"1\" />\n  <presetinput identifier=\"luminosity\" uid=\"3538960353\" type=\"0\" value=\"0.5\" />\n  <presetinput identifier=\"contrast\" uid=\"2910189251\" type=\"0\" value=\"0\" />\n  <presetinput identifier=\"hue_shift\" uid=\"3538960275\" type=\"0\" value=\"0\" />\n  <presetinput identifier=\"saturation\" uid=\"3538960372\" type=\"0\" value=\"0.5\" />\n  <presetinput identifier=\"normal_intensity\" uid=\"3539058816\" type=\"0\" value=\"0.5\" />\n  <presetinput identifier=\"normal_format\" uid=\"2882188749\" type=\"4\" value=\"0\" />\n  <presetinput identifier=\"height_range\" uid=\"2865876129\" type=\"0\" value=\"1\" />\n  <presetinput identifier=\"height_position\" uid=\"2865876176\" type=\"0\" value=\"0.5\" />\n  <presetinput identifier=\"ambientocclusion_intensity\" uid=\"2692927530\" type=\"0\" value=\"0.5\" />\n </sbspreset>\n</sbspresets>\n"  ;
+createNode place2dTexture -n "place2dTexture3";
+	rename -uid "A2B9A6FC-4DE3-31FD-AE34-12BA3C295AD0";
+createNode substanceOutputNode -n "Sand_Step_Dunes_diffuse";
+	rename -uid "307A2F59-477D-35CA-D899-A2B691ACA96C";
+	setAttr ".cpth" -type "string" "C:/Users/Kerr/Documents/maya\\2024\\substance/baked_images/Sand_Step_Dunes_diffuse.exr";
+createNode file -n "file11";
+	rename -uid "6818C329-4DD7-F4C0-6E50-BCA3A662CD09";
+	setAttr ".cs" -type "string" "sRGB";
+	setAttr ".ifr" yes;
+createNode substanceOutputNode -n "Sand_Step_Dunes_roughness";
+	rename -uid "C1820754-4720-5D41-DA56-D698DE7B762A";
+	setAttr ".cpth" -type "string" "C:/Users/Kerr/Documents/maya\\2024\\substance/baked_images/Sand_Step_Dunes_roughness.png";
+createNode file -n "file12";
+	rename -uid "0AB4E4D9-4D5D-D7CA-914E-658D3F17E04A";
+	setAttr ".ail" yes;
+	setAttr ".cs" -type "string" "Raw";
+	setAttr ".ifr" yes;
+createNode substanceOutputNode -n "Sand_Step_Dunes_height";
+	rename -uid "6C02C04A-4DCD-4662-04CF-CCB8D073C4F1";
+	setAttr ".cpth" -type "string" "C:/Users/Kerr/Documents/maya\\2024\\substance/baked_images/Sand_Step_Dunes_height.exr";
+createNode file -n "file13";
+	rename -uid "20A155DC-46F0-BB06-0538-97B078E891E9";
+	setAttr ".ail" yes;
+	setAttr ".ao" -0.5;
+	setAttr ".cs" -type "string" "Raw";
+	setAttr ".ifr" yes;
+createNode substanceOutputNode -n "Sand_Step_Dunes_basecolor";
+	rename -uid "8BA26177-4AF9-116C-7FE6-B4A7FCE6D5AA";
+	setAttr ".cpth" -type "string" "C:/Users/Kerr/Documents/maya\\2024\\substance/baked_images/Sand_Step_Dunes_basecolor.png";
+createNode file -n "file14";
+	rename -uid "C6000271-4CFE-B007-6F7B-D993AA496531";
+	setAttr ".cs" -type "string" "sRGB";
+	setAttr ".ifr" yes;
+createNode substanceOutputNode -n "Sand_Step_Dunes_metallic";
+	rename -uid "A8272B97-4BB7-230B-F386-E295E7C3D9ED";
+	setAttr ".cpth" -type "string" "C:/Users/Kerr/Documents/maya\\2024\\substance/baked_images/Sand_Step_Dunes_metallic.png";
+createNode file -n "file16";
+	rename -uid "F7AEB225-4AA4-6DD8-AC3E-47A4D0D652E6";
+	setAttr ".ail" yes;
+	setAttr ".cs" -type "string" "Raw";
+	setAttr ".ifr" yes;
+createNode substanceOutputNode -n "Sand_Step_Dunes_normal";
+	rename -uid "7C5295E7-4400-AEC0-5951-05B227AF9E67";
+	setAttr ".cpth" -type "string" "C:/Users/Kerr/Documents/maya\\2024\\substance/baked_images/Sand_Step_Dunes_normal.exr";
+createNode file -n "file17";
+	rename -uid "59ECE532-4885-362E-1DF7-0EBBF096D742";
+	setAttr ".ail" yes;
+	setAttr ".cs" -type "string" "Raw";
+	setAttr ".ifr" yes;
+createNode multiplyDivide -n "multiplyDivide2";
+	rename -uid "17B0BA0F-4013-F7A5-06FF-5BB0A02F5EB5";
+createNode aiStandardSurface -n "aiStandardSurface2";
+	rename -uid "83F67FE0-4C00-2E1A-5762-118E19F16957";
+	setAttr ".emission" 1;
+	setAttr ".emission_color" -type "float3" 0 0 0 ;
+createNode shadingEngine -n "set2";
+	rename -uid "9993EA62-43CC-DFFF-0D1C-79ADAA49177F";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "materialInfo3";
+	rename -uid "4102CDC1-47AF-2EBF-3427-5AAF943148E5";
+createNode bump2d -n "bump2d2";
+	rename -uid "A06447EB-49DE-9A39-299A-8C98E3E3C1F3";
+	setAttr ".bi" 1;
+	setAttr ".vc1" -type "float3" 0 1.9999999e-05 0 ;
+	setAttr ".vc2" -type "float3" 9.9999997e-06 9.9999997e-06 0 ;
+createNode displacementShader -n "displacementShader2";
+	rename -uid "B9957DC9-40CF-CB8A-21C7-87B274104214";
+createNode substanceNode -n "substanceNode4";
+	rename -uid "FC5E68E1-436B-660C-0C26-7F9D66FC15BF";
+	addAttr -r false -ci true -h true -k true -sn "input_randomseed" -ln "input_randomseed" 
+		-nn "$randomseed" -ct "substance_input" -smn 0 -smx 2147483647 -at "long";
+	addAttr -r false -ci true -uac -h true -k true -sn "input_rock_color_1" -ln "input_rock_color_1" 
+		-nn "Rock Color 1" -ct "substance_input" -at "float3" -nc 3;
+	addAttr -r false -ci true -h true -k true -sn "input_rock_color_1r" -ln "input_rock_color_1R" 
+		-dv 0.60392200946807861 -smn 0 -smx 0 -at "float" -p "input_rock_color_1";
+	addAttr -r false -ci true -h true -k true -sn "input_rock_color_1g" -ln "input_rock_color_1G" 
+		-dv 0.50445199012756348 -smn 0 -smx 0 -at "float" -p "input_rock_color_1";
+	addAttr -r false -ci true -h true -k true -sn "input_rock_color_1b" -ln "input_rock_color_1B" 
+		-dv 0.47603198885917664 -smn 0 -smx 0 -at "float" -p "input_rock_color_1";
+	addAttr -r false -ci true -uac -h true -k true -sn "input_rock_color_2" -ln "input_rock_color_2" 
+		-nn "Rock Color 2" -ct "substance_input" -at "float3" -nc 3;
+	addAttr -r false -ci true -h true -k true -sn "input_rock_color_2r" -ln "input_rock_color_2R" 
+		-dv 0.79607802629470825 -smn 0 -smx 0 -at "float" -p "input_rock_color_2";
+	addAttr -r false -ci true -h true -k true -sn "input_rock_color_2g" -ln "input_rock_color_2G" 
+		-dv 0.60111099481582642 -smn 0 -smx 0 -at "float" -p "input_rock_color_2";
+	addAttr -r false -ci true -h true -k true -sn "input_rock_color_2b" -ln "input_rock_color_2B" 
+		-dv 0.38399100303649902 -smn 0 -smx 0 -at "float" -p "input_rock_color_2";
+	addAttr -r false -ci true -h true -k true -sn "input_rock_roughness" -ln "input_rock_roughness" 
+		-nn "Rock Roughness" -ct "substance_input" -dv 0.80000001192092896 -smn 0 -smx 1 
+		-at "float";
+	addAttr -r false -ci true -h true -k true -sn "input_strata_angle" -ln "input_strata_angle" 
+		-nn "Strata Angle" -ct "substance_input" -dv 0.92683297395706177 -smn 0 -smx 1 -at "float";
+	addAttr -r false -ci true -h true -k true -sn "input_strata_density" -ln "input_strata_density" 
+		-nn "Strata Density" -ct "substance_input" -dv 0.34999999403953552 -smn 0 -smx 1 
+		-at "float";
+	addAttr -r false -ci true -h true -k true -sn "input_channel_diffuse" -ln "input_channel_diffuse" 
+		-nn "Diffuse" -ct "substance_input" -min 0 -max 1 -smn 0 -smx 0 -at "bool";
+	addAttr -r false -ci true -h true -k true -sn "input_channel_basecolor" -ln "input_channel_basecolor" 
+		-nn "Base Color" -ct "substance_input" -dv 1 -min 0 -max 1 -smn 0 -smx 0 -at "bool";
+	addAttr -r false -ci true -h true -k true -sn "input_channel_normal" -ln "input_channel_normal" 
+		-nn "Normal" -ct "substance_input" -dv 1 -min 0 -max 1 -smn 0 -smx 0 -at "bool";
+	addAttr -r false -ci true -h true -k true -sn "input_channel_specular" -ln "input_channel_specular" 
+		-nn "Specular" -ct "substance_input" -min 0 -max 1 -smn 0 -smx 0 -at "bool";
+	addAttr -r false -ci true -h true -k true -sn "input_channel_glossiness" -ln "input_channel_glossiness" 
+		-nn "Glossiness" -ct "substance_input" -min 0 -max 1 -smn 0 -smx 0 -at "bool";
+	addAttr -r false -ci true -h true -k true -sn "input_channel_roughness" -ln "input_channel_roughness" 
+		-nn "Roughness" -ct "substance_input" -dv 1 -min 0 -max 1 -smn 0 -smx 0 -at "bool";
+	addAttr -r false -ci true -h true -k true -sn "input_channel_metallic" -ln "input_channel_metallic" 
+		-nn "Metallic" -ct "substance_input" -dv 1 -min 0 -max 1 -smn 0 -smx 0 -at "bool";
+	addAttr -r false -ci true -h true -k true -sn "input_channel_height" -ln "input_channel_height" 
+		-nn "Height" -ct "substance_input" -dv 1 -min 0 -max 1 -smn 0 -smx 0 -at "bool";
+	addAttr -r false -ci true -h true -k true -sn "input_channel_ambientocclusion" -ln "input_channel_ambientocclusion" 
+		-nn "Ambient Occlusion" -ct "substance_input" -dv 1 -min 0 -max 1 -smn 0 -smx 0 -at "bool";
+	addAttr -r false -ci true -h true -k true -sn "input_luminosity" -ln "input_luminosity" 
+		-nn "Luminosity" -ct "substance_input" -dv 0.5 -smn 0 -smx 1 -at "float";
+	addAttr -r false -ci true -h true -k true -sn "input_contrast" -ln "input_contrast" 
+		-nn "Contrast" -ct "substance_input" -smn -1 -smx 1 -at "float";
+	addAttr -r false -ci true -h true -k true -sn "input_hue_shift" -ln "input_hue_shift" 
+		-nn "Hue Shift" -ct "substance_input" -smn 0 -smx 1 -at "float";
+	addAttr -r false -ci true -h true -k true -sn "input_saturation" -ln "input_saturation" 
+		-nn "Saturation" -ct "substance_input" -dv 0.5 -smn 0 -smx 1 -at "float";
+	addAttr -r false -ci true -h true -k true -sn "input_normal_intensity" -ln "input_normal_intensity" 
+		-nn "Normal Intensity" -ct "substance_input" -dv 0.5 -smn 0 -smx 1 -at "float";
+	addAttr -r false -ci true -h true -k true -sn "input_normal_format" -ln "input_normal_format" 
+		-nn "Normal Format" -ct "substance_input" -smn 0 -smx 0 -at "long";
+	addAttr -r false -ci true -h true -k true -sn "input_height_range" -ln "input_height_range" 
+		-nn "Height Range" -ct "substance_input" -dv 1 -smn 0 -smx 1 -at "float";
+	addAttr -r false -ci true -h true -k true -sn "input_height_position" -ln "input_height_position" 
+		-nn "Height Position" -ct "substance_input" -dv 0.5 -smn 0 -smx 1 -at "float";
+	addAttr -r false -ci true -h true -k true -sn "input_ambientocclusion_intensity" 
+		-ln "input_ambientocclusion_intensity" -nn "Ambient Occlusion Intensity" -ct "substance_input" 
+		-dv 0.5 -smn 0 -smx 1 -at "float";
+	addAttr -ci true -h true -sn "output_diffuse" -ln "output_diffuse" -ct "substance_output" 
+		-dt "string";
+	addAttr -ci true -h true -sn "output_roughness" -ln "output_roughness" -ct "substance_output" 
+		-dt "string";
+	addAttr -ci true -h true -sn "output_height" -ln "output_height" -ct "substance_output" 
+		-dt "string";
+	addAttr -ci true -h true -sn "output_basecolor" -ln "output_basecolor" -ct "substance_output" 
+		-dt "string";
+	addAttr -ci true -h true -sn "output_ambientocclusion" -ln "output_ambientocclusion" 
+		-ct "substance_output" -dt "string";
+	addAttr -ci true -h true -sn "output_metallic" -ln "output_metallic" -ct "substance_output" 
+		-dt "string";
+	addAttr -ci true -h true -sn "output_normal" -ln "output_normal" -ct "substance_output" 
+		-dt "string";
+	setAttr ".sbs" -type "string" "C:/Users/Kerr/Downloads/sand_stone_strata.sbsar";
+	setAttr ".ctd" yes;
+	setAttr ".wkfl" -type "string" "Arnold";
+	setAttr ".storedHeight" 9;
+	setAttr ".pst" -type "stringArray" 1 "<sbspresets formatversion=\"1.1\" count=\"3\" >\n <sbspreset pkgurl=\"pkg://sand_stone_strata\" label=\"Grey Stone Strata\" >\n  <presetinput identifier=\"rock_color_1\" uid=\"2783079955\" type=\"2\" value=\"0.529412,0.529412,0.529412\" />\n  <presetinput identifier=\"rock_color_2\" uid=\"2783585658\" type=\"2\" value=\"0.194872,0.180546,0.145862\" />\n  <presetinput identifier=\"rock_roughness\" uid=\"2783080175\" type=\"0\" value=\"0.8\" />\n  <presetinput identifier=\"strata_angle\" uid=\"2783787594\" type=\"0\" value=\"0.972222\" />\n  <presetinput identifier=\"strata_density\" uid=\"2783776206\" type=\"0\" value=\"0.84\" />\n  <presetinput identifier=\"channel_diffuse\" uid=\"3218869818\" type=\"4\" value=\"0\" />\n  <presetinput identifier=\"channel_basecolor\" uid=\"2976986640\" type=\"4\" value=\"1\" />\n  <presetinput identifier=\"channel_normal\" uid=\"2976986643\" type=\"4\" value=\"1\" />\n  <presetinput identifier=\"channel_specular\" uid=\"3218869765\" type=\"4\" value=\"0\" />\n  <presetinput identifier=\"channel_glossiness\" uid=\"3218869764\" type=\"4\" value=\"0\" />\n  <presetinput identifier=\"channel_roughness\" uid=\"2976986655\" type=\"4\" value=\"1\" />\n  <presetinput identifier=\"channel_metallic\" uid=\"2976986654\" type=\"4\" value=\"1\" />\n  <presetinput identifier=\"channel_height\" uid=\"2976986648\" type=\"4\" value=\"1\" />\n  <presetinput identifier=\"channel_ambientocclusion\" uid=\"3130161533\" type=\"4\" value=\"1\" />\n  <presetinput identifier=\"luminosity\" uid=\"3360403231\" type=\"0\" value=\"0.5\" />\n  <presetinput identifier=\"contrast\" uid=\"3083757117\" type=\"0\" value=\"0\" />\n  <presetinput identifier=\"hue_shift\" uid=\"3360403309\" type=\"0\" value=\"0\" />\n  <presetinput identifier=\"saturation\" uid=\"3360403210\" type=\"0\" value=\"0.5\" />\n  <presetinput identifier=\"normal_intensity\" uid=\"3360313470\" type=\"0\" value=\"0.5\" />\n  <presetinput identifier=\"normal_format\" uid=\"2976982323\" type=\"4\" value=\"0\" />\n  <presetinput identifier=\"height_range\" uid=\"2959760479\" type=\"0\" value=\"1\" />\n  <presetinput identifier=\"height_position\" uid=\"2959760430\" type=\"0\" value=\"0.5\" />\n  <presetinput identifier=\"ambientocclusion_intensity\" uid=\"3124314324\" type=\"0\" value=\"0.5\" />\n </sbspreset>\n <sbspreset pkgurl=\"pkg://sand_stone_strata\" label=\"Dirty Grey Stone Layers\" >\n  <presetinput identifier=\"rock_color_1\" uid=\"2783079955\" type=\"2\" value=\"0.338462,0.34359,0.232489\" />\n  <presetinput identifier=\"rock_color_2\" uid=\"2783585658\" type=\"2\" value=\"0.27451,0.27451,0.27451\" />\n  <presetinput identifier=\"rock_roughness\" uid=\"2783080175\" type=\"0\" value=\"0.73\" />\n  <presetinput identifier=\"strata_angle\" uid=\"2783787594\" type=\"0\" value=\"0.0579444\" />\n  <presetinput identifier=\"strata_density\" uid=\"2783776206\" type=\"0\" value=\"0.08\" />\n  <presetinput identifier=\"channel_diffuse\" uid=\"3218869818\" type=\"4\" value=\"0\" />\n  <presetinput identifier=\"channel_basecolor\" uid=\"2976986640\" type=\"4\" value=\"1\" />\n  <presetinput identifier=\"channel_normal\" uid=\"2976986643\" type=\"4\" value=\"1\" />\n  <presetinput identifier=\"channel_specular\" uid=\"3218869765\" type=\"4\" value=\"0\" />\n  <presetinput identifier=\"channel_glossiness\" uid=\"3218869764\" type=\"4\" value=\"0\" />\n  <presetinput identifier=\"channel_roughness\" uid=\"2976986655\" type=\"4\" value=\"1\" />\n  <presetinput identifier=\"channel_metallic\" uid=\"2976986654\" type=\"4\" value=\"1\" />\n  <presetinput identifier=\"channel_height\" uid=\"2976986648\" type=\"4\" value=\"1\" />\n  <presetinput identifier=\"channel_ambientocclusion\" uid=\"3130161533\" type=\"4\" value=\"1\" />\n  <presetinput identifier=\"luminosity\" uid=\"3360403231\" type=\"0\" value=\"0.5\" />\n  <presetinput identifier=\"contrast\" uid=\"3083757117\" type=\"0\" value=\"0\" />\n  <presetinput identifier=\"hue_shift\" uid=\"3360403309\" type=\"0\" value=\"0\" />\n  <presetinput identifier=\"saturation\" uid=\"3360403210\" type=\"0\" value=\"0.5\" />\n  <presetinput identifier=\"normal_intensity\" uid=\"3360313470\" type=\"0\" value=\"0.5\" />\n  <presetinput identifier=\"normal_format\" uid=\"2976982323\" type=\"4\" value=\"0\" />\n  <presetinput identifier=\"height_range\" uid=\"2959760479\" type=\"0\" value=\"1\" />\n  <presetinput identifier=\"height_position\" uid=\"2959760430\" type=\"0\" value=\"0.5\" />\n  <presetinput identifier=\"ambientocclusion_intensity\" uid=\"3124314324\" type=\"0\" value=\"0.5\" />\n </sbspreset>\n <sbspreset pkgurl=\"pkg://sand_stone_strata\" label=\"Old Stone Strata\" >\n  <presetinput identifier=\"rock_color_1\" uid=\"2783079955\" type=\"2\" value=\"0.533333,0.405589,0.201198\" />\n  <presetinput identifier=\"rock_color_2\" uid=\"2783585658\" type=\"2\" value=\"0.312821,0.269593,0.20043\" />\n  <presetinput identifier=\"rock_roughness\" uid=\"2783080175\" type=\"0\" value=\"0.57\" />\n  <presetinput identifier=\"strata_angle\" uid=\"2783787594\" type=\"0\" value=\"0.505556\" />\n  <presetinput identifier=\"strata_density\" uid=\"2783776206\" type=\"0\" value=\"0\" />\n  <presetinput identifier=\"channel_diffuse\" uid=\"3218869818\" type=\"4\" value=\"0\" />\n  <presetinput identifier=\"channel_basecolor\" uid=\"2976986640\" type=\"4\" value=\"1\" />\n  <presetinput identifier=\"channel_normal\" uid=\"2976986643\" type=\"4\" value=\"1\" />\n  <presetinput identifier=\"channel_specular\" uid=\"3218869765\" type=\"4\" value=\"0\" />\n  <presetinput identifier=\"channel_glossiness\" uid=\"3218869764\" type=\"4\" value=\"0\" />\n  <presetinput identifier=\"channel_roughness\" uid=\"2976986655\" type=\"4\" value=\"1\" />\n  <presetinput identifier=\"channel_metallic\" uid=\"2976986654\" type=\"4\" value=\"1\" />\n  <presetinput identifier=\"channel_height\" uid=\"2976986648\" type=\"4\" value=\"1\" />\n  <presetinput identifier=\"channel_ambientocclusion\" uid=\"3130161533\" type=\"4\" value=\"1\" />\n  <presetinput identifier=\"luminosity\" uid=\"3360403231\" type=\"0\" value=\"0.5\" />\n  <presetinput identifier=\"contrast\" uid=\"3083757117\" type=\"0\" value=\"0\" />\n  <presetinput identifier=\"hue_shift\" uid=\"3360403309\" type=\"0\" value=\"0\" />\n  <presetinput identifier=\"saturation\" uid=\"3360403210\" type=\"0\" value=\"0.5\" />\n  <presetinput identifier=\"normal_intensity\" uid=\"3360313470\" type=\"0\" value=\"0.5\" />\n  <presetinput identifier=\"normal_format\" uid=\"2976982323\" type=\"4\" value=\"0\" />\n  <presetinput identifier=\"height_range\" uid=\"2959760479\" type=\"0\" value=\"1\" />\n  <presetinput identifier=\"height_position\" uid=\"2959760430\" type=\"0\" value=\"0.5\" />\n  <presetinput identifier=\"ambientocclusion_intensity\" uid=\"3124314324\" type=\"0\" value=\"0.5\" />\n </sbspreset>\n</sbspresets>\n"  ;
+createNode place2dTexture -n "place2dTexture4";
+	rename -uid "D773A16B-4940-27EC-8DBE-8285CDD5B907";
+createNode substanceOutputNode -n "Sand_Stone_Strata_diffuse";
+	rename -uid "B2DB0DD2-425E-1449-9392-BFAECBE30F80";
+	setAttr ".cpth" -type "string" "C:/Users/Kerr/Documents/maya\\2024\\substance/baked_images/Sand_Stone_Strata_diffuse.exr";
+createNode file -n "file18";
+	rename -uid "E5E1AE45-40AA-AC0C-1856-C4B68147486E";
+	setAttr ".cs" -type "string" "sRGB";
+	setAttr ".ifr" yes;
+createNode substanceOutputNode -n "Sand_Stone_Strata_roughness";
+	rename -uid "C833710E-4C96-7678-020C-2489978CFDD2";
+	setAttr ".cpth" -type "string" "C:/Users/Kerr/Documents/maya\\2024\\substance/baked_images/Sand_Stone_Strata_roughness.png";
+createNode file -n "file19";
+	rename -uid "5F3EBA60-492E-19F0-A5F0-55A90B577305";
+	setAttr ".ail" yes;
+	setAttr ".cs" -type "string" "Raw";
+	setAttr ".ifr" yes;
+createNode substanceOutputNode -n "Sand_Stone_Strata_height";
+	rename -uid "2D99FDB7-4564-A1FD-7BBA-74ADAE746579";
+	setAttr ".cpth" -type "string" "C:/Users/Kerr/Documents/maya\\2024\\substance/baked_images/Sand_Stone_Strata_height.exr";
+createNode file -n "file20";
+	rename -uid "845EB222-41EB-D233-8E3E-0CB462697C64";
+	setAttr ".ail" yes;
+	setAttr ".ao" -0.5;
+	setAttr ".cs" -type "string" "Raw";
+	setAttr ".ifr" yes;
+createNode substanceOutputNode -n "Sand_Stone_Strata_basecolor";
+	rename -uid "688F5D87-4153-4351-D21F-46BDF345674E";
+	setAttr ".cpth" -type "string" "C:/Users/Kerr/Documents/maya\\2024\\substance/baked_images/Sand_Stone_Strata_basecolor.png";
+createNode file -n "file21";
+	rename -uid "1125B810-40AC-E8EA-9E67-939839947C5E";
+	setAttr ".cs" -type "string" "sRGB";
+	setAttr ".ifr" yes;
+createNode substanceOutputNode -n "Sand_Stone_Strata_ambientocclusion";
+	rename -uid "80B55750-4BED-6967-E164-FA9AA1FED51E";
+	setAttr ".cpth" -type "string" "C:/Users/Kerr/Documents/maya\\2024\\substance/baked_images/Sand_Stone_Strata_ambientocclusion.exr";
+createNode file -n "file22";
+	rename -uid "8252E7E4-473C-8193-8B83-FAB4806E52DF";
+	setAttr ".ail" yes;
+	setAttr ".cs" -type "string" "Raw";
+	setAttr ".ifr" yes;
+createNode substanceOutputNode -n "Sand_Stone_Strata_metallic";
+	rename -uid "C41A7B15-4D59-7E27-2677-D88A3B1AB9E2";
+	setAttr ".cpth" -type "string" "C:/Users/Kerr/Documents/maya\\2024\\substance/baked_images/Sand_Stone_Strata_metallic.png";
+createNode file -n "file23";
+	rename -uid "687DFDA0-4042-9183-0EC2-8FA2E92EAEE1";
+	setAttr ".ail" yes;
+	setAttr ".cs" -type "string" "Raw";
+	setAttr ".ifr" yes;
+createNode substanceOutputNode -n "Sand_Stone_Strata_normal";
+	rename -uid "49FCDBFF-476F-0127-684D-CDBDB981A2D0";
+	setAttr ".cpth" -type "string" "C:/Users/Kerr/Documents/maya\\2024\\substance/baked_images/Sand_Stone_Strata_normal.exr";
+createNode file -n "file24";
+	rename -uid "C4D73413-4E0A-2D26-B383-878F738AE1EB";
+	setAttr ".ail" yes;
+	setAttr ".cs" -type "string" "Raw";
+	setAttr ".ifr" yes;
+createNode multiplyDivide -n "multiplyDivide3";
+	rename -uid "2A791514-42BE-357B-B62C-E6B5A88194B1";
+createNode aiStandardSurface -n "aiStandardSurface3";
+	rename -uid "EA78E145-4B1B-09CE-9FD7-CB80C41552CD";
+	setAttr ".emission" 1;
+	setAttr ".emission_color" -type "float3" 0 0 0 ;
+createNode shadingEngine -n "set3";
+	rename -uid "9ABFC13A-4C41-9C68-A5C1-09846AC034A2";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "materialInfo4";
+	rename -uid "0DBF93D9-4BD3-BDCB-C1FA-A6A659AAC6E0";
+createNode bump2d -n "bump2d3";
+	rename -uid "EA8F4514-4245-D327-144D-2CB5B1CE9586";
+	setAttr ".bi" 1;
+	setAttr ".vc1" -type "float3" 0 9.9999997e-06 0 ;
+	setAttr ".vc2" -type "float3" 9.9999997e-06 9.9999997e-06 0 ;
+createNode displacementShader -n "displacementShader3";
+	rename -uid "E3E89B6A-498F-4369-F193-E8A4252267AC";
+createNode nodeGraphEditorInfo -n "hyperShadePrimaryNodeEditorSavedTabsInfo";
+	rename -uid "9D2BE53E-4357-D1B3-9CE7-519A85BFD845";
+	setAttr -s 2 ".tgi";
+	setAttr ".tgi[0].tn" -type "string" "Untitled_1";
+	setAttr ".tgi[0].vl" -type "double2" -3498.4888719715527 -777.38092149061004 ;
+	setAttr ".tgi[0].vh" -type "double2" 3437.7745886698381 1101.1904324330999 ;
+	setAttr -s 19 ".tgi[0].ni";
+	setAttr ".tgi[0].ni[0].x" 668.5714111328125;
+	setAttr ".tgi[0].ni[0].y" 605.71429443359375;
+	setAttr ".tgi[0].ni[0].nvs" 1923;
+	setAttr ".tgi[0].ni[1].x" -621.4285888671875;
+	setAttr ".tgi[0].ni[1].y" -110;
+	setAttr ".tgi[0].ni[1].nvs" 1923;
+	setAttr ".tgi[0].ni[2].x" 317.14285278320312;
+	setAttr ".tgi[0].ni[2].y" 558.5714111328125;
+	setAttr ".tgi[0].ni[2].nvs" 1922;
+	setAttr ".tgi[0].ni[3].x" 1024.2857666015625;
+	setAttr ".tgi[0].ni[3].y" -347.14285278320312;
+	setAttr ".tgi[0].ni[3].nvs" 1923;
+	setAttr ".tgi[0].ni[4].x" -314.28570556640625;
+	setAttr ".tgi[0].ni[4].y" 95.714286804199219;
+	setAttr ".tgi[0].ni[4].nvs" 1970;
+	setAttr ".tgi[0].ni[5].x" 1024.2857666015625;
+	setAttr ".tgi[0].ni[5].y" 347.14285278320312;
+	setAttr ".tgi[0].ni[5].nvs" 2387;
+	setAttr ".tgi[0].ni[6].x" -2.8571429252624512;
+	setAttr ".tgi[0].ni[6].y" 911.4285888671875;
+	setAttr ".tgi[0].ni[6].nvs" 1922;
+	setAttr ".tgi[0].ni[7].x" 668.5714111328125;
+	setAttr ".tgi[0].ni[7].y" -520;
+	setAttr ".tgi[0].ni[7].nvs" 1923;
+	setAttr ".tgi[0].ni[8].x" 317.14285278320312;
+	setAttr ".tgi[0].ni[8].y" 910;
+	setAttr ".tgi[0].ni[8].nvs" 1923;
+	setAttr ".tgi[0].ni[9].x" 317.14285278320312;
+	setAttr ".tgi[0].ni[9].y" 88.571426391601562;
+	setAttr ".tgi[0].ni[9].nvs" 1922;
+	setAttr ".tgi[0].ni[10].x" 1372.857177734375;
+	setAttr ".tgi[0].ni[10].y" -1261.4285888671875;
+	setAttr ".tgi[0].ni[10].nvs" 1923;
+	setAttr ".tgi[0].ni[11].x" 317.14285278320312;
+	setAttr ".tgi[0].ni[11].y" -441.42855834960938;
+	setAttr ".tgi[0].ni[11].nvs" 1922;
+	setAttr ".tgi[0].ni[12].x" 668.5714111328125;
+	setAttr ".tgi[0].ni[12].y" 38.571430206298828;
+	setAttr ".tgi[0].ni[12].nvs" 1923;
+	setAttr ".tgi[0].ni[13].x" 317.14285278320312;
+	setAttr ".tgi[0].ni[13].y" 734.28570556640625;
+	setAttr ".tgi[0].ni[13].nvs" 1923;
+	setAttr ".tgi[0].ni[14].x" 1372.857177734375;
+	setAttr ".tgi[0].ni[14].y" 22.857143402099609;
+	setAttr ".tgi[0].ni[14].nvs" 1923;
+	setAttr ".tgi[0].ni[15].x" 668.5714111328125;
+	setAttr ".tgi[0].ni[15].y" 214.28572082519531;
+	setAttr ".tgi[0].ni[15].nvs" 1923;
+	setAttr ".tgi[0].ni[16].x" 668.5714111328125;
+	setAttr ".tgi[0].ni[16].y" 367.14285278320312;
+	setAttr ".tgi[0].ni[16].nvs" 1923;
+	setAttr ".tgi[0].ni[17].x" 1024.2857666015625;
+	setAttr ".tgi[0].ni[17].y" -1010;
+	setAttr ".tgi[0].ni[17].nvs" 1922;
+	setAttr ".tgi[0].ni[18].x" -2.8571429252624512;
+	setAttr ".tgi[0].ni[18].y" 1381.4285888671875;
+	setAttr ".tgi[0].ni[18].nvs" 1922;
+	setAttr ".tgi[1].tn" -type "string" "Untitled_2";
+	setAttr ".tgi[1].vl" -type "double2" -1878.5713539237097 -2431.0701532800822 ;
+	setAttr ".tgi[1].vh" -type "double2" 1558.3332714107326 2298.9273013881102 ;
+	setAttr -s 21 ".tgi[1].ni";
+	setAttr ".tgi[1].ni[0].x" -332.85714721679688;
+	setAttr ".tgi[1].ni[0].y" -774.28570556640625;
+	setAttr ".tgi[1].ni[0].nvs" 1922;
+	setAttr ".tgi[1].ni[1].x" 61.428569793701172;
+	setAttr ".tgi[1].ni[1].y" 351.42855834960938;
+	setAttr ".tgi[1].ni[1].nvs" 1923;
+	setAttr ".tgi[1].ni[2].x" -332.85714721679688;
+	setAttr ".tgi[1].ni[2].y" 235.71427917480469;
+	setAttr ".tgi[1].ni[2].nvs" 1922;
+	setAttr ".tgi[1].ni[3].x" -1014.2857055664062;
+	setAttr ".tgi[1].ni[3].y" -32.857143402099609;
+	setAttr ".tgi[1].ni[3].nvs" 1970;
+	setAttr ".tgi[1].ni[4].x" 61.428569793701172;
+	setAttr ".tgi[1].ni[4].y" 61.428569793701172;
+	setAttr ".tgi[1].ni[4].nvs" 1923;
+	setAttr ".tgi[1].ni[5].x" -332.85714721679688;
+	setAttr ".tgi[1].ni[5].y" 587.14288330078125;
+	setAttr ".tgi[1].ni[5].nvs" 1923;
+	setAttr ".tgi[1].ni[6].x" -332.85714721679688;
+	setAttr ".tgi[1].ni[6].y" 804.28570556640625;
+	setAttr ".tgi[1].ni[6].nvs" 1923;
+	setAttr ".tgi[1].ni[7].x" -702.85711669921875;
+	setAttr ".tgi[1].ni[7].y" 1035.7142333984375;
+	setAttr ".tgi[1].ni[7].nvs" 1922;
+	setAttr ".tgi[1].ni[8].x" -702.85711669921875;
+	setAttr ".tgi[1].ni[8].y" 565.71429443359375;
+	setAttr ".tgi[1].ni[8].nvs" 1922;
+	setAttr ".tgi[1].ni[9].x" 411.42855834960938;
+	setAttr ".tgi[1].ni[9].y" -1355.7142333984375;
+	setAttr ".tgi[1].ni[9].nvs" 1922;
+	setAttr ".tgi[1].ni[10].x" 411.42855834960938;
+	setAttr ".tgi[1].ni[10].y" 41.428569793701172;
+	setAttr ".tgi[1].ni[10].nvs" 2387;
+	setAttr ".tgi[1].ni[11].x" -332.85714721679688;
+	setAttr ".tgi[1].ni[11].y" 411.42855834960938;
+	setAttr ".tgi[1].ni[11].nvs" 1923;
+	setAttr ".tgi[1].ni[12].x" -702.85711669921875;
+	setAttr ".tgi[1].ni[12].y" 1505.7142333984375;
+	setAttr ".tgi[1].ni[12].nvs" 1922;
+	setAttr ".tgi[1].ni[13].x" 760;
+	setAttr ".tgi[1].ni[13].y" -282.85714721679688;
+	setAttr ".tgi[1].ni[13].nvs" 1923;
+	setAttr ".tgi[1].ni[14].x" 61.428569793701172;
+	setAttr ".tgi[1].ni[14].y" -267.14285278320312;
+	setAttr ".tgi[1].ni[14].nvs" 1923;
+	setAttr ".tgi[1].ni[15].x" 411.42855834960938;
+	setAttr ".tgi[1].ni[15].y" -652.85711669921875;
+	setAttr ".tgi[1].ni[15].nvs" 1923;
+	setAttr ".tgi[1].ni[16].x" 760;
+	setAttr ".tgi[1].ni[16].y" -1605.7142333984375;
+	setAttr ".tgi[1].ni[16].nvs" 1923;
+	setAttr ".tgi[1].ni[17].x" -1321.4285888671875;
+	setAttr ".tgi[1].ni[17].y" -305.71429443359375;
+	setAttr ".tgi[1].ni[17].nvs" 1923;
+	setAttr ".tgi[1].ni[18].x" -332.85714721679688;
+	setAttr ".tgi[1].ni[18].y" -234.28572082519531;
+	setAttr ".tgi[1].ni[18].nvs" 1922;
+	setAttr ".tgi[1].ni[19].x" 61.428569793701172;
+	setAttr ".tgi[1].ni[19].y" -838.5714111328125;
+	setAttr ".tgi[1].ni[19].nvs" 1923;
+	setAttr ".tgi[1].ni[20].x" 61.428569793701172;
+	setAttr ".tgi[1].ni[20].y" -91.428573608398438;
+	setAttr ".tgi[1].ni[20].nvs" 1923;
 select -ne :time1;
 	setAttr -av -k on ".cch";
 	setAttr -av -cb on ".ihi";
@@ -5556,7 +6236,7 @@ select -ne :renderPartition;
 	setAttr -cb on ".ihi";
 	setAttr -av -k on ".nds";
 	setAttr -cb on ".bnm";
-	setAttr -s 92 ".st";
+	setAttr -s 5 ".st";
 	setAttr -cb on ".an";
 	setAttr -cb on ".pt";
 select -ne :renderGlobalsList1;
@@ -5569,7 +6249,7 @@ select -ne :defaultShaderList1;
 	setAttr -cb on ".ihi";
 	setAttr -k on ".nds";
 	setAttr -cb on ".bnm";
-	setAttr -s 95 ".s";
+	setAttr -s 11 ".s";
 select -ne :postProcessList1;
 	setAttr -k on ".cch";
 	setAttr -cb on ".ihi";
@@ -5577,13 +6257,11 @@ select -ne :postProcessList1;
 	setAttr -cb on ".bnm";
 	setAttr -s 2 ".p";
 select -ne :defaultRenderUtilityList1;
-	setAttr -s 142 ".u";
+	setAttr -s 10 ".u";
 select -ne :defaultRenderingList1;
 	setAttr -k on ".ihi";
-	setAttr -s 55 ".r";
-select -ne :lightList1;
 select -ne :defaultTextureList1;
-	setAttr -s 120 ".tx";
+	setAttr -s 50 ".tx";
 select -ne :standardSurface1;
 	setAttr ".bc" -type "float3" 0.40000001 0.40000001 0.40000001 ;
 	setAttr ".sr" 0.5;
@@ -5592,7 +6270,7 @@ select -ne :initialShadingGroup;
 	setAttr -cb on ".ihi";
 	setAttr -av -k on ".nds";
 	setAttr -cb on ".bnm";
-	setAttr -s 4 ".dsm";
+	setAttr -s 2 ".dsm";
 	setAttr -k on ".mwc";
 	setAttr -cb on ".an";
 	setAttr -cb on ".il";
@@ -5624,7 +6302,6 @@ select -ne :defaultResolution;
 	setAttr -av -k on ".zsl";
 	setAttr -av -k on ".isu";
 	setAttr -av -k on ".pdu";
-select -ne :defaultLightSet;
 select -ne :defaultColorMgtGlobals;
 	setAttr ".cfe" yes;
 	setAttr ".cfp" -type "string" "<MAYA_RESOURCES>/OCIO-configs/Maya2022-default/config.ocio";
@@ -5637,8 +6314,6 @@ select -ne :defaultColorMgtGlobals;
 select -ne :hardwareRenderGlobals;
 	setAttr ".ctrs" 256;
 	setAttr ".btrs" 512;
-select -ne :ikSystem;
-	setAttr -s 2 ".sol";
 connectAttr ":time1.o" "Kerr__dev__cobblestonePathGenerator__1_01.inTime";
 connectAttr "Kerr__dev__cobblestonePathGenerator__1_01.outputObjects[0].outputObjectTranslate" "cobblestonePathGenerator_1_0.t"
 		;
@@ -5672,11 +6347,11 @@ connectAttr "polyPlane1.out" "pPlaneShape1.i";
 connectAttr ":time1.o" "Kerr__dev__BrickWallTool_Build__1_02.inTime";
 connectAttr "houdiniInputCurve2.outputNodeId" "Kerr__dev__BrickWallTool_Build__1_02.input[0].inputNodeId"
 		;
-connectAttr "Kerr__dev__BrickWallTool_Build__1_02.outputObjects[0].outputObjectTranslate" "BrickWallTool_Build_1_1.t"
+connectAttr "Kerr__dev__BrickWallTool_Build__1_02.outputObjects[0].outputObjectTranslate" "BrickWallTool_Build_1_0.t"
 		;
-connectAttr "Kerr__dev__BrickWallTool_Build__1_02.outputObjects[0].outputObjectRotate" "BrickWallTool_Build_1_1.r"
+connectAttr "Kerr__dev__BrickWallTool_Build__1_02.outputObjects[0].outputObjectRotate" "BrickWallTool_Build_1_0.r"
 		;
-connectAttr "Kerr__dev__BrickWallTool_Build__1_02.outputObjects[0].outputObjectScale" "BrickWallTool_Build_1_1.s"
+connectAttr "Kerr__dev__BrickWallTool_Build__1_02.outputObjects[0].outputObjectScale" "BrickWallTool_Build_1_0.s"
 		;
 connectAttr "groupParts10.og" "BrickWallTool_Build1_0Shape.i";
 connectAttr "Kerr__dev__BrickWallTool_Build__1_02.outputObjects[0].outputGeos[0].outputParts[0].outputPartExtraAttributes[0].outputPartExtraAttributeData" "BrickWallTool_Build1_0Shape.class"
@@ -5699,8 +6374,14 @@ connectAttr "groupId10.id" "BrickWallTool_Build1_0Shape.iog.og[1].gid";
 connectAttr "outside.mwc" "BrickWallTool_Build1_0Shape.iog.og[1].gco";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "set2.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "set3.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "set1.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "set2.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "set3.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "set1.message" ":defaultLightSet.message";
 connectAttr "layerManager.dli[0]" "defaultLayer.id";
 connectAttr "renderLayerManager.rlmi[0]" "defaultRenderLayer.rlid";
 connectAttr ":defaultArnoldDisplayDriver.msg" ":defaultArnoldRenderOptions.drivers"
@@ -5715,6 +6396,7 @@ connectAttr "groupId8.msg" "outside.gn" -na;
 connectAttr "groupId10.msg" "outside.gn" -na;
 connectAttr "cobblestonePathGenerator1_0Shape.iog.og[1]" "outside.dsm" -na;
 connectAttr "BrickWallTool_Build1_0Shape.iog.og[1]" "outside.dsm" -na;
+connectAttr "sharedReferenceNode.sr" "PalBot_AnimationsRN.sr";
 connectAttr "Kerr__dev__cobblestonePathGenerator__1_01.outputObjects[0].outputGeos[0].outputParts[0].outputPartMeshData" "groupParts7.ig"
 		;
 connectAttr "groupId7.id" "groupParts7.gi";
@@ -5726,12 +6408,895 @@ connectAttr "Kerr__dev__BrickWallTool_Build__1_02.outputObjects[0].outputGeos[0]
 connectAttr "groupId9.id" "groupParts9.gi";
 connectAttr "groupParts9.og" "groupParts10.ig";
 connectAttr "groupId10.id" "groupParts10.gi";
+connectAttr "place2dTexture1.o" "substanceNode1.uv";
+connectAttr "place2dTexture1.ofs" "substanceNode1.fs";
+connectAttr "substanceNode1.output_diffuse" "Beige_Sandstone__diffuse.sbs";
+connectAttr "substanceNode1.rsw" "Beige_Sandstone__diffuse.rsw";
+connectAttr "substanceNode1.cext" "Beige_Sandstone__diffuse.cext";
+connectAttr "substanceNode1.hext" "Beige_Sandstone__diffuse.hext";
+connectAttr "substanceNode1.cfld" "Beige_Sandstone__diffuse.cprx";
+connectAttr "place2dTexture1.o" "Beige_Sandstone__diffuse.uv";
+connectAttr "place2dTexture1.ofs" "Beige_Sandstone__diffuse.fs";
+connectAttr ":defaultColorMgtGlobals.cme" "file1.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "file1.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "file1.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "file1.ws";
+connectAttr "Beige_Sandstone__diffuse.cpth" "file1.ftn";
+connectAttr "place2dTexture1.o" "file1.uv";
+connectAttr "place2dTexture1.ofs" "file1.fs";
+connectAttr "place2dTexture1.c" "file1.c";
+connectAttr "place2dTexture1.tf" "file1.tf";
+connectAttr "place2dTexture1.rf" "file1.rf";
+connectAttr "place2dTexture1.mu" "file1.mu";
+connectAttr "place2dTexture1.mv" "file1.mv";
+connectAttr "place2dTexture1.s" "file1.s";
+connectAttr "place2dTexture1.wu" "file1.wu";
+connectAttr "place2dTexture1.wv" "file1.wv";
+connectAttr "place2dTexture1.re" "file1.re";
+connectAttr "place2dTexture1.of" "file1.of";
+connectAttr "place2dTexture1.r" "file1.ro";
+connectAttr "place2dTexture1.n" "file1.n";
+connectAttr "place2dTexture1.vt1" "file1.vt1";
+connectAttr "place2dTexture1.vt2" "file1.vt2";
+connectAttr "place2dTexture1.vt3" "file1.vt3";
+connectAttr "place2dTexture1.vc1" "file1.vc1";
+connectAttr "substanceNode1.output_basecolor" "Beige_Sandstone__basecolor.sbs";
+connectAttr "substanceNode1.rsw" "Beige_Sandstone__basecolor.rsw";
+connectAttr "substanceNode1.cext" "Beige_Sandstone__basecolor.cext";
+connectAttr "substanceNode1.hext" "Beige_Sandstone__basecolor.hext";
+connectAttr "substanceNode1.cfld" "Beige_Sandstone__basecolor.cprx";
+connectAttr "place2dTexture1.o" "Beige_Sandstone__basecolor.uv";
+connectAttr "place2dTexture1.ofs" "Beige_Sandstone__basecolor.fs";
+connectAttr ":defaultColorMgtGlobals.cme" "file2.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "file2.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "file2.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "file2.ws";
+connectAttr "Beige_Sandstone__basecolor.cpth" "file2.ftn";
+connectAttr "place2dTexture1.o" "file2.uv";
+connectAttr "place2dTexture1.ofs" "file2.fs";
+connectAttr "place2dTexture1.c" "file2.c";
+connectAttr "place2dTexture1.tf" "file2.tf";
+connectAttr "place2dTexture1.rf" "file2.rf";
+connectAttr "place2dTexture1.mu" "file2.mu";
+connectAttr "place2dTexture1.mv" "file2.mv";
+connectAttr "place2dTexture1.s" "file2.s";
+connectAttr "place2dTexture1.wu" "file2.wu";
+connectAttr "place2dTexture1.wv" "file2.wv";
+connectAttr "place2dTexture1.re" "file2.re";
+connectAttr "place2dTexture1.of" "file2.of";
+connectAttr "place2dTexture1.r" "file2.ro";
+connectAttr "place2dTexture1.n" "file2.n";
+connectAttr "place2dTexture1.vt1" "file2.vt1";
+connectAttr "place2dTexture1.vt2" "file2.vt2";
+connectAttr "place2dTexture1.vt3" "file2.vt3";
+connectAttr "place2dTexture1.vc1" "file2.vc1";
+connectAttr "substanceNode1.output_normal" "Beige_Sandstone__normal.sbs";
+connectAttr "substanceNode1.rsw" "Beige_Sandstone__normal.rsw";
+connectAttr "substanceNode1.cext" "Beige_Sandstone__normal.cext";
+connectAttr "substanceNode1.hext" "Beige_Sandstone__normal.hext";
+connectAttr "substanceNode1.cfld" "Beige_Sandstone__normal.cprx";
+connectAttr "place2dTexture1.o" "Beige_Sandstone__normal.uv";
+connectAttr "place2dTexture1.ofs" "Beige_Sandstone__normal.fs";
+connectAttr ":defaultColorMgtGlobals.cme" "file3.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "file3.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "file3.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "file3.ws";
+connectAttr "Beige_Sandstone__normal.cpth" "file3.ftn";
+connectAttr "place2dTexture1.o" "file3.uv";
+connectAttr "place2dTexture1.ofs" "file3.fs";
+connectAttr "place2dTexture1.c" "file3.c";
+connectAttr "place2dTexture1.tf" "file3.tf";
+connectAttr "place2dTexture1.rf" "file3.rf";
+connectAttr "place2dTexture1.mu" "file3.mu";
+connectAttr "place2dTexture1.mv" "file3.mv";
+connectAttr "place2dTexture1.s" "file3.s";
+connectAttr "place2dTexture1.wu" "file3.wu";
+connectAttr "place2dTexture1.wv" "file3.wv";
+connectAttr "place2dTexture1.re" "file3.re";
+connectAttr "place2dTexture1.of" "file3.of";
+connectAttr "place2dTexture1.r" "file3.ro";
+connectAttr "place2dTexture1.n" "file3.n";
+connectAttr "place2dTexture1.vt1" "file3.vt1";
+connectAttr "place2dTexture1.vt2" "file3.vt2";
+connectAttr "place2dTexture1.vt3" "file3.vt3";
+connectAttr "place2dTexture1.vc1" "file3.vc1";
+connectAttr "substanceNode1.output_roughness" "Beige_Sandstone__roughness.sbs";
+connectAttr "substanceNode1.rsw" "Beige_Sandstone__roughness.rsw";
+connectAttr "substanceNode1.cext" "Beige_Sandstone__roughness.cext";
+connectAttr "substanceNode1.hext" "Beige_Sandstone__roughness.hext";
+connectAttr "substanceNode1.cfld" "Beige_Sandstone__roughness.cprx";
+connectAttr "place2dTexture1.o" "Beige_Sandstone__roughness.uv";
+connectAttr "place2dTexture1.ofs" "Beige_Sandstone__roughness.fs";
+connectAttr ":defaultColorMgtGlobals.cme" "file4.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "file4.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "file4.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "file4.ws";
+connectAttr "Beige_Sandstone__roughness.cpth" "file4.ftn";
+connectAttr "place2dTexture1.o" "file4.uv";
+connectAttr "place2dTexture1.ofs" "file4.fs";
+connectAttr "place2dTexture1.c" "file4.c";
+connectAttr "place2dTexture1.tf" "file4.tf";
+connectAttr "place2dTexture1.rf" "file4.rf";
+connectAttr "place2dTexture1.mu" "file4.mu";
+connectAttr "place2dTexture1.mv" "file4.mv";
+connectAttr "place2dTexture1.s" "file4.s";
+connectAttr "place2dTexture1.wu" "file4.wu";
+connectAttr "place2dTexture1.wv" "file4.wv";
+connectAttr "place2dTexture1.re" "file4.re";
+connectAttr "place2dTexture1.of" "file4.of";
+connectAttr "place2dTexture1.r" "file4.ro";
+connectAttr "place2dTexture1.n" "file4.n";
+connectAttr "place2dTexture1.vt1" "file4.vt1";
+connectAttr "place2dTexture1.vt2" "file4.vt2";
+connectAttr "place2dTexture1.vt3" "file4.vt3";
+connectAttr "place2dTexture1.vc1" "file4.vc1";
+connectAttr "place2dTexture2.o" "substanceNode2.uv";
+connectAttr "place2dTexture2.ofs" "substanceNode2.fs";
+connectAttr "substanceNode2.output_diffuse" "Beige_Sandstone__diffuse1.sbs";
+connectAttr "substanceNode2.rsw" "Beige_Sandstone__diffuse1.rsw";
+connectAttr "substanceNode2.cext" "Beige_Sandstone__diffuse1.cext";
+connectAttr "substanceNode2.hext" "Beige_Sandstone__diffuse1.hext";
+connectAttr "substanceNode2.cfld" "Beige_Sandstone__diffuse1.cprx";
+connectAttr "place2dTexture2.o" "Beige_Sandstone__diffuse1.uv";
+connectAttr "place2dTexture2.ofs" "Beige_Sandstone__diffuse1.fs";
+connectAttr ":defaultColorMgtGlobals.cme" "file5.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "file5.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "file5.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "file5.ws";
+connectAttr "Beige_Sandstone__diffuse1.cpth" "file5.ftn";
+connectAttr "place2dTexture2.o" "file5.uv";
+connectAttr "place2dTexture2.ofs" "file5.fs";
+connectAttr "place2dTexture2.c" "file5.c";
+connectAttr "place2dTexture2.tf" "file5.tf";
+connectAttr "place2dTexture2.rf" "file5.rf";
+connectAttr "place2dTexture2.mu" "file5.mu";
+connectAttr "place2dTexture2.mv" "file5.mv";
+connectAttr "place2dTexture2.s" "file5.s";
+connectAttr "place2dTexture2.wu" "file5.wu";
+connectAttr "place2dTexture2.wv" "file5.wv";
+connectAttr "place2dTexture2.re" "file5.re";
+connectAttr "place2dTexture2.of" "file5.of";
+connectAttr "place2dTexture2.r" "file5.ro";
+connectAttr "place2dTexture2.n" "file5.n";
+connectAttr "place2dTexture2.vt1" "file5.vt1";
+connectAttr "place2dTexture2.vt2" "file5.vt2";
+connectAttr "place2dTexture2.vt3" "file5.vt3";
+connectAttr "place2dTexture2.vc1" "file5.vc1";
+connectAttr "substanceNode2.output_basecolor" "Beige_Sandstone__basecolor1.sbs";
+connectAttr "substanceNode2.rsw" "Beige_Sandstone__basecolor1.rsw";
+connectAttr "substanceNode2.cext" "Beige_Sandstone__basecolor1.cext";
+connectAttr "substanceNode2.hext" "Beige_Sandstone__basecolor1.hext";
+connectAttr "substanceNode2.cfld" "Beige_Sandstone__basecolor1.cprx";
+connectAttr "place2dTexture2.o" "Beige_Sandstone__basecolor1.uv";
+connectAttr "place2dTexture2.ofs" "Beige_Sandstone__basecolor1.fs";
+connectAttr ":defaultColorMgtGlobals.cme" "file6.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "file6.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "file6.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "file6.ws";
+connectAttr "Beige_Sandstone__basecolor1.cpth" "file6.ftn";
+connectAttr "place2dTexture2.o" "file6.uv";
+connectAttr "place2dTexture2.ofs" "file6.fs";
+connectAttr "place2dTexture2.c" "file6.c";
+connectAttr "place2dTexture2.tf" "file6.tf";
+connectAttr "place2dTexture2.rf" "file6.rf";
+connectAttr "place2dTexture2.mu" "file6.mu";
+connectAttr "place2dTexture2.mv" "file6.mv";
+connectAttr "place2dTexture2.s" "file6.s";
+connectAttr "place2dTexture2.wu" "file6.wu";
+connectAttr "place2dTexture2.wv" "file6.wv";
+connectAttr "place2dTexture2.re" "file6.re";
+connectAttr "place2dTexture2.of" "file6.of";
+connectAttr "place2dTexture2.r" "file6.ro";
+connectAttr "place2dTexture2.n" "file6.n";
+connectAttr "place2dTexture2.vt1" "file6.vt1";
+connectAttr "place2dTexture2.vt2" "file6.vt2";
+connectAttr "place2dTexture2.vt3" "file6.vt3";
+connectAttr "place2dTexture2.vc1" "file6.vc1";
+connectAttr "substanceNode2.output_normal" "Beige_Sandstone__normal1.sbs";
+connectAttr "substanceNode2.rsw" "Beige_Sandstone__normal1.rsw";
+connectAttr "substanceNode2.cext" "Beige_Sandstone__normal1.cext";
+connectAttr "substanceNode2.hext" "Beige_Sandstone__normal1.hext";
+connectAttr "substanceNode2.cfld" "Beige_Sandstone__normal1.cprx";
+connectAttr "place2dTexture2.o" "Beige_Sandstone__normal1.uv";
+connectAttr "place2dTexture2.ofs" "Beige_Sandstone__normal1.fs";
+connectAttr ":defaultColorMgtGlobals.cme" "file7.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "file7.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "file7.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "file7.ws";
+connectAttr "Beige_Sandstone__normal1.cpth" "file7.ftn";
+connectAttr "place2dTexture2.o" "file7.uv";
+connectAttr "place2dTexture2.ofs" "file7.fs";
+connectAttr "place2dTexture2.c" "file7.c";
+connectAttr "place2dTexture2.tf" "file7.tf";
+connectAttr "place2dTexture2.rf" "file7.rf";
+connectAttr "place2dTexture2.mu" "file7.mu";
+connectAttr "place2dTexture2.mv" "file7.mv";
+connectAttr "place2dTexture2.s" "file7.s";
+connectAttr "place2dTexture2.wu" "file7.wu";
+connectAttr "place2dTexture2.wv" "file7.wv";
+connectAttr "place2dTexture2.re" "file7.re";
+connectAttr "place2dTexture2.of" "file7.of";
+connectAttr "place2dTexture2.r" "file7.ro";
+connectAttr "place2dTexture2.n" "file7.n";
+connectAttr "place2dTexture2.vt1" "file7.vt1";
+connectAttr "place2dTexture2.vt2" "file7.vt2";
+connectAttr "place2dTexture2.vt3" "file7.vt3";
+connectAttr "place2dTexture2.vc1" "file7.vc1";
+connectAttr "substanceNode2.output_roughness" "Beige_Sandstone__roughness1.sbs";
+connectAttr "substanceNode2.rsw" "Beige_Sandstone__roughness1.rsw";
+connectAttr "substanceNode2.cext" "Beige_Sandstone__roughness1.cext";
+connectAttr "substanceNode2.hext" "Beige_Sandstone__roughness1.hext";
+connectAttr "substanceNode2.cfld" "Beige_Sandstone__roughness1.cprx";
+connectAttr "place2dTexture2.o" "Beige_Sandstone__roughness1.uv";
+connectAttr "place2dTexture2.ofs" "Beige_Sandstone__roughness1.fs";
+connectAttr ":defaultColorMgtGlobals.cme" "file8.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "file8.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "file8.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "file8.ws";
+connectAttr "Beige_Sandstone__roughness1.cpth" "file8.ftn";
+connectAttr "place2dTexture2.o" "file8.uv";
+connectAttr "place2dTexture2.ofs" "file8.fs";
+connectAttr "place2dTexture2.c" "file8.c";
+connectAttr "place2dTexture2.tf" "file8.tf";
+connectAttr "place2dTexture2.rf" "file8.rf";
+connectAttr "place2dTexture2.mu" "file8.mu";
+connectAttr "place2dTexture2.mv" "file8.mv";
+connectAttr "place2dTexture2.s" "file8.s";
+connectAttr "place2dTexture2.wu" "file8.wu";
+connectAttr "place2dTexture2.wv" "file8.wv";
+connectAttr "place2dTexture2.re" "file8.re";
+connectAttr "place2dTexture2.of" "file8.of";
+connectAttr "place2dTexture2.r" "file8.ro";
+connectAttr "place2dTexture2.n" "file8.n";
+connectAttr "place2dTexture2.vt1" "file8.vt1";
+connectAttr "place2dTexture2.vt2" "file8.vt2";
+connectAttr "place2dTexture2.vt3" "file8.vt3";
+connectAttr "place2dTexture2.vc1" "file8.vc1";
+connectAttr "substanceNode2.output_metallic" "Beige_Sandstone__metallic.sbs";
+connectAttr "substanceNode2.rsw" "Beige_Sandstone__metallic.rsw";
+connectAttr "substanceNode2.cext" "Beige_Sandstone__metallic.cext";
+connectAttr "substanceNode2.hext" "Beige_Sandstone__metallic.hext";
+connectAttr "substanceNode2.cfld" "Beige_Sandstone__metallic.cprx";
+connectAttr "place2dTexture2.o" "Beige_Sandstone__metallic.uv";
+connectAttr "place2dTexture2.ofs" "Beige_Sandstone__metallic.fs";
+connectAttr ":defaultColorMgtGlobals.cme" "file9.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "file9.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "file9.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "file9.ws";
+connectAttr "Beige_Sandstone__metallic.cpth" "file9.ftn";
+connectAttr "place2dTexture2.o" "file9.uv";
+connectAttr "place2dTexture2.ofs" "file9.fs";
+connectAttr "place2dTexture2.c" "file9.c";
+connectAttr "place2dTexture2.tf" "file9.tf";
+connectAttr "place2dTexture2.rf" "file9.rf";
+connectAttr "place2dTexture2.mu" "file9.mu";
+connectAttr "place2dTexture2.mv" "file9.mv";
+connectAttr "place2dTexture2.s" "file9.s";
+connectAttr "place2dTexture2.wu" "file9.wu";
+connectAttr "place2dTexture2.wv" "file9.wv";
+connectAttr "place2dTexture2.re" "file9.re";
+connectAttr "place2dTexture2.of" "file9.of";
+connectAttr "place2dTexture2.r" "file9.ro";
+connectAttr "place2dTexture2.n" "file9.n";
+connectAttr "place2dTexture2.vt1" "file9.vt1";
+connectAttr "place2dTexture2.vt2" "file9.vt2";
+connectAttr "place2dTexture2.vt3" "file9.vt3";
+connectAttr "place2dTexture2.vc1" "file9.vc1";
+connectAttr "substanceNode2.output_height" "Beige_Sandstone__height.sbs";
+connectAttr "substanceNode2.rsw" "Beige_Sandstone__height.rsw";
+connectAttr "substanceNode2.cext" "Beige_Sandstone__height.cext";
+connectAttr "substanceNode2.hext" "Beige_Sandstone__height.hext";
+connectAttr "substanceNode2.cfld" "Beige_Sandstone__height.cprx";
+connectAttr "place2dTexture2.o" "Beige_Sandstone__height.uv";
+connectAttr "place2dTexture2.ofs" "Beige_Sandstone__height.fs";
+connectAttr ":defaultColorMgtGlobals.cme" "file10.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "file10.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "file10.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "file10.ws";
+connectAttr "Beige_Sandstone__height.cpth" "file10.ftn";
+connectAttr "place2dTexture2.o" "file10.uv";
+connectAttr "place2dTexture2.ofs" "file10.fs";
+connectAttr "place2dTexture2.c" "file10.c";
+connectAttr "place2dTexture2.tf" "file10.tf";
+connectAttr "place2dTexture2.rf" "file10.rf";
+connectAttr "place2dTexture2.mu" "file10.mu";
+connectAttr "place2dTexture2.mv" "file10.mv";
+connectAttr "place2dTexture2.s" "file10.s";
+connectAttr "place2dTexture2.wu" "file10.wu";
+connectAttr "place2dTexture2.wv" "file10.wv";
+connectAttr "place2dTexture2.re" "file10.re";
+connectAttr "place2dTexture2.of" "file10.of";
+connectAttr "place2dTexture2.r" "file10.ro";
+connectAttr "place2dTexture2.n" "file10.n";
+connectAttr "place2dTexture2.vt1" "file10.vt1";
+connectAttr "place2dTexture2.vt2" "file10.vt2";
+connectAttr "place2dTexture2.vt3" "file10.vt3";
+connectAttr "place2dTexture2.vc1" "file10.vc1";
+connectAttr "file6.oc" "multiplyDivide1.i1";
+connectAttr "multiplyDivide1.o" "aiStandardSurface1.base_color";
+connectAttr "bump2d1.o" "aiStandardSurface1.n";
+connectAttr "file8.oa" "aiStandardSurface1.specular_roughness";
+connectAttr "file9.oa" "aiStandardSurface1.metalness";
+connectAttr "aiStandardSurface1.out" "set1.ss";
+connectAttr "displacementShader1.d" "set1.ds";
+connectAttr "cobblestonePathGenerator1_0Shape.iog" "set1.dsm" -na;
+connectAttr "set1.msg" "materialInfo2.sg";
+connectAttr "aiStandardSurface1.msg" "materialInfo2.m";
+connectAttr "file6.msg" "materialInfo2.t" -na;
+connectAttr "file7.oa" "bump2d1.bv";
+connectAttr "file10.oa" "displacementShader1.d";
+connectAttr "place2dTexture3.o" "substanceNode3.uv";
+connectAttr "place2dTexture3.ofs" "substanceNode3.fs";
+connectAttr "substanceNode3.output_diffuse" "Sand_Step_Dunes_diffuse.sbs";
+connectAttr "substanceNode3.rsw" "Sand_Step_Dunes_diffuse.rsw";
+connectAttr "substanceNode3.cext" "Sand_Step_Dunes_diffuse.cext";
+connectAttr "substanceNode3.hext" "Sand_Step_Dunes_diffuse.hext";
+connectAttr "substanceNode3.cfld" "Sand_Step_Dunes_diffuse.cprx";
+connectAttr "place2dTexture3.o" "Sand_Step_Dunes_diffuse.uv";
+connectAttr "place2dTexture3.ofs" "Sand_Step_Dunes_diffuse.fs";
+connectAttr ":defaultColorMgtGlobals.cme" "file11.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "file11.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "file11.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "file11.ws";
+connectAttr "Sand_Step_Dunes_diffuse.cpth" "file11.ftn";
+connectAttr "place2dTexture3.o" "file11.uv";
+connectAttr "place2dTexture3.ofs" "file11.fs";
+connectAttr "place2dTexture3.c" "file11.c";
+connectAttr "place2dTexture3.tf" "file11.tf";
+connectAttr "place2dTexture3.rf" "file11.rf";
+connectAttr "place2dTexture3.mu" "file11.mu";
+connectAttr "place2dTexture3.mv" "file11.mv";
+connectAttr "place2dTexture3.s" "file11.s";
+connectAttr "place2dTexture3.wu" "file11.wu";
+connectAttr "place2dTexture3.wv" "file11.wv";
+connectAttr "place2dTexture3.re" "file11.re";
+connectAttr "place2dTexture3.of" "file11.of";
+connectAttr "place2dTexture3.r" "file11.ro";
+connectAttr "place2dTexture3.n" "file11.n";
+connectAttr "place2dTexture3.vt1" "file11.vt1";
+connectAttr "place2dTexture3.vt2" "file11.vt2";
+connectAttr "place2dTexture3.vt3" "file11.vt3";
+connectAttr "place2dTexture3.vc1" "file11.vc1";
+connectAttr "substanceNode3.output_roughness" "Sand_Step_Dunes_roughness.sbs";
+connectAttr "substanceNode3.rsw" "Sand_Step_Dunes_roughness.rsw";
+connectAttr "substanceNode3.cext" "Sand_Step_Dunes_roughness.cext";
+connectAttr "substanceNode3.hext" "Sand_Step_Dunes_roughness.hext";
+connectAttr "substanceNode3.cfld" "Sand_Step_Dunes_roughness.cprx";
+connectAttr "place2dTexture3.o" "Sand_Step_Dunes_roughness.uv";
+connectAttr "place2dTexture3.ofs" "Sand_Step_Dunes_roughness.fs";
+connectAttr ":defaultColorMgtGlobals.cme" "file12.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "file12.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "file12.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "file12.ws";
+connectAttr "Sand_Step_Dunes_roughness.cpth" "file12.ftn";
+connectAttr "place2dTexture3.o" "file12.uv";
+connectAttr "place2dTexture3.ofs" "file12.fs";
+connectAttr "place2dTexture3.c" "file12.c";
+connectAttr "place2dTexture3.tf" "file12.tf";
+connectAttr "place2dTexture3.rf" "file12.rf";
+connectAttr "place2dTexture3.mu" "file12.mu";
+connectAttr "place2dTexture3.mv" "file12.mv";
+connectAttr "place2dTexture3.s" "file12.s";
+connectAttr "place2dTexture3.wu" "file12.wu";
+connectAttr "place2dTexture3.wv" "file12.wv";
+connectAttr "place2dTexture3.re" "file12.re";
+connectAttr "place2dTexture3.of" "file12.of";
+connectAttr "place2dTexture3.r" "file12.ro";
+connectAttr "place2dTexture3.n" "file12.n";
+connectAttr "place2dTexture3.vt1" "file12.vt1";
+connectAttr "place2dTexture3.vt2" "file12.vt2";
+connectAttr "place2dTexture3.vt3" "file12.vt3";
+connectAttr "place2dTexture3.vc1" "file12.vc1";
+connectAttr "substanceNode3.output_height" "Sand_Step_Dunes_height.sbs";
+connectAttr "substanceNode3.rsw" "Sand_Step_Dunes_height.rsw";
+connectAttr "substanceNode3.cext" "Sand_Step_Dunes_height.cext";
+connectAttr "substanceNode3.hext" "Sand_Step_Dunes_height.hext";
+connectAttr "substanceNode3.cfld" "Sand_Step_Dunes_height.cprx";
+connectAttr "place2dTexture3.o" "Sand_Step_Dunes_height.uv";
+connectAttr "place2dTexture3.ofs" "Sand_Step_Dunes_height.fs";
+connectAttr ":defaultColorMgtGlobals.cme" "file13.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "file13.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "file13.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "file13.ws";
+connectAttr "Sand_Step_Dunes_height.cpth" "file13.ftn";
+connectAttr "place2dTexture3.o" "file13.uv";
+connectAttr "place2dTexture3.ofs" "file13.fs";
+connectAttr "place2dTexture3.c" "file13.c";
+connectAttr "place2dTexture3.tf" "file13.tf";
+connectAttr "place2dTexture3.rf" "file13.rf";
+connectAttr "place2dTexture3.mu" "file13.mu";
+connectAttr "place2dTexture3.mv" "file13.mv";
+connectAttr "place2dTexture3.s" "file13.s";
+connectAttr "place2dTexture3.wu" "file13.wu";
+connectAttr "place2dTexture3.wv" "file13.wv";
+connectAttr "place2dTexture3.re" "file13.re";
+connectAttr "place2dTexture3.of" "file13.of";
+connectAttr "place2dTexture3.r" "file13.ro";
+connectAttr "place2dTexture3.n" "file13.n";
+connectAttr "place2dTexture3.vt1" "file13.vt1";
+connectAttr "place2dTexture3.vt2" "file13.vt2";
+connectAttr "place2dTexture3.vt3" "file13.vt3";
+connectAttr "place2dTexture3.vc1" "file13.vc1";
+connectAttr "substanceNode3.output_basecolor" "Sand_Step_Dunes_basecolor.sbs";
+connectAttr "substanceNode3.rsw" "Sand_Step_Dunes_basecolor.rsw";
+connectAttr "substanceNode3.cext" "Sand_Step_Dunes_basecolor.cext";
+connectAttr "substanceNode3.hext" "Sand_Step_Dunes_basecolor.hext";
+connectAttr "substanceNode3.cfld" "Sand_Step_Dunes_basecolor.cprx";
+connectAttr "place2dTexture3.o" "Sand_Step_Dunes_basecolor.uv";
+connectAttr "place2dTexture3.ofs" "Sand_Step_Dunes_basecolor.fs";
+connectAttr ":defaultColorMgtGlobals.cme" "file14.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "file14.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "file14.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "file14.ws";
+connectAttr "Sand_Step_Dunes_basecolor.cpth" "file14.ftn";
+connectAttr "place2dTexture3.o" "file14.uv";
+connectAttr "place2dTexture3.ofs" "file14.fs";
+connectAttr "place2dTexture3.c" "file14.c";
+connectAttr "place2dTexture3.tf" "file14.tf";
+connectAttr "place2dTexture3.rf" "file14.rf";
+connectAttr "place2dTexture3.mu" "file14.mu";
+connectAttr "place2dTexture3.mv" "file14.mv";
+connectAttr "place2dTexture3.s" "file14.s";
+connectAttr "place2dTexture3.wu" "file14.wu";
+connectAttr "place2dTexture3.wv" "file14.wv";
+connectAttr "place2dTexture3.re" "file14.re";
+connectAttr "place2dTexture3.of" "file14.of";
+connectAttr "place2dTexture3.r" "file14.ro";
+connectAttr "place2dTexture3.n" "file14.n";
+connectAttr "place2dTexture3.vt1" "file14.vt1";
+connectAttr "place2dTexture3.vt2" "file14.vt2";
+connectAttr "place2dTexture3.vt3" "file14.vt3";
+connectAttr "place2dTexture3.vc1" "file14.vc1";
+connectAttr "substanceNode3.output_metallic" "Sand_Step_Dunes_metallic.sbs";
+connectAttr "substanceNode3.rsw" "Sand_Step_Dunes_metallic.rsw";
+connectAttr "substanceNode3.cext" "Sand_Step_Dunes_metallic.cext";
+connectAttr "substanceNode3.hext" "Sand_Step_Dunes_metallic.hext";
+connectAttr "substanceNode3.cfld" "Sand_Step_Dunes_metallic.cprx";
+connectAttr "place2dTexture3.o" "Sand_Step_Dunes_metallic.uv";
+connectAttr "place2dTexture3.ofs" "Sand_Step_Dunes_metallic.fs";
+connectAttr ":defaultColorMgtGlobals.cme" "file16.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "file16.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "file16.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "file16.ws";
+connectAttr "Sand_Step_Dunes_metallic.cpth" "file16.ftn";
+connectAttr "place2dTexture3.o" "file16.uv";
+connectAttr "place2dTexture3.ofs" "file16.fs";
+connectAttr "place2dTexture3.c" "file16.c";
+connectAttr "place2dTexture3.tf" "file16.tf";
+connectAttr "place2dTexture3.rf" "file16.rf";
+connectAttr "place2dTexture3.mu" "file16.mu";
+connectAttr "place2dTexture3.mv" "file16.mv";
+connectAttr "place2dTexture3.s" "file16.s";
+connectAttr "place2dTexture3.wu" "file16.wu";
+connectAttr "place2dTexture3.wv" "file16.wv";
+connectAttr "place2dTexture3.re" "file16.re";
+connectAttr "place2dTexture3.of" "file16.of";
+connectAttr "place2dTexture3.r" "file16.ro";
+connectAttr "place2dTexture3.n" "file16.n";
+connectAttr "place2dTexture3.vt1" "file16.vt1";
+connectAttr "place2dTexture3.vt2" "file16.vt2";
+connectAttr "place2dTexture3.vt3" "file16.vt3";
+connectAttr "place2dTexture3.vc1" "file16.vc1";
+connectAttr "substanceNode3.output_normal" "Sand_Step_Dunes_normal.sbs";
+connectAttr "substanceNode3.rsw" "Sand_Step_Dunes_normal.rsw";
+connectAttr "substanceNode3.cext" "Sand_Step_Dunes_normal.cext";
+connectAttr "substanceNode3.hext" "Sand_Step_Dunes_normal.hext";
+connectAttr "substanceNode3.cfld" "Sand_Step_Dunes_normal.cprx";
+connectAttr "place2dTexture3.o" "Sand_Step_Dunes_normal.uv";
+connectAttr "place2dTexture3.ofs" "Sand_Step_Dunes_normal.fs";
+connectAttr ":defaultColorMgtGlobals.cme" "file17.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "file17.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "file17.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "file17.ws";
+connectAttr "Sand_Step_Dunes_normal.cpth" "file17.ftn";
+connectAttr "place2dTexture3.o" "file17.uv";
+connectAttr "place2dTexture3.ofs" "file17.fs";
+connectAttr "place2dTexture3.c" "file17.c";
+connectAttr "place2dTexture3.tf" "file17.tf";
+connectAttr "place2dTexture3.rf" "file17.rf";
+connectAttr "place2dTexture3.mu" "file17.mu";
+connectAttr "place2dTexture3.mv" "file17.mv";
+connectAttr "place2dTexture3.s" "file17.s";
+connectAttr "place2dTexture3.wu" "file17.wu";
+connectAttr "place2dTexture3.wv" "file17.wv";
+connectAttr "place2dTexture3.re" "file17.re";
+connectAttr "place2dTexture3.of" "file17.of";
+connectAttr "place2dTexture3.r" "file17.ro";
+connectAttr "place2dTexture3.n" "file17.n";
+connectAttr "place2dTexture3.vt1" "file17.vt1";
+connectAttr "place2dTexture3.vt2" "file17.vt2";
+connectAttr "place2dTexture3.vt3" "file17.vt3";
+connectAttr "place2dTexture3.vc1" "file17.vc1";
+connectAttr "file14.oc" "multiplyDivide2.i1";
+connectAttr "multiplyDivide2.o" "aiStandardSurface2.base_color";
+connectAttr "bump2d2.o" "aiStandardSurface2.n";
+connectAttr "file12.oa" "aiStandardSurface2.specular_roughness";
+connectAttr "file16.oa" "aiStandardSurface2.metalness";
+connectAttr "aiStandardSurface2.out" "set2.ss";
+connectAttr "displacementShader2.d" "set2.ds";
+connectAttr "set2.msg" "materialInfo3.sg";
+connectAttr "aiStandardSurface2.msg" "materialInfo3.m";
+connectAttr "file14.msg" "materialInfo3.t" -na;
+connectAttr "file17.oa" "bump2d2.bv";
+connectAttr "file13.oa" "displacementShader2.d";
+connectAttr "place2dTexture4.o" "substanceNode4.uv";
+connectAttr "place2dTexture4.ofs" "substanceNode4.fs";
+connectAttr "substanceNode4.output_diffuse" "Sand_Stone_Strata_diffuse.sbs";
+connectAttr "substanceNode4.rsw" "Sand_Stone_Strata_diffuse.rsw";
+connectAttr "substanceNode4.cext" "Sand_Stone_Strata_diffuse.cext";
+connectAttr "substanceNode4.hext" "Sand_Stone_Strata_diffuse.hext";
+connectAttr "substanceNode4.cfld" "Sand_Stone_Strata_diffuse.cprx";
+connectAttr "place2dTexture4.o" "Sand_Stone_Strata_diffuse.uv";
+connectAttr "place2dTexture4.ofs" "Sand_Stone_Strata_diffuse.fs";
+connectAttr ":defaultColorMgtGlobals.cme" "file18.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "file18.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "file18.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "file18.ws";
+connectAttr "Sand_Stone_Strata_diffuse.cpth" "file18.ftn";
+connectAttr "place2dTexture4.o" "file18.uv";
+connectAttr "place2dTexture4.ofs" "file18.fs";
+connectAttr "place2dTexture4.c" "file18.c";
+connectAttr "place2dTexture4.tf" "file18.tf";
+connectAttr "place2dTexture4.rf" "file18.rf";
+connectAttr "place2dTexture4.mu" "file18.mu";
+connectAttr "place2dTexture4.mv" "file18.mv";
+connectAttr "place2dTexture4.s" "file18.s";
+connectAttr "place2dTexture4.wu" "file18.wu";
+connectAttr "place2dTexture4.wv" "file18.wv";
+connectAttr "place2dTexture4.re" "file18.re";
+connectAttr "place2dTexture4.of" "file18.of";
+connectAttr "place2dTexture4.r" "file18.ro";
+connectAttr "place2dTexture4.n" "file18.n";
+connectAttr "place2dTexture4.vt1" "file18.vt1";
+connectAttr "place2dTexture4.vt2" "file18.vt2";
+connectAttr "place2dTexture4.vt3" "file18.vt3";
+connectAttr "place2dTexture4.vc1" "file18.vc1";
+connectAttr "substanceNode4.output_roughness" "Sand_Stone_Strata_roughness.sbs";
+connectAttr "substanceNode4.rsw" "Sand_Stone_Strata_roughness.rsw";
+connectAttr "substanceNode4.cext" "Sand_Stone_Strata_roughness.cext";
+connectAttr "substanceNode4.hext" "Sand_Stone_Strata_roughness.hext";
+connectAttr "substanceNode4.cfld" "Sand_Stone_Strata_roughness.cprx";
+connectAttr "place2dTexture4.o" "Sand_Stone_Strata_roughness.uv";
+connectAttr "place2dTexture4.ofs" "Sand_Stone_Strata_roughness.fs";
+connectAttr ":defaultColorMgtGlobals.cme" "file19.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "file19.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "file19.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "file19.ws";
+connectAttr "Sand_Stone_Strata_roughness.cpth" "file19.ftn";
+connectAttr "place2dTexture4.o" "file19.uv";
+connectAttr "place2dTexture4.ofs" "file19.fs";
+connectAttr "place2dTexture4.c" "file19.c";
+connectAttr "place2dTexture4.tf" "file19.tf";
+connectAttr "place2dTexture4.rf" "file19.rf";
+connectAttr "place2dTexture4.mu" "file19.mu";
+connectAttr "place2dTexture4.mv" "file19.mv";
+connectAttr "place2dTexture4.s" "file19.s";
+connectAttr "place2dTexture4.wu" "file19.wu";
+connectAttr "place2dTexture4.wv" "file19.wv";
+connectAttr "place2dTexture4.re" "file19.re";
+connectAttr "place2dTexture4.of" "file19.of";
+connectAttr "place2dTexture4.r" "file19.ro";
+connectAttr "place2dTexture4.n" "file19.n";
+connectAttr "place2dTexture4.vt1" "file19.vt1";
+connectAttr "place2dTexture4.vt2" "file19.vt2";
+connectAttr "place2dTexture4.vt3" "file19.vt3";
+connectAttr "place2dTexture4.vc1" "file19.vc1";
+connectAttr "substanceNode4.output_height" "Sand_Stone_Strata_height.sbs";
+connectAttr "substanceNode4.rsw" "Sand_Stone_Strata_height.rsw";
+connectAttr "substanceNode4.cext" "Sand_Stone_Strata_height.cext";
+connectAttr "substanceNode4.hext" "Sand_Stone_Strata_height.hext";
+connectAttr "substanceNode4.cfld" "Sand_Stone_Strata_height.cprx";
+connectAttr "place2dTexture4.o" "Sand_Stone_Strata_height.uv";
+connectAttr "place2dTexture4.ofs" "Sand_Stone_Strata_height.fs";
+connectAttr ":defaultColorMgtGlobals.cme" "file20.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "file20.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "file20.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "file20.ws";
+connectAttr "Sand_Stone_Strata_height.cpth" "file20.ftn";
+connectAttr "place2dTexture4.o" "file20.uv";
+connectAttr "place2dTexture4.ofs" "file20.fs";
+connectAttr "place2dTexture4.c" "file20.c";
+connectAttr "place2dTexture4.tf" "file20.tf";
+connectAttr "place2dTexture4.rf" "file20.rf";
+connectAttr "place2dTexture4.mu" "file20.mu";
+connectAttr "place2dTexture4.mv" "file20.mv";
+connectAttr "place2dTexture4.s" "file20.s";
+connectAttr "place2dTexture4.wu" "file20.wu";
+connectAttr "place2dTexture4.wv" "file20.wv";
+connectAttr "place2dTexture4.re" "file20.re";
+connectAttr "place2dTexture4.of" "file20.of";
+connectAttr "place2dTexture4.r" "file20.ro";
+connectAttr "place2dTexture4.n" "file20.n";
+connectAttr "place2dTexture4.vt1" "file20.vt1";
+connectAttr "place2dTexture4.vt2" "file20.vt2";
+connectAttr "place2dTexture4.vt3" "file20.vt3";
+connectAttr "place2dTexture4.vc1" "file20.vc1";
+connectAttr "substanceNode4.output_basecolor" "Sand_Stone_Strata_basecolor.sbs";
+connectAttr "substanceNode4.rsw" "Sand_Stone_Strata_basecolor.rsw";
+connectAttr "substanceNode4.cext" "Sand_Stone_Strata_basecolor.cext";
+connectAttr "substanceNode4.hext" "Sand_Stone_Strata_basecolor.hext";
+connectAttr "substanceNode4.cfld" "Sand_Stone_Strata_basecolor.cprx";
+connectAttr "place2dTexture4.o" "Sand_Stone_Strata_basecolor.uv";
+connectAttr "place2dTexture4.ofs" "Sand_Stone_Strata_basecolor.fs";
+connectAttr ":defaultColorMgtGlobals.cme" "file21.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "file21.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "file21.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "file21.ws";
+connectAttr "Sand_Stone_Strata_basecolor.cpth" "file21.ftn";
+connectAttr "place2dTexture4.o" "file21.uv";
+connectAttr "place2dTexture4.ofs" "file21.fs";
+connectAttr "place2dTexture4.c" "file21.c";
+connectAttr "place2dTexture4.tf" "file21.tf";
+connectAttr "place2dTexture4.rf" "file21.rf";
+connectAttr "place2dTexture4.mu" "file21.mu";
+connectAttr "place2dTexture4.mv" "file21.mv";
+connectAttr "place2dTexture4.s" "file21.s";
+connectAttr "place2dTexture4.wu" "file21.wu";
+connectAttr "place2dTexture4.wv" "file21.wv";
+connectAttr "place2dTexture4.re" "file21.re";
+connectAttr "place2dTexture4.of" "file21.of";
+connectAttr "place2dTexture4.r" "file21.ro";
+connectAttr "place2dTexture4.n" "file21.n";
+connectAttr "place2dTexture4.vt1" "file21.vt1";
+connectAttr "place2dTexture4.vt2" "file21.vt2";
+connectAttr "place2dTexture4.vt3" "file21.vt3";
+connectAttr "place2dTexture4.vc1" "file21.vc1";
+connectAttr "substanceNode4.output_ambientocclusion" "Sand_Stone_Strata_ambientocclusion.sbs"
+		;
+connectAttr "substanceNode4.rsw" "Sand_Stone_Strata_ambientocclusion.rsw";
+connectAttr "substanceNode4.cext" "Sand_Stone_Strata_ambientocclusion.cext";
+connectAttr "substanceNode4.hext" "Sand_Stone_Strata_ambientocclusion.hext";
+connectAttr "substanceNode4.cfld" "Sand_Stone_Strata_ambientocclusion.cprx";
+connectAttr "place2dTexture4.o" "Sand_Stone_Strata_ambientocclusion.uv";
+connectAttr "place2dTexture4.ofs" "Sand_Stone_Strata_ambientocclusion.fs";
+connectAttr ":defaultColorMgtGlobals.cme" "file22.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "file22.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "file22.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "file22.ws";
+connectAttr "Sand_Stone_Strata_ambientocclusion.cpth" "file22.ftn";
+connectAttr "place2dTexture4.o" "file22.uv";
+connectAttr "place2dTexture4.ofs" "file22.fs";
+connectAttr "place2dTexture4.c" "file22.c";
+connectAttr "place2dTexture4.tf" "file22.tf";
+connectAttr "place2dTexture4.rf" "file22.rf";
+connectAttr "place2dTexture4.mu" "file22.mu";
+connectAttr "place2dTexture4.mv" "file22.mv";
+connectAttr "place2dTexture4.s" "file22.s";
+connectAttr "place2dTexture4.wu" "file22.wu";
+connectAttr "place2dTexture4.wv" "file22.wv";
+connectAttr "place2dTexture4.re" "file22.re";
+connectAttr "place2dTexture4.of" "file22.of";
+connectAttr "place2dTexture4.r" "file22.ro";
+connectAttr "place2dTexture4.n" "file22.n";
+connectAttr "place2dTexture4.vt1" "file22.vt1";
+connectAttr "place2dTexture4.vt2" "file22.vt2";
+connectAttr "place2dTexture4.vt3" "file22.vt3";
+connectAttr "place2dTexture4.vc1" "file22.vc1";
+connectAttr "substanceNode4.output_metallic" "Sand_Stone_Strata_metallic.sbs";
+connectAttr "substanceNode4.rsw" "Sand_Stone_Strata_metallic.rsw";
+connectAttr "substanceNode4.cext" "Sand_Stone_Strata_metallic.cext";
+connectAttr "substanceNode4.hext" "Sand_Stone_Strata_metallic.hext";
+connectAttr "substanceNode4.cfld" "Sand_Stone_Strata_metallic.cprx";
+connectAttr "place2dTexture4.o" "Sand_Stone_Strata_metallic.uv";
+connectAttr "place2dTexture4.ofs" "Sand_Stone_Strata_metallic.fs";
+connectAttr ":defaultColorMgtGlobals.cme" "file23.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "file23.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "file23.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "file23.ws";
+connectAttr "Sand_Stone_Strata_metallic.cpth" "file23.ftn";
+connectAttr "place2dTexture4.o" "file23.uv";
+connectAttr "place2dTexture4.ofs" "file23.fs";
+connectAttr "place2dTexture4.c" "file23.c";
+connectAttr "place2dTexture4.tf" "file23.tf";
+connectAttr "place2dTexture4.rf" "file23.rf";
+connectAttr "place2dTexture4.mu" "file23.mu";
+connectAttr "place2dTexture4.mv" "file23.mv";
+connectAttr "place2dTexture4.s" "file23.s";
+connectAttr "place2dTexture4.wu" "file23.wu";
+connectAttr "place2dTexture4.wv" "file23.wv";
+connectAttr "place2dTexture4.re" "file23.re";
+connectAttr "place2dTexture4.of" "file23.of";
+connectAttr "place2dTexture4.r" "file23.ro";
+connectAttr "place2dTexture4.n" "file23.n";
+connectAttr "place2dTexture4.vt1" "file23.vt1";
+connectAttr "place2dTexture4.vt2" "file23.vt2";
+connectAttr "place2dTexture4.vt3" "file23.vt3";
+connectAttr "place2dTexture4.vc1" "file23.vc1";
+connectAttr "substanceNode4.output_normal" "Sand_Stone_Strata_normal.sbs";
+connectAttr "substanceNode4.rsw" "Sand_Stone_Strata_normal.rsw";
+connectAttr "substanceNode4.cext" "Sand_Stone_Strata_normal.cext";
+connectAttr "substanceNode4.hext" "Sand_Stone_Strata_normal.hext";
+connectAttr "substanceNode4.cfld" "Sand_Stone_Strata_normal.cprx";
+connectAttr "place2dTexture4.o" "Sand_Stone_Strata_normal.uv";
+connectAttr "place2dTexture4.ofs" "Sand_Stone_Strata_normal.fs";
+connectAttr ":defaultColorMgtGlobals.cme" "file24.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "file24.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "file24.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "file24.ws";
+connectAttr "Sand_Stone_Strata_normal.cpth" "file24.ftn";
+connectAttr "place2dTexture4.o" "file24.uv";
+connectAttr "place2dTexture4.ofs" "file24.fs";
+connectAttr "place2dTexture4.c" "file24.c";
+connectAttr "place2dTexture4.tf" "file24.tf";
+connectAttr "place2dTexture4.rf" "file24.rf";
+connectAttr "place2dTexture4.mu" "file24.mu";
+connectAttr "place2dTexture4.mv" "file24.mv";
+connectAttr "place2dTexture4.s" "file24.s";
+connectAttr "place2dTexture4.wu" "file24.wu";
+connectAttr "place2dTexture4.wv" "file24.wv";
+connectAttr "place2dTexture4.re" "file24.re";
+connectAttr "place2dTexture4.of" "file24.of";
+connectAttr "place2dTexture4.r" "file24.ro";
+connectAttr "place2dTexture4.n" "file24.n";
+connectAttr "place2dTexture4.vt1" "file24.vt1";
+connectAttr "place2dTexture4.vt2" "file24.vt2";
+connectAttr "place2dTexture4.vt3" "file24.vt3";
+connectAttr "place2dTexture4.vc1" "file24.vc1";
+connectAttr "file21.oc" "multiplyDivide3.i1";
+connectAttr "file22.oc" "multiplyDivide3.i2";
+connectAttr "multiplyDivide3.o" "aiStandardSurface3.base_color";
+connectAttr "bump2d3.o" "aiStandardSurface3.n";
+connectAttr "file19.oa" "aiStandardSurface3.specular_roughness";
+connectAttr "file23.oa" "aiStandardSurface3.metalness";
+connectAttr "aiStandardSurface3.out" "set3.ss";
+connectAttr "displacementShader3.d" "set3.ds";
+connectAttr "BrickWallTool_Build1_0Shape.iog" "set3.dsm" -na;
+connectAttr "set3.msg" "materialInfo4.sg";
+connectAttr "aiStandardSurface3.msg" "materialInfo4.m";
+connectAttr "file21.msg" "materialInfo4.t" -na;
+connectAttr "file24.oa" "bump2d3.bv";
+connectAttr "file20.oa" "displacementShader3.d";
+connectAttr "multiplyDivide1.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[0].dn"
+		;
+connectAttr "place2dTexture2.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[1].dn"
+		;
+connectAttr "Beige_Sandstone__roughness1.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[2].dn"
+		;
+connectAttr "displacementShader1.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[3].dn"
+		;
+connectAttr "substanceNode2.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[4].dn"
+		;
+connectAttr "aiStandardSurface1.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[5].dn"
+		;
+connectAttr "Beige_Sandstone__normal1.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[6].dn"
+		;
+connectAttr "file10.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[7].dn"
+		;
+connectAttr "file6.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[8].dn"
+		;
+connectAttr "Beige_Sandstone__metallic.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[9].dn"
+		;
+connectAttr "file5.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[10].dn"
+		;
+connectAttr "Beige_Sandstone__height.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[11].dn"
+		;
+connectAttr "file9.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[12].dn"
+		;
+connectAttr "file7.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[13].dn"
+		;
+connectAttr "set1.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[14].dn"
+		;
+connectAttr "file8.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[15].dn"
+		;
+connectAttr "bump2d1.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[16].dn"
+		;
+connectAttr "Beige_Sandstone__diffuse1.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[17].dn"
+		;
+connectAttr "Beige_Sandstone__basecolor1.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[18].dn"
+		;
+connectAttr "Sand_Stone_Strata_height.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[1].ni[0].dn"
+		;
+connectAttr "multiplyDivide3.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[1].ni[1].dn"
+		;
+connectAttr "Sand_Stone_Strata_roughness.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[1].ni[2].dn"
+		;
+connectAttr "substanceNode4.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[1].ni[3].dn"
+		;
+connectAttr "bump2d3.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[1].ni[4].dn"
+		;
+connectAttr "file22.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[1].ni[5].dn"
+		;
+connectAttr "file21.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[1].ni[6].dn"
+		;
+connectAttr "Sand_Stone_Strata_ambientocclusion.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[1].ni[7].dn"
+		;
+connectAttr "Sand_Stone_Strata_normal.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[1].ni[8].dn"
+		;
+connectAttr "Sand_Stone_Strata_diffuse.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[1].ni[9].dn"
+		;
+connectAttr "aiStandardSurface3.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[1].ni[10].dn"
+		;
+connectAttr "file24.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[1].ni[11].dn"
+		;
+connectAttr "Sand_Stone_Strata_basecolor.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[1].ni[12].dn"
+		;
+connectAttr "set3.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[1].ni[13].dn"
+		;
+connectAttr "file23.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[1].ni[14].dn"
+		;
+connectAttr "displacementShader3.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[1].ni[15].dn"
+		;
+connectAttr "file18.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[1].ni[16].dn"
+		;
+connectAttr "place2dTexture4.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[1].ni[17].dn"
+		;
+connectAttr "Sand_Stone_Strata_metallic.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[1].ni[18].dn"
+		;
+connectAttr "file20.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[1].ni[19].dn"
+		;
+connectAttr "file19.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[1].ni[20].dn"
+		;
+connectAttr "set1.pa" ":renderPartition.st" -na;
+connectAttr "set2.pa" ":renderPartition.st" -na;
+connectAttr "set3.pa" ":renderPartition.st" -na;
+connectAttr "aiStandardSurface1.msg" ":defaultShaderList1.s" -na;
+connectAttr "displacementShader1.msg" ":defaultShaderList1.s" -na;
+connectAttr "aiStandardSurface2.msg" ":defaultShaderList1.s" -na;
+connectAttr "displacementShader2.msg" ":defaultShaderList1.s" -na;
+connectAttr "aiStandardSurface3.msg" ":defaultShaderList1.s" -na;
+connectAttr "displacementShader3.msg" ":defaultShaderList1.s" -na;
+connectAttr "place2dTexture1.msg" ":defaultRenderUtilityList1.u" -na;
+connectAttr "place2dTexture2.msg" ":defaultRenderUtilityList1.u" -na;
+connectAttr "multiplyDivide1.msg" ":defaultRenderUtilityList1.u" -na;
+connectAttr "bump2d1.msg" ":defaultRenderUtilityList1.u" -na;
+connectAttr "place2dTexture3.msg" ":defaultRenderUtilityList1.u" -na;
+connectAttr "multiplyDivide2.msg" ":defaultRenderUtilityList1.u" -na;
+connectAttr "bump2d2.msg" ":defaultRenderUtilityList1.u" -na;
+connectAttr "place2dTexture4.msg" ":defaultRenderUtilityList1.u" -na;
+connectAttr "multiplyDivide3.msg" ":defaultRenderUtilityList1.u" -na;
+connectAttr "bump2d3.msg" ":defaultRenderUtilityList1.u" -na;
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
-connectAttr "directionalLightShape1.ltd" ":lightList1.l" -na;
+connectAttr "substanceNode1.msg" ":defaultTextureList1.tx" -na;
+connectAttr "Beige_Sandstone__diffuse.msg" ":defaultTextureList1.tx" -na;
+connectAttr "file1.msg" ":defaultTextureList1.tx" -na;
+connectAttr "Beige_Sandstone__basecolor.msg" ":defaultTextureList1.tx" -na;
+connectAttr "file2.msg" ":defaultTextureList1.tx" -na;
+connectAttr "Beige_Sandstone__normal.msg" ":defaultTextureList1.tx" -na;
+connectAttr "file3.msg" ":defaultTextureList1.tx" -na;
+connectAttr "Beige_Sandstone__roughness.msg" ":defaultTextureList1.tx" -na;
+connectAttr "file4.msg" ":defaultTextureList1.tx" -na;
+connectAttr "substanceNode2.msg" ":defaultTextureList1.tx" -na;
+connectAttr "Beige_Sandstone__diffuse1.msg" ":defaultTextureList1.tx" -na;
+connectAttr "file5.msg" ":defaultTextureList1.tx" -na;
+connectAttr "Beige_Sandstone__basecolor1.msg" ":defaultTextureList1.tx" -na;
+connectAttr "file6.msg" ":defaultTextureList1.tx" -na;
+connectAttr "Beige_Sandstone__normal1.msg" ":defaultTextureList1.tx" -na;
+connectAttr "file7.msg" ":defaultTextureList1.tx" -na;
+connectAttr "Beige_Sandstone__roughness1.msg" ":defaultTextureList1.tx" -na;
+connectAttr "file8.msg" ":defaultTextureList1.tx" -na;
+connectAttr "Beige_Sandstone__metallic.msg" ":defaultTextureList1.tx" -na;
+connectAttr "file9.msg" ":defaultTextureList1.tx" -na;
+connectAttr "Beige_Sandstone__height.msg" ":defaultTextureList1.tx" -na;
+connectAttr "file10.msg" ":defaultTextureList1.tx" -na;
+connectAttr "substanceNode3.msg" ":defaultTextureList1.tx" -na;
+connectAttr "Sand_Step_Dunes_diffuse.msg" ":defaultTextureList1.tx" -na;
+connectAttr "file11.msg" ":defaultTextureList1.tx" -na;
+connectAttr "Sand_Step_Dunes_roughness.msg" ":defaultTextureList1.tx" -na;
+connectAttr "file12.msg" ":defaultTextureList1.tx" -na;
+connectAttr "Sand_Step_Dunes_height.msg" ":defaultTextureList1.tx" -na;
+connectAttr "file13.msg" ":defaultTextureList1.tx" -na;
+connectAttr "Sand_Step_Dunes_basecolor.msg" ":defaultTextureList1.tx" -na;
+connectAttr "file14.msg" ":defaultTextureList1.tx" -na;
+connectAttr "Sand_Step_Dunes_metallic.msg" ":defaultTextureList1.tx" -na;
+connectAttr "file16.msg" ":defaultTextureList1.tx" -na;
+connectAttr "Sand_Step_Dunes_normal.msg" ":defaultTextureList1.tx" -na;
+connectAttr "file17.msg" ":defaultTextureList1.tx" -na;
+connectAttr "substanceNode4.msg" ":defaultTextureList1.tx" -na;
+connectAttr "Sand_Stone_Strata_diffuse.msg" ":defaultTextureList1.tx" -na;
+connectAttr "file18.msg" ":defaultTextureList1.tx" -na;
+connectAttr "Sand_Stone_Strata_roughness.msg" ":defaultTextureList1.tx" -na;
+connectAttr "file19.msg" ":defaultTextureList1.tx" -na;
+connectAttr "Sand_Stone_Strata_height.msg" ":defaultTextureList1.tx" -na;
+connectAttr "file20.msg" ":defaultTextureList1.tx" -na;
+connectAttr "Sand_Stone_Strata_basecolor.msg" ":defaultTextureList1.tx" -na;
+connectAttr "file21.msg" ":defaultTextureList1.tx" -na;
+connectAttr "Sand_Stone_Strata_ambientocclusion.msg" ":defaultTextureList1.tx" -na
+		;
+connectAttr "file22.msg" ":defaultTextureList1.tx" -na;
+connectAttr "Sand_Stone_Strata_metallic.msg" ":defaultTextureList1.tx" -na;
+connectAttr "file23.msg" ":defaultTextureList1.tx" -na;
+connectAttr "Sand_Stone_Strata_normal.msg" ":defaultTextureList1.tx" -na;
+connectAttr "file24.msg" ":defaultTextureList1.tx" -na;
 connectAttr "groundTool1_0Shape.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "pPlaneShape1.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "cobblestonePathGenerator1_0Shape.iog" ":initialShadingGroup.dsm" -na
-		;
-connectAttr "BrickWallTool_Build1_0Shape.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "directionalLight1.iog" ":defaultLightSet.dsm" -na;
 // End of The BallBot Duo.ma
