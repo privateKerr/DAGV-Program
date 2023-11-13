@@ -6,10 +6,10 @@ def random_placement(num_dups, x_min, x_max, y_min, y_max, z_min, z_max):
     selection = cmds.ls(selection=True)
 
     # Runs through each selected object in the scene
-    for x in selection:
+    for sel in selection:
         # Runs through each duplicated object
         for y in range(num_dups):
-            dups = [cmds.duplicate(selection, returnRootsOnly=True)]
+            dups = [cmds.duplicate(sel, returnRootsOnly=True)]
             dup = dups[0]
 
             # Provides a random range of values
