@@ -28,13 +28,13 @@ class PlacementGeneratorUI:
 
     def delete(self):
         #Check to see if window exists and delete if true
-        if cmds.window('%sWindow' % self.window_name, exists=True):
-            cmds.deleteUI('%sWindow' % self.window_name)
+        if cmds.window(self.window_name, exists=True):
+            cmds.deleteUI(self.window_name, window=True)
 
     def create(self):
         #create window
         self.delete()
-        self.window_name = cmds.window('%sWindow' % self.window_name, title=('%s Tool' % self.window_name), resizeToFitChildren=True)
+        self.window_name = cmds.window(self.window_name, title=('%s Tool' % self.window_name), resizeToFitChildren=True)
         main_column = cmds.columnLayout()
         cmds.intFieldGrp(numberOfFields=1, label='Number of Duplicates', parent=main_column)
         range_column = cmds.rowColumnLayout(numberOfColumns = 1)
