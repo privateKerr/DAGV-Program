@@ -20,8 +20,32 @@ def random_placement(num_dups, x_min, x_max, y_min, y_max, z_min, z_max):
             # Moves the objects
             cmds.xform(dup, worldSpace=True, translation=[rand_x, rand_y, rand_z])
 
-<<<<<<< HEAD
 random_placement(200, 10, 20, 10, 30, 10, 30)
-=======
-random_placement(200, 10, 50, 10, 50, 10, 50)
->>>>>>> 9b28f4be03b00b631eb1790c881d4ac7bbc7450a
+
+class PlacementGeneratorUI:
+    def __init__(self):
+        self.window_name = 'Generate Placement'
+
+    def delete(self):
+        #Check to see if window exists and delete if true
+        if cmds.window('%sWindow' % self.window_name, exists=True):
+            cmds.deleteUI('%sWindow' % self.window_name)
+
+    def create(self):
+        #create window
+        self.delete()
+        self.window_name = cmds.window('%sWindow' % self.window_name, title=('%s Tool' % self.window_name), resizeToFitChildren=True)
+        main_column = cmds.columnLayout()
+        cmds.intFieldGrp(numberOfFields=1, label='Number of Duplicates', parent=main_column)
+        range_column = cmds.rowColumnLayout(numberOfColumns = 1)
+        cmds.intFieldGrp(numberOfFields=1, label='X Max')
+        cmds.intFieldGrp(numberOfFields=1, label='X Min')
+        cmds.intFieldGrp(numberOfFields=1, label='Y Max')
+        cmds.intFieldGrp(numberOfFields=1, label='Y Min')
+        cmds.intFieldGrp(numberOfFields=1, label='Z Max')
+        cmds.intFieldGrp(numberOfFields=1, label='Z Min')
+        cmds.button(label='Generate Placement')
+        cmds.showWindow(self.window_name)
+
+mainUI = PlacementGeneratorUI()
+mainUI.create()
