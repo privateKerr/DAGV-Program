@@ -487,7 +487,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 754419964}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce035e1ce5e6f4886828f723ee28f765, type: 3}
+  m_Script: {fileID: 11500000, guid: 1b3ab67e9d602714abf5ab2567e1dd7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
@@ -684,10 +684,10 @@ MeshCollider:
     m_Bits: 0
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
+  m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!54 &1653051062
@@ -838,7 +838,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2019621086}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6748811e457e04a20a2403d3781a4487, type: 3}
+  m_Script: {fileID: 11500000, guid: 0b7974c3cac69f24f8ed605148477137, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 2019621087}
