@@ -63,6 +63,7 @@ ExportedObj/
 *.pdb.meta
 *.mdb.meta
 *.asset
+*.psd
 
 # Unity3D generated file on crash reports
 sysinfo.txt
@@ -2335,3 +2336,463 @@ Python/MayaPythonProject/Crate Macro Script
 Python/MayaPythonProject/scratch_1.py
 
 *.icloud
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Fonts.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Fonts/Anton OFL.txt.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Fonts/Anton.ttf
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Fonts/Anton.ttf.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Fonts/Bangers - OFL.txt.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Fonts/Bangers.ttf
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Fonts/Bangers.ttf.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Fonts/Electronic Highway Sign.TTF
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Fonts/Electronic Highway Sign.TTF.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Fonts/Oswald-Bold - OFL.txt.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Fonts/Oswald-Bold.ttf
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Fonts/Oswald-Bold.ttf.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Fonts/Roboto-Bold.ttf
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Fonts/Roboto-Bold.ttf.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Materials.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Materials/Crate - Surface Shader Scene.mat
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Materials/Crate - Surface Shader Scene.mat.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Materials/Ground - Logo Scene.mat
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Materials/Ground - Logo Scene.mat.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Materials/Ground - Surface Shader Scene.mat
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Materials/Ground - Surface Shader Scene.mat.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Materials/Small Crate_diffuse.mat
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Materials/Small Crate_diffuse.mat.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Prefabs.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Prefabs/Text Popup.prefab
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Prefabs/Text Popup.prefab.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Prefabs/TextMeshPro - Prefab 1.prefab
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Prefabs/TextMeshPro - Prefab 1.prefab.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Prefabs/TextMeshPro - Prefab 2.prefab
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Prefabs/TextMeshPro - Prefab 2.prefab.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Resources.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Resources/Color Gradient Presets.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Resources/Color Gradient Presets/Blue to Purple - Vertical.asset.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Resources/Color Gradient Presets/Dark to Light Green - Vertical.asset.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Resources/Color Gradient Presets/Light to Dark Green - Vertical.asset.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Resources/Color Gradient Presets/Yellow to Orange - Vertical.asset.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Resources/Fonts & Materials.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Resources/Fonts & Materials/Anton SDF - Drop Shadow.mat
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Resources/Fonts & Materials/Anton SDF - Drop Shadow.mat.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Resources/Fonts & Materials/Anton SDF - Outline.mat
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Resources/Fonts & Materials/Anton SDF - Outline.mat.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Resources/Fonts & Materials/Anton SDF - Sunny Days.mat
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Resources/Fonts & Materials/Anton SDF - Sunny Days.mat.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Resources/Fonts & Materials/Anton SDF.asset.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Resources/Fonts & Materials/Bangers SDF - Drop Shadow.mat
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Resources/Fonts & Materials/Bangers SDF - Drop Shadow.mat.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Resources/Fonts & Materials/Bangers SDF - Outline.mat
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Resources/Fonts & Materials/Bangers SDF - Outline.mat.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Resources/Fonts & Materials/Bangers SDF Glow.mat
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Resources/Fonts & Materials/Bangers SDF Glow.mat.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Resources/Fonts & Materials/Bangers SDF Logo.mat
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Resources/Fonts & Materials/Bangers SDF Logo.mat.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Resources/Fonts & Materials/Bangers SDF.asset.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Resources/Fonts & Materials/Electronic Highway Sign SDF.asset.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Resources/Fonts & Materials/LiberationSans SDF - Metalic Green.mat
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Resources/Fonts & Materials/LiberationSans SDF - Metalic Green.mat.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Resources/Fonts & Materials/LiberationSans SDF - Overlay.mat
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Resources/Fonts & Materials/LiberationSans SDF - Overlay.mat.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Resources/Fonts & Materials/LiberationSans SDF - Soft Mask.mat
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Resources/Fonts & Materials/LiberationSans SDF - Soft Mask.mat.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Resources/Fonts & Materials/Oswald Bold SDF.asset.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Resources/Fonts & Materials/Roboto-Bold SDF - Drop Shadow.mat
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Resources/Fonts & Materials/Roboto-Bold SDF - Drop Shadow.mat.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Resources/Fonts & Materials/Roboto-Bold SDF - Surface.mat
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Resources/Fonts & Materials/Roboto-Bold SDF - Surface.mat.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Resources/Fonts & Materials/Roboto-Bold SDF.asset.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Resources/Sprite Assets.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Resources/Sprite Assets/Default Sprite Asset.asset.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Resources/Sprite Assets/DropCap Numbers.asset.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scenes.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scenes/01-  Single Line TextMesh Pro.unity
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scenes/01-  Single Line TextMesh Pro.unity.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scenes/02 - Multi-line TextMesh Pro.unity
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scenes/02 - Multi-line TextMesh Pro.unity.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scenes/03 - Line Justification.unity
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scenes/03 - Line Justification.unity.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scenes/04 - Word Wrapping.unity
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scenes/04 - Word Wrapping.unity.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scenes/05 - Style Tags.unity
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scenes/05 - Style Tags.unity.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scenes/06 - Extra Rich Text Examples.unity
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scenes/06 - Extra Rich Text Examples.unity.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scenes/07 - Superscript & Subscript Example.unity
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scenes/07 - Superscript & Subscript Example.unity.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scenes/08 - Improved Text Alignment.unity
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scenes/08 - Improved Text Alignment.unity.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scenes/09 - Margin Tag Example.unity
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scenes/09 - Margin Tag Example.unity.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scenes/10 - Bullets & Numbered List Example.unity
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scenes/10 - Bullets & Numbered List Example.unity.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scenes/11 - The Style Tag.unity
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scenes/11 - The Style Tag.unity.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scenes/12 - Link Example.unity
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scenes/12 - Link Example.unity.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scenes/12a - Text Interactions.unity
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scenes/12a - Text Interactions.unity.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scenes/13 - Soft Hyphenation.unity
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scenes/13 - Soft Hyphenation.unity.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scenes/14 - Multi Font & Sprites.unity
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scenes/14 - Multi Font & Sprites.unity.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scenes/15 - Inline Graphics & Sprites.unity
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scenes/15 - Inline Graphics & Sprites.unity.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scenes/16 - Linked text overflow mode example.unity
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scenes/16 - Linked text overflow mode example.unity.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scenes/17 - Old Computer Terminal.unity
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scenes/17 - Old Computer Terminal.unity.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scenes/18 - ScrollRect & Masking & Layout.unity
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scenes/18 - ScrollRect & Masking & Layout.unity.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scenes/19 - Masking Texture & Soft Mask.unity
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scenes/19 - Masking Texture & Soft Mask.unity.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scenes/20 - Input Field with Scrollbar.unity
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scenes/20 - Input Field with Scrollbar.unity.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scenes/21 - Script Example.unity
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scenes/21 - Script Example.unity.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scenes/22 - Basic Scripting Example.unity
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scenes/22 - Basic Scripting Example.unity.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scenes/23 - Animating Vertex Attributes.unity
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scenes/23 - Animating Vertex Attributes.unity.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scenes/24 - Surface Shader Example.unity
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scenes/24 - Surface Shader Example.unity.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scenes/25 - Sunny Days Example.unity
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scenes/25 - Sunny Days Example.unity.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scenes/26 - Dropdown Placeholder Example.unity
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scenes/26 - Dropdown Placeholder Example.unity.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scenes/Benchmark (Floating Text).unity
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scenes/Benchmark (Floating Text).unity.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scripts.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01_UGUI.cs
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01_UGUI.cs.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01.cs
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01.cs.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark02.cs
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark02.cs.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark03.cs
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark03.cs.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark04.cs
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark04.cs.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scripts/CameraController.cs
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scripts/CameraController.cs.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scripts/ChatController.cs
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scripts/ChatController.cs.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scripts/DropdownSample.cs
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scripts/DropdownSample.cs.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scripts/EnvMapAnimator.cs
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scripts/EnvMapAnimator.cs.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scripts/ObjectSpin.cs
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scripts/ObjectSpin.cs.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scripts/ShaderPropAnimator.cs
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scripts/ShaderPropAnimator.cs.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scripts/SimpleScript.cs
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scripts/SimpleScript.cs.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scripts/SkewTextExample.cs
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scripts/SkewTextExample.cs.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scripts/TeleType.cs
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scripts/TeleType.cs.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scripts/TextConsoleSimulator.cs
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scripts/TextConsoleSimulator.cs.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scripts/TextMeshProFloatingText.cs
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scripts/TextMeshProFloatingText.cs.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scripts/TextMeshSpawner.cs
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scripts/TextMeshSpawner.cs.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scripts/TMP_DigitValidator.cs
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scripts/TMP_DigitValidator.cs.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scripts/TMP_ExampleScript_01.cs
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scripts/TMP_ExampleScript_01.cs.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scripts/TMP_FrameRateCounter.cs
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scripts/TMP_FrameRateCounter.cs.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scripts/TMP_PhoneNumberValidator.cs
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scripts/TMP_PhoneNumberValidator.cs.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scripts/TMP_TextEventCheck.cs
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scripts/TMP_TextEventCheck.cs.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scripts/TMP_TextEventHandler.cs
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scripts/TMP_TextEventHandler.cs.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scripts/TMP_TextInfoDebugTool.cs
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scripts/TMP_TextInfoDebugTool.cs.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scripts/TMP_TextSelector_A.cs
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scripts/TMP_TextSelector_A.cs.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scripts/TMP_TextSelector_B.cs
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scripts/TMP_TextSelector_B.cs.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scripts/TMP_UiFrameRateCounter.cs
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scripts/TMP_UiFrameRateCounter.cs.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scripts/TMPro_InstructionOverlay.cs
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scripts/TMPro_InstructionOverlay.cs.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scripts/VertexColorCycler.cs
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scripts/VertexColorCycler.cs.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scripts/VertexJitter.cs
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scripts/VertexJitter.cs.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scripts/VertexShakeA.cs
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scripts/VertexShakeA.cs.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scripts/VertexShakeB.cs
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scripts/VertexShakeB.cs.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scripts/VertexZoom.cs
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scripts/VertexZoom.cs.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scripts/WarpTextExample.cs
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Scripts/WarpTextExample.cs.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Sprites.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Sprites/Default Sprites.png
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Sprites/Default Sprites.png.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Sprites/DropCap Numbers.psd.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Textures.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Textures/Brushed Metal 3.jpg
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Textures/Brushed Metal 3.jpg.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Textures/Floor Cement.jpg
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Textures/Floor Cement.jpg.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Textures/Floor Tiles 1 - diffuse.jpg
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Textures/Floor Tiles 1 - diffuse.jpg.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Textures/Fruit Jelly (B&W).jpg
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Textures/Fruit Jelly (B&W).jpg.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Textures/Gradient Diagonal (Color).jpg
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Textures/Gradient Diagonal (Color).jpg.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Textures/Gradient Horizontal (Color).jpg
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Textures/Gradient Horizontal (Color).jpg.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Textures/Gradient Vertical (Color).jpg
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Textures/Gradient Vertical (Color).jpg.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Textures/Mask Zig-n-Zag.psd.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Textures/Small Crate_diffuse.jpg
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Textures/Small Crate_diffuse.jpg.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Textures/Small Crate_normal.jpg
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Textures/Small Crate_normal.jpg.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Textures/Sunny Days - Seamless.jpg
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Textures/Sunny Days - Seamless.jpg.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Textures/Text Overflow - Linked Text Image 1.png
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Textures/Text Overflow - Linked Text Image 1.png.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Textures/Text Overflow - Linked Text UI Screenshot.png
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Textures/Text Overflow - Linked Text UI Screenshot.png.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Textures/Wipe Pattern - Circle.psd.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Textures/Wipe Pattern - Diagonal.psd.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Textures/Wipe Pattern - Radial Double.psd.meta
+
+Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Textures/Wipe Pattern - Radial Quad.psd.meta
