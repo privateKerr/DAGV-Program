@@ -2796,3 +2796,615 @@ Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Textures/Wipe Pattern
 Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Textures/Wipe Pattern - Radial Double.psd.meta
 
 Unity/Unit 1 Project/Assets/TextMesh Pro/Examples & Extras/Textures/Wipe Pattern - Radial Quad.psd.meta
+
+Unity/Unit 1 Project/Assets/Adobe.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Adobe.Substance.Editor.asmdef
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Adobe.Substance.Editor.asmdef.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Assets.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Assets/Logo_128.png
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Assets/Logo_128.png.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Assets/Logo_16.png
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Assets/Logo_16.png.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Assets/Logo_256.png
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Assets/Logo_256.png.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Assets/Logo_32.png
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Assets/Logo_32.png.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Assets/Logo_64.png
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Assets/Logo_64.png.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Assets/S_3DCummunityAssets_18_N.png
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Assets/S_3DCummunityAssets_18_N.png.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Assets/S_3DHeart_18_N_nudged.png
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Assets/S_3DHeart_18_N_nudged.png.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Scripts.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Scripts/Extensions.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Scripts/Extensions/PhysicalSizeExtension.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Scripts/Extensions/PhysicalSizeExtension.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Scripts/Extensions/SubstanceGraphSOExtensions.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Scripts/Extensions/SubstanceGraphSOExtensions.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Scripts/GUIContent.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Scripts/GUIContent/SubstanceInputGUIContent.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Scripts/GUIContent/SubstanceInputGUIContent.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Scripts/GUIContent/SubstanceNumericalInputGUIContent.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Scripts/GUIContent/SubstanceNumericalInputGUIContent.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Scripts/Importer.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Scripts/Importer/SubstanceImporter.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Scripts/Importer/SubstanceImporter.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Scripts/Importer/SubstanceImporterEditor.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Scripts/Importer/SubstanceImporterEditor.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Scripts/Package.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Scripts/Package/UnityPackageInfo.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Scripts/Package/UnityPackageInfo.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Scripts/Project Settings Editor.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Scripts/Project Settings Editor/Extensions.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Scripts/Project Settings Editor/Extensions.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Scripts/Project Settings Editor/SubstanceEditorSettingsProvider.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Scripts/Project Settings Editor/SubstanceEditorSettingsProvider.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Scripts/Project Settings Editor/SubstanceEditorSettingsSO.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Scripts/Project Settings Editor/SubstanceEditorSettingsSO.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Scripts/PropertyDrawers.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Scripts/PropertyDrawers/SubstanceInputDrawer.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Scripts/PropertyDrawers/SubstanceInputDrawer.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Scripts/PropertyDrawers/SubstanceInputDrawerFloat.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Scripts/PropertyDrawers/SubstanceInputDrawerFloat.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Scripts/PropertyDrawers/SubstanceInputDrawerFloat2.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Scripts/PropertyDrawers/SubstanceInputDrawerFloat2.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Scripts/PropertyDrawers/SubstanceInputDrawerFloat3.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Scripts/PropertyDrawers/SubstanceInputDrawerFloat3.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Scripts/PropertyDrawers/SubstanceInputDrawerFloat4.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Scripts/PropertyDrawers/SubstanceInputDrawerFloat4.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Scripts/PropertyDrawers/SubstanceInputDrawerInt.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Scripts/PropertyDrawers/SubstanceInputDrawerInt.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Scripts/PropertyDrawers/SubstanceInputDrawerInt2.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Scripts/PropertyDrawers/SubstanceInputDrawerInt2.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Scripts/PropertyDrawers/SubstanceInputDrawerInt3.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Scripts/PropertyDrawers/SubstanceInputDrawerInt3.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Scripts/PropertyDrawers/SubstanceInputDrawerInt4.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Scripts/PropertyDrawers/SubstanceInputDrawerInt4.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Scripts/PropertyDrawers/SubstanceInputDrawerString.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Scripts/PropertyDrawers/SubstanceInputDrawerString.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Scripts/PropertyDrawers/SubstanceInputDrawerTexture.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Scripts/PropertyDrawers/SubstanceInputDrawerTexture.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Scripts/SubstanceEditorEngine.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Scripts/SubstanceEditorEngine.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Scripts/SubstanceFileEditor.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Scripts/SubstanceFileEditor.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Scripts/SubstanceGraphSOEditor.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Scripts/SubstanceGraphSOEditor.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Scripts/Utilities.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Scripts/Utilities/AssetCreationUtils.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Scripts/Utilities/AssetCreationUtils.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Scripts/Utilities/EditorDrawUtilities.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Scripts/Utilities/EditorDrawUtilities.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Scripts/Utilities/EditorTools.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Scripts/Utilities/EditorTools.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Scripts/Utilities/GraphInputsGroupingHelper.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Scripts/Utilities/GraphInputsGroupingHelper.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Scripts/Utilities/SubstanceBuildUtils.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Scripts/Utilities/SubstanceBuildUtils.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Scripts/Utilities/SubstanceEditorTools.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Scripts/Utilities/SubstanceEditorTools.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Scripts/Utilities/TextureUtils.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Scripts/Utilities/TextureUtils.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Settings.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Editor/Settings/SubstanceEditorSettings.asset.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/HOWTO.pdf
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/HOWTO.pdf.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/README.md
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/README.md.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Adobe.Substance.asmdef
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Adobe.Substance.asmdef.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Plugins.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Plugins/Arm64.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Plugins/Arm64/libsbsario.so
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Plugins/Arm64/libsbsario.so.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Plugins/iOS.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Plugins/iOS/libalg.a
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Plugins/iOS/libalg.a.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Plugins/iOS/libalgcompression.a
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Plugins/iOS/libalgcompression.a.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Plugins/iOS/libintegrations_common.a
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Plugins/iOS/libintegrations_common.a.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Plugins/iOS/libintegrations_renderer.a
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Plugins/iOS/libintegrations_renderer.a.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Plugins/iOS/libintegrations_system.a
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Plugins/iOS/libintegrations_system.a.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Plugins/iOS/libpfxlinkercommon.a
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Plugins/iOS/libpfxlinkercommon.a.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Plugins/iOS/libsbsario_details.a
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Plugins/iOS/libsbsario_details.a.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Plugins/iOS/libsbsario.a
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Plugins/iOS/libsbsario.a.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Plugins/iOS/libsubstance_framework.a
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Plugins/iOS/libsubstance_framework.a.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Plugins/iOS/libsubstance_linker.a
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Plugins/iOS/libsubstance_linker.a.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Plugins/iOS/libsubstance_neon_blend.a
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Plugins/iOS/libsubstance_neon_blend.a.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Plugins/iOS/libtinyxml.a
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Plugins/iOS/libtinyxml.a.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Plugins/libsbsario.dylib
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Plugins/libsbsario.dylib.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Plugins/libsbsario.so
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Plugins/libsbsario.so.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Plugins/libsubstance_linker.9.dylib
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Plugins/libsubstance_linker.9.dylib.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Plugins/libsubstance_linker.dylib
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Plugins/libsubstance_linker.dylib.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Plugins/libsubstance_linker.so
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Plugins/libsubstance_linker.so.9
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Plugins/libsubstance_linker.so.9.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Plugins/libsubstance_linker.so.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Plugins/libsubstance_mtl_blend.dylib
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Plugins/libsubstance_mtl_blend.dylib.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Plugins/libsubstance_ogl3_blend.so
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Plugins/libsubstance_ogl3_blend.so.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Plugins/sbsario.dll
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Plugins/sbsario.dll.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Plugins/substance_d3d11pc_blend.dll
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Plugins/substance_d3d11pc_blend.dll.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Plugins/substance_linker.dll
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Plugins/substance_linker.dll.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Plugins/substance_sse2_blend.dll
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Plugins/substance_sse2_blend.dll.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Runtime.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Runtime/Adobe.Substance.Runtime.asmdef
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Runtime/Adobe.Substance.Runtime.asmdef.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Runtime/Scripts.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Runtime/Scripts/SubstanceRuntime.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Runtime/Scripts/SubstanceRuntime.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Runtime/Scripts/SubstanceRuntimeGraph.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Runtime/Scripts/SubstanceRuntimeGraph.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Engine.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Engine.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Exceptions.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Exceptions/SubstanceException.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Exceptions/SubstanceException.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/MarshalStructs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/MarshalStructs/DataInternalNumeric.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/MarshalStructs/DataInternalNumeric.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/MarshalStructs/Enums.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/MarshalStructs/Enums/ErrorCode.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/MarshalStructs/Enums/ErrorCode.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/MarshalStructs/Enums/HVFlip.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/MarshalStructs/Enums/HVFlip.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/MarshalStructs/Enums/ImageFormat.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/MarshalStructs/Enums/ImageFormat.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/MarshalStructs/Enums/nativevaluetype.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/MarshalStructs/Enums/nativevaluetype.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/MarshalStructs/NativeDataImage.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/MarshalStructs/NativeDataImage.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/MarshalStructs/nativegraph.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/MarshalStructs/nativegraph.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/MarshalStructs/nativeinputdesc.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/MarshalStructs/nativeinputdesc.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/MarshalStructs/NativeInputVisibility.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/MarshalStructs/NativeInputVisibility.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/MarshalStructs/nativeNumericInputDesc.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/MarshalStructs/nativeNumericInputDesc.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/MarshalStructs/nativeoutputdesc.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/MarshalStructs/nativeoutputdesc.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/MarshalStructs/NativeOutputFormat.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/MarshalStructs/NativeOutputFormat.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/MarshalStructs/NativePhysicalSize.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/MarshalStructs/NativePhysicalSize.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/MarshalStructs/NativePreset.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/MarshalStructs/NativePreset.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/MarshalStructs/NativeThumbnail.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/MarshalStructs/NativeThumbnail.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/NativeMethods.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/NativeMethods.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Profile.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Profile/ProfileUtils.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Profile/ProfileUtils.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Render Pipelines.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Render Pipelines/PluginPipelines.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Render Pipelines/PluginPipelines.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/SubstanceNativeGraph.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/SubstanceNativeGraph.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Unity Objects.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Unity Objects/Enums.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Unity Objects/Enums/ShuffleIndex.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Unity Objects/Enums/ShuffleIndex.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Unity Objects/Enums/SubstanceValueType.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Unity Objects/Enums/SubstanceValueType.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Unity Objects/Enums/SubstanceWidgetType.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Unity Objects/Enums/SubstanceWidgetType.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Unity Objects/Enums/TextureFlip.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Unity Objects/Enums/TextureFlip.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Unity Objects/Inputs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Unity Objects/Inputs/Descriptions.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Unity Objects/Inputs/Descriptions/ISubstanceInputDescNumerical.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Unity Objects/Inputs/Descriptions/ISubstanceInputDescNumerical.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Unity Objects/Inputs/Descriptions/SubstanceInputDescNumericalFloat.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Unity Objects/Inputs/Descriptions/SubstanceInputDescNumericalFloat.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Unity Objects/Inputs/Descriptions/SubstanceInputDescNumericalFloat2.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Unity Objects/Inputs/Descriptions/SubstanceInputDescNumericalFloat2.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Unity Objects/Inputs/Descriptions/SubstanceInputDescNumericalFloat3.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Unity Objects/Inputs/Descriptions/SubstanceInputDescNumericalFloat3.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Unity Objects/Inputs/Descriptions/SubstanceInputDescNumericalFloat4.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Unity Objects/Inputs/Descriptions/SubstanceInputDescNumericalFloat4.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Unity Objects/Inputs/Descriptions/SubstanceInputDescNumericalInt.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Unity Objects/Inputs/Descriptions/SubstanceInputDescNumericalInt.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Unity Objects/Inputs/Descriptions/SubstanceInputDescNumericalInt2.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Unity Objects/Inputs/Descriptions/SubstanceInputDescNumericalInt2.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Unity Objects/Inputs/Descriptions/SubstanceInputDescNumericalInt3.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Unity Objects/Inputs/Descriptions/SubstanceInputDescNumericalInt3.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Unity Objects/Inputs/Descriptions/SubstanceInputDescNumericalInt4.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Unity Objects/Inputs/Descriptions/SubstanceInputDescNumericalInt4.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Unity Objects/Inputs/Descriptions/SubstanceInputDescription.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Unity Objects/Inputs/Descriptions/SubstanceInputDescription.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Unity Objects/Inputs/ISubstanceInput.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Unity Objects/Inputs/ISubstanceInput.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Unity Objects/Inputs/SubstanceInputFactory.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Unity Objects/Inputs/SubstanceInputFactory.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Unity Objects/Inputs/Values.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Unity Objects/Inputs/Values/SubstanceInputFloat.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Unity Objects/Inputs/Values/SubstanceInputFloat.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Unity Objects/Inputs/Values/SubstanceInputFloat2.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Unity Objects/Inputs/Values/SubstanceInputFloat2.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Unity Objects/Inputs/Values/SubstanceInputFloat3.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Unity Objects/Inputs/Values/SubstanceInputFloat3.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Unity Objects/Inputs/Values/SubstanceInputFloat4.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Unity Objects/Inputs/Values/SubstanceInputFloat4.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Unity Objects/Inputs/Values/SubstanceInputFont.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Unity Objects/Inputs/Values/SubstanceInputFont.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Unity Objects/Inputs/Values/SubstanceInputInt.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Unity Objects/Inputs/Values/SubstanceInputInt.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Unity Objects/Inputs/Values/SubstanceInputInt2.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Unity Objects/Inputs/Values/SubstanceInputInt2.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Unity Objects/Inputs/Values/SubstanceInputInt3.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Unity Objects/Inputs/Values/SubstanceInputInt3.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Unity Objects/Inputs/Values/SubstanceInputInt4.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Unity Objects/Inputs/Values/SubstanceInputInt4.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Unity Objects/Inputs/Values/SubstanceInputString.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Unity Objects/Inputs/Values/SubstanceInputString.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Unity Objects/Inputs/Values/SubstanceInputTexture.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Unity Objects/Inputs/Values/SubstanceInputTexture.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Unity Objects/Inputs/Values/SubstanceInvalidInput.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Unity Objects/Inputs/Values/SubstanceInvalidInput.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Unity Objects/Outputs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Unity Objects/Outputs/SubstanceOutputDescription.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Unity Objects/Outputs/SubstanceOutputDescription.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Unity Objects/Outputs/SubstanceOutputTexture.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Unity Objects/Outputs/SubstanceOutputTexture.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Unity Objects/Outputs/SubstanceVirtualOutputCreateInfo.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Unity Objects/Outputs/SubstanceVirtualOutputCreateInfo.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Unity Objects/Presets.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Unity Objects/Presets/PresetInfo.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Unity Objects/Presets/PresetInfo.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Unity Objects/SubstanceFileRawData.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Unity Objects/SubstanceFileRawData.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Unity Objects/SubstanceFileSO.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Unity Objects/SubstanceFileSO.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Unity Objects/SubstanceGraphSO.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Unity Objects/SubstanceGraphSO.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Utilities.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Utilities/DLLHelper.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Utilities/DLLHelper.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Utilities/EnumExtensions.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Utilities/EnumExtensions.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Utilities/Globals.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Utilities/Globals.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Utilities/MaterialUtils.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Utilities/MaterialUtils.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Utilities/PathUtils.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Utilities/PathUtils.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Utilities/PlatformUtils.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Utilities/PlatformUtils.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Utilities/RenderingUtils.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Utilities/RenderingUtils.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Utilities/TextureExtensions.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Utilities/TextureExtensions.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Utilities/TextureOutputExtensions.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Utilities/TextureOutputExtensions.cs.meta
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Utilities/Version.cs
+
+Unity/Unit 1 Project/Assets/Adobe/Substance3DForUnity/Runtime/Scripts/Utilities/Version.cs.meta
