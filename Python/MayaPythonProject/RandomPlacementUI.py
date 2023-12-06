@@ -1,6 +1,5 @@
 import maya.cmds as cmds
 
-
 class PlacementGeneratorUI:
 
     window_name = 'Placement Generator'
