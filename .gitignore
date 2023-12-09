@@ -133,6 +133,7 @@ ExportedObj/
 *.VC.db
 *.jpeg
 *.psd
+*.exr
 
 # Unity3D generated meta files
 *.pidb.meta
